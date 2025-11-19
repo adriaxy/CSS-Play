@@ -1,0 +1,1 @@
+// Convierte el texto del editor en objeto JS
