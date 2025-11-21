@@ -1,0 +1,56 @@
+:root {
+  /* Background colors */
+  --bg-darkest: #132C47;        /* darkest background */
+  --bg-dark: #294C63;           /* slightly lighter background */
+  --bg-secondary: #78AEAD;      /* secondary background for titles or sections */
+  --bg-primary: #D4ECE9;        /* primary background for titles or cards */
+  --bg-light: #fff;
+
+  /* Highlight colors */
+  --highlight-yellow: #FFD966;  /* yellow highlight for emphasis */
+  --highlight-red: #D4523D;     /* red highlight for warnings or errors */
+
+  /* Text colors */
+  --text-on-dark: #132C47;       /* text over dark backgrounds */
+  --text-on-light: #FFF;         /* text over light backgrounds */
+  --text-muted: #D4ECE9;         /* less intense text for secondary info */
+
+  --border-radius-parent: 30px;
+}
+
+@font-face {
+    font-family: Lexend;
+    src: url(../../public/assets/Fonts/Lexend-VariableFont_wght.woff2) format("woff2");
+    font-weight: 100 900;
+}
+
+*,
+*::after,
+*::before{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+h1,
+h2,
+h3{
+    margin: 0;
+}
+
+html{
+    background-color: var(--bg-light);
+}
+
+body{
+    font-family: Lexend;
+    background-color: var(--bg-dark);
+    width: 100vw;
+    height: 100vh;
+    border-radius: var(--border-radius-parent);
+    overflow: hidden;
+}
+
+.light{
+    font-weight: 100;
+}

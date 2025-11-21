@@ -1,7 +1,41 @@
-import './Header.css'
+import './Header.css';
+import LogoButton from './LogoButton';
+import PrevChallengeButton from './PrevChallengeButton';
+import NextChallengeButton from './NextChallengeButton';
+import BackHomeButton from './navButtons/BackHomeButton';
+import DarkModeButton from './DarkModeButton';
 
-export default function Header() {
+export default function Header({title}) {
+
     return (
-        <h1 className="prueba">Prueba</h1>
+        <header>
+            <LogoButton />
+            <PrevChallengeButton />
+            {title && <h1>{title}</h1>}
+            <NextChallengeButton />
+            <div className="header-right">
+                <BackHomeButton
+                    className={"home-btn"}
+                    svg={
+                        <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="40"
+                        height="40"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="#ffffff"
+                        strokeWidth="1.75"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        >
+                        <path d="M5 12l-2 0l9 -9l9 9l-2 0" />
+                        <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+                        <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+                        </svg>
+                    }
+                />
+                <DarkModeButton />
+            </div>
+        </header>
     )
 }
