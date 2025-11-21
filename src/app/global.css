@@ -20,9 +20,9 @@
 
 @font-face {
     font-family: Lexend;
-    src: url(../../public/assets/Fonts/Lexend-VariableFont_wght.woff2) format("woff2");
+    src: url("/assets/Lexend/Lexend-VariableFont_wght.woff2") format("woff2");
     font-weight: 100 900;
-}
+}  
 
 *,
 *::after,
