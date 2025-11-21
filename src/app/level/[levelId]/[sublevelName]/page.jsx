@@ -1,29 +1,23 @@
+// app/level/[levelId]/[sublevelName]/page.jsx
 import levels from "@/data/levels";
 import LevelLayout from "../layout";
+import Header from "@/components/Header/Header";
 
-export default async function SublevelPage(props) {
-    const params = await props.params;
-    //obtenemos los valores de la URL
-    const {levelId, sublevelName} = params; 
-    //la primera variable guarda el primer tramo dinámico 
-    //de la url, el segundo guarda el sublevelname de la url
+export default async function SublevelPage({ params }) {
+  const { levelId, sublevelName } = await params;
 
-    //buscamos el nivel 
-    const level = levels.find(l => l.level === Number(levelId));
+  const level = levels.find(l => l.level === Number(levelId));
+  if (!level) return <p>Level not found</p>;
 
-    if (!level) return (
-        <p>Level not found</p>
-    );
+  const sublevel = level.sublevels.find(s => s.name === sublevelName);
+  if (!sublevel) return <p>Sublevel not found</p>;
 
-    //buscamos el subnivel
-    const sublevel = level.sublevels.find(sublevel => sublevel.name === sublevelName)
-
-    if(!sublevel) return <p>Sublevel not found</p>
-    
-    const headerTitle = sublevel.name;
-
-    return (
-       <LevelLayout headerTitle={headerTitle}>
-       </LevelLayout>
-    )
+  return (
+    <LevelLayout>
+      <Header title={sublevel.name.toLocaleUpperCase()} />
+      <div className="sublevel-content">
+        {/* Aquí va el contenido del subnivel */}
+      </div>
+    </LevelLayout>
+  );
 }

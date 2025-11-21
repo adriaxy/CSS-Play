@@ -8,13 +8,16 @@ export default function DarkModeButton() {
     }
     
     return(
-        <button onClick={handleClick} aria-label="Toggle dark/light mode">
+        <button onClick={handleClick} 
+            aria-label="Toggle dark/light mode"
+            className="color-mode-btn"
+        >
             {
                 colorMode === 'dark' ? (
                     <svg
                     xmlns="http://www.w3.org/2000/svg"
-                    width="30"
-                    height="30"
+                    width="27"
+                    height="27"
                     viewBox="0 0 24 24"
                     fill="none"
                     stroke="#132c47"
@@ -35,8 +38,8 @@ export default function DarkModeButton() {
                 ) : (
                     <svg
                     xmlns="http://www.w3.org/2000/svg"
-                    width="30"
-                    height="30"
+                    width="27"
+                    height="27"
                     viewBox="0 0 24 24"
                     fill="none"
                     stroke="#132c47"

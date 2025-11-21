@@ -1,7 +1,7 @@
 :root {
   /* Background colors */
-  --bg-darkest: #132C47;        /* darkest background */
-  --bg-dark: #294C63;           /* slightly lighter background */
+  --bg-darkest: #0d1f33;        /* darkest background */
+  --bg-dark: #1b3241;           /* slightly lighter background */
   --bg-secondary: #78AEAD;      /* secondary background for titles or sections */
   --bg-primary: #D4ECE9;        /* primary background for titles or cards */
   --bg-light: #fff;
@@ -15,7 +15,19 @@
   --text-on-light: #FFF;         /* text over light backgrounds */
   --text-muted: #D4ECE9;         /* less intense text for secondary info */
 
-  --border-radius-parent: 30px;
+  /* Font sizes */
+  --text-xxs: 11px;
+  --text-xs: 12px;
+  --text-s: 15px;
+  --text-m: 16px;
+  --text-l: 20px;
+  --text-xl: 25px;
+
+  /* Font weight */
+  --text-bold: 600;
+
+  /* border radius */
+  --border-radius-xl: 30px;
 }
 
 @font-face {
@@ -24,6 +36,7 @@
     font-weight: 100 900;
 }  
 
+/* Reset styles */
 *,
 *::after,
 *::before{
@@ -38,8 +51,14 @@ h3{
     margin: 0;
 }
 
+button{
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
 html{
-    background-color: var(--bg-light);
+    background-color: var(--bg-primary);
 }
 
 body{
@@ -47,8 +66,7 @@ body{
     background-color: var(--bg-dark);
     width: 100vw;
     height: 100vh;
-    border-radius: var(--border-radius-parent);
-    overflow: hidden;
+    border-radius: var(--border-radius-xl);
 }
 
 .light{

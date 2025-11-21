@@ -1,14 +1,8 @@
-import Header from "@/components/Header/Header";
-
-export default function LevelLayout({ children, headerTitle }) {
+// app/level/[levelId]/layout.jsx
+export default function LevelLayout({ children }) {
   return (
     <div className="level-wrapper">
-      <Header title={headerTitle} />
-
-      <div className="level-content">
-        {children}
-      </div>
+      <div className="level-content">{children}</div>
     </div>
   );
 }
-

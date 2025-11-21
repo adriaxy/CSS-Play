@@ -4,7 +4,7 @@ import ChallengeButton from "./navButtons/ChallengeButton";
 
 export default function NextChallengeButton() {
     return (
-        <ChallengeButton 
+        <ChallengeButton
             label={'Next challenge'}
             svg={
                 <svg
