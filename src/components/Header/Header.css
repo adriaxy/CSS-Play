@@ -52,11 +52,6 @@ button{
     }
 }
 
-
-.next-chall-btn{
-    background-color: red;
-}
-
 h1{
     font-size: var(--text-xl);
     font-weight: 200;

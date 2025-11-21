@@ -1,0 +1,107 @@
+/* [project]/src/components/Header/Header.css [app-client] (css) */
+* {
+  color: #fff;
+  font-family: Lexend, sans-serif;
+}
+
+header {
+  background-color: var(--bg-darkest);
+  border-radius: var(--border-radius-xl) var(--border-radius-xl) 0 0;
+  justify-content: space-between;
+  align-items: center;
+  padding: 7px 30px;
+  display: flex;
+  overflow: hidden;
+}
+
+.header-right {
+  display: flex;
+}
+
+.logo {
+  cursor: pointer;
+  font-size: 24px;
+}
+
+.logo-text {
+  font-weight: 800;
+}
+
+.logo-text-light {
+  font-weight: 100;
+}
+
+button {
+  display: block;
+}
+
+.challenge-button {
+  background-color: var(--bg-dark);
+  border-radius: 9999px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  width: 205px;
+  padding: 6px 0;
+  display: flex;
+}
+
+.challenge-button svg {
+  filter: drop-shadow(3px 3px 5px #000);
+}
+
+.challenge-button span {
+  color: var(--text-muted);
+}
+
+h1 {
+  font-size: var(--text-xl);
+  margin-bottom: 5px;
+  font-weight: 200;
+  display: inline-block;
+}
+
+h1 span.highlight {
+  font-weight: var(--text-bold);
+}
+
+.header-center {
+  position: relative;
+}
+
+.outline-title {
+  background-color: var(--highlight-yellow);
+  width: 100%;
+  height: 20px;
+  position: absolute;
+  transform: rotate(-1.5deg);
+}
+
+.header-right {
+  align-items: center;
+  gap: 15px;
+  display: flex;
+}
+
+.home-btn {
+  background-color: var(--highlight-yellow);
+  border-radius: 20px;
+  place-items: center;
+  padding: 8px 11px;
+  display: grid;
+}
+
+.home-btn svg {
+  filter: drop-shadow(3px 3px 5px #00000080);
+}
+
+.color-mode-btn {
+  background-color: var(--bg-primary);
+  border-radius: 50px;
+  place-items: center;
+  width: 33px;
+  height: 33px;
+  display: grid;
+}
+
+/*# sourceMappingURL=src_components_Header_Header_99f37424.css.map*/

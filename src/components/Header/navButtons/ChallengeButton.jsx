@@ -7,7 +7,7 @@ export default function ChallengeButton({ label, onClick, svg, svgPosition = 'le
             {svg && svgPosition === 'left' && 
                 svg
             }
-            <span>{label}</span>
+            <span className='disabled'>{label}</span>
             {svg && svgPosition === 'right' && 
                 svg
             }

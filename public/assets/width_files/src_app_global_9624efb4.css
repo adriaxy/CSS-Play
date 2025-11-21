@@ -1,0 +1,61 @@
+/* [project]/src/app/global.css [app-client] (css) */
+:root {
+  --bg-darkest: #0d1f33;
+  --bg-dark: #1b3241;
+  --bg-secondary: #78aead;
+  --bg-primary: #d4ece9;
+  --bg-light: #fff;
+  --highlight-yellow: #ffd966;
+  --highlight-red: #d4523d;
+  --text-on-dark: #132c47;
+  --text-on-light: #fff;
+  --text-muted: #d4ece9;
+  --text-xxs: 11px;
+  --text-xs: 12px;
+  --text-s: 15px;
+  --text-m: 16px;
+  --text-l: 20px;
+  --text-xl: 25px;
+  --text-bold: 600;
+  --border-radius-xl: 30px;
+}
+
+@font-face {
+  font-family: Lexend;
+  src: url("/assets/Lexend/Lexend-VariableFont_wght.woff2") format("woff2");
+  font-weight: 100 900;
+}
+
+*, :after, :before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+h1, h2, h3 {
+  margin: 0;
+}
+
+button {
+  cursor: pointer;
+  background: none;
+  border: none;
+}
+
+html {
+  background-color: var(--bg-primary);
+}
+
+body {
+  background-color: var(--bg-dark);
+  border-radius: var(--border-radius-xl);
+  width: 100vw;
+  height: 100vh;
+  font-family: Lexend;
+}
+
+.light {
+  font-weight: 100;
+}
+
+/*# sourceMappingURL=src_app_global_9624efb4.css.map*/
