@@ -13,7 +13,7 @@ export default function NextChallengeButton({onClick}) {
                 height="30"
                 viewBox="0 0 24 24"
                 fill="none"
-                stroke="#ffffff"
+                stroke="var(--text-on-light)"
                 strokeWidth="1.75"
                 strokeLinecap="round"
                 strokeLinejoin="round"

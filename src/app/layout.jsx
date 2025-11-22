@@ -1,13 +1,31 @@
+"use client";
+
 import './global.css';
+import { ThemeProvider, useTheme } from './ThemeContext';
+import { useEffect } from 'react';
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body>
-        <div className='container'>
-          {children}
-        </div>
+        <ThemeProvider>
+          <BodyClassController>
+            <div className='container'>
+              {children}
+            </div>
+          </BodyClassController>
+        </ThemeProvider>
       </body>
     </html>
   );
+}
+
+function BodyClassController({children}){
+   const { theme } = useTheme();
+
+   useEffect(() => {
+    document.documentElement.className = theme;
+   }, [theme]);
+
+   return children; 
 }

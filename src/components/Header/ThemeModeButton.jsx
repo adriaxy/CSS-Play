@@ -1,19 +1,17 @@
 'use client';
-import { useState } from "react"
+import { useState } from "react";
+import { useTheme } from "@/app/ThemeContext";
 
-export default function DarkModeButton() {
-    const [colorMode, setColorMode] = useState('dark');
-    const handleClick = () => {
-        setColorMode(colorMode === 'dark' ? 'light' : 'dark')
-    }
+export default function ThemeModeButton() {
+    const { toggleTheme, theme } = useTheme();
     
     return(
-        <button onClick={handleClick} 
+        <button onClick={toggleTheme} 
             aria-label="Toggle dark/light mode"
             className="color-mode-btn"
         >
             {
-                colorMode === 'dark' ? (
+                theme === 'dark-mode' ? (
                     <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="27"

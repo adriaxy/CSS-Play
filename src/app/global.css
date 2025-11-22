@@ -5,6 +5,7 @@
   --bg-secondary: #78AEAD;      /* secondary background for titles or sections */
   --bg-primary: #D4ECE9;        /* primary background for titles or cards */
   --bg-light: #fff;
+  --bg-html: #D4ECE9;
 
   /* Highlight colors */
   --highlight-yellow: #FFD966;  /* yellow highlight for emphasis */
@@ -28,6 +29,30 @@
 
   /* border radius */
   --border-radius-xl: 30px;
+
+  /* drop-shadow filter */
+  --shadow: 5;
+}
+
+.light-mode{
+    /* Background colors (Light Mode) */
+  --bg-darkest: #F5F9FB;        /* tono más oscuro dentro del modo claro */
+  --bg-dark: #E8F0F4;           /* ligeramente más oscuro que el fondo base */
+  --bg-secondary: #C7E4E3;      /* secundario suave para secciones */
+  --bg-primary: #78AEAD;        /* primario más fuerte para tarjetas/títulos */
+  --bg-light: #ffffff;          /* fondo principal claro */
+  --bg-html: #0d1f33;
+
+  /* Highlight colors (Light Mode) */
+  --highlight-yellow: #E6B800;  /* amarillo más suave pero visible */
+  --highlight-red: #C24432;     /* rojo para alertas, adaptado a modo claro */
+
+  /* Text colors (Light Mode) */
+  --text-on-dark: #0d1f33;      /* texto sobre elementos más oscuros */
+  --text-on-light: #1b3241;     /* texto principal sobre fondos claros */
+  --text-muted: #6B8A92;        /* texto apagado o secundario */
+
+  --shadow: 0.3;
 }
 
 @font-face {
@@ -58,7 +83,7 @@ button{
 }
 
 html{
-    background-color: var(--bg-primary);
+    background-color: var(--bg-html);
 }
 
 body{
@@ -67,6 +92,7 @@ body{
     width: 100vw;
     height: 100vh;
     border-radius: var(--border-radius-xl);
+    transition: all 0.5s ease;
 }
 
 .light{

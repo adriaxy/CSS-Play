@@ -3,7 +3,7 @@ import LogoButton from './LogoButton';
 import PrevChallengeButton from './PrevChallengeButton';
 import NextChallengeButton from './NextChallengeButton';
 import BackHomeButton from './navButtons/BackHomeButton';
-import DarkModeButton from './DarkModeButton';
+import ThemeModeButton from './ThemeModeButton';
 
 export default function Header({title, onPrev, onNext}) {
 
@@ -21,7 +21,7 @@ export default function Header({title, onPrev, onNext}) {
                     className={"home-btn"}
                     type={"home-btn"}
                 />
-                <DarkModeButton />
+                <ThemeModeButton />
             </div>
         </header>
     )

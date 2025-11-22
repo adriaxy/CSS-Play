@@ -1,7 +1,7 @@
 
 *{
     font-family: Lexend, sans-serif;
-    color: white;
+    color: var(--text-on-light);
 }
 
 header{
@@ -45,7 +45,7 @@ button{
     background-color: var(--bg-dark);
     border-radius: 9999;
     svg{
-        filter: drop-shadow(3px 3px 5px rgba(0,0,0,5));
+        filter: drop-shadow(3px 3px 5px rgba(0,0,0,var(--shadow)));
     }
     span{
         color: var(--text-muted);
