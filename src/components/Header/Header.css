@@ -100,3 +100,13 @@ h1{
     place-items: center;
     border-radius: 50px;
 }
+
+button.disabled span, 
+button.disabled svg{
+    color: var(--btn-disabled);
+    --text-on-light: var(--btn-disabled);
+}
+
+button.disabled{
+    cursor: not-allowed;
+}

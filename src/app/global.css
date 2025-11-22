@@ -15,6 +15,7 @@
   --text-on-dark: #132C47;       /* text over dark backgrounds */
   --text-on-light: #FFF;         /* text over light backgrounds */
   --text-muted: #D4ECE9;         /* less intense text for secondary info */
+  --btn-disabled: #2d485b;         /* less intense text for secondary info */
 
   /* Font sizes */
   --text-xxs: 11px;
@@ -51,6 +52,7 @@
   --text-on-dark: #0d1f33;      /* texto sobre elementos más oscuros */
   --text-on-light: #1b3241;     /* texto principal sobre fondos claros */
   --text-muted: #6B8A92;        /* texto apagado o secundario */
+  --btn-disabled: #aebec3;  
 
   --shadow: 0.3;
 }
@@ -80,6 +82,7 @@ button{
     background: none;
     border: none;
     cursor: pointer;
+    transition: all .2s ease;
 }
 
 html{
@@ -97,4 +100,8 @@ body{
 
 .light{
     font-weight: 100;
+}
+
+button:active{
+    transform: scale(0.9);
 }

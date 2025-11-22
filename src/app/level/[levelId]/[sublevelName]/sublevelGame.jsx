@@ -1,33 +1,44 @@
 "use client";
-import { usePathname, useRouter } from "next/navigation";
 import { useState } from "react";
-import levels from "@/data/levels";
+import { useRouter } from "next/navigation";
 import Header from "@/components/Header/Header";
 
 export default function SublevelGame({ level, sublevel }) {
-  const [currentSublevel, setCurrentSublevel] = useState(0);
-  const pathname = usePathname();
   const router = useRouter();
-  const goToPrev = () => console.log(level);
-  const goToNext = () => {
-    setCurrentSublevel(prev => {
-        if(prev >= level.sublevels.length) return prev;
-        return prev + 1;
-    });
+  const levelId = 2;
 
-    const parts = pathname.split('/');
-    parts[parts.length-1] = level.sublevels[currentSublevel].name;
-    const newPath = parts.join('/');
-    router.push(newPath);
+  const [currentSublevel, setCurrentSublevel] = useState(
+    level.sublevels.findIndex(s => s.name === sublevel.name)
+  );
+
+  const goToPrev = () => {
+    const next = currentSublevel - 1;
+    if(next < 0) return; 
+    const nextSublevelName = level.sublevels[next].name;
+    setCurrentSublevel(next);
+    router.push(`/level/${levelId}/${nextSublevelName}`);
   };
+
+  const goToNext = () => {
+    const next = currentSublevel + 1;
+    if(next >= level.sublevels.length) return; 
+    const nextSublevelName = level.sublevels[next].name;
+    setCurrentSublevel(next);
+    router.push(`/level/${levelId}/${nextSublevelName}`);
+  };
+
+  const isPrevDisabled = currentSublevel === 0 ? true : false;
+  const isNextDisabled = currentSublevel === level.sublevels.length - 1 ?  true : false;
 
   return (
     <>
       <Header 
         title={sublevel.name.toUpperCase()} 
         onPrev={goToPrev} 
-        onNext={goToNext} />
-      <div>{/* contenido del subnivel */}</div>
+        onNext={goToNext}
+        isPrevDisabled={isPrevDisabled} 
+        isNextDisabled={isNextDisabled}/>
+      <div>{/* contenido del subnive */}</div>
     </>
   );
 }
