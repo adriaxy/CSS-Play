@@ -38,4 +38,6 @@
 
 .main__theory{
     grid-area: theory;
+    border-radius: var(--border-radius-l);
+    overflow: hidden;
 }

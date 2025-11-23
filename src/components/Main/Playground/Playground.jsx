@@ -1,4 +1,4 @@
-import SubHeader from "../Shared/SubHeader"
+import SubHeaderArena from "../Shared/SubHeaderArena"
 import PlaygroundButton from "../Shared/PlaygroundButton"
 
 export default function Playground({}){
@@ -7,7 +7,7 @@ export default function Playground({}){
 
     return(
         <div className='playground'>
-            <SubHeader 
+            <SubHeaderArena 
                 SubHeaderTitle={'Playground'}
                 buttons={[
                     <PlaygroundButton 

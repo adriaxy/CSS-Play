@@ -43,6 +43,8 @@ export default function SublevelGame({ level, sublevel }) {
           levelNum={level.level.toString()}
           sublevelNum={level.sublevels[currentSublevel].id}
           challenge={level.sublevels[currentSublevel].challenge}
+          name={sublevel.name}
+          theoryText={level.sublevels[currentSublevel].theory.description}
         />
     </>
   );

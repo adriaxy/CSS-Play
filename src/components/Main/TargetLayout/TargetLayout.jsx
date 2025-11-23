@@ -1,5 +1,5 @@
 import './TargetLayout.css'
-import SubHeader from "../Shared/SubHeader"
+import SubHeaderArena from "../Shared/SubHeaderArena"
 import PlaygroundButton from "../Shared/PlaygroundButton"
 
 export default function TargetLayout({}){
@@ -8,7 +8,7 @@ export default function TargetLayout({}){
 
     return(
         <div className='target-layout'>
-            <SubHeader 
+            <SubHeaderArena 
                 SubHeaderTitle={'Target Layout'}
             />
         </div>

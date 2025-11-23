@@ -4,7 +4,7 @@ import Playground from './Playground/Playground';
 import TargetLayout from './TargetLayout/TargetLayout';
 import Theory from './Theory/Theory';
 
-export default function Main({levelNum, sublevelNum, challenge, defaultCode, solution, theory}){
+export default function Main({levelNum, sublevelNum, challenge, defaultCode, solution, theoryText, name}){
     
     return (
         <main className='main'>
@@ -14,6 +14,7 @@ export default function Main({levelNum, sublevelNum, challenge, defaultCode, sol
                     sublevelNum={sublevelNum}
                     challenge={challenge}
                     defaultCode={defaultCode}
+                    name={name}
                 />
             </section>
             <section className="main__playground">
@@ -24,7 +25,10 @@ export default function Main({levelNum, sublevelNum, challenge, defaultCode, sol
             </section>
             <div></div>
             <section className="main__theory">
-                <Theory />
+                <Theory 
+                    cssPropertyName={name}
+                    theoryText={theoryText}    
+                />
             </section>
         </main>
     )

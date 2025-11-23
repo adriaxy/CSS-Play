@@ -29,6 +29,7 @@
   --text-bold: 600;
   --text-medium: 500;
   --text-regular: 300;
+  --text-light: 200;
 
   /* border radius */
   --border-radius-xl: 30px;
@@ -39,6 +40,9 @@
 
   /* Gap */
   --gap-main: 20px;
+
+  /* height */
+  --section-title-height: 52px;
 }
 
 .light-mode{

@@ -1,0 +1,8 @@
+.subheader-section{
+    height: var(--section-title-height);
+    background-color: var(--bg-primary);
+}
+
+.subheader-section span{
+    color: var(--text-on-dark);
+}

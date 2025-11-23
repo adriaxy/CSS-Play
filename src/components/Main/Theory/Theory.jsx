@@ -1,8 +1,31 @@
 import './Theory.css'
+import SubHeaderSection from '../Shared/SubHeaderSection'
+import css from 'styled-jsx/css'
 
-export default function Theory(){
-
+export default function Theory({cssPropertyName, theoryText}){
     return(
-        <div className="theory">Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident nam rem voluptatum cumque fugiat asperiores mollitia ut dolore minima molestiae magni consequatur quas, ducimus architecto illum autem pariatur, facere, est dolor numquam deleniti molestias accusamus? Est aspernatur voluptas fugit, cum illum iusto necessitatibus nostrum, debitis, labore vel delectus eaque! Dolor deleniti, commodi amet molestias quibusdam impedit aliquid exercitationem qui eos ipsam quas perspiciatis dolore vel fugiat perferendis eveniet esse nisi ipsa natus beatae nam. Iste atque cupiditate deleniti reiciendis sequi debitis eos quasi tenetur iure, sint quidem nobis labore et explicabo repudiandae modi facere aperiam alias repellat ipsum odit error veniam. Non excepturi aut delectus cumque atque natus libero necessitatibus ab omnis amet veniam, consectetur facilis suscipit quas veritatis sequi deserunt recusandae magnam animi ea provident. Ullam, amet? Dignissimos quam, et quos impedit, earum asperiores unde possimus vero cupiditate beatae nobis amet eveniet officiis commodi, voluptatem quas dolorem. Ex consequatur voluptate quaerat, provident, quis beatae suscipit aspernatur maiores saepe voluptatum, molestias laudantium est incidunt tempore animi doloribus explicabo dolores tenetur sapiente cum tempora ipsam. Exercitationem totam sequi iure neque laborum, voluptate molestias quam minima consectetur impedit minus dolorem veniam sint esse sapiente ab dicta, cum quos id quae voluptatum aperiam?</div>
+        <>
+            <SubHeaderSection sectionName={'theory__title'}>
+                <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="30"
+                height="30"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="var(--text-on-dark)"
+                stroke-width="1.75"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                >
+                <path d="M3 19a9 9 0 0 1 9 0a9 9 0 0 1 9 0" />
+                <path d="M3 6a9 9 0 0 1 9 0a9 9 0 0 1 9 0" />
+                <path d="M3 6l0 13" />
+                <path d="M12 6l0 13" />
+                <path d="M21 6l0 13" />
+                </svg>
+            <span className='theory__title--light'>CSS property: <span className='theory__title--bold'>{cssPropertyName.toUpperCase()}</span></span>
+            </SubHeaderSection>
+            <div className="theory__text">{theoryText}</div>
+        </>
     )
 }

@@ -1,4 +1,4 @@
-import './SubHeader.css'
+import './SubHeaderArena.css'
 
 export default function SubHeader({SubHeaderTitle, buttons = []}){
     return(

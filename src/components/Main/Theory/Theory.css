@@ -1,6 +1,24 @@
-.theory{
+.theory__text{
     background-color: var(--bg-darkest);
     padding: 30px;
     height: 100%;
-    border-radius: var(--border-radius-l);
+}
+
+.theory__title{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+
+    svg{
+        filter: drop-shadow(3px 3px 5px rgba(0,0,0,0.3));
+    }
+}
+
+.theory__title--light{
+    font-weight: var(--text-regular);
+}
+
+.theory__title--bold{
+    font-weight: var(--text-bold);
 }

@@ -1,24 +1,52 @@
 .editor{
-    background-color: var(--bg-darkest);
+    background-color: var(--bg-primary);
     height: 100%;
     border-radius: var(--border-radius-l);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+
+    & > *{
+        padding: 15px;
+    }
+}
+
+.editor__challenge{
+    background-color: var(--highlight-yellow);
+    color: var(--text-on-dark);
+    font-weight: var(--text-regular);
+}
+
+.editor__challenge--bold{
+    color: var(--text-on-dark);
+    font-weight: var(--text-bold);
+}
+
+textarea{
+    width: 100%;
+    background-color: var(--bg-darkest);
+    border: none;
+    resize: none;
+    flex: 1;
+
+    &:focus{
+        outline: none;
+    }
+}
+
+.editor__title--light-typo{
+    font-weight: var(--text-regular);
+}
+
+.editor__title svg{
+    transform: rotate(-20deg);
 }
 
 .editor__title{
     display: flex;
     align-items: center;
     gap: 20px;
-}
-
-.editor__title svg{
-    transform: rotate(-10deg);
-    margin-top: 5px;
-}
-
-textarea{
-    width: 100%;
-}
-
-.editor__title--light-typo{
-    font-weight: var(--text-regular);
+    svg{
+        filter: drop-shadow(3px 3px 5px rgba(0,0,0,0.3));
+    }
 }
