@@ -25,7 +25,7 @@ export default function PrevChallengeButton({onClick, isPrevDisabled}) {
             }
             svgPosition="left"
             onClick={onClick}
-            isPrevDisabled={isPrevDisabled}
+            disabled={isPrevDisabled}
         />
     )
 }

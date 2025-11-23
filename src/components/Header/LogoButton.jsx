@@ -1,8 +1,8 @@
 export default function LogoButton(){
     return (
-        <div className='header-left'>
-                <div className='logo'>
-                    <span className='logo-text'>CSS</span> <span className="logo-text-light">Play</span>
+        <div className='header__left'>
+                <div className='header__logo'>
+                    <span className='header__logo-bold'>CSS</span> <span className="header__logo-light">Play</span>
                 </div>
         </div>
     )

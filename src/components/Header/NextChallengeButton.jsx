@@ -26,7 +26,7 @@ export default function NextChallengeButton({onClick, isNextDisabled}) {
             }
             svgPosition="right"
             onClick={onClick}
-            isNextDisabled={isNextDisabled}
+            disabled={isNextDisabled}
         />
     )
 }

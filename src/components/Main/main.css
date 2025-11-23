@@ -1,0 +1,10 @@
+.css-arena{
+    display: flex;
+    gap: var(--gap-main);
+}
+
+.target-layout, .playground{
+    width: 400;
+    height: 300;
+    background-color: var(--bg-darkest);
+}

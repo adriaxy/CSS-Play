@@ -2,6 +2,7 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import Header from "@/components/Header/Header";
+import Main from "@/components/Main/Main";
 
 export default function SublevelGame({ level, sublevel }) {
   const router = useRouter();
@@ -38,7 +39,13 @@ export default function SublevelGame({ level, sublevel }) {
         onNext={goToNext}
         isPrevDisabled={isPrevDisabled} 
         isNextDisabled={isNextDisabled}/>
-      <div>{/* contenido del subnive */}</div>
+      <main>
+        <Main 
+          levelNum={level.level.toString()}
+          sublevelNum={level.sublevels[currentSublevel].id}
+          challenge={level.sublevels[currentSublevel].challenge}
+        />
+      </main>
     </>
   );
 }

@@ -1,11 +1,10 @@
 import '../Header.css';
 
-export default function ChallengeButton({ label, onClick, svg, svgPosition = 'left', isNextDisabled, isPrevDisabled}) {
-    const disabled = isNextDisabled === true || isPrevDisabled === true ? 'disabled' : '';
+export default function ChallengeButton({ label, onClick, svg, svgPosition = 'left', disabled}) {
     const svgNamePosition = svgPosition;
 
     return (
-        <button className={`challenge-button ${svgNamePosition} ${disabled}`} onClick={onClick}>
+        <button className={`header__challenge-button ${svgNamePosition} ${disabled ? 'header__challenge-button--disabled' : ''}`} onClick={onClick}>
             {svg && svgPosition === 'left' && 
                 svg
             }

@@ -8,7 +8,8 @@ export default function ThemeModeButton() {
     return(
         <button onClick={toggleTheme} 
             aria-label="Toggle dark/light mode"
-            className="color-mode-btn"
+            aria-pressed={theme === "light-mode"}
+            className="header__color-mode-btn"
         >
             {
                 theme === 'dark-mode' ? (

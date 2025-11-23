@@ -8,17 +8,17 @@ import ThemeModeButton from './ThemeModeButton';
 export default function Header({title, onPrev, onNext, isPrevDisabled, isNextDisabled}) {
 
     return (
-        <header>
+        <header className="header">
             <LogoButton />
             <PrevChallengeButton onClick={onPrev} isPrevDisabled={isPrevDisabled}/>
-            <div className="header-center">
-                {<h1>CSS Property: <span className="highlight">{title}</span></h1>}
-            <div className="outline-title"></div>
+            <div className="header__center">
+                {<h1 className='header__title'>CSS Property: <span className="header__title--highlight">{title}</span></h1>}
+            <div className="header__title-outline"></div>
             </div>
             <NextChallengeButton onClick={onNext} isNextDisabled={isNextDisabled}/>
-            <div className="header-right">
+            <div className="header__right">
                 <BackHomeButton
-                    className={"home-btn"}
+                    className={"header__home-btn"}
                     type={"home-btn"}
                 />
                 <ThemeModeButton />
@@ -26,3 +26,24 @@ export default function Header({title, onPrev, onNext, isPrevDisabled, isNextDis
         </header>
     )
 }
+// export default function Header({title, onPrev, onNext, isPrevDisabled, isNextDisabled}) {
+
+//     return (
+//         <header>
+//             <LogoButton />
+//             <PrevChallengeButton onClick={onPrev} isPrevDisabled={isPrevDisabled}/>
+//             <div className="header-center">
+//                 {<h1>CSS Property: <span className="highlight">{title}</span></h1>}
+//             <div className="outline-title"></div>
+//             </div>
+//             <NextChallengeButton onClick={onNext} isNextDisabled={isNextDisabled}/>
+//             <div className="header-right">
+//                 <BackHomeButton
+//                     className={"home-btn"}
+//                     type={"home-btn"}
+//                 />
+//                 <ThemeModeButton />
+//             </div>
+//         </header>
+//     )
+// }

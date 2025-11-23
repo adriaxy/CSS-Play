@@ -33,6 +33,9 @@
 
   /* drop-shadow filter */
   --shadow: 5;
+
+  /* Gap */
+  --gap-main: 20px;
 }
 
 .light-mode{
@@ -98,9 +101,15 @@ body{
     transition: all 0.5s ease;
 }
 
-.light{
-    font-weight: 100;
+*{
+    font-family: Lexend, sans-serif;
+    color: var(--text-on-light);
 }
+
+/* .light{
+    font-weight: 100;
+    background-color: red;
+} */
 
 button:active{
     transform: scale(0.9);
