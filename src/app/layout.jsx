@@ -3,6 +3,7 @@
 import './global.css';
 import { ThemeProvider, useTheme } from './ThemeContext';
 import { useEffect } from 'react';
+import Header from '@/components/Header/Header';
 
 export default function RootLayout({ children }) {
   return (

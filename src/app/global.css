@@ -12,7 +12,7 @@
   --highlight-red: #D4523D;     /* red highlight for warnings or errors */
 
   /* Text colors */
-  --text-on-dark: #132C47;       /* text over dark backgrounds */
+  --text-on-dark: #0d1f33;       /* text over dark backgrounds */
   --text-on-light: #FFF;         /* text over light backgrounds */
   --text-muted: #D4ECE9;         /* less intense text for secondary info */
   --btn-disabled: #2d485b;         /* less intense text for secondary info */
@@ -27,9 +27,12 @@
 
   /* Font weight */
   --text-bold: 600;
+  --text-medium: 500;
+  --text-regular: 300;
 
   /* border radius */
   --border-radius-xl: 30px;
+  --border-radius-l: 15px;
 
   /* drop-shadow filter */
   --shadow: 5;
@@ -81,6 +84,15 @@ h3{
     margin: 0;
 }
 
+h2{
+    font-size: var(--text-l);
+}
+
+h3{
+    font-size: var(--text-s);
+    font-weight: var(--text-medium);
+}
+
 button{
     background: none;
     border: none;
@@ -98,7 +110,7 @@ body{
     width: 100vw;
     height: 100vh;
     border-radius: var(--border-radius-xl);
-    transition: all 0.5s ease;
+    transition: background-color 0.5s ease;
 }
 
 *{

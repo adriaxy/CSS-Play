@@ -1,0 +1,6 @@
+.theory{
+    background-color: var(--bg-darkest);
+    padding: 30px;
+    height: 100%;
+    border-radius: var(--border-radius-l);
+}

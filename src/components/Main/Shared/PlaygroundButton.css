@@ -1,0 +1,7 @@
+.sub-header__button{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: var(--text-xs);
+    color: var(--bg-darkest);
+}

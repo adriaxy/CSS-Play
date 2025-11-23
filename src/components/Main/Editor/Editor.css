@@ -1,3 +1,24 @@
+.editor{
+    background-color: var(--bg-darkest);
+    height: 100%;
+    border-radius: var(--border-radius-l);
+}
+
+.editor__title{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.editor__title svg{
+    transform: rotate(-10deg);
+    margin-top: 5px;
+}
+
 textarea{
-    resize: non;
+    width: 100%;
+}
+
+.editor__title--light-typo{
+    font-weight: var(--text-regular);
 }

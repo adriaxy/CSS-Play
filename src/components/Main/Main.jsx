@@ -1,11 +1,14 @@
 import './main.css'
 import Editor from "./Editor/Editor";
+import Playground from './Playground/Playground';
+import TargetLayout from './TargetLayout/TargetLayout';
+import Theory from './Theory/Theory';
 
 export default function Main({levelNum, sublevelNum, challenge, defaultCode, solution, theory}){
     
     return (
-        <>
-            <section className="editor">
+        <main className='main'>
+            <section className="main__editor">
                 <Editor 
                     levelNum={levelNum}
                     sublevelNum={sublevelNum}
@@ -13,13 +16,16 @@ export default function Main({levelNum, sublevelNum, challenge, defaultCode, sol
                     defaultCode={defaultCode}
                 />
             </section>
-            <section className="css-arena">
-                <div className='playground'></div>
-                <div className='target-layout'></div>
+            <section className="main__playground">
+                <Playground />
             </section>
-            <section className="theory">
-                
+            <section className="main__target">
+                <TargetLayout />
             </section>
-        </>
+            <div></div>
+            <section className="main__theory">
+                <Theory />
+            </section>
+        </main>
     )
 }

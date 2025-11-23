@@ -1,0 +1,8 @@
+import './Theory.css'
+
+export default function Theory(){
+
+    return(
+        <div className="theory">Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident nam rem voluptatum cumque fugiat asperiores mollitia ut dolore minima molestiae magni consequatur quas, ducimus architecto illum autem pariatur, facere, est dolor numquam deleniti molestias accusamus? Est aspernatur voluptas fugit, cum illum iusto necessitatibus nostrum, debitis, labore vel delectus eaque! Dolor deleniti, commodi amet molestias quibusdam impedit aliquid exercitationem qui eos ipsam quas perspiciatis dolore vel fugiat perferendis eveniet esse nisi ipsa natus beatae nam. Iste atque cupiditate deleniti reiciendis sequi debitis eos quasi tenetur iure, sint quidem nobis labore et explicabo repudiandae modi facere aperiam alias repellat ipsum odit error veniam. Non excepturi aut delectus cumque atque natus libero necessitatibus ab omnis amet veniam, consectetur facilis suscipit quas veritatis sequi deserunt recusandae magnam animi ea provident. Ullam, amet? Dignissimos quam, et quos impedit, earum asperiores unde possimus vero cupiditate beatae nobis amet eveniet officiis commodi, voluptatem quas dolorem. Ex consequatur voluptate quaerat, provident, quis beatae suscipit aspernatur maiores saepe voluptatum, molestias laudantium est incidunt tempore animi doloribus explicabo dolores tenetur sapiente cum tempora ipsam. Exercitationem totam sequi iure neque laborum, voluptate molestias quam minima consectetur impedit minus dolorem veniam sint esse sapiente ab dicta, cum quos id quae voluptatum aperiam?</div>
+    )
+}

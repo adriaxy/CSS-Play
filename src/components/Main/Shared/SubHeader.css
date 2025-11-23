@@ -1,0 +1,32 @@
+.sub-header{
+    display: flex;
+    justify-content: space-between;
+    gap: 45px;
+    height: 33px;
+    padding: 5px 10px;
+    background-color: var(--bg-secondary);
+    border-radius: var(--border-radius-l) var(--border-radius-l) 0 0;
+}
+
+.sub-header__title{
+    color: var(--text-on-dark);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.sub-header__svg{
+    border-radius: 5px;
+    outline: 2px solid var(--highlight-yellow);
+    background-color: var(--bg-darkest);
+}
+
+.sub-header__left{
+    display: flex;
+    gap: 20px;
+}
+
+.sub-header__buttons > button{
+    color: var(--text-on-dark);
+}
+

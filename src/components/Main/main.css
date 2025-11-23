@@ -1,10 +1,41 @@
-.css-arena{
+.main__css-arena{
     display: flex;
     gap: var(--gap-main);
 }
 
 .target-layout, .playground{
-    width: 400;
-    height: 300;
+    border-radius: var(--border-radius-l);
     background-color: var(--bg-darkest);
+    width: 100%;
+    height: 300px;
+}
+
+.main {
+    padding: 20px 30px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto 1fr;
+    grid-template-areas: 
+        "editor playground target"
+        "editor theory theory"
+    ;
+    min-height: calc(100vh - 60px - 40px);
+    gap: var(--gap-main);
+}
+
+.main__editor{
+    grid-area: editor;
+}
+
+.main__playground{
+    grid-area: playground;
+}
+
+.main__target{
+    grid-area: target;
+}
+
+.main__theory{
+    grid-area: theory;
 }
