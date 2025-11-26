@@ -5,7 +5,16 @@
   --bg-secondary: #78AEAD;      /* secondary background for titles or sections */
   --bg-primary: #D4ECE9;        /* primary background for titles or cards */
   --bg-light: #fff;
-  --bg-html: #26485e;
+  --bg-html: #0a1422;
+
+  /* gradient colors */
+  --gradient-darkest: #0a1422;
+  --gradient-dark: #0f1c25;
+;
+  --gradient-light: #a7c0bc;
+
+  /* border colors */
+  --border-dark: #26485e;
 
   /* Highlight colors */
   --highlight-yellow: #ffca29;  /* yellow highlight for emphasis */
@@ -53,6 +62,10 @@
   --bg-primary: #78AEAD;        /* primario más fuerte para tarjetas/títulos */
   --bg-light: #ffffff;          /* fondo principal claro */
   --bg-html: #0d1f33;
+
+  /* gradient colors */
+  --gradient-darkest: #fff;
+  --gradient-light: #78AEAD;
 
   /* Highlight colors (Light Mode) */
   --highlight-yellow: #E6B800;  /* amarillo más suave pero visible */
@@ -111,8 +124,11 @@ html{
 body{
     font-family: Lexend;
     background-color: var(--bg-dark);
+    background: radial-gradient(circle at top center, var(--bg-dark), var(--gradient-darkest), var(--gradient-darkest));
+    /* background: linear-gradient(to bottom, var(--bg-dark), var(--gradient-darkest)); */
     width: 100vw;
     height: 100vh;
+    border: 1px solid var(--border-dark);
     border-radius: var(--border-radius-xl);
     transition: background-color 0.5s ease;
 }

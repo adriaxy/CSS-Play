@@ -17,7 +17,7 @@ export default function SublevelGame({ level, sublevel }) {
     if(next < 0) return; 
     const nextSublevelName = level.sublevels[next].name;
     setCurrentSublevel(next);
-    router.push(`/level/${levelId}/${nextSublevelName}`);
+    router.replace(`/level/${levelId}/${nextSublevelName}`, {scroll:false});
   };
 
   const goToNext = () => {
@@ -25,8 +25,7 @@ export default function SublevelGame({ level, sublevel }) {
     if(next >= level.sublevels.length) return; 
     const nextSublevelName = level.sublevels[next].name;
     setCurrentSublevel(next);
-    router.prefetch(`/level/${levelId}/${nextSublevelName}`);
-    router.push(`/level/${levelId}/${nextSublevelName}`);
+    router.replace(`/level/${levelId}/${nextSublevelName}`, {scroll:false});
   };
 
   const isPrevDisabled = currentSublevel === 0 ? true : false;

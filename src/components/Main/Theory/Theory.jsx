@@ -12,7 +12,7 @@ export default function Theory({cssPropertyName, theoryText}){
                 height="30"
                 viewBox="0 0 24 24"
                 fill="none"
-                stroke="var(--text-on-dark)"
+                stroke="var(--text-on-light)"
                 strokeWidth="1.75"
                 strokeLinejoin="round"
                 >
@@ -24,7 +24,7 @@ export default function Theory({cssPropertyName, theoryText}){
                 </svg>
             <span className='theory__title--light'>CSS property: <span className='theory__title--bold'>{cssPropertyName.toUpperCase()}</span></span>
             </SubHeaderSection>
-            <div className="theory__text">{theoryText}</div>
+            <div className="theory__text"><div className="theory__text-limit">{theoryText}</div></div>
         </>
     )
 }

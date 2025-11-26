@@ -1,8 +1,20 @@
-.subheader-section{
+/* .subheader-section{
     height: var(--section-title-height);
     background-color: var(--bg-primary);
+    background: linear-gradient(to right, var(--gradient-light), var(--bg-primary), var(--gradient-light));
 }
 
 .subheader-section span{
     color: var(--text-on-dark);
+} */
+
+.subheader-section{
+    height: var(--section-title-height);
+    /* background-color: var(--bg-primary); */
+    background: linear-gradient(to right, var(--gradient-darkest), var(--bg-darkest), var(--gradient-darkest));
+    border-bottom: 1px solid var(--border-dark);
+}
+
+.subheader-section span{
+    color: var(--text-on-light);
 }

@@ -19,7 +19,7 @@ export default function ThemeModeButton() {
                     height="27"
                     viewBox="0 0 24 24"
                     fill="none"
-                    stroke="#132c47"
+                    stroke="#fff"
                     strokeWidth="1.75"
                     strokeLinecap="round"
                     strokeLinejoin="round"

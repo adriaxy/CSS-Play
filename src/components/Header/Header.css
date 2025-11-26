@@ -3,9 +3,11 @@
     justify-content: space-between;
     align-items: center;
     padding: 7px 30px ;
-    background-color: var(--bg-darkest);
+    /* background-color: var(--bg-darkest); */
+    background: linear-gradient(to right, var(--gradient-darkest), var(--bg-darkest), var(--gradient-darkest));
     border-radius: var(--border-radius-xl) var(--border-radius-xl) 0 0;
     overflow: hidden;
+    border-bottom: 0.5px solid var(--border-dark);
 }
 
 .header__logo{
@@ -30,6 +32,7 @@
     padding: 6px 0;
     background-color: var(--bg-dark);
     border-radius: 9999;
+    box-shadow: inset 1px 1px 2px hsla(0, 0%, 100%, .1);
     svg{
         filter: drop-shadow(3px 3px 5px rgba(0,0,0,var(--shadow)));
     }
@@ -70,17 +73,23 @@
 .header__home-btn{
     background-color: var(--highlight-yellow);
     padding: 8px 11px;
-    border-radius: 20px;
     display: grid;
     place-items: center;
+    border-radius: 9999;
 
     svg{
         filter: drop-shadow(3px 3px 5px rgba(0,0,0,0.5));
     }
 }
 
+.home-btn{
+    background-color: var(--highlight-yellow);
+}
+
 .header__color-mode-btn{
-    background-color: var(--bg-primary);
+    background-color: var(--bg-dark);
+    border-radius: 9999;
+    box-shadow: inset 1px 1px 2px hsla(0, 0%, 100%, .1);
     width: 33px;
     height: 33px;
     display: grid;

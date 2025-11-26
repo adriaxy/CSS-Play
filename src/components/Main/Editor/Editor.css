@@ -1,5 +1,4 @@
 .editor{
-    background-color: var(--bg-primary);
     height: 100%;
     border-radius: var(--border-radius-l);
     display: flex;
@@ -15,6 +14,7 @@
     background-color: var(--highlight-yellow);
     color: var(--text-on-dark);
     font-weight: var(--text-regular);
+    text-align: center;
 }
 
 .editor__challenge--bold{
@@ -24,10 +24,13 @@
 
 textarea{
     width: 100%;
-    background-color: var(--bg-darkest);
+    /* background-color: var(--bg-darkest); */
+    /* background: radial-gradient(circle, var(--bg-dark), var(--gradient-darkest)); */
+    background: linear-gradient(to bottom, var(--bg-darkest), var(--bg-darkest), var(--gradient-darkest));
     border: none;
     resize: none;
     flex: 1;
+    font-family: monospace;
 
     &:focus{
         outline: none;
@@ -45,6 +48,7 @@ textarea{
 .editor__title{
     display: flex;
     align-items: center;
+    justify-content: center;
     gap: 20px;
     svg{
         filter: drop-shadow(3px 3px 5px rgba(0,0,0,0.3));

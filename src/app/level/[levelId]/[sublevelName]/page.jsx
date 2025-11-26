@@ -8,6 +8,7 @@ export default async function SublevelPage({ params }) {
   if (!level) return <p>Level not found</p>;
   const sublevel = level.sublevels.find(s => s.name === sublevelName);
   if (!sublevel) return <p>Sublevel not found</p>;
+  console.log("🔵 Server component rendered");
 
   return (
     <LevelLayout>

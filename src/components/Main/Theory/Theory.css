@@ -1,9 +1,15 @@
 .theory__text{
-    background-color: var(--bg-darkest);
+    /* background-color: var(--bg-darkest); */
+    background: linear-gradient(to bottom, var(--bg-darkest), var(--gradient-darkest));
     padding: 30px;
     height: 100%;
     font-size: var(--text-s);
     font-weight: var(--text-regular);
+}
+
+.theory__text-limit{
+    margin: 0 auto;
+    max-width: 700px;
 }
 
 .theory__title{

@@ -14,7 +14,7 @@ export default function Editor ({levelNum, sublevelNum, challenge, defaultCode, 
               height="30"
               viewBox="0 0 24 24"
               fill="none"
-              stroke="var(--text-on-dark)"
+              stroke="var(--text-on-light)"
               strokeWidth="1.75"
               strokeLinecap="round"
               strokeLinejoin="round"
