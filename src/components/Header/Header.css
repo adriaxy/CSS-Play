@@ -88,12 +88,15 @@
     border-radius: 50px;
 }
 
-.header__challenge-button--disabled span, 
+/* .header__challenge-button--disabled span, 
 .header__challenge-button--disabled svg{
     color: var(--btn-disabled);
     --text-on-light: var(--btn-disabled);
-}
+} */
 
 .header__challenge-button--disabled{
     pointer-events: none;
+    & > *{
+        opacity: 0.2;
+    }
 }

@@ -2,6 +2,8 @@
     background-color: var(--bg-darkest);
     padding: 30px;
     height: 100%;
+    font-size: var(--text-s);
+    font-weight: var(--text-regular);
 }
 
 .theory__title{

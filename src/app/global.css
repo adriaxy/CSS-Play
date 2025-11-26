@@ -5,10 +5,10 @@
   --bg-secondary: #78AEAD;      /* secondary background for titles or sections */
   --bg-primary: #D4ECE9;        /* primary background for titles or cards */
   --bg-light: #fff;
-  --bg-html: #D4ECE9;
+  --bg-html: #26485e;
 
   /* Highlight colors */
-  --highlight-yellow: #FFD966;  /* yellow highlight for emphasis */
+  --highlight-yellow: #ffca29;  /* yellow highlight for emphasis */
   --highlight-red: #D4523D;     /* red highlight for warnings or errors */
 
   /* Text colors */

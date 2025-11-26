@@ -13,9 +13,8 @@ export default function Theory({cssPropertyName, theoryText}){
                 viewBox="0 0 24 24"
                 fill="none"
                 stroke="var(--text-on-dark)"
-                stroke-width="1.75"
-                stroke-linecap="round"
-                stroke-linejoin="round"
+                strokeWidth="1.75"
+                strokeLinejoin="round"
                 >
                 <path d="M3 19a9 9 0 0 1 9 0a9 9 0 0 1 9 0" />
                 <path d="M3 6a9 9 0 0 1 9 0a9 9 0 0 1 9 0" />
