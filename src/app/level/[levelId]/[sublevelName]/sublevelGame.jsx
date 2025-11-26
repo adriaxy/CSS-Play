@@ -25,6 +25,7 @@ export default function SublevelGame({ level, sublevel }) {
     if(next >= level.sublevels.length) return; 
     const nextSublevelName = level.sublevels[next].name;
     setCurrentSublevel(next);
+    router.prefetch(`/level/${levelId}/${nextSublevelName}`);
     router.push(`/level/${levelId}/${nextSublevelName}`);
   };
 
@@ -34,7 +35,7 @@ export default function SublevelGame({ level, sublevel }) {
   return (
     <>
       <Header 
-        title={sublevel.name.toUpperCase()} 
+        title={level.sublevels[currentSublevel].name.toUpperCase()} 
         onPrev={goToPrev} 
         onNext={goToNext}
         isPrevDisabled={isPrevDisabled} 
@@ -43,7 +44,7 @@ export default function SublevelGame({ level, sublevel }) {
           levelNum={level.level.toString()}
           sublevelNum={level.sublevels[currentSublevel].id}
           challenge={level.sublevels[currentSublevel].challenge}
-          name={sublevel.name}
+          name={level.sublevels[currentSublevel].name}
           theoryText={level.sublevels[currentSublevel].theory.description}
         />
     </>
