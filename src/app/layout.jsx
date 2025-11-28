@@ -2,6 +2,7 @@
 
 import './global.css';
 import { ThemeProvider, useTheme } from './ThemeContext';
+import { GameProvider } from './GameContext';
 import { useEffect } from 'react';
 import Header from '@/components/Header/Header';
 
@@ -9,13 +10,15 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body>
-        <ThemeProvider>
+        <GameProvider>
+          <ThemeProvider>
           <BodyClassController>
             <div className='container'>
               {children}
             </div>
           </BodyClassController>
         </ThemeProvider>
+        </GameProvider>
       </body>
     </html>
   );

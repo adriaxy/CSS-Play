@@ -1,9 +1,11 @@
 import './Editor.css'
 import SubHeaderSection from '../Shared/SubHeaderSection';
+import { useGame } from '@/app/GameContext';
 
 export default function Editor ({levelNum, sublevelNum, challenge, defaultCode, name}){
   const boldTarget = `${name} property`;
   const parts = challenge.split(boldTarget);
+  const {code, setCode} = useGame();
 
     return (
         <div className='editor'>
@@ -50,7 +52,7 @@ export default function Editor ({levelNum, sublevelNum, challenge, defaultCode, 
             <span className='editor__challenge--bold'>{boldTarget}</span>
             {parts[1]}
           </p>
-          <textarea name="" id="" onChange={()=>{}}></textarea>
+          <textarea name="" id="" onChange={()=>{}} defaultValue={code}></textarea>
         </div>
     )
 }
