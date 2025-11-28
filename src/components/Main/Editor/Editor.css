@@ -31,6 +31,7 @@ textarea{
     resize: none;
     flex: 1;
     font-family: monospace;
+    font-size: var(--text-m);
 
     &:focus{
         outline: none;
