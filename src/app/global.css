@@ -13,6 +13,9 @@
 ;
   --gradient-light: #a7c0bc;
 
+  /* Block colors */
+  --b-light: #fff;
+
   /* border colors */
   --border-dark: #26485e;
 
@@ -76,6 +79,9 @@
   --text-on-light: #1b3241;     /* texto principal sobre fondos claros */
   --text-muted: #6B8A92;        /* texto apagado o secundario */
   --btn-disabled: #aebec3;  
+
+  /* Block colors */
+  --b-light: #0d1f33;
 
   --shadow: 0.3;
 }

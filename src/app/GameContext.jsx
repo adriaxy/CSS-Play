@@ -17,7 +17,7 @@ export function GameProvider({children}){
 
     //Editor + solution
     const [code, setCode] = useState(
-        "/* Block 1 */\n.block1{\n\n}\n\n/* Block 2 */\n.block2{\n\n}"
+        "/* Block 1 */\n.block1 {\n\n}\n\n/* Block 2 */\n.block2 {\n\n}"
     );
 
     //UI buttons
@@ -33,7 +33,7 @@ export function GameProvider({children}){
         setSelectedBlock(null);
         setHoveredBlock(null);
         setCompletedBlocks({ block1: false, block2: false });
-        setCode("/* Block 1 */\n.block1{\n\n}\n\n/* Block 2 */\n.block2{\n\n}");
+        setCode("/* Block 1 */\n.block1 {\n\n}\n\n/* Block 2 */\n.block2 {\n\n}");
         setEvaluationResult(null);
         setShowGrid(false);
         setViewSolution(false);

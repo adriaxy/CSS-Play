@@ -7,6 +7,10 @@ export default function Editor ({levelNum, sublevelNum, challenge, defaultCode, 
   const parts = challenge.split(boldTarget);
   const {code, setCode} = useGame();
 
+  const handleChange = (e) => {
+    setCode(e.target.value)
+  }
+
     return (
         <div className='editor'>
           <SubHeaderSection sectionName={'editor__title'}>
@@ -52,7 +56,7 @@ export default function Editor ({levelNum, sublevelNum, challenge, defaultCode, 
             <span className='editor__challenge--bold'>{boldTarget}</span>
             {parts[1]}
           </p>
-          <textarea name="" id="" onChange={()=>{}} defaultValue={code}></textarea>
+          <textarea name="" id="" onChange={handleChange} value={code}></textarea>
         </div>
     )
 }

@@ -19,12 +19,17 @@ const levels = [
         },
         blocks: [
           {
+            id: "initialStylePlayground",
+            style: {width: "60px"}
+          },
+          {
             id: "block1",
             defaultCode: "",
             expectedStyles: [
               { property: "width", value: "200px", tolerance: 0 }
             ],
-            solution: ["width: 200px;"]
+            solution: {width: "120px"},
+            completed: {background: 'var(--b-light)', borderRadius: '20px', height: "60px"}
           },
           {
             id: "block2",
@@ -32,7 +37,14 @@ const levels = [
             expectedStyles: [
               { property: "width", value: "300px", tolerance: 0 }
             ],
-            solution: ["width: 300px;"]
+            solution: {width: "250px"},
+            completed: {height: "60px", background: 'var(--b-light)', borderRadius: '20px'}
+          },
+          {
+            id: "blockParent",
+            style: {padding: "20px", height: "100%", display: "flex", flexDirection: "column",
+              alignItems: 'center', justifyContent: 'center', gap: '50px'
+            }
           }
         ],
         successMessage: "Great! You've learned how width works."
