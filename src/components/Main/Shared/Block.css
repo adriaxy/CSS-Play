@@ -1,0 +1,14 @@
+.block{
+    position: relative;
+}
+
+.block-name-text{
+    display: none;
+    white-space: nowrap;
+    color: red;
+    font-size: var(--text-s);
+    position: absolute;
+    bottom: -25px;
+    left: 50%;
+    transform: translateX(-50%);
+}

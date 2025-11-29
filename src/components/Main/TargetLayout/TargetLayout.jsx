@@ -15,9 +15,8 @@ export default function TargetLayout({initialStyles}){
                 blockId={'target'}
                 initialStyles={initialStyles}
             >
-                <Block blockId={'targetBlock1'} style={{...initialStyles[1].completed, ...initialStyles[1].solution}} group={'group1'}/>
-                <Block blockId={'targetBlock2'} style={{...initialStyles[1].completed, ...initialStyles[2].solution}} group={'group2'}/>
-                {/* <Block blockStyle={{...initialStyles[2].completed, ...initialStyles[2].solution}}/> */}
+                <Block blockId={'block 1'} style={{...initialStyles[1].completed, ...initialStyles[1].solution}} group={'group1'}/>
+                <Block blockId={'block 2'} style={{...initialStyles[1].completed, ...initialStyles[2].solution}} group={'group2'}/>
             </BlockContainer>
         </div>
     )

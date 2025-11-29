@@ -11,11 +11,18 @@ export default function Block({blockId, style, group}) {
         ...(isHovered ? {outline: "5px solid red"} : {})
     }
 
+    const finalStyleHoverText = {
+        ...(isHovered ? {display: "block"} : {display: "none"})
+    }
+
     return (
         <div 
             style={finalStyle} 
             onMouseEnter={() => setHoveredBlock(group)} 
             onMouseLeave={() => setHoveredBlock(null)}
-        />
+            className='block'
+        >
+            <div className='block-name-text' style={finalStyleHoverText} aria-label={blockId}>{blockId}</div>
+        </div>
     )
 }
