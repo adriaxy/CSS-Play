@@ -1,14 +1,21 @@
 import './Block.css'
+import { useGame } from '@/app/GameContext'
 
-export default function Block({blockId, blockStyle}) {
+export default function Block({blockId, style, group}) {
+    const {hoveredBlock, setHoveredBlock} = useGame();
 
-    if(blockId === 'playground'){
-        return (
-            <div style={{...blockStyle[1].completed, ...blockStyle[0].style}}></div>
-        )
+    const isHovered = hoveredBlock === group;
+
+    const finalStyle = {
+        ...style,
+        ...(isHovered ? {outline: "5px solid red"} : {})
     }
-    
-    return(
-        <div style={blockStyle}></div>
+
+    return (
+        <div 
+            style={finalStyle} 
+            onMouseEnter={() => setHoveredBlock(group)} 
+            onMouseLeave={() => setHoveredBlock(null)}
+        />
     )
 }

@@ -2,6 +2,7 @@ import SubHeaderArena from "../Shared/SubHeaderArena"
 import PlaygroundButton from "../Shared/PlaygroundButton"
 import Block from "../Shared/Block"
 import BlockContainer from "../Shared/BlockContainer"
+import { useGame } from "@/app/GameContext"
 
 export default function Playground({initialStyles}){
     const handleClick = () => console.log('show grid')
@@ -23,8 +24,8 @@ export default function Playground({initialStyles}){
                 ]}
             />
             <BlockContainer blockId={'playground'} initialStyles={initialStyles}>
-                <Block blockId={'playground'} blockStyle={initialStyles}/>
-                <Block blockId={'playground'} blockStyle={initialStyles}/>
+                <Block blockId={'playgroundBlock1'} style={{...initialStyles[1].completed, ...initialStyles[0].style}} group={'group1'}/>
+                <Block blockId={'playgroundBlock2'} style={{...initialStyles[1].completed, ...initialStyles[0].style}} group={'group2'}/>
             </BlockContainer>
         </div>
     )

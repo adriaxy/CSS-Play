@@ -5,7 +5,6 @@ import BlockContainer from '../Shared/BlockContainer'
 import Block from '../Shared/Block'
 
 export default function TargetLayout({initialStyles}){
-    console.log(initialStyles[0].completed)
 
     return(
         <div className='target-layout'>
@@ -16,8 +15,9 @@ export default function TargetLayout({initialStyles}){
                 blockId={'target'}
                 initialStyles={initialStyles}
             >
-                <Block blockStyle={{...initialStyles[1].completed, ...initialStyles[1].solution}}/>
-                <Block blockStyle={{...initialStyles[2].completed, ...initialStyles[2].solution}}/>
+                <Block blockId={'targetBlock1'} style={{...initialStyles[1].completed, ...initialStyles[1].solution}} group={'group1'}/>
+                <Block blockId={'targetBlock2'} style={{...initialStyles[1].completed, ...initialStyles[2].solution}} group={'group2'}/>
+                {/* <Block blockStyle={{...initialStyles[2].completed, ...initialStyles[2].solution}}/> */}
             </BlockContainer>
         </div>
     )

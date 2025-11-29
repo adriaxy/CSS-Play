@@ -38,10 +38,9 @@ export function GameProvider({children}){
         setShowGrid(false);
         setViewSolution(false);
     };
-    
 
     return (
-        <GameContext.Provider value={{code, setCode}}>
+        <GameContext.Provider value={{code, setCode, hoveredBlock, setHoveredBlock}}>
             {children}
         </GameContext.Provider>
     )
