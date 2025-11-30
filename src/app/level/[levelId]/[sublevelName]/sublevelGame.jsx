@@ -46,6 +46,7 @@ export default function SublevelGame({ level, sublevel }) {
           name={level.sublevels[currentSublevel].name}
           theoryText={level.sublevels[currentSublevel].theory.description}
           initialStyles={level.sublevels[currentSublevel].blocks}
+          solution={level.sublevels[currentSublevel].blocks}
         />
     </>
   );

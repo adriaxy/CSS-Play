@@ -75,7 +75,7 @@
   --highlight-red: #C24432;     /* rojo para alertas, adaptado a modo claro */
 
   /* Text colors (Light Mode) */
-  --text-on-dark: #0d1f33;      /* texto sobre elementos más oscuros */
+  --text-on-dark: #ffffff;      /* texto sobre elementos más oscuros */
   --text-on-light: #1b3241;     /* texto principal sobre fondos claros */
   --text-muted: #6B8A92;        /* texto apagado o secundario */
   --btn-disabled: #aebec3;  

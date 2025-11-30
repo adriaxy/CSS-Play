@@ -1,0 +1,11 @@
+.solution-code__wrapper{
+    border: 0.5px solid #264254;
+    padding: 10px;
+    border-radius: var(--border-radius-l);
+    position: relative;
+}
+
+.block__code-wrapper{
+    background-color: #0f1e32;
+    border-radius: var(--border-radius-l);
+}

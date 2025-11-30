@@ -1,0 +1,19 @@
+.editor-button{
+    background-color: var(--b-light);
+    width: fit-content;
+    border-radius: 9999;
+    border: 3px solid var(--highlight-yellow);
+    height: 29px;
+    padding: 0 6px;
+}
+
+.editor-button div{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.editor-button > div > span{
+    font-size: var(--text-xs);
+    color: var(--text-on-dark);
+}

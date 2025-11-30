@@ -1,11 +1,14 @@
 import './Editor.css'
 import SubHeaderSection from '../Shared/SubHeaderSection';
+import ResetCodeButton from './ResetCodeButton';
+import ViewSolutionButton from './ViewSolutionButton';
+import ModalSolution from './ModalSolution';
 import { useGame } from '@/app/GameContext';
 
-export default function Editor ({levelNum, sublevelNum, challenge, defaultCode, name}){
+export default function Editor ({levelNum, sublevelNum, challenge, defaultCode, name, solutionCode}){
   const boldTarget = `${name} property`;
   const parts = challenge.split(boldTarget);
-  const {code, setCode} = useGame();
+  const {code, setCode, initialGameCode, viewSolution, setViewSolution} = useGame();
 
   const handleChange = (e) => {
     setCode(e.target.value)
@@ -56,7 +59,17 @@ export default function Editor ({levelNum, sublevelNum, challenge, defaultCode, 
             <span className='editor__challenge--bold'>{boldTarget}</span>
             {parts[1]}
           </p>
+          <div className="editor-buttons__wrapper">
+            <ResetCodeButton onClick={() => setCode(initialGameCode)}/>
+            <ViewSolutionButton onClick={() => setViewSolution(true)}/>
+          </div>
           <textarea name="" id="" onChange={handleChange} value={code}></textarea>
+          <ModalSolution 
+            viewSolution={viewSolution} 
+            className='modal-solution' 
+            onClick={() => setViewSolution(false)}
+            solutionCode={solutionCode}
+            />
         </div>
     )
 }

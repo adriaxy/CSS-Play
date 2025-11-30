@@ -15,6 +15,7 @@ export default function Main({levelNum, sublevelNum, challenge, defaultCode, sol
                     challenge={challenge}
                     defaultCode={defaultCode}
                     name={name}
+                    solutionCode={solution}
                 />
             </section>
             <section className="main__playground">

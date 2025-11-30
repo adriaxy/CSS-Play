@@ -19,6 +19,7 @@ export function GameProvider({children}){
     const [code, setCode] = useState(
         "/* Block 1 */\n.block1 {\n\n}\n\n/* Block 2 */\n.block2 {\n\n}"
     );
+    const initialGameCode = "/* Block 1 */\n.block1 {\n\n}\n\n/* Block 2 */\n.block2 {\n\n}";
 
     //UI buttons
     const [viewSolution, setViewSolution] = useState(false);
@@ -40,7 +41,7 @@ export function GameProvider({children}){
     };
 
     return (
-        <GameContext.Provider value={{code, setCode, hoveredBlock, setHoveredBlock}}>
+        <GameContext.Provider value={{code, setCode, hoveredBlock, setHoveredBlock, initialGameCode, viewSolution, setViewSolution}}>
             {children}
         </GameContext.Provider>
     )
