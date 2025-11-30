@@ -1,5 +1,6 @@
 "use client";
 import { createContext, useContext, useState } from "react";
+import { parseCssToRules } from "../../lib/parseCss";
 
 const GameContext = createContext();
 
@@ -40,8 +41,10 @@ export function GameProvider({children}){
         setViewSolution(false);
     };
 
+    const blockStyles = parseCssToRules(code)
+
     return (
-        <GameContext.Provider value={{code, setCode, hoveredBlock, setHoveredBlock, initialGameCode, viewSolution, setViewSolution}}>
+        <GameContext.Provider value={{code, setCode, hoveredBlock, setHoveredBlock, initialGameCode, viewSolution, setViewSolution, blockStyles}}>
             {children}
         </GameContext.Provider>
     )

@@ -16,12 +16,12 @@ export default function ClipboardButton({copiedText}){
 
     const svg = clipboard === false 
         ? <svg xmlns="http://www.w3.org/2000/svg" 
-            width="20" 
-            height="20" 
+            width="18" 
+            height="18" 
             viewBox="0 0 24 24" 
             fill="none" 
             stroke="white" 
-            strokeWidth="2" 
+            strokeWidth="1" 
             strokeLinecap="round" 
             strokeLinejoin="round">
             <rect width="8" height="4" x="8" y="2" rx="1" ry="1"/>
@@ -29,12 +29,12 @@ export default function ClipboardButton({copiedText}){
             </svg>
             
         : <svg xmlns="http://www.w3.org/2000/svg" 
-            width="20" 
-            height="20" 
+            width="18" 
+            height="18" 
             viewBox="0 0 24 24" 
             fill="none" 
             stroke="white" 
-            strokeWidth="2" 
+            strokeWidth="1" 
             strokeLinecap="round" 
             strokeLinejoin="round">
             <rect width="8" height="4" x="8" y="2" rx="1" ry="1"/>

@@ -24,8 +24,8 @@ export default function Playground({initialStyles}){
                 ]}
             />
             <BlockContainer blockId={'playground'} initialStyles={initialStyles}>
-                <Block blockId={'block 1'} style={{...initialStyles[1].completed, ...initialStyles[0].style}} group={'group1'}/>
-                <Block blockId={'block 2'} style={{...initialStyles[1].completed, ...initialStyles[0].style}} group={'group2'}/>
+                <Block blockId={'block 1'} style={{...initialStyles[1].completed, ...initialStyles[0].style}} group={'group1'} playground={true}/>
+                <Block blockId={'block 2'} style={{...initialStyles[1].completed, ...initialStyles[0].style}} group={'group2'} playground={true}/>
             </BlockContainer>
         </div>
     )
