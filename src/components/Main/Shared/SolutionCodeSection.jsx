@@ -1,8 +1,7 @@
 import './SolutionCodeSection.css'
 import ClipboardButton from './ClipboardButton'
 
-export default function SolutionCodeSection({blockId, solutionCode}) {
-
+export default function SolutionCodeSection({blockId, solutionCode}) { 
 
     return(
        <div className="solution-code__wrapper">
