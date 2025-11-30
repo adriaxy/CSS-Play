@@ -3,9 +3,23 @@
     padding: 10px;
     border-radius: var(--border-radius-l);
     position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+
+    div{
+       white-space: pre-wrap;
+       font-family: monospace;
+       font-size: var(--text-s);
+    }
 }
 
 .block__code-wrapper{
     background-color: #0f1e32;
     border-radius: var(--border-radius-l);
+}
+
+.block_code-text{
+    font-weight: var(--text-bold);
+    padding: 15px;
 }

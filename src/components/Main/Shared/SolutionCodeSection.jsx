@@ -7,8 +7,8 @@ export default function SolutionCodeSection({blockId, solutionCode}) {
        <div className="solution-code__wrapper">
             <div className="block__title">{`/* ${blockId} */`}</div>
             <div className="block__code-wrapper">
-                <ClipboardButton />
-                <div className="block1_code-text">{solutionCode}</div>
+                <ClipboardButton copiedText={solutionCode}/>
+                <div className="block_code-text">{solutionCode}</div>
             </div>
         </div>
     )

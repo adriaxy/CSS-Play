@@ -6,9 +6,8 @@
     border: 1px solid rgb(62, 62, 62);
     border-radius: 10px;
     position: absolute;
-    top: 0;
-    right: 0;
-    margin: 8px;
+    bottom: 20;
+    right: 20;
 }
 
 .copy-code-button__text{

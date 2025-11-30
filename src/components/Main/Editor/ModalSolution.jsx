@@ -56,7 +56,7 @@ export default function ModalSolution({viewSolution, solutionCode, onClick}) {
                 </div>
                 <div className='solution-code'>
                     <SolutionCodeSection blockId={'block1'} solutionCode={solutionCode[1].solutionString}/>
-                    <SolutionCodeSection blockId={'block2'} solutionCode={solutionCode[0].id}/>
+                    <SolutionCodeSection blockId={'block2'} solutionCode={solutionCode[2].solutionString}/>
                 </div>
             </div>
         </div>

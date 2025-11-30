@@ -29,7 +29,7 @@ const levels = [
               { property: "width", value: "200px", tolerance: 0 }
             ],
             solution: {width: "120px"},
-            solutionString: '\n.block1 {\n\n}\n\n/* Block 2 */\n.block2 {\n\n}',
+            solutionString: 'width: 120px;',
             completed: {background: 'var(--b-light)', borderRadius: '20px', height: "60px"}
           },
           {
@@ -39,6 +39,7 @@ const levels = [
               { property: "width", value: "300px", tolerance: 0 }
             ],
             solution: {width: "250px"},
+            solutionString: 'width: 200px;',
             completed: {height: "60px", background: 'var(--b-light)', borderRadius: '20px'}
           },
           {

@@ -82,13 +82,12 @@ textarea{
 }
 
 .modal-solution__wrapper{
-    position: absolute;
     top: 0;
     left: 50%;
-    transform: translate(-50%, 40%);
+    transform: translate(-50%, 50%);
     border-radius: var(--border-radius-xl);
-    width: 500px;
-    height: 500px;
+    max-width: 500px;
+    min-height: fit-content;
     z-index: 2;
     position: relative;
 }
@@ -129,7 +128,7 @@ textarea{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 5px;
+    padding: 2px 5px;
     margin-bottom: 10px;
 }
 
