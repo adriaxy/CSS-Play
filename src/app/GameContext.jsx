@@ -44,14 +44,14 @@ export function GameProvider({children}){
     const blockStyles = parseCssToRules(code);
 
     useEffect(()=> {
-        console.log(completedBlocks)
         if(Object.values(completedBlocks).every(v => v === true)){
-            console.log("🎉 Todos los bloques completados!");
+            setEvaluationResult(true);
+            console.log('true')
         }
     }, [completedBlocks])
 
     return (
-        <GameContext.Provider value={{code, setCode, hoveredBlock, setHoveredBlock, initialGameCode, viewSolution, setViewSolution, blockStyles, completedBlocks, setCompletedBlocks}}>
+        <GameContext.Provider value={{code, setCode, hoveredBlock, setHoveredBlock, initialGameCode, viewSolution, setViewSolution, blockStyles, completedBlocks, setCompletedBlocks, evaluationResult}}>
             {children}
         </GameContext.Provider>
     )

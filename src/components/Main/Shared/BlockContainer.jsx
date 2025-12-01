@@ -1,6 +1,11 @@
 import './BlockContainer.css'
+import { useGame } from "@/app/GameContext"
 
 export default function BlockContainer({blockId, initialStyles, children}){
+    const {evaluationResult} = useGame();
+
+    const isCompleted = evaluationResult ? 'completed' : '';
+
     if(blockId === 'target'){
         return (
             <div className="block-container" style={initialStyles[3].style}>
@@ -11,7 +16,10 @@ export default function BlockContainer({blockId, initialStyles, children}){
 
     if(blockId === 'playground'){
         return (
-            <div className="block-container" style={initialStyles[3].style}>
+            <div className="block-container block-container-playground" style={initialStyles[3].style}>
+                <div className={`completed-sublevel-message ${isCompleted}`}>
+                    <span className='completed-sublevel__title'>🎉&nbsp;&nbsp;Challenge completed</span>
+                </div>
                 {children}
             </div>
         )

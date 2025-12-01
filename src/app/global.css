@@ -23,6 +23,10 @@
   --highlight-yellow: #ffca29;  /* yellow highlight for emphasis */
   --highlight-red: #D4523D;     /* red highlight for warnings or errors */
 
+  /* Game stats colors */
+  --completed-dark: #006127;
+  --completed-light: #00943b;
+
   /* Text colors */
   --text-on-dark: #0d1f33;       /* text over dark backgrounds */
   --text-on-light: #FFF;         /* text over light backgrounds */

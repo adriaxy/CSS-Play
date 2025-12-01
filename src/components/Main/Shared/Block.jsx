@@ -31,7 +31,7 @@ export default function Block({blockId, style, group, blockSolution, playground 
 
     const finalStyle = {
         ...style,
-        ...(isHovered ? {outline: "5px solid red"} : {}),
+        ...(isHovered ? {outline: "5px solid var(--highlight-red)"} : {}),
         ...(playground === true ? blockStyles[blockIdPlayground] : {})
     }
 

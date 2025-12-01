@@ -2,7 +2,6 @@ import SubHeaderArena from "../Shared/SubHeaderArena"
 import PlaygroundButton from "../Shared/PlaygroundButton"
 import Block from "../Shared/Block"
 import BlockContainer from "../Shared/BlockContainer"
-import { useGame } from "@/app/GameContext"
 
 export default function Playground({initialStyles}){
     const handleClick = () => console.log('show grid')

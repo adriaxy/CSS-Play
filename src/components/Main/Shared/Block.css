@@ -20,7 +20,7 @@
     right: -8px;
     width: 24px;
     height: 24px;
-    background: #00c851;
+    background: var(--completed-light);
     border-radius: 50px;
 
     background-image: url('/assets/check.svg');
@@ -33,7 +33,7 @@
 .block-name-text{
     display: none;
     white-space: nowrap;
-    color: red;
+    color: var(--highlight-yellow);
     font-size: var(--text-s);
     position: absolute;
     bottom: -25px;
