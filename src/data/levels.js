@@ -30,7 +30,10 @@ const levels = [
             ],
             solution: {width: "120px"},
             solutionString: 'width: 120px;',
-            completed: {background: 'var(--b-light)', borderRadius: '20px', height: "60px"}
+            completed: {background: 'var(--b-light)', borderRadius: '20px', height: "60px"},
+            // solutionCompleted tendrá mas sentido cuando en los siguientes niveles haya
+            // propiedades acumuladas en el nivel anterior en el código del textarea
+            solutionCompleted: {width: "120px"} 
           },
           {
             id: "block2",
@@ -39,8 +42,9 @@ const levels = [
               { property: "width", value: "300px", tolerance: 0 }
             ],
             solution: {width: "250px"},
-            solutionString: 'width: 200px;',
-            completed: {height: "60px", background: 'var(--b-light)', borderRadius: '20px'}
+            solutionString: 'width: 250px;',
+            completed: {height: "60px", background: 'var(--b-light)', borderRadius: '20px'},
+            solutionCompleted: {width: "250px"} 
           },
           {
             id: "blockParent",

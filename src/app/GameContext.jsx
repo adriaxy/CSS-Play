@@ -1,5 +1,5 @@
 "use client";
-import { createContext, useContext, useState } from "react";
+import { createContext, useContext, useState, useEffect } from "react";
 import { parseCssToRules } from "../../lib/parseCss";
 
 const GameContext = createContext();
@@ -41,10 +41,17 @@ export function GameProvider({children}){
         setViewSolution(false);
     };
 
-    const blockStyles = parseCssToRules(code)
+    const blockStyles = parseCssToRules(code);
+
+    useEffect(()=> {
+        console.log(completedBlocks)
+        if(Object.values(completedBlocks).every(v => v === true)){
+            console.log("🎉 Todos los bloques completados!");
+        }
+    }, [completedBlocks])
 
     return (
-        <GameContext.Provider value={{code, setCode, hoveredBlock, setHoveredBlock, initialGameCode, viewSolution, setViewSolution, blockStyles}}>
+        <GameContext.Provider value={{code, setCode, hoveredBlock, setHoveredBlock, initialGameCode, viewSolution, setViewSolution, blockStyles, completedBlocks, setCompletedBlocks}}>
             {children}
         </GameContext.Provider>
     )
