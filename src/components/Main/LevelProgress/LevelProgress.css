@@ -1,0 +1,16 @@
+.main__level-progress{
+    background-color: transparent;
+    width: 100px;
+    border-radius: var(--border-radius-l);
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+.progress__title{
+    font-size: var(--text-xl);
+    display: flex;
+    justify-content: center;
+    padding-bottom: 5px;
+    border-bottom: 0.5px solid var(--border-dark);
+}

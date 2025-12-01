@@ -47,6 +47,7 @@ export default function SublevelGame({ level, sublevel }) {
           theoryText={level.sublevels[currentSublevel].theory.description}
           initialStyles={level.sublevels[currentSublevel].blocks}
           solution={level.sublevels[currentSublevel].blocks}
+          numOfSublevels={level.sublevels.length}
         />
     </>
   );

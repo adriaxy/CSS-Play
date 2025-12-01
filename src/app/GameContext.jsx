@@ -1,10 +1,17 @@
 "use client";
 import { createContext, useContext, useState, useEffect } from "react";
 import { parseCssToRules } from "../../lib/parseCss";
+import levels from "@/data/levels";
 
 const GameContext = createContext();
 
 export function GameProvider({children}){
+    const [currentLevel, setCurrentLevel] = useState(0);
+    const [currentSublevel, setCurrentSublevel] = useState(0);
+
+    const currentLevelData = levels[currentLevel];
+    const currentSublevelData = currentLevelData.sublevels[currentSublevel];
+
     //Active block
     const [selectedBlock, setSelectedBlock] = useState(null);
     const [hoveredBlock, setHoveredBlock] = useState(null);
@@ -28,7 +35,15 @@ export function GameProvider({children}){
 
     //TFG
     const [sublevelProgress, setSublevelProgress] = useState({});
-    const [levelProgress, setLevelProgress] = useState({});
+    const [levelProgress, setLevelProgress] = useState(() => {
+    const progress = {};
+    levels.forEach((level, lvlIdx) => {
+        progress[lvlIdx] = Object.fromEntries(
+        level.sublevels.map((_, subIdx) => [subIdx, false])
+        );
+    });
+    return progress;
+    });
 
     //Reset game
     const resetGame = () => {
@@ -43,12 +58,32 @@ export function GameProvider({children}){
 
     const blockStyles = parseCssToRules(code);
 
+    useEffect(() => {
+        console.log('currentlevel effect')
+    const sublevelsCount = levels[currentLevel].sublevels.length;
+        setLevelProgress(prev => ({
+            ...prev,
+            [currentLevel]: prev[currentLevel] || Object.fromEntries(
+                Array.from({ length: sublevelsCount }, (_, i) => [i, false])
+            )
+        }));
+    }, [currentLevel]);
+
+    const allBlocksCompleted = Object.values(completedBlocks).every(v => v === true);
+
     useEffect(()=> {
-        if(Object.values(completedBlocks).every(v => v === true)){
+        if(allBlocksCompleted){
             setEvaluationResult(true);
-            console.log('true')
+
+            setLevelProgress(prev => ({
+                ...prev,
+                [currentLevel]: {
+                    ...prev[currentLevel],
+                    [currentSublevel]: true
+                }
+            }))
         }
-    }, [completedBlocks])
+    }, [completedBlocks, currentLevel, currentSublevel])
 
     return (
         <GameContext.Provider value={{code, setCode, hoveredBlock, setHoveredBlock, initialGameCode, viewSolution, setViewSolution, blockStyles, completedBlocks, setCompletedBlocks, evaluationResult}}>

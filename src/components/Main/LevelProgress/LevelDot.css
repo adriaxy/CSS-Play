@@ -1,0 +1,12 @@
+.level-dot{
+    width: 15px;
+    height: 15px;
+    background-color: var(--highlight-red);
+    filter: drop-shadow(0px 0px 7px rgba(219, 0, 0, 1));
+    border-radius: 50px;
+}
+
+.level-dot.completed{
+    background-color: green;
+    filter: drop-shadow(0px 0px 7px rgb(21, 120, 57));
+}

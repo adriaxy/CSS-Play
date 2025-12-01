@@ -3,8 +3,9 @@ import Editor from "./Editor/Editor";
 import Playground from './Playground/Playground';
 import TargetLayout from './TargetLayout/TargetLayout';
 import Theory from './Theory/Theory';
+import LevelProgress from './LevelProgress/LevelProgress';
 
-export default function Main({levelNum, sublevelNum, challenge, defaultCode, solution, theoryText, name, initialStyles}){
+export default function Main({levelNum, sublevelNum, challenge, defaultCode, solution, theoryText, name, initialStyles, numOfSublevels}){
     
     return (
         <main className='main'>
@@ -18,11 +19,18 @@ export default function Main({levelNum, sublevelNum, challenge, defaultCode, sol
                     solutionCode={solution}
                 />
             </section>
-            <section className="main__playground">
-                <Playground initialStyles={initialStyles}/>
-            </section>
-            <section className="main__target">
-                <TargetLayout initialStyles={initialStyles}/>
+            <section className='main__arena'>
+                <section className="main__playground">
+                    <Playground initialStyles={initialStyles}/>
+                </section>
+                <section className="main__target">
+                    <TargetLayout initialStyles={initialStyles}/>
+                </section>
+                <LevelProgress 
+                    level={2}
+                    sublevel={sublevelNum}
+                    numOfSublevels={numOfSublevels}
+                />
             </section>
             <div></div>
             <section className="main__theory">
