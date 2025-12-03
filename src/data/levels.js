@@ -26,19 +26,19 @@ const levels = [
             id: "block1",
             defaultCode: "",
             expectedStyles: [{ property: "width", value: "200px", tolerance: 0 }],
-            solution: { width: "120px" },
-            solutionString: 'width: 120px;',
+            solution: { width: "150px" },
+            solutionString: 'width: 150px;',
             completed: { background: 'var(--b-light)', borderRadius: '20px', height: "60px" },
-            solutionCompleted: { width: "120px" }
+            solutionCompleted: { width: "150px" }
           },
           {
             id: "block2",
             defaultCode: "",
             expectedStyles: [{ property: "width", value: "300px", tolerance: 0 }],
-            solution: { width: "250px" },
-            solutionString: 'width: 250px;',
+            solution: { width: "300px" },
+            solutionString: 'width: 300px;',
             completed: { height: "60px", background: 'var(--b-light)', borderRadius: '20px' },
-            solutionCompleted: { width: "250px" }
+            solutionCompleted: { width: "300px" }
           },
           {
             id: "blockParent",

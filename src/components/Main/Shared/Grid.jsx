@@ -1,7 +1,7 @@
 import './Grid.css'
 import { useGame } from '@/app/GameContext';
 
-export default function Grid({cols = 20, rows = 15, size = 20, visible}) {
+export default function Grid({cols = 8, rows = 6, size = 50, visible}) {
     const { showGrid } = useGame();
     
     return(

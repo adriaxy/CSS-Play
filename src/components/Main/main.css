@@ -47,8 +47,6 @@
 
 .main__editor,
 .main__theory, 
-.main__playground,
-.main__target,
 .main__level-progress{
     border: 1px solid var(--border-dark);
     border-radius: var(--border-radius-l);

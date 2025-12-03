@@ -14,13 +14,13 @@
 .gridX{
     position: absolute;
     top: 0;
-    width: 20px;
+    width: 50px;
     height: 100%;
 }
 
 .gridY{
     position: absolute;
     top: 0;
-    height: 20px;
+    height: 50px;
     width: 100%;
 }
