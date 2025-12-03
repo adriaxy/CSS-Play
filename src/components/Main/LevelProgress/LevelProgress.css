@@ -1,6 +1,6 @@
 .main__level-progress{
     background-color: transparent;
-    width: 100px;
+    width: 80px;
     border-radius: var(--border-radius-l);
     padding: 15px;
     display: flex;

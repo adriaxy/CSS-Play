@@ -33,6 +33,9 @@
   --text-muted: #D4ECE9;         /* less intense text for secondary info */
   --btn-disabled: #2d485b;         /* less intense text for secondary info */
 
+  /* Grid colors */
+  --border-grid-primary: #78aead2c;
+
   /* Font sizes */
   --text-xxs: 11px;
   --text-xs: 12px;

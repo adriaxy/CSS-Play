@@ -20,36 +20,36 @@ const levels = [
         blocks: [
           {
             id: "initialStylePlayground",
-            style: {width: "60px"}
+            style: { width: "60px" }
           },
           {
             id: "block1",
             defaultCode: "",
-            expectedStyles: [
-              { property: "width", value: "200px", tolerance: 0 }
-            ],
-            solution: {width: "120px"},
+            expectedStyles: [{ property: "width", value: "200px", tolerance: 0 }],
+            solution: { width: "120px" },
             solutionString: 'width: 120px;',
-            completed: {background: 'var(--b-light)', borderRadius: '20px', height: "60px"},
-            // solutionCompleted tendrá mas sentido cuando en los siguientes niveles haya
-            // propiedades acumuladas en el nivel anterior en el código del textarea
-            solutionCompleted: {width: "120px"} 
+            completed: { background: 'var(--b-light)', borderRadius: '20px', height: "60px" },
+            solutionCompleted: { width: "120px" }
           },
           {
             id: "block2",
             defaultCode: "",
-            expectedStyles: [
-              { property: "width", value: "300px", tolerance: 0 }
-            ],
-            solution: {width: "250px"},
+            expectedStyles: [{ property: "width", value: "300px", tolerance: 0 }],
+            solution: { width: "250px" },
             solutionString: 'width: 250px;',
-            completed: {height: "60px", background: 'var(--b-light)', borderRadius: '20px'},
-            solutionCompleted: {width: "250px"} 
+            completed: { height: "60px", background: 'var(--b-light)', borderRadius: '20px' },
+            solutionCompleted: { width: "250px" }
           },
           {
             id: "blockParent",
-            style: {padding: "20px", height: "100%", display: "flex", flexDirection: "column",
-              alignItems: 'center', justifyContent: 'center', gap: '50px'
+            style: {
+              padding: "20px",
+              height: "100%",
+              display: "flex",
+              flexDirection: "column",
+              alignItems: 'center',
+              justifyContent: 'center',
+              gap: '50px'
             }
           }
         ],
@@ -72,20 +72,38 @@ const levels = [
         },
         blocks: [
           {
+            id: "initialStylePlayground",
+            style: { height: "60px" }
+          },
+          {
             id: "block1",
             defaultCode: "width: 200px;",
-            expectedStyles: [
-              { property: "height", value: "150px", tolerance: 0 }
-            ],
-            solution: ["width: 200px;", "height: 150px;"]
+            expectedStyles: [{ property: "height", value: "150px", tolerance: 0 }],
+            solution: { width: "200px", height: "150px" },
+            solutionString: 'width: 200px;\nheight: 150px;',
+            completed: { background: 'var(--b-light)', borderRadius: '20px' },
+            solutionCompleted: { width: "200px", height: "150px" }
           },
           {
             id: "block2",
             defaultCode: "width: 300px;",
-            expectedStyles: [
-              { property: "height", value: "180px", tolerance: 0 }
-            ],
-            solution: ["width: 300px;", "height: 180px;"]
+            expectedStyles: [{ property: "height", value: "180px", tolerance: 0 }],
+            solution: { width: "300px", height: "180px" },
+            solutionString: 'width: 300px;\nheight: 180px;',
+            completed: { background: 'var(--b-light)', borderRadius: '20px' },
+            solutionCompleted: { width: "300px", height: "180px" }
+          },
+          {
+            id: "blockParent",
+            style: {
+              padding: "20px",
+              height: "100%",
+              display: "flex",
+              flexDirection: "column",
+              alignItems: 'center',
+              justifyContent: 'center',
+              gap: '50px'
+            }
           }
         ],
         successMessage: "Awesome! Now you know how to control height."
@@ -107,20 +125,38 @@ const levels = [
         },
         blocks: [
           {
+            id: "initialStylePlayground",
+            style: { padding: "20px" }
+          },
+          {
             id: "block1",
             defaultCode: "width: 200px;\nheight: 150px;",
-            expectedStyles: [
-              { property: "padding", value: "20px", tolerance: 0 }
-            ],
-            solution: ["width: 200px;", "height: 150px;", "padding: 20px;"]
+            expectedStyles: [{ property: "padding", value: "20px", tolerance: 0 }],
+            solution: { width: "200px", height: "150px", padding: "20px" },
+            solutionString: 'width: 200px;\nheight: 150px;\npadding: 20px;',
+            completed: { background: 'var(--b-light)', borderRadius: '20px' },
+            solutionCompleted: { width: "200px", height: "150px", padding: "20px" }
           },
           {
             id: "block2",
             defaultCode: "width: 300px;\nheight: 180px;",
-            expectedStyles: [
-              { property: "padding", value: "15px", tolerance: 0 }
-            ],
-            solution: ["width: 300px;", "height: 180px;", "padding: 15px;"]
+            expectedStyles: [{ property: "padding", value: "15px", tolerance: 0 }],
+            solution: { width: "300px", height: "180px", padding: "15px" },
+            solutionString: 'width: 300px;\nheight: 180px;\npadding: 15px;',
+            completed: { background: 'var(--b-light)', borderRadius: '20px' },
+            solutionCompleted: { width: "300px", height: "180px", padding: "15px" }
+          },
+          {
+            id: "blockParent",
+            style: {
+              padding: "20px",
+              height: "100%",
+              display: "flex",
+              flexDirection: "column",
+              alignItems: 'center',
+              justifyContent: 'center',
+              gap: '50px'
+            }
           }
         ],
         successMessage: "Well done! You now understand padding."
@@ -142,20 +178,38 @@ const levels = [
         },
         blocks: [
           {
+            id: "initialStylePlayground",
+            style: { margin: "10px" }
+          },
+          {
             id: "block1",
             defaultCode: "width: 200px;\nheight: 150px;\npadding: 20px;",
-            expectedStyles: [
-              { property: "margin", value: "10px", tolerance: 0 }
-            ],
-            solution: ["width: 200px;", "height: 150px;", "padding: 20px;", "margin: 10px;"]
+            expectedStyles: [{ property: "margin", value: "10px", tolerance: 0 }],
+            solution: { width: "200px", height: "150px", padding: "20px", margin: "10px" },
+            solutionString: 'width: 200px;\nheight: 150px;\npadding: 20px;\nmargin: 10px;',
+            completed: { background: 'var(--b-light)', borderRadius: '20px' },
+            solutionCompleted: { width: "200px", height: "150px", padding: "20px", margin: "10px" }
           },
           {
             id: "block2",
             defaultCode: "width: 300px;\nheight: 180px;\npadding: 15px;",
-            expectedStyles: [
-              { property: "margin", value: "15px", tolerance: 0 }
-            ],
-            solution: ["width: 300px;", "height: 180px;", "padding: 15px;", "margin: 15px;"]
+            expectedStyles: [{ property: "margin", value: "15px", tolerance: 0 }],
+            solution: { width: "300px", height: "180px", padding: "15px", margin: "15px" },
+            solutionString: 'width: 300px;\nheight: 180px;\npadding: 15px;\nmargin: 15px;',
+            completed: { background: 'var(--b-light)', borderRadius: '20px' },
+            solutionCompleted: { width: "300px", height: "180px", padding: "15px", margin: "15px" }
+          },
+          {
+            id: "blockParent",
+            style: {
+              padding: "20px",
+              height: "100%",
+              display: "flex",
+              flexDirection: "column",
+              alignItems: 'center',
+              justifyContent: 'center',
+              gap: '50px'
+            }
           }
         ],
         successMessage: "Excellent! You've mastered margins."
@@ -177,20 +231,38 @@ const levels = [
         },
         blocks: [
           {
+            id: "initialStylePlayground",
+            style: { boxSizing: "border-box" }
+          },
+          {
             id: "block1",
             defaultCode: "width: 200px;\nheight: 150px;\npadding: 20px;\nmargin: 10px;",
-            expectedStyles: [
-              { property: "box-sizing", value: "border-box", tolerance: 0 }
-            ],
-            solution: ["width: 200px;", "height: 150px;", "padding: 20px;", "margin: 10px;", "box-sizing: border-box;"]
+            expectedStyles: [{ property: "box-sizing", value: "border-box", tolerance: 0 }],
+            solution: { width: "200px", height: "150px", padding: "20px", margin: "10px", boxSizing: "border-box" },
+            solutionString: 'width: 200px;\nheight: 150px;\npadding: 20px;\nmargin: 10px;\nbox-sizing: border-box;',
+            completed: { background: 'var(--b-light)', borderRadius: '20px' },
+            solutionCompleted: { width: "200px", height: "150px", padding: "20px", margin: "10px", boxSizing: "border-box" }
           },
           {
             id: "block2",
             defaultCode: "width: 300px;\nheight: 180px;\npadding: 15px;\nmargin: 15px;",
-            expectedStyles: [
-              { property: "box-sizing", value: "border-box", tolerance: 0 }
-            ],
-            solution: ["width: 300px;", "height: 180px;", "padding: 15px;", "margin: 15px;", "box-sizing: border-box;"]
+            expectedStyles: [{ property: "box-sizing", value: "border-box", tolerance: 0 }],
+            solution: { width: "300px", height: "180px", padding: "15px", margin: "15px", boxSizing: "border-box" },
+            solutionString: 'width: 300px;\nheight: 180px;\npadding: 15px;\nmargin: 15px;\nbox-sizing: border-box;',
+            completed: { background: 'var(--b-light)', borderRadius: '20px' },
+            solutionCompleted: { width: "300px", height: "180px", padding: "15px", margin: "15px", boxSizing: "border-box" }
+          },
+          {
+            id: "blockParent",
+            style: {
+              padding: "20px",
+              height: "100%",
+              display: "flex",
+              flexDirection: "column",
+              alignItems: 'center',
+              justifyContent: 'center',
+              gap: '50px'
+            }
           }
         ],
         successMessage: "Perfect! You understand how box-sizing works."
@@ -198,5 +270,6 @@ const levels = [
     ]
   }
 ];
+
 
 export default levels;
