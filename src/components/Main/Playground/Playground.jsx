@@ -16,11 +16,11 @@ console.log('playground')
                     <PlaygroundButton 
                         type={'grid'}
                         buttonLabel={'Show Grid'}
-                    />,
-                    <PlaygroundButton 
-                        type={'diff'}
-                        buttonLabel={'Show diff'}
                     />
+                    // <PlaygroundButton 
+                    //     type={'diff'}
+                    //     buttonLabel={'Show diff'}
+                    // />
                 ]}
             />
             <BlockContainer blockId={'playground'} initialStyles={initialStyles}>

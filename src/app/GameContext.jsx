@@ -31,7 +31,7 @@ export function GameProvider({children}){
 
     //UI buttons
     const [viewSolution, setViewSolution] = useState(false);
-    const [showGrid, setShowGrid] = useState(false);
+    const [showGrid, setShowGrid] = useState(true);
 
     //TFG
     const [sublevelProgress, setSublevelProgress] = useState({});
@@ -52,7 +52,7 @@ export function GameProvider({children}){
         setCompletedBlocks({ block1: false, block2: false });
         setCode("/* Block 1 */\n.block1 {\n\n}\n\n/* Block 2 */\n.block2 {\n\n}");
         setEvaluationResult(null);
-        setShowGrid(false);
+        setShowGrid(true);
         setViewSolution(false);
     };
 

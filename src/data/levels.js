@@ -20,7 +20,7 @@ const levels = [
         blocks: [
           {
             id: "initialStylePlayground",
-            style: { width: "60px" }
+            style: { width: "50px" }
           },
           {
             id: "block1",
@@ -28,7 +28,7 @@ const levels = [
             expectedStyles: [{ property: "width", value: "200px", tolerance: 0 }],
             solution: { width: "150px" },
             solutionString: 'width: 150px;',
-            completed: { background: 'var(--b-light)', borderRadius: '20px', height: "60px" },
+            completed: { background: 'var(--b-light)', borderRadius: '20px', height: "50px" },
             solutionCompleted: { width: "150px" }
           },
           {
@@ -37,7 +37,7 @@ const levels = [
             expectedStyles: [{ property: "width", value: "300px", tolerance: 0 }],
             solution: { width: "300px" },
             solutionString: 'width: 300px;',
-            completed: { height: "60px", background: 'var(--b-light)', borderRadius: '20px' },
+            completed: { height: "50px", background: 'var(--b-light)', borderRadius: '20px' },
             solutionCompleted: { width: "300px" }
           },
           {

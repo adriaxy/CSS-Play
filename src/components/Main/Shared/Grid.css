@@ -18,9 +18,34 @@
     height: 100%;
 }
 
+.info-gridX{
+    position: absolute;
+    top: 0;
+    transform: translateX(50%) rotate(-10deg);
+    width: 50px;
+    font-size: var(--text-xxs);
+    text-align: center;
+    padding: 2px;
+    margin-top: 10px;
+    background-color: var(--border-dark);
+    color: var(--gradient-light);
+}
+
 .gridY{
     position: absolute;
     top: 0;
     height: 50px;
     width: 100%;
+}
+
+.info-gridY{
+    position: absolute;
+    top: 0;
+    transform: translateY(-50%) rotate(-10deg);
+    padding: 2px;
+    margin-left: 8px;
+    font-size: var(--text-xxs);
+    text-align: center;
+    background-color: var(--border-dark);
+    color: var(--gradient-light);
 }
