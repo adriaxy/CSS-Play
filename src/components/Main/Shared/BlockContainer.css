@@ -2,9 +2,6 @@
     width: 400px;
     height: 300px;
     background-color: var(--border-dark);
-}
-
-.block-container-playground{
     position: relative;
 }
 
@@ -19,6 +16,7 @@
     background-color: var(--completed-dark);
     border-radius: 5px 0 0 12px;
     transition: all 0.5s ease;
+    z-index: 1;
 }
 
 .completed-sublevel-message.completed{

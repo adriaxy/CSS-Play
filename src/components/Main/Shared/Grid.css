@@ -1,0 +1,26 @@
+.grid-wrapper{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+}
+
+.grid-wrapper.show{
+    opacity: 1;
+}
+
+.gridX{
+    position: absolute;
+    top: 0;
+    width: 20px;
+    height: 100%;
+}
+
+.gridY{
+    position: absolute;
+    top: 0;
+    height: 20px;
+    width: 100%;
+}
