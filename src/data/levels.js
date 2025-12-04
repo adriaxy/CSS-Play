@@ -73,34 +73,34 @@ const levels = [
         blocks: [
           {
             id: "initialStylePlayground",
-            style: { height: "60px" }
+            style: { height: "50px", width: "100px" }
           },
           {
             id: "block1",
-            defaultCode: "width: 200px;",
-            expectedStyles: [{ property: "height", value: "150px", tolerance: 0 }],
-            solution: { width: "200px", height: "150px" },
-            solutionString: 'width: 200px;\nheight: 150px;',
+            defaultCode: "width: 100px;",
+            expectedStyles: [{ property: "height", value: "120px", tolerance: 0 }],
+            solution: { width: "100px", height: "120px" },
+            solutionString: 'height: 120px;',
             completed: { background: 'var(--b-light)', borderRadius: '20px' },
-            solutionCompleted: { width: "200px", height: "150px" }
+            solutionCompleted: { height: "120px" }
           },
           {
             id: "block2",
-            defaultCode: "width: 300px;",
-            expectedStyles: [{ property: "height", value: "180px", tolerance: 0 }],
-            solution: { width: "300px", height: "180px" },
-            solutionString: 'width: 300px;\nheight: 180px;',
+            defaultCode: "width: 100px;",
+            expectedStyles: [{ property: "height", value: "200px", tolerance: 0 }],
+            solution: { width: "100px", height: "200px" },
+            solutionString: 'height: 200px;',
             completed: { background: 'var(--b-light)', borderRadius: '20px' },
-            solutionCompleted: { width: "300px", height: "180px" }
+            solutionCompleted: { height: "200px" }
           },
           {
             id: "blockParent",
             style: {
-              padding: "20px",
+              paddingBottom: "50px",
               height: "100%",
               display: "flex",
-              flexDirection: "column",
-              alignItems: 'center',
+              flexDirection: "row",
+              alignItems: 'flex-end',
               justifyContent: 'center',
               gap: '50px'
             }
@@ -108,6 +108,57 @@ const levels = [
         ],
         successMessage: "Awesome! Now you know how to control height."
       },
+      // {
+      //   id: 2,
+      //   name: "height",
+      //   challenge: "Apply the height property to both blocks so that each one matches the required height shown in the target layout.",
+      //   theory: {
+      //     description: [
+      //       "The height property defines the vertical size of an element's content area.",
+      //       "It determines how tall the element appears on the page, without affecting the width.",
+      //       "You can assign height values in pixels, percentages, or relative units.",
+      //       "Height is essential to control layout and spacing vertically."
+      //     ],
+      //     syntax: "height: 150px;"
+      //   },
+      //   blocks: [
+      //     {
+      //       id: "initialStylePlayground",
+      //       style: { height: "60px" }
+      //     },
+      //     {
+      //       id: "block1",
+      //       defaultCode: "width: 200px;",
+      //       expectedStyles: [{ property: "height", value: "150px", tolerance: 0 }],
+      //       solution: { width: "200px", height: "150px" },
+      //       solutionString: 'width: 200px;\nheight: 150px;',
+      //       completed: { background: 'var(--b-light)', borderRadius: '20px' },
+      //       solutionCompleted: { width: "200px", height: "150px" }
+      //     },
+      //     {
+      //       id: "block2",
+      //       defaultCode: "width: 300px;",
+      //       expectedStyles: [{ property: "height", value: "180px", tolerance: 0 }],
+      //       solution: { width: "300px", height: "180px" },
+      //       solutionString: 'width: 300px;\nheight: 180px;',
+      //       completed: { background: 'var(--b-light)', borderRadius: '20px' },
+      //       solutionCompleted: { width: "300px", height: "180px" }
+      //     },
+      //     {
+      //       id: "blockParent",
+      //       style: {
+      //         padding: "20px",
+      //         height: "100%",
+      //         display: "flex",
+      //         flexDirection: "column",
+      //         alignItems: 'center',
+      //         justifyContent: 'center',
+      //         gap: '50px'
+      //       }
+      //     }
+      //   ],
+      //   successMessage: "Awesome! Now you know how to control height."
+      // },
 
       // Sublevel 3: PADDING
       {
