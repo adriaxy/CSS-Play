@@ -20,7 +20,8 @@ const levels = [
         blocks: [
           {
             id: "initialStylePlayground",
-            style: { width: "50px" }
+            style: { width: "50px" },
+            defaultCode: "/* Block 1 */\n.block1 {\nPRUEBA DAFAULT SUB 1\n}\n\n/* Block 2 */\n.block2 {\n\n}"
           },
           {
             id: "block1",
@@ -73,7 +74,8 @@ const levels = [
         blocks: [
           {
             id: "initialStylePlayground",
-            style: { height: "50px", width: "100px" }
+            style: { height: "50px", width: "100px" }, 
+            defaultCode: "/* Block 1 */\n.block1 {\nPRUEBA DAFAULT SUB 2 - HEIGHT\n}\n\n/* Block 2 */\n.block2 {\n\n}"
           },
           {
             id: "block1",
@@ -177,7 +179,8 @@ const levels = [
         blocks: [
           {
             id: "initialStylePlayground",
-            style: { padding: "20px" }
+            style: { padding: "20px" },
+            defaultCode: "/* Block 1 */\n.block1 {\nPRUEBA DAFAULT SUB 3\n}\n\n/* Block 2 */\n.block2 {\n\n}"
           },
           {
             id: "block1",
@@ -230,7 +233,8 @@ const levels = [
         blocks: [
           {
             id: "initialStylePlayground",
-            style: { margin: "10px" }
+            style: { margin: "10px" },
+            defaultCode: "/* Block 1 */\n.block1 {\nPRUEBA DAFAULT SUB 4\n}\n\n/* Block 2 */\n.block2 {\n\n}"
           },
           {
             id: "block1",
@@ -283,7 +287,8 @@ const levels = [
         blocks: [
           {
             id: "initialStylePlayground",
-            style: { boxSizing: "border-box" }
+            style: { boxSizing: "border-box" },
+            defaultCode: "/* Block 1 */\n.block1 {\nPRUEBA DAFAULT SUB 5\n}\n\n/* Block 2 */\n.block2 {\n\n}"
           },
           {
             id: "block1",

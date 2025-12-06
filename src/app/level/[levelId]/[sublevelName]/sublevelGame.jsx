@@ -3,10 +3,12 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 import Header from "@/components/Header/Header";
 import Main from "@/components/Main/Main";
+import { useGame } from "@/app/GameContext";
 
 export default function SublevelGame({ level, sublevel }) {
   const router = useRouter();
   const levelId = 2;
+  const { code } = useGame();
 
   const [currentSublevel, setCurrentSublevel] = useState(
     level.sublevels.findIndex(s => s.name === sublevel.name)

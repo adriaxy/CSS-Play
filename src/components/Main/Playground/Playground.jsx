@@ -7,7 +7,6 @@ import Grid from "../Shared/Grid"
 
 export default function Playground({initialStyles}){
     
-console.log('playground')
     return(
         <div className='playground'>
             <SubHeaderArena 

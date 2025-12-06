@@ -4,6 +4,7 @@ import PrevChallengeButton from './PrevChallengeButton';
 import NextChallengeButton from './NextChallengeButton';
 import BackHomeButton from './navButtons/BackHomeButton';
 import ThemeModeButton from './ThemeModeButton';
+import levels from '@/data/levels';
 
 export default function Header({title, onPrev, onNext, isPrevDisabled, isNextDisabled}) {
 
