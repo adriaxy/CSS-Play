@@ -11,7 +11,8 @@ export default function Block({blockId, style, group, blockSolution, playground 
 
     const compareCodeWithSolution = () => {
         if (!blockIdPlayground) return;
-        const current = blockStyles[blockIdPlayground];
+        // console.log(blockStyles)
+        const current = (blockStyles?.[blockIdPlayground] || {});
         if(!current || !blockSolution) return false;
 
         for(const key in blockSolution){
@@ -25,14 +26,14 @@ export default function Block({blockId, style, group, blockSolution, playground 
         if (!blockIdPlayground) return;
         const isCorrect = compareCodeWithSolution();
         setCompletedBlocks(prev => ({...prev, [blockIdPlayground]: isCorrect}))
-    }, [code]);
+    }, [blockStyles]);
 
     const isCompleted = completedBlocks[blockIdPlayground] === true ? 'completed' : '';
 
     const finalStyle = {
         ...style,
         ...(isHovered ? {outline: "5px solid var(--highlight-red)"} : {}),
-        ...(playground === true ? blockStyles[blockIdPlayground] : {})
+        ...(playground === true ? (blockStyles?.[blockIdPlayground] || {}) : {})
     }
 
     const finalStyleHoverText = {

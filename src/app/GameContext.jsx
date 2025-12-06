@@ -2,12 +2,15 @@
 import { createContext, useContext, useState, useEffect } from "react";
 import { parseCssToRules } from "../../lib/parseCss";
 import levels from "@/data/levels";
+import { parse } from "css-tree";
 
 const GameContext = createContext();
 
-export function GameProvider({children}){
-    const [currentLevel, setCurrentLevel] = useState(0);
-    const [currentSublevel, setCurrentSublevel] = useState(0);
+export function GameProvider({ initialLevel, initialSublevel, children}){
+    const [currentLevel, setCurrentLevel] = useState(initialLevel ?? 1);
+    const [currentSublevel, setCurrentSublevel] = useState(initialSublevel ?? 1);
+
+    
 
     const currentLevelData = levels[currentLevel];
     const currentSublevelData = currentLevelData.sublevels[currentSublevel];
@@ -69,7 +72,14 @@ export function GameProvider({children}){
         setViewSolution(false);
     };
 
-    const blockStyles = parseCssToRules(code);
+    const [blockStyles, setBlockStyles] = useState();
+    useEffect(()=> {
+        const index = sublevelState[currentLevel][currentSublevel]
+        const code = index.firstTime === true ? index.defaultCode : index.playerCode;
+        console.log(index.defaultCode)
+        const parseCss = parseCssToRules(code);
+        setBlockStyles(parseCss);
+    }, [currentLevel, currentSublevel, sublevelState])
 
     useEffect(() => {
         console.log('currentlevel effect')
@@ -99,7 +109,7 @@ export function GameProvider({children}){
     }, [completedBlocks, currentLevel, currentSublevel])
 
     return (
-        <GameContext.Provider value={{code, setCode, hoveredBlock, setHoveredBlock, initialGameCode, viewSolution, setViewSolution, blockStyles, completedBlocks, setCompletedBlocks, evaluationResult, showGrid, setShowGrid}}>
+        <GameContext.Provider value={{code, setCode, hoveredBlock, setHoveredBlock, initialGameCode, viewSolution, setViewSolution, blockStyles, completedBlocks, setCompletedBlocks, evaluationResult, showGrid, setShowGrid, sublevelState, setSublevelState, setCurrentLevel, setCurrentSublevel}}>
             {children}
         </GameContext.Provider>
     )

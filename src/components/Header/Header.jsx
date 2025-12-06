@@ -5,9 +5,9 @@ import NextChallengeButton from './NextChallengeButton';
 import BackHomeButton from './navButtons/BackHomeButton';
 import ThemeModeButton from './ThemeModeButton';
 import levels from '@/data/levels';
+import { useGame } from '@/app/GameContext';
 
 export default function Header({title, onPrev, onNext, isPrevDisabled, isNextDisabled}) {
-
     return (
         <header className="header">
             <LogoButton />

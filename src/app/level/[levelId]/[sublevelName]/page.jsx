@@ -1,6 +1,7 @@
 import levels from "@/data/levels";
 import LevelLayout from "../layout";
 import SublevelGame from "./sublevelGame";
+import { GameProvider } from "@/app/GameContext";
 
 export default async function SublevelPage({ params }) {
   const { levelId, sublevelName } = await params;
@@ -10,8 +11,10 @@ export default async function SublevelPage({ params }) {
   if (!sublevel) return <p>Sublevel not found</p>;
 
   return (
-    <LevelLayout>
+    <GameProvider>
+      <LevelLayout>
       <SublevelGame level={level} sublevel={sublevel} />
-    </LevelLayout>
+      </LevelLayout>
+    </GameProvider>
   );
 }

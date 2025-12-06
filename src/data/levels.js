@@ -1,5 +1,170 @@
 const levels = [
   {
+    level: 1,
+    name: "por definir",
+    sublevels: [
+      // Sublevel 1: WIDTH
+      {
+        id: 1,
+        name: "1-1",
+        challenge: "Apply the width property to both blocks so that each one matches the required width shown in the target layout.",
+        theory: {
+          description: [
+            "The width property defines the horizontal size of an element's content area.",
+            "It determines how wide the element appears on the page, without affecting the height.",
+            "You can set width using various units like pixels (px), percentages (%), or relative units (em, rem).",
+            "Using width properly helps control layout and alignment of elements."
+          ],
+          syntax: "width: 200px;"
+        },
+        blocks: [
+          {
+            id: "initialStylePlayground",
+            style: { width: "50px" },
+            defaultCode: "/* Block 1 */\n.block1 {\nPRUEBA DAFAULT perdona? SUB 1\n}\n\n/* Block 2 */\n.block2 {\n\n}"
+          },
+          {
+            id: "block1",
+            defaultCode: "",
+            expectedStyles: [{ property: "width", value: "200px", tolerance: 0 }],
+            solution: { width: "150px" },
+            solutionString: 'width: 150px;',
+            completed: { background: 'var(--b-light)', borderRadius: '20px', height: "50px" },
+            solutionCompleted: { width: "150px" }
+          },
+          {
+            id: "block2",
+            defaultCode: "",
+            expectedStyles: [{ property: "width", value: "300px", tolerance: 0 }],
+            solution: { width: "300px" },
+            solutionString: 'width: 300px;',
+            completed: { height: "50px", background: 'var(--b-light)', borderRadius: '20px' },
+            solutionCompleted: { width: "300px" }
+          },
+          {
+            id: "blockParent",
+            style: {
+              padding: "20px",
+              height: "100%",
+              display: "flex",
+              flexDirection: "column",
+              alignItems: 'center',
+              justifyContent: 'center',
+              gap: '50px'
+            }
+          }
+        ],
+        successMessage: "Great! You've learned how width works."
+      },
+
+      // Sublevel 2: HEIGHT
+      {
+        id: 2,
+        name: "1-2",
+        challenge: "Apply the height property to both blocks so that each one matches the required height shown in the target layout.",
+        theory: {
+          description: [
+            "The height property defines the vertical size of an element's content area.",
+            "It determines how tall the element appears on the page, without affecting the width.",
+            "You can assign height values in pixels, percentages, or relative units.",
+            "Height is essential to control layout and spacing vertically."
+          ],
+          syntax: "height: 150px;"
+        },
+        blocks: [
+          {
+            id: "initialStylePlayground",
+            style: { height: "50px", width: "100px" }, 
+            defaultCode: "/* Block 1 */\n.block1 {\nPRUEBA DAFAULT SUB 2 -ssssss HEIGHT\n}\n\n/* Block 2 */\n.block2 {\n\n}"
+          },
+          {
+            id: "block1",
+            defaultCode: "width: 100px;",
+            expectedStyles: [{ property: "height", value: "120px", tolerance: 0 }],
+            solution: { width: "100px", height: "120px" },
+            solutionString: 'height: 120px;',
+            completed: { background: 'var(--b-light)', borderRadius: '20px' },
+            solutionCompleted: { height: "120px" }
+          },
+          {
+            id: "block2",
+            defaultCode: "width: 100px;",
+            expectedStyles: [{ property: "height", value: "200px", tolerance: 0 }],
+            solution: { width: "100px", height: "200px" },
+            solutionString: 'height: 200px;',
+            completed: { background: 'var(--b-light)', borderRadius: '20px' },
+            solutionCompleted: { height: "200px" }
+          },
+          {
+            id: "blockParent",
+            style: {
+              paddingBottom: "50px",
+              height: "100%",
+              display: "flex",
+              flexDirection: "row",
+              alignItems: 'flex-end',
+              justifyContent: 'center',
+              gap: '50px'
+            }
+          }
+        ],
+        successMessage: "Awesome! Now you know how to control height."
+      },
+      {
+        id: 3,
+        name: "1-3",
+        challenge: "Apply the padding property to both blocks so that each one matches the required spacing shown in the target layout.",
+        theory: {
+          description: [
+            "The padding property adds space inside the element, between its content and its border.",
+            "It helps create breathing room for content and improves readability.",
+            "You can set padding individually for top, right, bottom, and left, or all sides at once.",
+            "Proper use of padding improves the visual structure of your elements."
+          ],
+          syntax: "padding: 20px;"
+        },
+        blocks: [
+          {
+            id: "initialStylePlayground",
+            style: { padding: "20px" },
+            defaultCode: "/* Block 1 */\n.block1 {\nPRUEBA DAFAULT SUB 3\n}\n\n/* Block 2 */\n.block2 {\n\n}"
+          },
+          {
+            id: "block1",
+            defaultCode: "width: 200px;\nheight: 150px;",
+            expectedStyles: [{ property: "padding", value: "20px", tolerance: 0 }],
+            solution: { width: "200px", height: "150px", padding: "20px" },
+            solutionString: 'width: 200px;\nheight: 150px;\npadding: 20px;',
+            completed: { background: 'var(--b-light)', borderRadius: '20px' },
+            solutionCompleted: { width: "200px", height: "150px", padding: "20px" }
+          },
+          {
+            id: "block2",
+            defaultCode: "width: 300px;\nheight: 180px;",
+            expectedStyles: [{ property: "padding", value: "15px", tolerance: 0 }],
+            solution: { width: "300px", height: "180px", padding: "15px" },
+            solutionString: 'width: 300px;\nheight: 180px;\npadding: 15px;',
+            completed: { background: 'var(--b-light)', borderRadius: '20px' },
+            solutionCompleted: { width: "300px", height: "180px", padding: "15px" }
+          },
+          {
+            id: "blockParent",
+            style: {
+              padding: "20px",
+              height: "100%",
+              display: "flex",
+              flexDirection: "column",
+              alignItems: 'center',
+              justifyContent: 'center',
+              gap: '50px'
+            }
+          }
+        ],
+        successMessage: "Well done! You now understand padding."
+      }
+    ]
+  },
+  {
     level: 2,
     name: "Dimensions and Spacing",
     sublevels: [
@@ -21,7 +186,7 @@ const levels = [
           {
             id: "initialStylePlayground",
             style: { width: "50px" },
-            defaultCode: "/* Block 1 */\n.block1 {\nPRUEBA DAFAULT SUB 1\n}\n\n/* Block 2 */\n.block2 {\n\n}"
+            defaultCode: "/* Block 1 */\n.block1 {color: red;\n\n}\n\n/* Block 2 */\n.block2 {\n\n}"
           },
           {
             id: "block1",

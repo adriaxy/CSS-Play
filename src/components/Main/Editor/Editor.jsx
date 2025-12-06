@@ -4,14 +4,40 @@ import ResetCodeButton from './ResetCodeButton';
 import ViewSolutionButton from './ViewSolutionButton';
 import ModalSolution from './ModalSolution';
 import { useGame } from '@/app/GameContext';
+import LevelProgress from '../LevelProgress/LevelProgress';
 
-export default function Editor ({levelNum, sublevelNum, challenge, defaultCode, name, solutionCode}){
+export default function Editor ({levelNum, sublevelNum, challenge, name, solutionCode}){
   const boldTarget = `${name} property`;
   const parts = challenge.split(boldTarget);
-  const {code, setCode, initialGameCode, viewSolution, setViewSolution} = useGame();
+  const {code, setCode, initialGameCode, viewSolution, setViewSolution, sublevelState, setSublevelState} = useGame();
+
+  const currentSublevelState = sublevelState[levelNum - 1][sublevelNum - 1]
+  const defaultSublevelCode = currentSublevelState.defaultCode;
+  const playerCode = currentSublevelState.playerCode;
+  const currentCode = currentSublevelState.firstTime === true ? defaultSublevelCode : playerCode;
 
   const handleChange = (e) => {
-    setCode(e.target.value)
+    setSublevelState(prev => {
+      const newData = [...prev];
+      const innerArray = [...newData[levelNum - 1]];
+      const obj = { ...innerArray[sublevelNum - 1], firstTime: false, playerCode: `${e.target.value}`}
+      innerArray[sublevelNum - 1] = obj;
+      newData[levelNum - 1] = innerArray;
+
+      return newData;
+      });
+  }
+
+  const resetCode = () => {
+    setSublevelState(prev => {
+      const newData = [...prev];
+      const innerArray = [...newData[levelNum -1]];
+      const obj = {...innerArray[sublevelNum -1], firstTime: true, playerCode: ''}
+      innerArray[sublevelNum - 1] = obj;
+      newData[levelNum - 1] = innerArray;
+
+      return newData
+    })
   }
 
     return (
@@ -41,10 +67,10 @@ export default function Editor ({levelNum, sublevelNum, challenge, defaultCode, 
             {parts[1]}
           </p>
           <div className="editor-buttons__wrapper">
-            <ResetCodeButton onClick={() => setCode(initialGameCode)}/>
+            <ResetCodeButton onClick={resetCode}/>
             <ViewSolutionButton onClick={() => setViewSolution(true)}/>
           </div>
-          <textarea name="" id="" onChange={handleChange} value={code}></textarea>
+          <textarea name="" id="" onChange={handleChange} value={currentCode}></textarea>
           <ModalSolution 
             viewSolution={viewSolution} 
             className='modal-solution' 
