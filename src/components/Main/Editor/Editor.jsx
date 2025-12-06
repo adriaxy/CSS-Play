@@ -4,6 +4,7 @@ import ResetCodeButton from './ResetCodeButton';
 import ViewSolutionButton from './ViewSolutionButton';
 import ModalSolution from './ModalSolution';
 import { useGame } from '@/app/GameContext';
+import { useEffect } from 'react';
 import LevelProgress from '../LevelProgress/LevelProgress';
 
 export default function Editor ({levelNum, sublevelNum, challenge, name, solutionCode}){
@@ -39,6 +40,15 @@ export default function Editor ({levelNum, sublevelNum, challenge, name, solutio
       return newData
     })
   }
+
+  useEffect(() => {
+  console.log('Editor montado', { levelNum, sublevelNum, currentSublevelState });
+}, []);
+
+useEffect(() => {
+  console.log('playerCode actual', currentSublevelState.playerCode);
+}, [currentSublevelState.playerCode]);
+
 
     return (
         <div className='editor'>

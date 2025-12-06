@@ -7,10 +7,8 @@ import { parse } from "css-tree";
 const GameContext = createContext();
 
 export function GameProvider({ initialLevel, initialSublevel, children}){
-    const [currentLevel, setCurrentLevel] = useState(initialLevel ?? 1);
-    const [currentSublevel, setCurrentSublevel] = useState(initialSublevel ?? 1);
-
-    
+    const [currentLevel, setCurrentLevel] = useState(initialLevel);
+    const [currentSublevel, setCurrentSublevel] = useState(initialSublevel);
 
     const currentLevelData = levels[currentLevel];
     const currentSublevelData = currentLevelData.sublevels[currentSublevel];
@@ -76,13 +74,21 @@ export function GameProvider({ initialLevel, initialSublevel, children}){
     useEffect(()=> {
         const index = sublevelState[currentLevel][currentSublevel]
         const code = index.firstTime === true ? index.defaultCode : index.playerCode;
-        console.log(index.defaultCode)
+        // console.log(sublevelState)
+        // console.log(index.defaultCode)
         const parseCss = parseCssToRules(code);
         setBlockStyles(parseCss);
-    }, [currentLevel, currentSublevel, sublevelState])
+    }, [sublevelState])
+
+    // useEffect(()=> {
+    //     const index = sublevelState[currentLevel][currentSublevel]
+    //     const code = index.firstTime === true ? index.defaultCode : index.playerCode;
+    //     console.log(index.defaultCode)
+    //     const parseCss = parseCssToRules(code);
+    //     setBlockStyles(parseCss);
+    // }, [currentLevel, currentSublevel, sublevelState])
 
     useEffect(() => {
-        console.log('currentlevel effect')
     const sublevelsCount = levels[currentLevel].sublevels.length;
         setLevelProgress(prev => ({
             ...prev,
@@ -107,6 +113,11 @@ export function GameProvider({ initialLevel, initialSublevel, children}){
             }))
         }
     }, [completedBlocks, currentLevel, currentSublevel])
+
+    useEffect(() => {
+  console.log('GameProvider montado', { currentLevel, currentSublevel, sublevelState });
+}, []);
+
 
     return (
         <GameContext.Provider value={{code, setCode, hoveredBlock, setHoveredBlock, initialGameCode, viewSolution, setViewSolution, blockStyles, completedBlocks, setCompletedBlocks, evaluationResult, showGrid, setShowGrid, sublevelState, setSublevelState, setCurrentLevel, setCurrentSublevel}}>
