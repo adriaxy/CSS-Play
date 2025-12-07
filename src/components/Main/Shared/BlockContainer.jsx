@@ -2,7 +2,7 @@ import './BlockContainer.css'
 import { useGame } from "@/app/GameContext"
 
 export default function BlockContainer({blockId, initialStyles, children}){
-    const {evaluationResult} = useGame();
+    const {evaluationResult, sublevelState, currentSublevel, currentLevel} = useGame();
 
     const isCompleted = evaluationResult ? 'completed' : '';
 

@@ -5,7 +5,7 @@ import BlockContainer from "../Shared/BlockContainer"
 import './Playground.css'
 import Grid from "../Shared/Grid"
 
-export default function Playground({initialStyles, level, sublevel}){
+export default function Playground({initialStyles}){
     
     return(
         <div className='playground'>
@@ -16,16 +16,12 @@ export default function Playground({initialStyles, level, sublevel}){
                         type={'grid'}
                         buttonLabel={'Show Grid'}
                     />
-                    // <PlaygroundButton 
-                    //     type={'diff'}
-                    //     buttonLabel={'Show diff'}
-                    // />
                 ]}
             />
             <BlockContainer blockId={'playground'} initialStyles={initialStyles}>
                 <Grid/>
-                <Block blockId={'block1'} style={{...initialStyles[1].completed, ...initialStyles[0].style}} group={'group1'} playground={true} blockSolution={initialStyles[1].solutionCompleted} level={level} sublevel={sublevel}/>
-                <Block blockId={'block2'} style={{...initialStyles[1].completed, ...initialStyles[0].style}} group={'group2'} playground={true} blockSolution={initialStyles[2].solutionCompleted} level={level} sublevel={sublevel}/>
+                <Block blockId={'block1'} style={{...initialStyles[1].completed, ...initialStyles[0].style}} group={'group1'} playground={true} blockSolution={initialStyles[1].solutionCompleted}/>
+                <Block blockId={'block2'} style={{...initialStyles[1].completed, ...initialStyles[0].style}} group={'group2'} playground={true} blockSolution={initialStyles[2].solutionCompleted}/>
             </BlockContainer>
         </div>
     )
