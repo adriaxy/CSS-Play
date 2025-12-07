@@ -21,7 +21,7 @@ export default function Main({levelNum, sublevelNum, challenge, defaultCode, sol
             </section>
             <section className='main__arena'>
                 <section className="main__playground">
-                    <Playground initialStyles={initialStyles}/>
+                    <Playground initialStyles={initialStyles} level={levelNum} sublevel={sublevelNum}/>
                 </section>
                 <section className="main__target">
                     <TargetLayout initialStyles={initialStyles}/>

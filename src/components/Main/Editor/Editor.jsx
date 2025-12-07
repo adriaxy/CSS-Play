@@ -41,14 +41,6 @@ export default function Editor ({levelNum, sublevelNum, challenge, name, solutio
     })
   }
 
-  useEffect(() => {
-  console.log('Editor montado', { levelNum, sublevelNum, currentSublevelState });
-}, []);
-
-useEffect(() => {
-  console.log('playerCode actual', currentSublevelState.playerCode);
-}, [currentSublevelState.playerCode]);
-
 
     return (
         <div className='editor'>

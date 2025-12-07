@@ -53,7 +53,8 @@ export function GameProvider({ initialLevel, initialSublevel, children}){
                 firstTime: true,
                 defaultCode: level.sublevels[i].blocks[0].defaultCode,
                 playerCode: null,
-                completed: false
+                completed: false,
+                blockStyles: {}
             }));
             return sublevelState;
         })
@@ -71,22 +72,32 @@ export function GameProvider({ initialLevel, initialSublevel, children}){
     };
 
     const [blockStyles, setBlockStyles] = useState();
+    // useEffect(()=> {
+    //     const index = sublevelState[currentLevel][currentSublevel]
+    //     const code = index.firstTime === true ? index.defaultCode : index.playerCode;
+    //     // console.log(sublevelState)
+    //     // console.log(index.defaultCode)
+    //     const parseCss = parseCssToRules(code);
+    //     setBlockStyles(parseCss);
+    // }, [sublevelState])
+
     useEffect(()=> {
         const index = sublevelState[currentLevel][currentSublevel]
         const code = index.firstTime === true ? index.defaultCode : index.playerCode;
         // console.log(sublevelState)
         // console.log(index.defaultCode)
         const parseCss = parseCssToRules(code);
-        setBlockStyles(parseCss);
-    }, [sublevelState])
-
-    // useEffect(()=> {
-    //     const index = sublevelState[currentLevel][currentSublevel]
-    //     const code = index.firstTime === true ? index.defaultCode : index.playerCode;
-    //     console.log(index.defaultCode)
-    //     const parseCss = parseCssToRules(code);
-    //     setBlockStyles(parseCss);
-    // }, [currentLevel, currentSublevel, sublevelState])
+        // setBlockStyles(parseCss);
+        setSublevelState((prev) => {
+            const newData = [...prev];
+            const innerArray = [...newData[currentLevel]];
+            const obj = {...innerArray[currentSublevel], blockStyles: parseCss};
+            innerArray[currentSublevel] = obj;
+            newData[currentLevel] = innerArray;
+            // console.log(newData)
+            return newData
+        })
+    }, [currentSublevel, currentLevel, sublevelState[currentLevel]?.[currentSublevel]?.playerCode, sublevelState[currentLevel]?.[currentSublevel]?.firstTime ])
 
     useEffect(() => {
     const sublevelsCount = levels[currentLevel].sublevels.length;
@@ -113,11 +124,6 @@ export function GameProvider({ initialLevel, initialSublevel, children}){
             }))
         }
     }, [completedBlocks, currentLevel, currentSublevel])
-
-    useEffect(() => {
-  console.log('GameProvider montado', { currentLevel, currentSublevel, sublevelState });
-}, []);
-
 
     return (
         <GameContext.Provider value={{code, setCode, hoveredBlock, setHoveredBlock, initialGameCode, viewSolution, setViewSolution, blockStyles, completedBlocks, setCompletedBlocks, evaluationResult, showGrid, setShowGrid, sublevelState, setSublevelState, setCurrentLevel, setCurrentSublevel}}>
