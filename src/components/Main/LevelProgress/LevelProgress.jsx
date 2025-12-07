@@ -1,6 +1,5 @@
 import './LevelProgress.css';
 import ProgressDots from './ProgressDots';
-import { useGame } from '@/app/GameContext'
 
 
 export default function LevelProgress({level, sublevel, numOfSublevels}){

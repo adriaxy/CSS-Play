@@ -53,12 +53,39 @@ export function GameProvider({ initialLevel, initialSublevel, children}){
                 firstTime: true,
                 defaultCode: level.sublevels[i].blocks[0].defaultCode,
                 playerCode: null,
+                completedBlocks: {
+                    block1: false,
+                    block2: false
+                },        
                 completed: false,
                 blockStyles: {}
             }));
             return sublevelState;
         })
     const [sublevelState, setSublevelState] = useState(initialProgress);
+
+    const evaluateBlocks = (blocks) => {
+        return Object.values(blocks).every((blockState) => blockState === true)
+    }
+
+    useEffect(() => {
+    const allBlocksCompleted = evaluateBlocks(sublevelState[currentLevel][currentSublevel].completedBlocks);
+    // console.log(sublevelState)
+    if (allBlocksCompleted && !sublevelState[currentLevel][currentSublevel].completed) {
+        setSublevelState(prev => {
+        const newData = [...prev];
+        const innerArray = [...newData[currentLevel]];
+        const obj = {
+            ...innerArray[currentSublevel],
+            completed: true
+        };
+        innerArray[currentSublevel] = obj;
+        newData[currentLevel] = innerArray;
+        return newData;
+        });
+        console.log(sublevelState)
+    }
+    }, [sublevelState, currentLevel, currentSublevel]);
 
     //Reset game
     const resetGame = () => {

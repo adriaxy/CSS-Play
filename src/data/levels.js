@@ -186,12 +186,12 @@ const levels = [
           {
             id: "initialStylePlayground",
             style: { width: "50px" },
-            defaultCode: "/* Block 1 */\n.block1 {color: red;\n\n}\n\n/* Block 2 */\n.block2 {\n\n}"
+            defaultCode: "/* Block 1 */\n.block1 {\n\n}\n\n/* Block 2 */\n.block2 {\n\n}"
           },
           {
             id: "block1",
             defaultCode: "",
-            expectedStyles: [{ property: "width", value: "200px", tolerance: 0 }],
+            expectedStyles: [{ property: "width", value: "150px", tolerance: 0 }],
             solution: { width: "150px" },
             solutionString: 'width: 150px;',
             completed: { background: 'var(--b-light)', borderRadius: '20px', height: "50px" },

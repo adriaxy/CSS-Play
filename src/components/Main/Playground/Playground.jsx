@@ -20,8 +20,8 @@ export default function Playground({initialStyles}){
             />
             <BlockContainer blockId={'playground'} initialStyles={initialStyles}>
                 <Grid/>
-                <Block blockId={'block1'} style={{...initialStyles[1].completed, ...initialStyles[0].style}} group={'group1'} playground={true} blockSolution={initialStyles[1].solutionCompleted}/>
-                <Block blockId={'block2'} style={{...initialStyles[1].completed, ...initialStyles[0].style}} group={'group2'} playground={true} blockSolution={initialStyles[2].solutionCompleted}/>
+                <Block blockId={'block 1'} style={{...initialStyles[1].completed, ...initialStyles[0].style}} group={'group1'} playground={true} blockSolution={initialStyles[1].solutionCompleted}/>
+                <Block blockId={'block 2'} style={{...initialStyles[1].completed, ...initialStyles[0].style}} group={'group2'} playground={true} blockSolution={initialStyles[2].solutionCompleted}/>
             </BlockContainer>
         </div>
     )

@@ -4,7 +4,7 @@ import { useGame } from "@/app/GameContext"
 export default function BlockContainer({blockId, initialStyles, children}){
     const {evaluationResult, sublevelState, currentSublevel, currentLevel} = useGame();
 
-    const isCompleted = evaluationResult ? 'completed' : '';
+    const isCompleted = sublevelState[currentLevel][currentSublevel].completed ? 'completed' : ''; 
 
     if(blockId === 'target'){
         return (

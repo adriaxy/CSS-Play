@@ -3,9 +3,9 @@ import { useGame } from '@/app/GameContext'
 import { useEffect } from 'react';
 
 export default function Block({blockId, style, group, blockSolution, playground = false}) {
-    const {hoveredBlock, setHoveredBlock, setCompletedBlocks, completedBlocks, sublevelState, currentSublevel, currentLevel} = useGame();
+    const {hoveredBlock, setHoveredBlock, setCompletedBlocks, completedBlocks, sublevelState, currentSublevel, currentLevel, setSublevelState} = useGame();
 
-    const blockIdPlayground = playground === true ? blockId : null;
+    const blockIdPlayground = playground === true ? blockId.replace(' ', '') : null;
     const isHovered = hoveredBlock === group;
 
     const compareCodeWithSolution = () => {
@@ -22,15 +22,36 @@ export default function Block({blockId, style, group, blockSolution, playground 
     useEffect(()=> {
         if (!blockIdPlayground) return;
         const isCorrect = compareCodeWithSolution();
-        setCompletedBlocks(prev => ({...prev, [blockIdPlayground]: isCorrect}))
-    }, [sublevelState]);
+        console.log(`${blockIdPlayground} is ${isCorrect}`)
+        
+        setSublevelState(prev => {
+            const newData = [...prev];
+            const innerArray = [...newData[currentLevel]];
+            const innerObj = {
+                ...innerArray[currentSublevel],
+                completedBlocks: {
+                    ...innerArray[currentSublevel].completedBlocks,
+                    [blockIdPlayground]: isCorrect
+                }
+            };
+            innerArray[currentSublevel] = innerObj;
+            newData[currentLevel] = innerArray;
+            return newData;
+        });
 
-    const isCompleted = completedBlocks[blockIdPlayground] === true ? 'completed' : '';
+    }, [sublevelState[currentLevel][currentSublevel].blockStyles]);
+
+    useEffect(() => {
+  console.log(sublevelState);
+}, [sublevelState, currentLevel, currentSublevel]);
+    
+    const isCompleted = sublevelState[currentLevel][currentSublevel].completedBlocks[blockIdPlayground] === true ? 'completed' : '';
+    // const isCompleted = completedBlocks[blockIdPlayground] === true ? 'completed' : '';
 
     const finalStyle = {
         ...style,
         ...(isHovered ? {outline: "5px solid var(--highlight-red)"} : {}),
-        ...(playground === true ? (sublevelState?.[currentLevel]?.[currentSublevel]?.blockStyles?.[blockIdPlayground] || {}) : {})
+        ...(playground === true ? (sublevelState[currentLevel][currentSublevel].blockStyles[blockIdPlayground] || {}) : {})
     }
 
     const finalStyleHoverText = {
