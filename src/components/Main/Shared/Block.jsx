@@ -1,9 +1,13 @@
 import './Block.css'
 import { useGame } from '@/app/GameContext'
 import { useEffect } from 'react';
+import levels from '@/data/levels';
 
 export default function Block({blockId, style, group, blockSolution, playground = false}) {
-    const {hoveredBlock, setHoveredBlock, setCompletedBlocks, completedBlocks, sublevelState, currentSublevel, currentLevel, setSublevelState} = useGame();
+    const {hoveredBlock, setHoveredBlock, sublevelState, currentSublevel, currentLevel, setSublevelState} = useGame();
+    const hasBlockChildren = levels[currentLevel].sublevels[currentSublevel].blocks[0].blockChildren;
+    const blockChildrenStyles = levels[currentLevel].sublevels[currentSublevel]?.blocks[4]?.style;
+    const blockChildrenText = levels[currentLevel].sublevels[currentSublevel]?.blocks[4]?.text;
 
     const blockIdPlayground = playground === true ? blockId.replace(' ', '') : null;
     const isHovered = hoveredBlock === group;
@@ -22,7 +26,6 @@ export default function Block({blockId, style, group, blockSolution, playground 
     useEffect(()=> {
         if (!blockIdPlayground) return;
         const isCorrect = compareCodeWithSolution();
-        console.log(`${blockIdPlayground} is ${isCorrect}`)
         
         setSublevelState(prev => {
             const newData = [...prev];
@@ -40,13 +43,8 @@ export default function Block({blockId, style, group, blockSolution, playground 
         });
 
     }, [sublevelState[currentLevel][currentSublevel].blockStyles]);
-
-    useEffect(() => {
-  console.log(sublevelState);
-}, [sublevelState, currentLevel, currentSublevel]);
     
     const isCompleted = sublevelState[currentLevel][currentSublevel].completedBlocks[blockIdPlayground] === true ? 'completed' : '';
-    // const isCompleted = completedBlocks[blockIdPlayground] === true ? 'completed' : '';
 
     const finalStyle = {
         ...style,
@@ -60,12 +58,13 @@ export default function Block({blockId, style, group, blockSolution, playground 
 
     return (
         <div 
-            style={finalStyle} 
-            onMouseEnter={() => setHoveredBlock(group)} 
-            onMouseLeave={() => setHoveredBlock(null)}
-            className={`block ${blockIdPlayground} ${isCompleted}`}
-        >
+        style={finalStyle} 
+        onMouseEnter={() => setHoveredBlock(group)} 
+        onMouseLeave={() => setHoveredBlock(null)}
+        className={`block ${blockIdPlayground} ${isCompleted}`}>
+            {hasBlockChildren && <div style={blockChildrenStyles}>{blockChildrenText !== '' && blockChildrenText}</div>}
             <div className='block-name-text' style={finalStyleHoverText} aria-label={blockId}>{blockId}</div>
+
         </div>
     )
 }

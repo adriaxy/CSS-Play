@@ -136,9 +136,9 @@ html{
 
 body{
     font-family: Lexend;
-    background-color: var(--bg-dark);
-    background: radial-gradient(circle at top center, var(--bg-dark), var(--gradient-darkest), var(--gradient-darkest));
-    /* background: linear-gradient(to bottom, var(--bg-dark), var(--gradient-darkest)); */
+    /* background-color: var(--bg-dark); */
+    /* background: radial-gradient(circle at top center, var(--bg-dark), var(--gradient-darkest), var(--gradient-darkest)); */
+    background: linear-gradient(to bottom, var(--bg-dark), var(--bg-dark), var(--gradient-darkest));
     width: 100vw;
     height: 100vh;
     border: 1px solid var(--border-dark);

@@ -11,6 +11,7 @@
     overflow: hidden;
     display: flex;
     flex-direction: column;
+    border: 1px solid var(--border-dark);
 }
 
 .target-layout{
@@ -26,24 +27,9 @@
         "editor arena"
         "editor theory"
     ;
-    min-height: calc(100vh - 60px - 40px);
+    min-height: calc(100vh - 70px);
     gap: var(--gap-main);
 }
-
-/* 
-.main {
-    padding: 20px 30px;
-    width: 100%;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: auto 1fr;
-    grid-template-areas: 
-        "editor playground target"
-        "editor theory theory"
-    ;
-    min-height: calc(100vh - 60px - 40px);
-    gap: var(--gap-main);
-} */
 
 .main__editor,
 .main__theory, 

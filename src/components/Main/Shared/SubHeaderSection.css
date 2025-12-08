@@ -12,6 +12,7 @@
     height: var(--section-title-height);
     /* background-color: var(--bg-primary); */
     background: linear-gradient(to right, var(--gradient-darkest), var(--bg-darkest), var(--gradient-darkest));
+    /* background: var(--gradient-darkest); */
     border-bottom: 1px solid var(--border-dark);
 }
 

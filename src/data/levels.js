@@ -3,7 +3,6 @@ const levels = [
     level: 1,
     name: "por definir",
     sublevels: [
-      // Sublevel 1: WIDTH
       {
         id: 1,
         name: "1-1",
@@ -56,8 +55,6 @@ const levels = [
         ],
         successMessage: "Great! You've learned how width works."
       },
-
-      // Sublevel 2: HEIGHT
       {
         id: 2,
         name: "1-2",
@@ -186,7 +183,8 @@ const levels = [
           {
             id: "initialStylePlayground",
             style: { width: "50px" },
-            defaultCode: "/* Block 1 */\n.block1 {\n\n}\n\n/* Block 2 */\n.block2 {\n\n}"
+            defaultCode: "/* Block 1 */\n.block1 {\n\n}\n\n/* Block 2 */\n.block2 {\n\n}",
+            blockChildren: false
           },
           {
             id: "block1",
@@ -240,7 +238,8 @@ const levels = [
           {
             id: "initialStylePlayground",
             style: { height: "50px", width: "100px" }, 
-            defaultCode: "/* Block 1 */\n.block1 {\nPRUEBA DAFAULT SUB 2 - HEIGHT\n}\n\n/* Block 2 */\n.block2 {\n\n}"
+            defaultCode: '/* Block 1 */\n.block1 {\nwidth: 100px;\n\n}\n\n/* Block 2 */\n.block2 {\nwidth: 100px;\n\n}',
+            blockChildren: false
           },
           {
             id: "block1",
@@ -275,58 +274,6 @@ const levels = [
         ],
         successMessage: "Awesome! Now you know how to control height."
       },
-      // {
-      //   id: 2,
-      //   name: "height",
-      //   challenge: "Apply the height property to both blocks so that each one matches the required height shown in the target layout.",
-      //   theory: {
-      //     description: [
-      //       "The height property defines the vertical size of an element's content area.",
-      //       "It determines how tall the element appears on the page, without affecting the width.",
-      //       "You can assign height values in pixels, percentages, or relative units.",
-      //       "Height is essential to control layout and spacing vertically."
-      //     ],
-      //     syntax: "height: 150px;"
-      //   },
-      //   blocks: [
-      //     {
-      //       id: "initialStylePlayground",
-      //       style: { height: "60px" }
-      //     },
-      //     {
-      //       id: "block1",
-      //       defaultCode: "width: 200px;",
-      //       expectedStyles: [{ property: "height", value: "150px", tolerance: 0 }],
-      //       solution: { width: "200px", height: "150px" },
-      //       solutionString: 'width: 200px;\nheight: 150px;',
-      //       completed: { background: 'var(--b-light)', borderRadius: '20px' },
-      //       solutionCompleted: { width: "200px", height: "150px" }
-      //     },
-      //     {
-      //       id: "block2",
-      //       defaultCode: "width: 300px;",
-      //       expectedStyles: [{ property: "height", value: "180px", tolerance: 0 }],
-      //       solution: { width: "300px", height: "180px" },
-      //       solutionString: 'width: 300px;\nheight: 180px;',
-      //       completed: { background: 'var(--b-light)', borderRadius: '20px' },
-      //       solutionCompleted: { width: "300px", height: "180px" }
-      //     },
-      //     {
-      //       id: "blockParent",
-      //       style: {
-      //         padding: "20px",
-      //         height: "100%",
-      //         display: "flex",
-      //         flexDirection: "column",
-      //         alignItems: 'center',
-      //         justifyContent: 'center',
-      //         gap: '50px'
-      //       }
-      //     }
-      //   ],
-      //   successMessage: "Awesome! Now you know how to control height."
-      // },
-
       // Sublevel 3: PADDING
       {
         id: 3,
@@ -344,26 +291,27 @@ const levels = [
         blocks: [
           {
             id: "initialStylePlayground",
-            style: { padding: "20px" },
-            defaultCode: "/* Block 1 */\n.block1 {\nPRUEBA DAFAULT SUB 3\n}\n\n/* Block 2 */\n.block2 {\n\n}"
+            style: { width: "200px", height: "50px" },
+            defaultCode: "/* Block 1 */\n.block1 {\nwidth: 200px;\nheight: 50px;\n\n}\n\n/* Block 2 */\n.block2 {\nwidth: 200px;\nheight: 50px;\n\n}",
+            blockChildren: true
           },
           {
             id: "block1",
-            defaultCode: "width: 200px;\nheight: 150px;",
+            defaultCode: "width: 200px;\nheight: 50px;",
             expectedStyles: [{ property: "padding", value: "20px", tolerance: 0 }],
-            solution: { width: "200px", height: "150px", padding: "20px" },
-            solutionString: 'width: 200px;\nheight: 150px;\npadding: 20px;',
-            completed: { background: 'var(--b-light)', borderRadius: '20px' },
-            solutionCompleted: { width: "200px", height: "150px", padding: "20px" }
+            solution: { width: "200px", height: "50px", padding: "10px"},
+            solutionString: 'padding: 10px;',
+            completed: { background: 'var(--b-light)'},
+            solutionCompleted: { width: "200px", height: "50px", padding: "10px" }
           },
           {
             id: "block2",
-            defaultCode: "width: 300px;\nheight: 180px;",
-            expectedStyles: [{ property: "padding", value: "15px", tolerance: 0 }],
-            solution: { width: "300px", height: "180px", padding: "15px" },
-            solutionString: 'width: 300px;\nheight: 180px;\npadding: 15px;',
-            completed: { background: 'var(--b-light)', borderRadius: '20px' },
-            solutionCompleted: { width: "300px", height: "180px", padding: "15px" }
+            defaultCode: "width: 200px;\nheight: 50px;",
+            expectedStyles: [{ property: "padding", value: "25px 50px 0 50px", tolerance: 0 }],
+            solution: { width: "200px", height: "50px", padding: "25px 50px 0 50px"},
+            solutionString: 'padding: 25px 50px 0 50px;',
+            completed: { background: 'var(--b-light)'},
+            solutionCompleted: { width: "200px", height: "50px", padding: "25px 50px 0 50px"}
           },
           {
             id: "blockParent",
@@ -374,8 +322,13 @@ const levels = [
               flexDirection: "column",
               alignItems: 'center',
               justifyContent: 'center',
-              gap: '50px'
+              gap: '100px'
             }
+          },
+          {
+            id: "blockChildren",
+            style: {width: '100%', height: '100%', background: 'var(--highlight-yellow)',padding: '1px 5px', color: 'black', textAlign: 'center'},
+            text: "content"
           }
         ],
         successMessage: "Well done! You now understand padding."

@@ -4,7 +4,8 @@
     display: flex;
     flex-direction: column;
     overflow: hidden;
-    background: linear-gradient(to bottom, var(--bg-darkest), var(--bg-darkest), var(--gradient-darkest));
+    background: linear-gradient(to bottom, var(--bg-darkest), var(--gradient-darkest));
+    /* background: transparent; */
 
     & > *{
         padding: 15px;

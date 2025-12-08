@@ -8,7 +8,6 @@ export default function ModalSolution({viewSolution, solutionCode, onClick}) {
 
     useEffect(()=> {
         const handelKeyDown = (e) => {
-            console.log(9)
             if(e.key === 'Escape') onClick();
         }
 

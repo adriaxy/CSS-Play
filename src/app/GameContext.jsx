@@ -70,7 +70,6 @@ export function GameProvider({ initialLevel, initialSublevel, children}){
 
     useEffect(() => {
     const allBlocksCompleted = evaluateBlocks(sublevelState[currentLevel][currentSublevel].completedBlocks);
-    // console.log(sublevelState)
     if (allBlocksCompleted && !sublevelState[currentLevel][currentSublevel].completed) {
         setSublevelState(prev => {
         const newData = [...prev];
@@ -83,7 +82,6 @@ export function GameProvider({ initialLevel, initialSublevel, children}){
         newData[currentLevel] = innerArray;
         return newData;
         });
-        console.log(sublevelState)
     }
     }, [sublevelState, currentLevel, currentSublevel]);
 
@@ -99,29 +97,17 @@ export function GameProvider({ initialLevel, initialSublevel, children}){
     };
 
     const [blockStyles, setBlockStyles] = useState();
-    // useEffect(()=> {
-    //     const index = sublevelState[currentLevel][currentSublevel]
-    //     const code = index.firstTime === true ? index.defaultCode : index.playerCode;
-    //     // console.log(sublevelState)
-    //     // console.log(index.defaultCode)
-    //     const parseCss = parseCssToRules(code);
-    //     setBlockStyles(parseCss);
-    // }, [sublevelState])
 
     useEffect(()=> {
         const index = sublevelState[currentLevel][currentSublevel]
         const code = index.firstTime === true ? index.defaultCode : index.playerCode;
-        // console.log(sublevelState)
-        // console.log(index.defaultCode)
         const parseCss = parseCssToRules(code);
-        // setBlockStyles(parseCss);
         setSublevelState((prev) => {
             const newData = [...prev];
             const innerArray = [...newData[currentLevel]];
             const obj = {...innerArray[currentSublevel], blockStyles: parseCss};
             innerArray[currentSublevel] = obj;
             newData[currentLevel] = innerArray;
-            // console.log(newData)
             return newData
         })
     }, [currentSublevel, currentLevel, sublevelState[currentLevel]?.[currentSublevel]?.playerCode, sublevelState[currentLevel]?.[currentSublevel]?.firstTime ])
