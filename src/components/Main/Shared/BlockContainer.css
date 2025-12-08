@@ -3,6 +3,7 @@
     height: 300px;
     background-color: var(--gradient-darkest);
     position: relative;
+    border-radius: var(--border-radius-l);
 }
 
 .completed-sublevel-message{

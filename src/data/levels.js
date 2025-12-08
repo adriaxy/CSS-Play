@@ -184,7 +184,8 @@ const levels = [
             id: "initialStylePlayground",
             style: { width: "50px" },
             defaultCode: "/* Block 1 */\n.block1 {\n\n}\n\n/* Block 2 */\n.block2 {\n\n}",
-            blockChildren: false
+            blockChildrenInside: false,
+            blockChildrenOutside: false
           },
           {
             id: "block1",
@@ -239,7 +240,8 @@ const levels = [
             id: "initialStylePlayground",
             style: { height: "50px", width: "100px" }, 
             defaultCode: '/* Block 1 */\n.block1 {\nwidth: 100px;\n\n}\n\n/* Block 2 */\n.block2 {\nwidth: 100px;\n\n}',
-            blockChildren: false
+            blockChildrenInside: false,
+            blockChildrenOutside: false
           },
           {
             id: "block1",
@@ -293,12 +295,13 @@ const levels = [
             id: "initialStylePlayground",
             style: { width: "200px", height: "50px" },
             defaultCode: "/* Block 1 */\n.block1 {\nwidth: 200px;\nheight: 50px;\n\n}\n\n/* Block 2 */\n.block2 {\nwidth: 200px;\nheight: 50px;\n\n}",
-            blockChildren: true
+            blockChildrenInside: true,
+            blockChildrenOutside: false
           },
           {
             id: "block1",
             defaultCode: "width: 200px;\nheight: 50px;",
-            expectedStyles: [{ property: "padding", value: "20px", tolerance: 0 }],
+            expectedStyles: [{ property: "padding", value: "10px", tolerance: 0 }],
             solution: { width: "200px", height: "50px", padding: "10px"},
             solutionString: 'padding: 10px;',
             completed: { background: 'var(--b-light)'},
@@ -307,11 +310,11 @@ const levels = [
           {
             id: "block2",
             defaultCode: "width: 200px;\nheight: 50px;",
-            expectedStyles: [{ property: "padding", value: "25px 50px 0 50px", tolerance: 0 }],
-            solution: { width: "200px", height: "50px", padding: "25px 50px 0 50px"},
-            solutionString: 'padding: 25px 50px 0 50px;',
+            expectedStyles: [{ property: "padding", value: "25px 50px 0px 50px", tolerance: 0 }],
+            solution: { width: "200px", height: "50px", padding: "25px 50px 0px 50px"},
+            solutionString: 'padding: 25px 50px 0px 50px;',
             completed: { background: 'var(--b-light)'},
-            solutionCompleted: { width: "200px", height: "50px", padding: "25px 50px 0 50px"}
+            solutionCompleted: { width: "200px", height: "50px", padding: "25px 50px 0px 50px"}
           },
           {
             id: "blockParent",
@@ -326,7 +329,7 @@ const levels = [
             }
           },
           {
-            id: "blockChildren",
+            id: "blockChildrenInside",
             style: {width: '100%', height: '100%', background: 'var(--highlight-yellow)',padding: '1px 5px', color: 'black', textAlign: 'center'},
             text: "content"
           }
@@ -338,7 +341,7 @@ const levels = [
       {
         id: 4,
         name: "margin",
-        challenge: "Apply the margin property to both blocks so that each one matches the required spacing from other elements shown in the target layout.",
+        challenge: "Apply margin property to each block so they are positioned correctly inside their parent container. The spacing is measured relative to the parent, not between the blocks.",
         theory: {
           description: [
             "The margin property adds space outside the element, separating it from surrounding elements.",
@@ -351,37 +354,38 @@ const levels = [
         blocks: [
           {
             id: "initialStylePlayground",
-            style: { margin: "10px" },
-            defaultCode: "/* Block 1 */\n.block1 {\nPRUEBA DAFAULT SUB 4\n}\n\n/* Block 2 */\n.block2 {\n\n}"
+            style: { width: "150px", height: "100px"},
+            defaultCode: "/* Block 1 */\n.block1 {\nwidth: 150px;\nheight: 100px;\n\n}\n\n/* Block 2 */\n.block2 {\nwidth: 150px;\nheight: 100px;\n\n}",
+            blockChildrenInside: false,
+            blockChildrenOutside: false
           },
           {
             id: "block1",
-            defaultCode: "width: 200px;\nheight: 150px;\npadding: 20px;",
-            expectedStyles: [{ property: "margin", value: "10px", tolerance: 0 }],
-            solution: { width: "200px", height: "150px", padding: "20px", margin: "10px" },
-            solutionString: 'width: 200px;\nheight: 150px;\npadding: 20px;\nmargin: 10px;',
-            completed: { background: 'var(--b-light)', borderRadius: '20px' },
-            solutionCompleted: { width: "200px", height: "150px", padding: "20px", margin: "10px" }
+            defaultCode: "width: 150px;\nheight: 100px;\n",
+            expectedStyles: [{ property: "margin", value: "50px", tolerance: 0 }],
+            solution: { width: "150px", height: "100px", margin: '50px' },
+            solutionString: 'margin: 50px',
+            completed: { background: 'var(--b-light)', borderRadius: '20px'},
+            solutionCompleted: { width: "150px", height: "100px", margin: '50px'  }
           },
           {
             id: "block2",
-            defaultCode: "width: 300px;\nheight: 180px;\npadding: 15px;",
-            expectedStyles: [{ property: "margin", value: "15px", tolerance: 0 }],
-            solution: { width: "300px", height: "180px", padding: "15px", margin: "15px" },
-            solutionString: 'width: 300px;\nheight: 180px;\npadding: 15px;\nmargin: 15px;',
-            completed: { background: 'var(--b-light)', borderRadius: '20px' },
-            solutionCompleted: { width: "300px", height: "180px", padding: "15px", margin: "15px" }
+            defaultCode: "width: 150px;\nheight: 100px;\n",
+            expectedStyles: [{ property: "margin", value: "0px 0px 0px 250px", tolerance: 0 }],
+            solution: { width: "150px", height: "100px", margin: '0px 0px 0px 250px'},
+            solutionString: 'margin: 0px 0px 0px 250px',
+            completed: { background: 'var(--b-light)', borderRadius: '20px'},
+            solutionCompleted: { width: "150px", height: "100px", margin: '0px 0px 0px 250px' }
           },
           {
             id: "blockParent",
             style: {
-              padding: "20px",
+              padding: "0px",
               height: "100%",
               display: "flex",
               flexDirection: "column",
-              alignItems: 'center',
-              justifyContent: 'center',
-              gap: '50px'
+              alignItems: 'flex-start',
+              justifyContent: 'space-between',
             }
           }
         ],

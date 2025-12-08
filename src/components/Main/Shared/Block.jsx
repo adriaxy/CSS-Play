@@ -5,9 +5,12 @@ import levels from '@/data/levels';
 
 export default function Block({blockId, style, group, blockSolution, playground = false}) {
     const {hoveredBlock, setHoveredBlock, sublevelState, currentSublevel, currentLevel, setSublevelState} = useGame();
-    const hasBlockChildren = levels[currentLevel].sublevels[currentSublevel].blocks[0].blockChildren;
-    const blockChildrenStyles = levels[currentLevel].sublevels[currentSublevel]?.blocks[4]?.style;
-    const blockChildrenText = levels[currentLevel].sublevels[currentSublevel]?.blocks[4]?.text;
+    const hasBlockChildrenInside = levels[currentLevel].sublevels[currentSublevel].blocks[0].blockChildrenInside;
+    const insideChildrenStyles = levels[currentLevel].sublevels[currentSublevel]?.blocks[4]?.style;
+    const insideChildrenText = levels[currentLevel].sublevels[currentSublevel]?.blocks[4]?.text;
+
+    const hasBlockChildrenOutside = levels[currentLevel].sublevels[currentSublevel].blocks[0].blockChildrenOutside;
+    
 
     const blockIdPlayground = playground === true ? blockId.replace(' ', '') : null;
     const isHovered = hoveredBlock === group;
@@ -57,14 +60,16 @@ export default function Block({blockId, style, group, blockSolution, playground 
     }
 
     return (
-        <div 
-        style={finalStyle} 
-        onMouseEnter={() => setHoveredBlock(group)} 
-        onMouseLeave={() => setHoveredBlock(null)}
-        className={`block ${blockIdPlayground} ${isCompleted}`}>
-            {hasBlockChildren && <div style={blockChildrenStyles}>{blockChildrenText !== '' && blockChildrenText}</div>}
-            <div className='block-name-text' style={finalStyleHoverText} aria-label={blockId}>{blockId}</div>
-
-        </div>
+        <>
+            <div 
+            style={finalStyle} 
+            onMouseEnter={() => setHoveredBlock(group)} 
+            onMouseLeave={() => setHoveredBlock(null)}
+            className={`block ${blockIdPlayground} ${isCompleted}`}>
+                {hasBlockChildrenInside && <div style={insideChildrenStyles}>{insideChildrenText !== '' && insideChildrenText}</div>}
+                <div className='block-name-text' style={finalStyleHoverText} aria-label={blockId}>{blockId}</div>
+            </div>
+            {}
+        </>
     )
 }
