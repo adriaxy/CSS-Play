@@ -5,9 +5,12 @@ import BlockContainer from "../Shared/BlockContainer"
 import './Playground.css'
 import Grid from "../Shared/Grid"
 import { useGame } from "@/app/GameContext"
+import levels from "@/data/levels"
 
-export default function Playground({initialStyles}){
+export default function Playground(){
     const {currentLevel, currentSublevel} = useGame();
+    const levelRoot = levels[currentLevel].sublevels[currentSublevel]
+    const blocksToRender = levelRoot.totalBlocks;
     
     return(
         <div className='playground'>
@@ -20,10 +23,23 @@ export default function Playground({initialStyles}){
                     />
                 ]}
             />
-            <BlockContainer blockId={'playground'} initialStyles={initialStyles}>
+            <BlockContainer blockId={'playground'}>
                 <Grid/>
-                <Block blockId={'block 1'} style={{...initialStyles[1].completed, ...initialStyles[0].initialStyleBlock1}} group={'group1'} playground={true} blockSolution={initialStyles[1].solutionCompleted}/>
-                <Block blockId={'block 2'} style={{...initialStyles[2].completed, ...initialStyles[0].initialStyleBlock2}} group={'group2'} playground={true} blockSolution={initialStyles[2].solutionCompleted}/>
+                {
+                    blocksToRender.map((blockId) => {
+                        const block = levelRoot.blocks.find(b => b.id === blockId);
+                        if (!block) return null;
+                        return (
+                            <Block 
+                                key={blockId} 
+                                blockId={blockId} 
+                                style={block.initialStyle} 
+                                group={block.group} 
+                                blockSolution={block.solution}
+                                playground={true}/>
+                        )
+                    })
+                }
             </BlockContainer>
         </div>
     )

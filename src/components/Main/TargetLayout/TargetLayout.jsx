@@ -4,18 +4,36 @@ import PlaygroundButton from "../Shared/PlaygroundButton"
 import BlockContainer from '../Shared/BlockContainer'
 import Block from '../Shared/Block'
 import Grid from '../Shared/Grid'
+import { useGame } from "@/app/GameContext"
+import levels from "@/data/levels"
 
-export default function TargetLayout({initialStyles}){
+export default function TargetLayout(){
+    const {currentLevel, currentSublevel} = useGame();
+    const levelRoot = levels[currentLevel].sublevels[currentSublevel]
+    const blocksToRender = levelRoot.totalBlocks;
 
     return(
         <div className='target-layout'>
             <SubHeaderArena 
                 SubHeaderTitle={'Target Layout'}
             />
-            <BlockContainer blockId={'target'} initialStyles={initialStyles}>
+            <BlockContainer blockId={'target'}>
                 <Grid />
-                <Block blockId={'block 1'} style={{...initialStyles[1].completed, ...initialStyles[1].solution}} group={'group1'}/>
-                <Block blockId={'block 2'} style={{...initialStyles[1].completed, ...initialStyles[2].solution}} group={'group2'}/>
+                {
+                    blocksToRender.map((blockId) => {
+                        const block = levelRoot.blocks.find(b => b.id === blockId);
+                        if (!block) return null;
+                        return (
+                            <Block 
+                                key={blockId} 
+                                blockId={blockId} 
+                                style={{...block.initialStyle, ...block.solution}} 
+                                group={block.group} 
+                                blockSolution={block.solution}
+                                playground={false}/>
+                        )
+                    })
+                }
             </BlockContainer>
         </div>
     )
