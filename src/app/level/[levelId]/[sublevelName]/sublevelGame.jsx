@@ -8,11 +8,9 @@ export default function SublevelGame({ level, sublevel }) {
   const router = useRouter();
   const levelId = level.level;
 
-  // ✔ Índices derivados del nivel cargado
   const levelIndex = levels.findIndex(l => l.level === level.level);
   const sublevelIndex = level.sublevels.findIndex(s => s.name === sublevel.name);
 
-  // ✔ Navegación usando ONLY URL → el wrapper actualizará el contexto
   const goToPrev = () => {
     const prevIndex = sublevelIndex - 1;
     if (prevIndex < 0) return;
@@ -29,7 +27,6 @@ export default function SublevelGame({ level, sublevel }) {
     router.replace(`/level/${levelId}/${name}`, { scroll: false });
   };
 
-  // ✔ Disabled buttons usando sublevelIndex directo
   const isPrevDisabled = sublevelIndex === 0;
   const isNextDisabled = sublevelIndex === level.sublevels.length - 1;
 

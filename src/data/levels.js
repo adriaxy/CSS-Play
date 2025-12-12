@@ -1,10 +1,11 @@
 const levels = [
   {
     level: 1,
-    name: "por definir",
+    name: "Dimensions and Spacing",
     sublevels: [
+      // Sublevel 1: WIDTH
       {
-        id: 1,
+        id: 1-1,
         name: "1-1",
         evaluatedBlocks: ["block1", "block2"],
         totalBlocks: ["block1", "block2"],
@@ -22,26 +23,26 @@ const levels = [
           {
             id: "initialStylePlayground",
             initialStyleBlock1: { width: "50px" },
-            initialStyleBlock2: { width: "10px", height: "10px" },
-            defaultCode: "/* Block 1 */\n.block1 {\nPRUEBA DAFAULT perdona? SUB 1\n}\n\n/* Block 2 */\n.block2 {\n\n}"
+            initialStyleBlock2: { width: "50px" },
+            defaultCode: "/* Block 1 */\n.block1 {\n\n}\n\n/* Block 2 */\n.block2 {\n\n}",
+            blockChildrenInside: false,
+            blockChildrenOutside: false
           },
           {
             id: "block1",
             group: "group1",
+            initialStyle: { width: "50px", height: "50px", background: 'var(--b-light)', borderRadius: '20px'},
             defaultCode: "",
             solution: { width: "150px" },
-            viewSolution: 'width: 150px;',
-            completed: { background: 'var(--b-light)', borderRadius: '20px', height: "50px" },
-            solutionCompleted: { width: "150px" }
+            viewSolution: 'width: 150px;'
           },
           {
             id: "block2",
             group: "group2",
+            initialStyle: { width: "50px", height: "50px", background: 'var(--b-light)', borderRadius: '20px'},
             defaultCode: "",
             solution: { width: "300px" },
-            viewSolution: 'width: 300px;',
-            completed: { height: "50px", background: 'var(--b-light)', borderRadius: '20px' },
-            solutionCompleted: { width: "300px" }
+            viewSolution: 'width: 300px;'
           },
           {
             id: "blockParent",
@@ -58,9 +59,11 @@ const levels = [
         ],
         successMessage: "Great! You've learned how width works."
       },
+
+      // Sublevel 2: HEIGHT
       {
-        id: 2,
-        name: "1-2",
+        id: 1-2,
+        name: "1.2",
         evaluatedBlocks: ["block1", "block2"],
         totalBlocks: ["block1", "block2"],
         challenge: "Apply the height property to both blocks so that each one matches the required height shown in the target layout.",
@@ -76,27 +79,25 @@ const levels = [
         blocks: [
           {
             id: "initialStylePlayground",
-            initialStyleBlock1: { height: "50px", width: "100px" }, 
-            initialStyleBlock2: { width: "10px", height: "10px" },
-            defaultCode: "/* Block 1 */\n.block1 {\nPRUEBA DAFAULT SUB 2 -ssssss HEIGHT\n}\n\n/* Block 2 */\n.block2 {\n\n}"
+            defaultCode: '/* Block 1 */\n.block1 {\nwidth: 100px;\n\n}\n\n/* Block 2 */\n.block2 {\nwidth: 100px;\n\n}',
+            blockChildrenInside: false,
+            blockChildrenOutside: false
           },
           {
             id: "block1",
             group: "group1",
+            initialStyle: { height: "50px", width: "100px", background: 'var(--b-light)', borderRadius: '20px'},
             defaultCode: "width: 100px;",
             solution: { width: "100px", height: "120px" },
-            viewSolution: 'height: 120px;',
-            completed: { background: 'var(--b-light)', borderRadius: '20px' },
-            solutionCompleted: { height: "120px" }
+            viewSolution: 'height: 120px;'
           },
           {
             id: "block2",
             group: "group2",
+            initialStyle: { height: "50px", width: "100px", background: 'var(--b-light)', borderRadius: '20px'},
             defaultCode: "width: 100px;",
             solution: { width: "100px", height: "200px" },
-            viewSolution: 'height: 200px;',
-            completed: { background: 'var(--b-light)', borderRadius: '20px' },
-            solutionCompleted: { height: "200px" }
+            viewSolution: 'height: 200px;'
           },
           {
             id: "blockParent",
@@ -112,61 +113,6 @@ const levels = [
           }
         ],
         successMessage: "Awesome! Now you know how to control height."
-      },
-      {
-        id: 3,
-        name: "1-3",
-        evaluatedBlocks: ["block1", "block2"],
-        totalBlocks: ["block1", "block2"],
-        challenge: "Apply the padding property to both blocks so that each one matches the required spacing shown in the target layout.",
-        theory: {
-          description: [
-            "The padding property adds space inside the element, between its content and its border.",
-            "It helps create breathing room for content and improves readability.",
-            "You can set padding individually for top, right, bottom, and left, or all sides at once.",
-            "Proper use of padding improves the visual structure of your elements."
-          ],
-          syntax: "padding: 20px;"
-        },
-        blocks: [
-          {
-            id: "initialStylePlayground",
-            initialStyleBlock1: { padding: "20px" },
-            initialStyleBlock2: { width: "10px", height: "10px" },
-            defaultCode: "/* Block 1 */\n.block1 {\nPRUEBA DAFAULT SUB 3\n}\n\n/* Block 2 */\n.block2 {\n\n}"
-          },
-          {
-            id: "block1",
-            group: "group1",
-            defaultCode: "width: 200px;\nheight: 150px;",
-            solution: { width: "200px", height: "150px", padding: "20px" },
-            viewSolution: 'width: 200px;\nheight: 150px;\npadding: 20px;',
-            completed: { background: 'var(--b-light)', borderRadius: '20px' },
-            solutionCompleted: { width: "200px", height: "150px", padding: "20px" }
-          },
-          {
-            id: "block2",
-            group: "group2",
-            defaultCode: "width: 300px;\nheight: 180px;",
-            solution: { width: "300px", height: "180px", padding: "15px" },
-            viewSolution: 'width: 300px;\nheight: 180px;\npadding: 15px;',
-            completed: { background: 'var(--b-light)', borderRadius: '20px' },
-            solutionCompleted: { width: "300px", height: "180px", padding: "15px" }
-          },
-          {
-            id: "blockParent",
-            style: {
-              padding: "20px",
-              height: "100%",
-              display: "flex",
-              flexDirection: "column",
-              alignItems: 'center',
-              justifyContent: 'center',
-              gap: '50px'
-            }
-          }
-        ],
-        successMessage: "Well done! You now understand padding."
       }
     ]
   },
@@ -374,7 +320,7 @@ const levels = [
             initialStyle: { width: "150px", height: "100px", background: 'var(--b-light)', borderRadius: '20px' },
             defaultCode: "width: 150px;\nheight: 100px;\n",
             solution: { width: "150px", height: "100px", marginRight: '100px' },
-            viewSolution: 'margin-right: 100px'
+            viewSolution: 'margin-right: 100px;'
           },
           {
             id: "block2",
@@ -382,7 +328,7 @@ const levels = [
             initialStyle: { width: "50px", height: "50px", background: 'var(--bg-secondary)', borderRadius: '20px' },
             defaultCode: "width: 150px;\nheight: 100px;\n",
             solution: { width: "50px", height: "50px", background: 'var(--bg-secondary)'},
-            viewSolution: 'margin: 0px 0px 0px 250px'
+            viewSolution: 'margin: 0px 0px 0px 250px;'
           },
           {
             id: "blockParent",
@@ -423,10 +369,10 @@ const levels = [
           {
             id: "block1",
             group: "group1",
-            initialStyle: { boxSizing: "content-box", width: "100px", height: "100px", background: 'var(--b-light)', borderRadius: '20px', border: '15px solid var(--highlight-yellow)' },
+            initialStyle: { boxSizing: "content-box", width: "100px", height: "100px", background: 'var(--b-light)', borderRadius: '20px', border: '10px solid var(--highlight-yellow)' },
             defaultCode: "width: 100px;\nheight: 100px;\npadding: 20px;\nmargin: 10px;",
             solution: { width: "100px", height: "100px", boxSizing: "border-box" },
-            viewSolution: 'box-sizing: border-box'
+            viewSolution: 'box-sizing: border-box;'
           },
           {
             id: "blockParent",

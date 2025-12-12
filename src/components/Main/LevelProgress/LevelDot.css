@@ -24,6 +24,20 @@
 
 .level-dot__sublevel-name{
     display: none;
+    background-color: var(--highlight-yellow);
+    color: #0a1422;
+    padding: 5px 10px;
+    border-radius: 5px;
+    position: absolute;
+    top: 50%;
+    left: -50%;
+    transform: translate(-80%, -50%);
+    white-space: nowrap;
+    font-size: var(--text-s);
+}
+/* 
+.level-dot__sublevel-name{
+    display: none;
     background-color: var(--bg-dark);
     padding: 5px 7px;
     border-radius: 5px;
@@ -34,21 +48,21 @@
     transform: translate(-50%, -180%);
     transition: all .9s ease;
     font-size: var(--text-s);
-}
+} */
 
 .level-dot__sublevel-name.show{
     display: block;
 }
 
 .level-dot__sublevel-name__edge{
-    background-color: var(--bg-dark);
+    background-color: var(--highlight-yellow);
     display: block;
     position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%) translateY(50%) rotate(-45deg);
-    width: 10px;
-    height: 10px;
+    top: 50%;
+    right: 0;
+    transform: translate(50%, -50%) rotate(-45deg);
+    width: 7px;
+    height: 7px;
 }
 
 
