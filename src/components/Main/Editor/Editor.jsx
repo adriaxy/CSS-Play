@@ -47,8 +47,8 @@ export default function Editor ({levelNum, sublevelNum, challenge, name, solutio
           <SubHeaderSection sectionName={'editor__title'}>
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              width="30"
-              height="30"
+              width="40"
+              height="40"
               viewBox="0 0 24 24"
               fill="none"
               stroke="var(--text-on-light)"

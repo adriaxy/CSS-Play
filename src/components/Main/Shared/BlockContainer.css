@@ -4,6 +4,7 @@
     background-color: var(--gradient-darkest);
     position: relative;
     border-radius: var(--border-radius-l);
+    overflow: hidden;
 }
 
 .completed-sublevel-message{

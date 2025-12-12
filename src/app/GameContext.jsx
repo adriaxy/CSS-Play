@@ -64,12 +64,19 @@ export function GameProvider({ initialLevel, initialSublevel, children}){
         })
     const [sublevelState, setSublevelState] = useState(initialProgress);
 
-    const evaluateBlocks = (blocks) => {
-        return Object.values(blocks).every((blockState) => blockState === true)
+    const evaluateBlocks = (completedBlocks, evaluatedBlocksArray) => {
+        return evaluatedBlocksArray.every(
+            blockId => completedBlocks[blockId] === true
+        )
     }
 
     useEffect(() => {
-    const allBlocksCompleted = evaluateBlocks(sublevelState[currentLevel][currentSublevel].completedBlocks);
+    const evaluated = currentSublevelData.evaluatedBlocks;
+
+    const allBlocksCompleted = evaluateBlocks(
+        sublevelState[currentLevel][currentSublevel].completedBlocks, evaluated
+    )
+
     if (allBlocksCompleted && !sublevelState[currentLevel][currentSublevel].completed) {
         setSublevelState(prev => {
         const newData = [...prev];

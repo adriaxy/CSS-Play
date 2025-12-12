@@ -6,6 +6,7 @@ const levels = [
       {
         id: 1,
         name: "1-1",
+        evaluatedBlocks: ["block1", "block2"],
         challenge: "Apply the width property to both blocks so that each one matches the required width shown in the target layout.",
         theory: {
           description: [
@@ -19,7 +20,8 @@ const levels = [
         blocks: [
           {
             id: "initialStylePlayground",
-            style: { width: "50px" },
+            initialStyleBlock1: { width: "50px" },
+            initialStyleBlock2: { width: "10px", height: "10px" },
             defaultCode: "/* Block 1 */\n.block1 {\nPRUEBA DAFAULT perdona? SUB 1\n}\n\n/* Block 2 */\n.block2 {\n\n}"
           },
           {
@@ -58,6 +60,7 @@ const levels = [
       {
         id: 2,
         name: "1-2",
+        evaluatedBlocks: ["block1", "block2"],
         challenge: "Apply the height property to both blocks so that each one matches the required height shown in the target layout.",
         theory: {
           description: [
@@ -71,7 +74,8 @@ const levels = [
         blocks: [
           {
             id: "initialStylePlayground",
-            style: { height: "50px", width: "100px" }, 
+            initialStyleBlock1: { height: "50px", width: "100px" }, 
+            initialStyleBlock2: { width: "10px", height: "10px" },
             defaultCode: "/* Block 1 */\n.block1 {\nPRUEBA DAFAULT SUB 2 -ssssss HEIGHT\n}\n\n/* Block 2 */\n.block2 {\n\n}"
           },
           {
@@ -110,6 +114,7 @@ const levels = [
       {
         id: 3,
         name: "1-3",
+        evaluatedBlocks: ["block1", "block2"],
         challenge: "Apply the padding property to both blocks so that each one matches the required spacing shown in the target layout.",
         theory: {
           description: [
@@ -123,7 +128,8 @@ const levels = [
         blocks: [
           {
             id: "initialStylePlayground",
-            style: { padding: "20px" },
+            initialStyleBlock1: { padding: "20px" },
+            initialStyleBlock2: { width: "10px", height: "10px" },
             defaultCode: "/* Block 1 */\n.block1 {\nPRUEBA DAFAULT SUB 3\n}\n\n/* Block 2 */\n.block2 {\n\n}"
           },
           {
@@ -169,6 +175,7 @@ const levels = [
       {
         id: 1,
         name: "width",
+        evaluatedBlocks: ["block1", "block2"],
         challenge: "Apply the width property to both blocks so that each one matches the required width shown in the target layout.",
         theory: {
           description: [
@@ -182,7 +189,8 @@ const levels = [
         blocks: [
           {
             id: "initialStylePlayground",
-            style: { width: "50px" },
+            initialStyleBlock1: { width: "50px" },
+            initialStyleBlock2: { width: "50px" },
             defaultCode: "/* Block 1 */\n.block1 {\n\n}\n\n/* Block 2 */\n.block2 {\n\n}",
             blockChildrenInside: false,
             blockChildrenOutside: false
@@ -225,6 +233,7 @@ const levels = [
       {
         id: 2,
         name: "height",
+        evaluatedBlocks: ["block1", "block2"],
         challenge: "Apply the height property to both blocks so that each one matches the required height shown in the target layout.",
         theory: {
           description: [
@@ -238,7 +247,8 @@ const levels = [
         blocks: [
           {
             id: "initialStylePlayground",
-            style: { height: "50px", width: "100px" }, 
+            initialStyleBlock1: { height: "50px", width: "100px" }, 
+            initialStyleBlock2: { height: "50px", width: "100px" }, 
             defaultCode: '/* Block 1 */\n.block1 {\nwidth: 100px;\n\n}\n\n/* Block 2 */\n.block2 {\nwidth: 100px;\n\n}',
             blockChildrenInside: false,
             blockChildrenOutside: false
@@ -280,6 +290,7 @@ const levels = [
       {
         id: 3,
         name: "padding",
+        evaluatedBlocks: ["block1", "block2"],
         challenge: "Apply the padding property to both blocks so that each one matches the required spacing shown in the target layout.",
         theory: {
           description: [
@@ -293,7 +304,8 @@ const levels = [
         blocks: [
           {
             id: "initialStylePlayground",
-            style: { width: "200px", height: "50px" },
+            initialStyleBlock1: { width: "200px", height: "50px" },
+            initialStyleBlock2: { width: "200px", height: "50px" },    
             defaultCode: "/* Block 1 */\n.block1 {\nwidth: 200px;\nheight: 50px;\n\n}\n\n/* Block 2 */\n.block2 {\nwidth: 200px;\nheight: 50px;\n\n}",
             blockChildrenInside: true,
             blockChildrenOutside: false
@@ -341,7 +353,8 @@ const levels = [
       {
         id: 4,
         name: "margin",
-        challenge: "Apply margin property to each block so they are positioned correctly inside their parent container. The spacing is measured relative to the parent, not between the blocks.",
+        evaluatedBlocks: ["block1"],
+        challenge: "Apply margin property to block 1....",
         theory: {
           description: [
             "The margin property adds space outside the element, separating it from surrounding elements.",
@@ -354,48 +367,103 @@ const levels = [
         blocks: [
           {
             id: "initialStylePlayground",
-            style: { width: "150px", height: "100px"},
-            defaultCode: "/* Block 1 */\n.block1 {\nwidth: 150px;\nheight: 100px;\n\n}\n\n/* Block 2 */\n.block2 {\nwidth: 150px;\nheight: 100px;\n\n}",
+            initialStyleBlock1: { width: "150px", height: "100px" },
+            initialStyleBlock2: { width: "50px", height: "50px", background: 'var(--bg-secondary)' },
+            defaultCode: "/* Block 1 */\n.block1 {\nwidth: 150px;\nheight: 100px;\n\n}",
             blockChildrenInside: false,
             blockChildrenOutside: false
           },
           {
             id: "block1",
             defaultCode: "width: 150px;\nheight: 100px;\n",
-            expectedStyles: [{ property: "margin", value: "50px", tolerance: 0 }],
-            solution: { width: "150px", height: "100px", margin: '50px' },
-            solutionString: 'margin: 50px',
+            // expectedStyles: [{ property: "margin", value: "50px", tolerance: 0 }],
+            solution: { width: "150px", height: "100px", marginRight: '100px' },
+            solutionString: 'margin-right: 100px',
             completed: { background: 'var(--b-light)', borderRadius: '20px'},
-            solutionCompleted: { width: "150px", height: "100px", margin: '50px'  }
+            solutionCompleted: { width: "150px", height: "100px", marginRight: '100px'  }
           },
           {
             id: "block2",
             defaultCode: "width: 150px;\nheight: 100px;\n",
-            expectedStyles: [{ property: "margin", value: "0px 0px 0px 250px", tolerance: 0 }],
-            solution: { width: "150px", height: "100px", margin: '0px 0px 0px 250px'},
+            // expectedStyles: [{ property: "margin", value: "0px 0px 0px 250px", tolerance: 0 }],
+            solution: { width: "50px", height: "50px", background: 'var(--bg-secondary)'},
             solutionString: 'margin: 0px 0px 0px 250px',
-            completed: { background: 'var(--b-light)', borderRadius: '20px'},
-            solutionCompleted: { width: "150px", height: "100px", margin: '0px 0px 0px 250px' }
+            completed: { background: 'var(--bg-secondary)', borderRadius: '20px'}
           },
           {
             id: "blockParent",
             style: {
-              padding: "0px",
+              paddingBottom: "100px",
               height: "100%",
               display: "flex",
-              flexDirection: "column",
-              alignItems: 'flex-start',
-              justifyContent: 'space-between',
+              flexDirection: "row",
+              alignItems: 'flex-end',
+              justifyContent: 'center'
             }
           }
         ],
         successMessage: "Excellent! You've mastered margins."
       },
+      // {
+      //   id: 4,
+      //   name: "margin",
+      //   challenge: "Apply margin property to each block so they are positioned correctly inside their parent container. The spacing is measured relative to the parent, not between the blocks.",
+      //   theory: {
+      //     description: [
+      //       "The margin property adds space outside the element, separating it from surrounding elements.",
+      //       "It helps position elements and maintain visual balance.",
+      //       "You can define margins for each side or all sides at once.",
+      //       "Using margins correctly helps control layout spacing and alignment."
+      //     ],
+      //     syntax: "margin: 10px;"
+      //   },
+      //   blocks: [
+      //     {
+      //       id: "initialStylePlayground",
+      //       initialStyleBlock1: { width: "150px", height: "100px"},
+
+      //       defaultCode: "/* Block 1 */\n.block1 {\nwidth: 150px;\nheight: 100px;\n\n}\n\n/* Block 2 */\n.block2 {\nwidth: 150px;\nheight: 100px;\n\n}",
+      //       blockChildrenInside: false,
+      //       blockChildrenOutside: false
+      //     },
+      //     {
+      //       id: "block1",
+      //       defaultCode: "width: 150px;\nheight: 100px;\n",
+      //       expectedStyles: [{ property: "margin", value: "50px", tolerance: 0 }],
+      //       solution: { width: "150px", height: "100px", margin: '50px' },
+      //       solutionString: 'margin: 50px',
+      //       completed: { background: 'var(--b-light)', borderRadius: '20px'},
+      //       solutionCompleted: { width: "150px", height: "100px", margin: '50px'  }
+      //     },
+      //     {
+      //       id: "block2",
+      //       defaultCode: "width: 150px;\nheight: 100px;\n",
+      //       expectedStyles: [{ property: "margin", value: "0px 0px 0px 250px", tolerance: 0 }],
+      //       solution: { width: "150px", height: "100px", margin: '0px 0px 0px 250px'},
+      //       solutionString: 'margin: 0px 0px 0px 250px',
+      //       completed: { background: 'var(--b-light)', borderRadius: '20px'},
+      //       solutionCompleted: { width: "150px", height: "100px", margin: '0px 0px 0px 250px' }
+      //     },
+      //     {
+      //       id: "blockParent",
+      //       style: {
+      //         padding: "0px",
+      //         height: "100%",
+      //         display: "flex",
+      //         flexDirection: "column",
+      //         alignItems: 'flex-start',
+      //         justifyContent: 'space-between',
+      //       }
+      //     }
+      //   ],
+      //   successMessage: "Excellent! You've mastered margins."
+      // },
 
       // Sublevel 5: BOX-SIZING
       {
         id: 5,
         name: "box-sizing",
+        evaluatedBlocks: ["block1", "block2"],
         challenge: "Apply the box-sizing property to both blocks to ensure the element's total width and height includes padding and border as shown in the target layout.",
         theory: {
           description: [
@@ -409,7 +477,8 @@ const levels = [
         blocks: [
           {
             id: "initialStylePlayground",
-            style: { boxSizing: "border-box" },
+            initialStyleBlock1: { boxSizing: "border-box" },
+            initialStyleBlock2: { width: "10px", height: "10px" },     
             defaultCode: "/* Block 1 */\n.block1 {\nPRUEBA DAFAULT SUB 5\n}\n\n/* Block 2 */\n.block2 {\n\n}"
           },
           {
