@@ -29,7 +29,7 @@ const levels = [
             defaultCode: "",
             expectedStyles: [{ property: "width", value: "200px", tolerance: 0 }],
             solution: { width: "150px" },
-            solutionString: 'width: 150px;',
+            viewSolution: 'width: 150px;',
             completed: { background: 'var(--b-light)', borderRadius: '20px', height: "50px" },
             solutionCompleted: { width: "150px" }
           },
@@ -38,7 +38,7 @@ const levels = [
             defaultCode: "",
             expectedStyles: [{ property: "width", value: "300px", tolerance: 0 }],
             solution: { width: "300px" },
-            solutionString: 'width: 300px;',
+            viewSolution: 'width: 300px;',
             completed: { height: "50px", background: 'var(--b-light)', borderRadius: '20px' },
             solutionCompleted: { width: "300px" }
           },
@@ -83,7 +83,7 @@ const levels = [
             defaultCode: "width: 100px;",
             expectedStyles: [{ property: "height", value: "120px", tolerance: 0 }],
             solution: { width: "100px", height: "120px" },
-            solutionString: 'height: 120px;',
+            viewSolution: 'height: 120px;',
             completed: { background: 'var(--b-light)', borderRadius: '20px' },
             solutionCompleted: { height: "120px" }
           },
@@ -92,7 +92,7 @@ const levels = [
             defaultCode: "width: 100px;",
             expectedStyles: [{ property: "height", value: "200px", tolerance: 0 }],
             solution: { width: "100px", height: "200px" },
-            solutionString: 'height: 200px;',
+            viewSolution: 'height: 200px;',
             completed: { background: 'var(--b-light)', borderRadius: '20px' },
             solutionCompleted: { height: "200px" }
           },
@@ -137,7 +137,7 @@ const levels = [
             defaultCode: "width: 200px;\nheight: 150px;",
             expectedStyles: [{ property: "padding", value: "20px", tolerance: 0 }],
             solution: { width: "200px", height: "150px", padding: "20px" },
-            solutionString: 'width: 200px;\nheight: 150px;\npadding: 20px;',
+            viewSolution: 'width: 200px;\nheight: 150px;\npadding: 20px;',
             completed: { background: 'var(--b-light)', borderRadius: '20px' },
             solutionCompleted: { width: "200px", height: "150px", padding: "20px" }
           },
@@ -146,7 +146,7 @@ const levels = [
             defaultCode: "width: 300px;\nheight: 180px;",
             expectedStyles: [{ property: "padding", value: "15px", tolerance: 0 }],
             solution: { width: "300px", height: "180px", padding: "15px" },
-            solutionString: 'width: 300px;\nheight: 180px;\npadding: 15px;',
+            viewSolution: 'width: 300px;\nheight: 180px;\npadding: 15px;',
             completed: { background: 'var(--b-light)', borderRadius: '20px' },
             solutionCompleted: { width: "300px", height: "180px", padding: "15px" }
           },
@@ -200,7 +200,7 @@ const levels = [
             defaultCode: "",
             expectedStyles: [{ property: "width", value: "150px", tolerance: 0 }],
             solution: { width: "150px" },
-            solutionString: 'width: 150px;',
+            viewSolution: 'width: 150px;',
             completed: { background: 'var(--b-light)', borderRadius: '20px', height: "50px" },
             solutionCompleted: { width: "150px" }
           },
@@ -209,7 +209,7 @@ const levels = [
             defaultCode: "",
             expectedStyles: [{ property: "width", value: "300px", tolerance: 0 }],
             solution: { width: "300px" },
-            solutionString: 'width: 300px;',
+            viewSolution: 'width: 300px;',
             completed: { height: "50px", background: 'var(--b-light)', borderRadius: '20px' },
             solutionCompleted: { width: "300px" }
           },
@@ -258,7 +258,7 @@ const levels = [
             defaultCode: "width: 100px;",
             expectedStyles: [{ property: "height", value: "120px", tolerance: 0 }],
             solution: { width: "100px", height: "120px" },
-            solutionString: 'height: 120px;',
+            viewSolution: 'height: 120px;',
             completed: { background: 'var(--b-light)', borderRadius: '20px' },
             solutionCompleted: { height: "120px" }
           },
@@ -267,7 +267,7 @@ const levels = [
             defaultCode: "width: 100px;",
             expectedStyles: [{ property: "height", value: "200px", tolerance: 0 }],
             solution: { width: "100px", height: "200px" },
-            solutionString: 'height: 200px;',
+            viewSolution: 'height: 200px;',
             completed: { background: 'var(--b-light)', borderRadius: '20px' },
             solutionCompleted: { height: "200px" }
           },
@@ -315,7 +315,7 @@ const levels = [
             defaultCode: "width: 200px;\nheight: 50px;",
             expectedStyles: [{ property: "padding", value: "10px", tolerance: 0 }],
             solution: { width: "200px", height: "50px", padding: "10px"},
-            solutionString: 'padding: 10px;',
+            viewSolution: 'padding: 10px;',
             completed: { background: 'var(--b-light)'},
             solutionCompleted: { width: "200px", height: "50px", padding: "10px" }
           },
@@ -324,7 +324,7 @@ const levels = [
             defaultCode: "width: 200px;\nheight: 50px;",
             expectedStyles: [{ property: "padding", value: "25px 50px 0px 50px", tolerance: 0 }],
             solution: { width: "200px", height: "50px", padding: "25px 50px 0px 50px"},
-            solutionString: 'padding: 25px 50px 0px 50px;',
+            viewSolution: 'padding: 25px 50px 0px 50px;',
             completed: { background: 'var(--b-light)'},
             solutionCompleted: { width: "200px", height: "50px", padding: "25px 50px 0px 50px"}
           },
@@ -354,7 +354,7 @@ const levels = [
         id: 4,
         name: "margin",
         evaluatedBlocks: ["block1"],
-        challenge: "Apply margin property to block 1....",
+        challenge: "Apply the margin property to Block 1 to replicate the spacing shown in the target layout. Use the shorthand syntax to set the right margin so that Block 1 is positioned correctly.",
         theory: {
           description: [
             "The margin property adds space outside the element, separating it from surrounding elements.",
@@ -378,7 +378,7 @@ const levels = [
             defaultCode: "width: 150px;\nheight: 100px;\n",
             // expectedStyles: [{ property: "margin", value: "50px", tolerance: 0 }],
             solution: { width: "150px", height: "100px", marginRight: '100px' },
-            solutionString: 'margin-right: 100px',
+            viewSolution: 'margin-right: 100px',
             completed: { background: 'var(--b-light)', borderRadius: '20px'},
             solutionCompleted: { width: "150px", height: "100px", marginRight: '100px'  }
           },
@@ -387,7 +387,7 @@ const levels = [
             defaultCode: "width: 150px;\nheight: 100px;\n",
             // expectedStyles: [{ property: "margin", value: "0px 0px 0px 250px", tolerance: 0 }],
             solution: { width: "50px", height: "50px", background: 'var(--bg-secondary)'},
-            solutionString: 'margin: 0px 0px 0px 250px',
+            viewSolution: 'margin: 0px 0px 0px 250px',
             completed: { background: 'var(--bg-secondary)', borderRadius: '20px'}
           },
           {
@@ -431,7 +431,7 @@ const levels = [
       //       defaultCode: "width: 150px;\nheight: 100px;\n",
       //       expectedStyles: [{ property: "margin", value: "50px", tolerance: 0 }],
       //       solution: { width: "150px", height: "100px", margin: '50px' },
-      //       solutionString: 'margin: 50px',
+      //       viewSolution: 'margin: 50px',
       //       completed: { background: 'var(--b-light)', borderRadius: '20px'},
       //       solutionCompleted: { width: "150px", height: "100px", margin: '50px'  }
       //     },
@@ -440,7 +440,7 @@ const levels = [
       //       defaultCode: "width: 150px;\nheight: 100px;\n",
       //       expectedStyles: [{ property: "margin", value: "0px 0px 0px 250px", tolerance: 0 }],
       //       solution: { width: "150px", height: "100px", margin: '0px 0px 0px 250px'},
-      //       solutionString: 'margin: 0px 0px 0px 250px',
+      //       viewSolution: 'margin: 0px 0px 0px 250px',
       //       completed: { background: 'var(--b-light)', borderRadius: '20px'},
       //       solutionCompleted: { width: "150px", height: "100px", margin: '0px 0px 0px 250px' }
       //     },
@@ -486,7 +486,7 @@ const levels = [
             defaultCode: "width: 200px;\nheight: 150px;\npadding: 20px;\nmargin: 10px;",
             expectedStyles: [{ property: "box-sizing", value: "border-box", tolerance: 0 }],
             solution: { width: "200px", height: "150px", padding: "20px", margin: "10px", boxSizing: "border-box" },
-            solutionString: 'width: 200px;\nheight: 150px;\npadding: 20px;\nmargin: 10px;\nbox-sizing: border-box;',
+            viewSolution: 'width: 200px;\nheight: 150px;\npadding: 20px;\nmargin: 10px;\nbox-sizing: border-box;',
             completed: { background: 'var(--b-light)', borderRadius: '20px' },
             solutionCompleted: { width: "200px", height: "150px", padding: "20px", margin: "10px", boxSizing: "border-box" }
           },
@@ -495,7 +495,7 @@ const levels = [
             defaultCode: "width: 300px;\nheight: 180px;\npadding: 15px;\nmargin: 15px;",
             expectedStyles: [{ property: "box-sizing", value: "border-box", tolerance: 0 }],
             solution: { width: "300px", height: "180px", padding: "15px", margin: "15px", boxSizing: "border-box" },
-            solutionString: 'width: 300px;\nheight: 180px;\npadding: 15px;\nmargin: 15px;\nbox-sizing: border-box;',
+            viewSolution: 'width: 300px;\nheight: 180px;\npadding: 15px;\nmargin: 15px;\nbox-sizing: border-box;',
             completed: { background: 'var(--b-light)', borderRadius: '20px' },
             solutionCompleted: { width: "300px", height: "180px", padding: "15px", margin: "15px", boxSizing: "border-box" }
           },

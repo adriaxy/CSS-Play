@@ -1,20 +1,24 @@
 import { useState, useEffect } from "react";
 import SolutionCodeSection from "../Shared/SolutionCodeSection";
+import { useGame } from "@/app/GameContext";
+import levels from "@/data/levels";
 
 export default function ModalSolution({viewSolution, solutionCode, onClick}) {
+    const {currentLevel, currentSublevel} = useGame();
+    const levelRoot = levels[currentLevel].sublevels[currentSublevel]
+    const blocksToEvaluate = levelRoot.evaluatedBlocks;
+
     const finalClass = viewSolution === true ? 'showModal' : '';
 
-    
-
     useEffect(()=> {
-        const handelKeyDown = (e) => {
+        const handleKeyDown = (e) => {
             if(e.key === 'Escape') onClick();
         }
 
         if(viewSolution === true){
-            window.addEventListener('keydown', handelKeyDown);
-            return () => {window.removeEventListener('keydown', handelKeyDown)};
+            window.addEventListener('keydown', handleKeyDown);
         }
+        return () => {window.removeEventListener('keydown', handleKeyDown)};
     }, [viewSolution])
 
     return (
@@ -54,8 +58,15 @@ export default function ModalSolution({viewSolution, solutionCode, onClick}) {
                     </button>
                 </div>
                 <div className='solution-code'>
-                    <SolutionCodeSection blockId={'block1'} solutionCode={solutionCode[1].solutionString}/>
-                    <SolutionCodeSection blockId={'block2'} solutionCode={solutionCode[2].solutionString}/>
+                    {
+                        blocksToEvaluate.map((blockId) => {
+                            const block = levelRoot.blocks.find(b => b.id === blockId);
+                            if (!block) return null;
+                            return (
+                                <SolutionCodeSection key={blockId} blockId={blockId} solutionCode={block.viewSolution}/>
+                            )
+                        })
+                    }
                 </div>
             </div>
         </div>

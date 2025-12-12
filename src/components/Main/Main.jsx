@@ -33,7 +33,6 @@ export default function Main({levelNum, sublevelNum, challenge, defaultCode, sol
                     numOfSublevels={numOfSublevels}
                 />
             </section>
-            <div></div>
             <section className="main__theory">
                 <Theory 
                     cssPropertyName={name}
