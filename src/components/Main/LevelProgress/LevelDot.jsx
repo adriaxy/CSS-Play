@@ -7,20 +7,20 @@ import levels from '@/data/levels';
 export default function LevelDot({ isCompleted, dotName }) {
     const {currentLevel} = useGame();
     const pageLevel = levels[currentLevel].level;
-    let [isHovered, setIsHovered] = useState('')
+    let [isHovered, setIsHovered] = useState('');
 
     return (
-        <Link href={`/level/${pageLevel}/${dotName}`} className="level-dot-wrapper">
-        <div
-            onMouseEnter={() => setIsHovered('show')}
-            onMouseLeave={() => setIsHovered('')}
+        <Link
+        href={`/level/${pageLevel}/${dotName}`}
+        className="level-dot-wrapper"
+        onMouseEnter={() => setIsHovered('show')}
+        onMouseLeave={() => setIsHovered('')}
         >
-            <button className={`level-dot ${isCompleted}`} />
-            <span className={`level-dot__sublevel-name ${isHovered}`}>
+        <button className={`level-dot ${isCompleted}`} />
+        <span className={`level-dot__sublevel-name ${isHovered}`}>
             {dotName}
             <span className="level-dot__sublevel-name__edge"></span>
-            </span>
-        </div>
+        </span>
         </Link>
     );
 }
