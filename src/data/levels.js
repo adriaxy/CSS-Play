@@ -403,9 +403,9 @@ const levels = [
       {
         id: 5,
         name: "box-sizing",
-        evaluatedBlocks: ["block1", "block2"],
+        evaluatedBlocks: ["block1"],
         totalBlocks: ["block1", "block2"],
-        challenge: "Apply the box-sizing property to both blocks to ensure the element's total width and height includes padding and border as shown in the target layout.",
+        challenge: "Apply the box-sizing property to Block 1 so that the element’s total width and height exactly match the values defined in the code, including padding and border.",
         theory: {
           description: [
             "The box-sizing property changes how the total width and height of an element are calculated.",
@@ -418,27 +418,15 @@ const levels = [
         blocks: [
           {
             id: "initialStylePlayground",
-            initialStyleBlock1: { boxSizing: "border-box", width: "200px", height: "100px" },
-            initialStyleBlock2: { width: "10px", height: "10px" },     
-            defaultCode: "/* Block 1 */\n.block1 {\n\n}\n\n/* Block 2 */\n.block2 {\n\n}"
+            defaultCode: "/* Block 1 */\n.block1 {\nwidth: 100px;\nheight: 100px;\n\n}\n\n"
           },
           {
             id: "block1",
             group: "group1",
-            defaultCode: "width: 200px;\nheight: 150px;\npadding: 20px;\nmargin: 10px;",
-            solution: { width: "200px", height: "150px", padding: "20px", margin: "10px", boxSizing: "border-box" },
-            viewSolution: 'width: 200px;\nheight: 150px;\npadding: 20px;\nmargin: 10px;\nbox-sizing: border-box;',
-            completed: { background: 'var(--b-light)', borderRadius: '20px' },
-            solutionCompleted: { width: "200px", height: "150px", padding: "20px", margin: "10px", boxSizing: "border-box" }
-          },
-          {
-            id: "block2",
-            group: "group2",
-            defaultCode: "width: 300px;\nheight: 180px;\npadding: 15px;\nmargin: 15px;",
-            solution: { width: "300px", height: "180px", padding: "15px", margin: "15px", boxSizing: "border-box" },
-            viewSolution: 'width: 300px;\nheight: 180px;\npadding: 15px;\nmargin: 15px;\nbox-sizing: border-box;',
-            completed: { background: 'var(--b-light)', borderRadius: '20px' },
-            solutionCompleted: { width: "300px", height: "180px", padding: "15px", margin: "15px", boxSizing: "border-box" }
+            initialStyle: { boxSizing: "content-box", width: "100px", height: "100px", background: 'var(--b-light)', borderRadius: '20px', border: '15px solid var(--highlight-yellow)' },
+            defaultCode: "width: 100px;\nheight: 100px;\npadding: 20px;\nmargin: 10px;",
+            solution: { width: "100px", height: "100px", boxSizing: "border-box" },
+            viewSolution: 'box-sizing: border-box'
           },
           {
             id: "blockParent",
