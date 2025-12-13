@@ -47,7 +47,6 @@ export default function SublevelGame({ level, sublevel }) {
         sublevelNum={s.id}
         challenge={s.challenge}
         name={s.name}
-        theoryText={s.theory.description}
         solution={s.blocks}
         numOfSublevels={level.sublevels.length}
       />

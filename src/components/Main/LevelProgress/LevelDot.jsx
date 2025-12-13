@@ -11,10 +11,10 @@ export default function LevelDot({ isCompleted, dotName }) {
 
     return (
         <Link
-        href={`/level/${pageLevel}/${dotName}`}
-        className="level-dot-wrapper"
-        onMouseEnter={() => setIsHovered('show')}
-        onMouseLeave={() => setIsHovered('')}
+            href={`/level/${pageLevel}/${dotName}`}
+            className="level-dot-wrapper"
+            onMouseEnter={() => setIsHovered('show')}
+            onMouseLeave={() => setIsHovered('')}
         >
         <button className={`level-dot ${isCompleted}`} />
         <span className={`level-dot__sublevel-name ${isHovered}`}>

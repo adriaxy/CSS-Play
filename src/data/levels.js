@@ -1,9 +1,9 @@
 const levels = [
   {
+      // PRUEBA NIVEL 1 (SOLO EL NIVEL 2 ESTA COMPLETO --- VER MÁS ABAJO)
     level: 1,
     name: "Dimensions and Spacing",
     sublevels: [
-      // Sublevel 1: WIDTH
       {
         id: 1-1,
         name: "1-1",
@@ -17,7 +17,7 @@ const levels = [
             "You can set width using various units like pixels (px), percentages (%), or relative units (em, rem).",
             "Using width properly helps control layout and alignment of elements."
           ],
-          syntax: "width: 200px;"
+          syntax: ["width: 200px;"]
         },
         blocks: [
           {
@@ -60,7 +60,6 @@ const levels = [
         successMessage: "Great! You've learned how width works."
       },
 
-      // Sublevel 2: HEIGHT
       {
         id: 1-2,
         name: "1.2",
@@ -74,7 +73,7 @@ const levels = [
             "You can assign height values in pixels, percentages, or relative units.",
             "Height is essential to control layout and spacing vertically."
           ],
-          syntax: "height: 150px;"
+          syntax: ["height: 150px;"]
         },
         blocks: [
           {
@@ -117,6 +116,7 @@ const levels = [
     ]
   },
   {
+    // NIVEL 2 COMPLETO ==>
     level: 2,
     name: "Dimensions and Spacing",
     sublevels: [
@@ -126,16 +126,22 @@ const levels = [
         name: "width",
         evaluatedBlocks: ["block1", "block2"],
         totalBlocks: ["block1", "block2"],
-        challenge: "Apply the width property to both blocks so that each one matches the required width shown in the target layout.",
+        challenge: "Apply the width property to both blocks so that each one matches the required width shown in the target layout, using pixel values.",
         theory: {
-          description: [
-            "The width property defines the horizontal size of an element's content area.",
-            "It determines how wide the element appears on the page, without affecting the height.",
-            "You can set width using various units like pixels (px), percentages (%), or relative units (em, rem).",
-            "Using width properly helps control layout and alignment of elements."
-          ],
-          syntax: "width: 200px;"
-        },
+        description: [
+          "The width property defines the horizontal size of an element’s content area.",
+          "By default, it only affects the content box and does not include padding, border, or margin.",
+          "Setting a width allows you to control how elements occupy space within a layout.",
+          "The final visible size of an element can change depending on other properties such as `padding`, `border`, and `box-sizing`.",
+          "Using `width` effectively is essential for building consistent and predictable layouts."
+        ],
+        syntax: [
+          "/* Fixed width */\nwidth: 200px;",
+          "/* Relative to parent */\nwidth: 50%;",
+          "/* Responsive units */\nwidth: 10rem;",
+          "/* Automatic width (default) */\nwidth: auto;"
+        ]
+      },
         blocks: [
           {
             id: "initialStylePlayground",
@@ -185,14 +191,20 @@ const levels = [
         totalBlocks: ["block1", "block2"],
         challenge: "Apply the height property to both blocks so that each one matches the required height shown in the target layout.",
         theory: {
-          description: [
-            "The height property defines the vertical size of an element's content area.",
-            "It determines how tall the element appears on the page, without affecting the width.",
-            "You can assign height values in pixels, percentages, or relative units.",
-            "Height is essential to control layout and spacing vertically."
-          ],
-          syntax: "height: 150px;"
-        },
+        description: [
+          "The height property defines the vertical size of an element’s content area.",
+          "By default, it only affects the content box and does not include padding, border, or margin.",
+          "Setting a height allows you to control how tall elements appear on the page.",
+          "The final visible height can change depending on other properties such as `padding`, `border`, and `box-sizing`.",
+          "Using height effectively helps maintain layout consistency and alignment."
+        ],
+        syntax: [
+          "/* Fixed height */\nheight: 100px;",
+          "/* Relative to parent */\nheight: 50%;",
+          "/* Responsive units */\nheight: 10rem;",
+          "/* Automatic height (default) */\nheight: auto;"
+        ]
+      },
         blocks: [
           {
             id: "initialStylePlayground",
@@ -239,14 +251,20 @@ const levels = [
         totalBlocks: ["block1", "block2"],
         challenge: "Apply the padding property to both blocks so that each one matches the required spacing shown in the target layout.",
         theory: {
-          description: [
-            "The padding property adds space inside the element, between its content and its border.",
-            "It helps create breathing room for content and improves readability.",
-            "You can set padding individually for top, right, bottom, and left, or all sides at once.",
-            "Proper use of padding improves the visual structure of your elements."
-          ],
-          syntax: "padding: 20px;"
-        },
+        description: [
+          "The padding property adds space inside an element, between its content and its border.",
+          "It helps create breathing room for content and improves readability.",
+          "You can set padding individually for top, right, bottom, and left, or all sides at once.",
+          "Proper use of padding improves the visual structure and spacing within an element.",
+          "Padding affects the element’s total size unless `box-sizing` is adjusted."
+        ],
+        syntax: [
+          "/* Same padding on all sides */\npadding: 20px;",
+          "/* Vertical | Horizontal */\npadding: 10px 20px;",
+          "/* Top | Right | Bottom | Left */\npadding: 5px 10px 15px 20px;",
+          "/* Individual sides */\npadding-top: 10px;\npadding-right: 15px;\npadding-bottom: 10px;\npadding-left: 15px;"
+        ]
+      },
         blocks: [
           {
             id: "initialStylePlayground",
@@ -299,14 +317,20 @@ const levels = [
         totalBlocks: ["block1", "block2"],
         challenge: "Apply the margin property to Block 1 to replicate the spacing shown in the target layout. Use the shorthand syntax to set the right margin so that Block 1 is positioned correctly.",
         theory: {
-          description: [
-            "The margin property adds space outside the element, separating it from surrounding elements.",
-            "It helps position elements and maintain visual balance.",
-            "You can define margins for each side or all sides at once.",
-            "Using margins correctly helps control layout spacing and alignment."
-          ],
-          syntax: "margin: 10px;"
-        },
+        description: [
+          "The margin property adds space outside an element, separating it from surrounding elements.",
+          "It is essential for controlling spacing between elements and maintaining visual balance.",
+          "Margins can collapse under certain conditions, so understanding margin behavior is important.",
+          "You can set margins individually for top, right, bottom, and left, or all sides at once.",
+          "Proper use of margin helps align elements and prevent overlapping or overcrowding."
+        ],
+        syntax: [
+          "/* Same margin on all sides */\nmargin: 20px;",
+          "/* Vertical | Horizontal */\nmargin: 10px 20px;",
+          "/* Top | Right | Bottom | Left */\nmargin: 5px 10px 15px 20px;",
+          "/* Individual sides */\nmargin-top: 10px;\nmargin-right: 15px;\nmargin-bottom: 10px;\nmargin-left: 15px;"
+        ]
+      },
         blocks: [
           {
             id: "initialStylePlayground",
@@ -353,14 +377,18 @@ const levels = [
         totalBlocks: ["block1", "block2"],
         challenge: "Apply the box-sizing property to Block 1 so that the element’s total width and height exactly match the values defined in the code, including padding and border.",
         theory: {
-          description: [
-            "The box-sizing property changes how the total width and height of an element are calculated.",
-            "With box-sizing: border-box, padding and border are included inside the width and height you set.",
-            "It helps prevent elements from growing unexpectedly when adding padding or borders.",
-            "Using box-sizing improves consistency in layout sizing."
-          ],
-          syntax: "box-sizing: border-box;"
-        },
+        description: [
+          "The `box-sizing` property controls how the total width and height of an element are calculated.",
+          "By default, elements use `content-box`, meaning width and height only apply to the content area, not padding or border.",
+          "Changing box-sizing affects layout calculations and can simplify handling element sizes with padding and border.",
+          "It is essential for creating predictable, maintainable layouts, especially in complex designs."
+        ],
+        syntax: [
+          "/* Default */\nbox-sizing: content-box;",
+          "/* Include padding and border in width/height */\nbox-sizing: border-box;",
+          "/* Apply to all elements (common practice) */\n* {\n  box-sizing: border-box;\n}"
+        ]
+      },
         blocks: [
           {
             id: "initialStylePlayground",

@@ -26,7 +26,8 @@
         "editor arena"
         "editor theory"
     ;
-    min-height: calc(100vh - 70px);
+    /* min-height: calc(100vh - 70px); */
+    height: calc(100vh - 80px);
     gap: var(--gap-main);
 }
 
@@ -61,4 +62,6 @@
     grid-area: theory;
     border-radius: var(--border-radius-l);
     overflow: hidden;
+    display: flex;
+    flex-direction: column;
 }

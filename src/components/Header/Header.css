@@ -7,7 +7,7 @@
     background: linear-gradient(to right, var(--gradient-darkest), var(--bg-darkest), var(--gradient-darkest));
     border-radius: var(--border-radius-xl) var(--border-radius-xl) 0 0;
     overflow: hidden;
-    border-bottom: 0.5px solid var(--border-dark);
+    border-bottom: 1px solid var(--border-dark);
 }
 
 .header__logo{

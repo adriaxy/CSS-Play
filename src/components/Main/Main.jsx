@@ -6,7 +6,7 @@ import Theory from './Theory/Theory';
 import LevelProgress from './LevelProgress/LevelProgress';
 import { useGame } from '@/app/GameContext';
 
-export default function Main({levelNum, sublevelNum, challenge, defaultCode, solution, theoryText, name, numOfSublevels}){
+export default function Main({levelNum, sublevelNum, challenge, defaultCode, solution, name, numOfSublevels}){
     const { currentLevel, currentSublevel } = useGame();
     return (
         <main className='main'>
@@ -35,8 +35,7 @@ export default function Main({levelNum, sublevelNum, challenge, defaultCode, sol
             </section>
             <section className="main__theory">
                 <Theory 
-                    cssPropertyName={name}
-                    theoryText={theoryText}    
+                    cssPropertyName={name}  
                 />
             </section>
         </main>
