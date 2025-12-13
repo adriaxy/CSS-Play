@@ -42,11 +42,7 @@ export default function SublevelGame({ level, sublevel }) {
       />
 
       <Main
-        levelNum={levelId}
-        sublevelNum={s.id}
-        challenge={s.challenge}
         name={s.name}
-        solution={s.blocks}
         numOfSublevels={level.sublevels.length}
       />
     </>

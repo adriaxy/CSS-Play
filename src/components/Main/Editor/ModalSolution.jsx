@@ -3,7 +3,7 @@ import SolutionCodeSection from "../Shared/SolutionCodeSection";
 import { useGame } from "@/app/GameContext";
 import levels from "@/data/levels";
 
-export default function ModalSolution({viewSolution, solutionCode, onClick}) {
+export default function ModalSolution({viewSolution, onClick}) {
     const {currentLevel, currentSublevel} = useGame();
     const levelRoot = levels[currentLevel].sublevels[currentSublevel]
     const blocksToEvaluate = levelRoot.evaluatedBlocks;
