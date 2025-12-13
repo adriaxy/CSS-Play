@@ -2,31 +2,29 @@
 import { useRouter } from "next/navigation";
 import Header from "@/components/Header/Header";
 import Main from "@/components/Main/Main";
+import { useGame } from "@/app/GameContext";
 
-export default function SublevelGame({ level, sublevel }) {
+export default function SublevelGame() {
+  const { currentSublevel, currentLevelData } = useGame(); 
   const router = useRouter();
-  const levelId = level.level;
-
-  const sublevelIndex = level.sublevels.findIndex(s => s.name === sublevel.name);
-
-  const goToPrev = () => {
-    const prevIndex = sublevelIndex - 1;
-    if (prevIndex < 0) return;
-
-    const name = level.sublevels[prevIndex].name;
-    router.replace(`/level/${levelId}/${name}`, { scroll: false });
-  };
+  const levelSublevels = currentLevelData.sublevels;
 
   const goToNext = () => {
-    const nextIndex = sublevelIndex + 1;
-    if (nextIndex >= level.sublevels.length) return;
-
-    const name = level.sublevels[nextIndex].name;
-    router.replace(`/level/${levelId}/${name}`, { scroll: false });
+      if (currentSublevel + 1 < levelSublevels.length) {
+          const nextName = levelSublevels[currentSublevel + 1].name;
+          router.replace(`/level/${currentLevelData.level}/${nextName}`);
+      }
   };
 
-  const isPrevDisabled = sublevelIndex === 0;
-  const isNextDisabled = sublevelIndex === level.sublevels.length - 1;
+  const goToPrev = () => {
+      if (currentSublevel - 1 >= 0) {
+          const nextName = levelSublevels[currentSublevel - 1].name;
+          router.replace(`/level/${currentLevelData.level}/${nextName}`);
+      }
+  };
+
+  const isPrevDisabled = currentSublevel === 0;
+  const isNextDisabled = currentSublevel === levelSublevels.length - 1;
 
   return (
     <>
