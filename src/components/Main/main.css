@@ -23,11 +23,15 @@
     grid-template-columns: 1fr 1fr;
     grid-template-rows: auto 1fr;
     grid-template-areas: 
+        "theory arena"
+        "theory editor"
+    ;
+    /* grid-template-areas: 
         "editor arena"
         "editor theory"
-    ;
+    ; */
     /* min-height: calc(100vh - 70px); */
-    height: calc(100vh - 80px);
+    height: calc(100vh - 130px);
     gap: var(--gap-main);
 }
 

@@ -378,7 +378,7 @@ const levels = [
         challenge: "Apply the box-sizing property to Block 1 so that the element’s total width and height exactly match the values defined in the code, including padding and border.",
         theory: {
         description: [
-          "The `box-sizing` property controls how the total width and height of an element are calculated.",
+          "The box-sizing property controls how the total width and height of an element are calculated.",
           "By default, elements use `content-box`, meaning width and height only apply to the content area, not padding or border.",
           "Changing box-sizing affects layout calculations and can simplify handling element sizes with padding and border.",
           "It is essential for creating predictable, maintainable layouts, especially in complex designs."
