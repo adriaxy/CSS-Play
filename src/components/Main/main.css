@@ -27,15 +27,15 @@
         "editor theory"
     ;
     /* min-height: calc(100vh - 70px); */
-    height: calc(100vh - 80px);
+    height: calc(100vh - 65px);
     gap: var(--gap-main);
 }
 
 .main__editor,
 .main__theory, 
 .main__level-progress{
-    border: 1px solid var(--border-dark);
-    border-radius: var(--border-radius-l);
+    /* border: 1px solid var(--border-dark);
+    border-radius: var(--border-radius-l); */
 }
 
 .main__editor{

@@ -6,11 +6,14 @@ import ModalSolution from './ModalSolution';
 import { useGame } from '@/app/GameContext';
 import { useEffect } from 'react';
 import LevelProgress from '../LevelProgress/LevelProgress';
+import levels from '@/data/levels';
 
 export default function Editor ({levelNum, sublevelNum, challenge, name, solutionCode}){
   const boldTarget = `${name} property`;
   const parts = challenge.split(boldTarget);
-  const {code, setCode, initialGameCode, viewSolution, setViewSolution, sublevelState, setSublevelState} = useGame();
+  const {code, setCode, initialGameCode, viewSolution, setViewSolution, sublevelState, setSublevelState, currentLevel, currentSublevel} = useGame();
+  const levelRoot = levels[currentLevel];
+  const sublevelName = levelRoot.sublevels[currentSublevel].name.toUpperCase();
 
   const currentSublevelState = sublevelState[levelNum - 1][sublevelNum - 1]
   const defaultSublevelCode = currentSublevelState.defaultCode;
@@ -61,7 +64,8 @@ export default function Editor ({levelNum, sublevelNum, challenge, name, solutio
               <path d="M15 11l0 .01" />
               <path d="M18 13l0 .01" />
             </svg>
-            <span>Level <span>{levelNum}</span> <span className='editor__title--light-typo'>- CHALLENGE <span>{sublevelNum}</span></span></span>
+            <span>CHALLENGE <span>{sublevelNum}</span><span className='editor__title--light-typo'> - {sublevelName}</span></span>
+            {/* <span>Level <span>{levelNum}</span> <span className='editor__title--light-typo'>- CHALLENGE <span>{sublevelNum}</span></span></span> */}
           </SubHeaderSection>
           <p className='editor__challenge'>
             {parts[0]}

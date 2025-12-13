@@ -35,7 +35,6 @@ export default function SublevelGame({ level, sublevel }) {
   return (
     <>
       <Header
-        title={s.name.toUpperCase()}
         onPrev={goToPrev}
         onNext={goToNext}
         isPrevDisabled={isPrevDisabled}

@@ -7,13 +7,17 @@ import ThemeModeButton from './ThemeModeButton';
 import levels from '@/data/levels';
 import { useGame } from '@/app/GameContext';
 
-export default function Header({title, onPrev, onNext, isPrevDisabled, isNextDisabled}) {
+export default function Header({ onPrev, onNext, isPrevDisabled, isNextDisabled}) {
+    const { currentLevel, currentSublevel } = useGame();
+    const levelRoot = levels[currentLevel];
+    const sublevelName = levelRoot.sublevels[currentSublevel].name.toUpperCase();
+
     return (
         <header className="header">
             <LogoButton />
             <PrevChallengeButton onClick={onPrev} isPrevDisabled={isPrevDisabled}/>
             <div className="header__center">
-                {<h1 className='header__title'>CSS Property: <span className="header__title--highlight">{title}</span></h1>}
+                {<h1 className='header__title'>Level {levelRoot.level} : <span className="header__title--highlight">{sublevelName}</span></h1>}
             <div className="header__title-outline"></div>
             </div>
             <NextChallengeButton onClick={onNext} isNextDisabled={isNextDisabled}/>
