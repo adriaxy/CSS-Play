@@ -5,12 +5,10 @@ import BlockContainer from "../Shared/BlockContainer"
 import './Playground.css'
 import Grid from "../Shared/Grid"
 import { useGame } from "@/app/GameContext"
-import levels from "@/data/levels"
 
 export default function Playground(){
-    const {currentLevel, currentSublevel} = useGame();
-    const levelRoot = levels[currentLevel].sublevels[currentSublevel]
-    const blocksToRender = levelRoot.totalBlocks;
+    const {currentSublevelData} = useGame();
+    const blocksToRender = currentSublevelData.totalBlocks;
     
     return(
         <div className='playground'>
@@ -27,7 +25,7 @@ export default function Playground(){
                 <Grid/>
                 {
                     blocksToRender.map((blockId) => {
-                        const block = levelRoot.blocks.find(b => b.id === blockId);
+                        const block = currentSublevelData.blocks.find(b => b.id === blockId);
                         if (!block) return null;
                         return (
                             <Block 
@@ -44,4 +42,3 @@ export default function Playground(){
         </div>
     )
 }
-

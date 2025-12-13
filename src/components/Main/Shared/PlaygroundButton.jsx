@@ -1,5 +1,4 @@
 import './PlaygroundButton.css'
-import { useState } from 'react'
 import { useGame } from '@/app/GameContext';
 
 export default function PlaygroundButton({buttonLabel, type}){

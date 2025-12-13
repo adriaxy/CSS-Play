@@ -2,11 +2,10 @@ import { useState } from 'react';
 import './LevelDot.css';
 import Link from 'next/link';
 import { useGame } from '@/app/GameContext';
-import levels from '@/data/levels';
 
 export default function LevelDot({ isCompleted, dotName }) {
-    const {currentLevel} = useGame();
-    const pageLevel = levels[currentLevel].level;
+    const {currentLevelData} = useGame();
+    const pageLevel = currentLevelData.level;
     let [isHovered, setIsHovered] = useState('');
 
     return (

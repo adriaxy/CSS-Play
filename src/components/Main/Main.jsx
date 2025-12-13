@@ -4,10 +4,9 @@ import Playground from './Playground/Playground';
 import TargetLayout from './TargetLayout/TargetLayout';
 import Theory from './Theory/Theory';
 import LevelProgress from './LevelProgress/LevelProgress';
-import { useGame } from '@/app/GameContext';
 
-export default function Main({name, numOfSublevels}){
-    const { currentLevel, currentSublevel } = useGame();
+export default function Main(){
+
     return (
         <main className='main'>
             <section className="main__editor">
@@ -20,16 +19,10 @@ export default function Main({name, numOfSublevels}){
                 <section className="main__target">
                     <TargetLayout/>
                 </section>
-                <LevelProgress 
-                    level={currentLevel + 1}
-                    sublevel={currentSublevel + 1}
-                    numOfSublevels={numOfSublevels}
-                />
+                <LevelProgress/>
             </section>
             <section className="main__theory">
-                <Theory 
-                    cssPropertyName={name}  
-                />
+                <Theory/>
             </section>
         </main>
     )

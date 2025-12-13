@@ -1,10 +1,9 @@
 import './BlockContainer.css'
 import { useGame } from "@/app/GameContext"
-import levels from '@/data/levels';
 
 export default function BlockContainer({blockId, children}){
-    const {evaluationResult, sublevelState, currentSublevel, currentLevel} = useGame();
-    const containerStyles = levels[currentLevel].sublevels[currentSublevel].blocks.find(b => b.id === "blockParent").style
+    const {evaluationResult, sublevelState, currentSublevel, currentLevel, currentSublevelData} = useGame();
+    const containerStyles = currentSublevelData.blocks.find(b => b.id === "blockParent").style
     const isCompleted = sublevelState[currentLevel][currentSublevel].completed ? 'completed' : ''; 
 
     if(blockId === 'target'){

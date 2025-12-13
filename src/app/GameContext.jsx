@@ -9,6 +9,7 @@ const GameContext = createContext();
 export function GameProvider({ initialLevel, initialSublevel, children}){
     const [currentLevel, setCurrentLevel] = useState(initialLevel);
     const [currentSublevel, setCurrentSublevel] = useState(initialSublevel);
+    
 
     const currentLevelData = levels[currentLevel];
     const currentSublevelData = currentLevelData.sublevels[currentSublevel];
@@ -146,7 +147,7 @@ export function GameProvider({ initialLevel, initialSublevel, children}){
     }, [completedBlocks, currentLevel, currentSublevel])
 
     return (
-        <GameContext.Provider value={{code, setCode, hoveredBlock, setHoveredBlock, initialGameCode, viewSolution, setViewSolution, blockStyles, completedBlocks, setCompletedBlocks, evaluationResult, showGrid, setShowGrid, sublevelState, setSublevelState, setCurrentLevel, setCurrentSublevel, currentSublevel, currentLevel}}>
+        <GameContext.Provider value={{code, setCode, hoveredBlock, setHoveredBlock, initialGameCode, viewSolution, setViewSolution, blockStyles, completedBlocks, setCompletedBlocks, evaluationResult, showGrid, setShowGrid, sublevelState, setSublevelState, setCurrentLevel, setCurrentSublevel, currentSublevel, currentLevel, currentLevelData, currentSublevelData}}>
             {children}
         </GameContext.Provider>
     )

@@ -1,12 +1,10 @@
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 import SolutionCodeSection from "../Shared/SolutionCodeSection";
 import { useGame } from "@/app/GameContext";
-import levels from "@/data/levels";
 
 export default function ModalSolution({viewSolution, onClick}) {
-    const {currentLevel, currentSublevel} = useGame();
-    const levelRoot = levels[currentLevel].sublevels[currentSublevel]
-    const blocksToEvaluate = levelRoot.evaluatedBlocks;
+    const {currentSublevelData} = useGame();
+    const blocksToEvaluate = currentSublevelData.evaluatedBlocks;
 
     const finalClass = viewSolution === true ? 'showModal' : '';
 
@@ -60,7 +58,7 @@ export default function ModalSolution({viewSolution, onClick}) {
                 <div className='solution-code'>
                     {
                         blocksToEvaluate.map((blockId) => {
-                            const block = levelRoot.blocks.find(b => b.id === blockId);
+                            const block = currentSublevelData.blocks.find(b => b.id === blockId);
                             if (!block) return null;
                             return (
                                 <SolutionCodeSection key={blockId} blockId={blockId} solutionCode={block.viewSolution}/>

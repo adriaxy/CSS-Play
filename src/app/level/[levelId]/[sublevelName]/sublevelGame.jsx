@@ -30,8 +30,6 @@ export default function SublevelGame({ level, sublevel }) {
   const isPrevDisabled = sublevelIndex === 0;
   const isNextDisabled = sublevelIndex === level.sublevels.length - 1;
 
-  const s = level.sublevels[sublevelIndex];
-
   return (
     <>
       <Header
@@ -40,11 +38,7 @@ export default function SublevelGame({ level, sublevel }) {
         isPrevDisabled={isPrevDisabled}
         isNextDisabled={isNextDisabled}
       />
-
-      <Main
-        name={s.name}
-        numOfSublevels={level.sublevels.length}
-      />
+      <Main/>
     </>
   );
 }

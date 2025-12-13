@@ -1,4 +1,3 @@
-import { Children } from 'react'
 import './EditorButton.css'
 
 export default function editorButton({onClick, children}) {

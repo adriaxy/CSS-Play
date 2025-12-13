@@ -1,16 +1,12 @@
 import './Block.css'
 import { useGame } from '@/app/GameContext'
 import { useEffect } from 'react';
-import levels from '@/data/levels';
 
 export default function Block({blockId, style, group, blockSolution, playground = false}) {
-    const {hoveredBlock, setHoveredBlock, sublevelState, currentSublevel, currentLevel, setSublevelState} = useGame();
-    const hasBlockChildrenInside = levels[currentLevel].sublevels[currentSublevel].blocks[0].blockChildrenInside;
-    const insideChildrenStyles = levels[currentLevel].sublevels[currentSublevel]?.blocks[4]?.style;
-    const insideChildrenText = levels[currentLevel].sublevels[currentSublevel]?.blocks[4]?.text;
-
-    const hasBlockChildrenOutside = levels[currentLevel].sublevels[currentSublevel].blocks[0].blockChildrenOutside;
-    
+    const {hoveredBlock, setHoveredBlock, sublevelState, currentSublevel, currentLevel, setSublevelState, currentSublevelData} = useGame();
+    const hasBlockChildrenInside = currentSublevelData.blocks[0].blockChildrenInside;
+    const insideChildrenStyles = currentSublevelData?.blocks[4]?.style;
+    const insideChildrenText = currentSublevelData?.blocks[4]?.text;    
 
     const blockIdPlayground = playground === true ? blockId.replace(' ', '') : null;
     const isHovered = hoveredBlock === group;

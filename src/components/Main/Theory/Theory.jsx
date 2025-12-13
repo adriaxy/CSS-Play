@@ -1,14 +1,11 @@
 import './Theory.css'
 import SubHeaderSection from '../Shared/SubHeaderSection'
-import css from 'styled-jsx/css'
 import { useGame } from '@/app/GameContext'
-import levels from '@/data/levels'
 
-export default function Theory({cssPropertyName}){
-    const { currentLevel, currentSublevel } = useGame();
-    const levelRoot = levels[currentLevel].sublevels[currentSublevel];
-    const description = levelRoot.theory.description;
-    const syntax = levelRoot.theory.syntax;
+export default function Theory(){
+    const { currentSublevelData } = useGame();
+    const description = currentSublevelData.theory.description;
+    const syntax = currentSublevelData.theory.syntax;
 
     return(
         <>
@@ -29,7 +26,7 @@ export default function Theory({cssPropertyName}){
                 <path d="M12 6l0 13" />
                 <path d="M21 6l0 13" />
                 </svg>
-            <span className='theory__title--light'>CSS property: <span className='theory__title--bold'>{cssPropertyName.toUpperCase()}</span></span>
+            <span className='theory__title--light'>CSS property: <span className='theory__title--bold'>{currentSublevelData.name.toUpperCase()}</span></span>
             </SubHeaderSection>
             <div className="theory__text">
                 <div className="theory__text-limit">
