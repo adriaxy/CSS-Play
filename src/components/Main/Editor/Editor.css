@@ -17,6 +17,7 @@
     color: var(--text-on-dark);
     font-weight: var(--text-regular);
     text-align: center;
+    font-size: var(--text-m);
 }
 
 .editor__challenge--bold{

@@ -41,12 +41,12 @@
   --text-xxs: 11px;
   --text-xs: 12px;
   --text-s: 15px;
-  --text-m: 16px;
+  --text-m: 16.2px;
   --text-l: 20px;
   --text-xl: 25px;
 
   /* Font weight */
-  --text-bold: 600;
+  --text-bold: 500;
   --text-medium: 500;
   --text-regular: 300;
   --text-light: 200;

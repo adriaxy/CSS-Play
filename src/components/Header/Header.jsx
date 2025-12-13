@@ -15,7 +15,7 @@ export default function Header({ onPrev, onNext, isPrevDisabled, isNextDisabled}
             <LogoButton />
             <PrevChallengeButton onClick={onPrev} isPrevDisabled={isPrevDisabled}/>
             <div className="header__center">
-                {<h1 className='header__title'>Level {currentLevelData.level} : <span className="header__title--highlight">{sublevelName}</span></h1>}
+                {<h1 className='header__title'>Level {currentLevelData.level} : <span>{currentLevelData.name}</span></h1>}
             <div className="header__title-outline"></div>
             </div>
             <NextChallengeButton onClick={onNext} isNextDisabled={isNextDisabled}/>

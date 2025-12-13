@@ -2,13 +2,11 @@
 import { useRouter } from "next/navigation";
 import Header from "@/components/Header/Header";
 import Main from "@/components/Main/Main";
-import levels from "@/data/levels";
 
 export default function SublevelGame({ level, sublevel }) {
   const router = useRouter();
   const levelId = level.level;
 
-  const levelIndex = levels.findIndex(l => l.level === level.level);
   const sublevelIndex = level.sublevels.findIndex(s => s.name === sublevel.name);
 
   const goToPrev = () => {
