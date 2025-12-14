@@ -119,6 +119,7 @@ const levels = [
     // NIVEL 2 COMPLETO ==>
     level: 2,
     name: "Dimensions and Spacing",
+    successMessage: "You’ve successfully completed the Dimensions & Spacing level! You mastered essential CSS properties like padding, margin, width, height, and box-sizing. Keep experimenting and applying what you’ve learned",
     sublevels: [
       // Sublevel 1: WIDTH
       {
@@ -189,7 +190,7 @@ const levels = [
         name: "height",
         evaluatedBlocks: ["block1", "block2"],
         totalBlocks: ["block1", "block2"],
-        challenge: "Apply the height property to both blocks so that each one matches the required height shown in the target layout.",
+        challenge: "Apply the height property to both blocks so that each one matches the required height shown in the target layout, using pixel values.",
         theory: {
         description: [
           "The height property defines the vertical size of an element’s content area.",
@@ -249,7 +250,7 @@ const levels = [
         name: "padding",
         evaluatedBlocks: ["block1", "block2"],
         totalBlocks: ["block1", "block2"],
-        challenge: "Apply the padding property to both blocks so that each one matches the required spacing shown in the target layout.",
+        challenge: "Apply the padding property to both blocks so that each one matches the required spacing shown in the target layout, using pixel values.",
         theory: {
         description: [
           "The padding property adds space inside an element, between its content and its border.",
@@ -315,7 +316,7 @@ const levels = [
         name: "margin",
         evaluatedBlocks: ["block1"],
         totalBlocks: ["block1", "block2"],
-        challenge: "Apply the margin property to Block 1 to replicate the spacing shown in the target layout. Use the shorthand syntax to set the right margin so that Block 1 is positioned correctly.",
+        challenge: "Apply the margin property to Block 1 to replicate the spacing shown in the target layout. Use the shorthand syntax to set the right margin so that Block 1 is positioned correctly. Use pixel values.",
         theory: {
         description: [
           "The margin property adds space outside an element, separating it from surrounding elements.",

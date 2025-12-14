@@ -16,6 +16,7 @@ export default function Playground(){
                 SubHeaderTitle={'Playground'}
                 buttons={[
                     <PlaygroundButton 
+                        key={'show-grid'}
                         type={'grid'}
                         buttonLabel={'Show Grid'}
                     />

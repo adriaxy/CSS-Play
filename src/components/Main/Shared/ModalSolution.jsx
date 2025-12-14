@@ -1,6 +1,7 @@
 import { useEffect } from "react";
-import SolutionCodeSection from "../Shared/SolutionCodeSection";
+import SolutionCodeSection from "./SolutionCodeSection";
 import { useGame } from "@/app/GameContext";
+import './ModalSolution.css'
 
 export default function ModalSolution({viewSolution, onClick}) {
     const {currentSublevelData} = useGame();

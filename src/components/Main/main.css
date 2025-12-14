@@ -10,7 +10,7 @@
     height: 330px;
     display: flex;
     flex-direction: column;
-    border: 1px solid var(--border-dark);
+    /* border: 1px solid var(--border-dark); */
 }
 
 .target-layout{

@@ -35,6 +35,9 @@ export function GameProvider({ initialLevel, initialSublevel, children}){
     const [viewSolution, setViewSolution] = useState(false);
     const [showGrid, setShowGrid] = useState(true);
 
+    //Escondemos el mensaje "challenge completed" cuando se completa el nivel y se muestra la modal
+    const [showCompletedLevelMessage, setShowCompletedLevelMessage] = useState(false);
+
     //TFG
     const [sublevelProgress, setSublevelProgress] = useState({});
     const [levelProgress, setLevelProgress] = useState(() => {
@@ -147,7 +150,7 @@ export function GameProvider({ initialLevel, initialSublevel, children}){
     }, [completedBlocks, currentLevel, currentSublevel])
 
     return (
-        <GameContext.Provider value={{code, setCode, hoveredBlock, setHoveredBlock, initialGameCode, viewSolution, setViewSolution, blockStyles, completedBlocks, setCompletedBlocks, evaluationResult, showGrid, setShowGrid, sublevelState, setSublevelState, setCurrentLevel, setCurrentSublevel, currentSublevel, currentLevel, currentLevelData, currentSublevelData}}>
+        <GameContext.Provider value={{code, setCode, hoveredBlock, setHoveredBlock, initialGameCode, viewSolution, setViewSolution, blockStyles, completedBlocks, setCompletedBlocks, evaluationResult, showGrid, setShowGrid, sublevelState, setSublevelState, setCurrentLevel, setCurrentSublevel, currentSublevel, currentLevel, currentLevelData, currentSublevelData, showCompletedLevelMessage, setShowCompletedLevelMessage}}>
             {children}
         </GameContext.Provider>
     )

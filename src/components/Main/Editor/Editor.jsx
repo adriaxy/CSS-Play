@@ -2,11 +2,12 @@ import './Editor.css'
 import SubHeaderSection from '../Shared/SubHeaderSection';
 import ResetCodeButton from './ResetCodeButton';
 import ViewSolutionButton from './ViewSolutionButton';
-import ModalSolution from './ModalSolution';
+import ModalSolution from '../Shared/ModalSolution';
 import { useGame } from '@/app/GameContext';
 
 export default function Editor (){
   const {viewSolution, setViewSolution, sublevelState, setSublevelState, currentLevel, currentSublevel, currentSublevelData} = useGame();
+  const isCompleted = sublevelState[currentLevel][currentSublevel].completed ? 'completed' : ''; 
 
   const sublevelName = currentSublevelData.name;
   const sublevelNumber = currentSublevelData.id;
@@ -44,7 +45,7 @@ export default function Editor (){
   }
 
     return (
-        <div className='editor'>
+        <div className={`editor ${isCompleted}`}>
           <SubHeaderSection sectionName={'editor__title'}>
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -75,11 +76,6 @@ export default function Editor (){
             <ViewSolutionButton onClick={() => setViewSolution(true)}/>
           </div>
           <textarea name="" id="" onChange={handleChange} value={currentCode}></textarea>
-          <ModalSolution 
-            viewSolution={viewSolution} 
-            className='modal-solution' 
-            onClick={() => setViewSolution(false)}
-            />
         </div>
     )
 }

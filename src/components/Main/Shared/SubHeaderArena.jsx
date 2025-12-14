@@ -14,7 +14,7 @@ export default function SubHeader({SubHeaderTitle, buttons = []}){
                         fill="none"
                         stroke="#ffffff"
                         strokeWidth="1.75"
-                        strokLinecap="round"
+                        strokeLinecap="round"
                         strokeLinejoin="round"
                         >
                         <path d="M12 5m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" />

@@ -46,6 +46,7 @@
   --text-xl: 25px;
 
   /* Font weight */
+  --text-bolder: 700;
   --text-bold: 500;
   --text-medium: 500;
   --text-regular: 300;
