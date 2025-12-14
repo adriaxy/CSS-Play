@@ -5,15 +5,24 @@ import { useEffect, useState } from 'react';
 import CloseModalButton from '../Shared/CloseModalButton';
 
 export default function LevelProgress(){
-    const { currentLevelData, sublevelState, currentLevel, setShowCompletedLevelMessage} = useGame();
+    const { currentLevelData, sublevelState, currentLevel, setShowCompletedLevelMessage, levelCompletedModalShown, setLevelCompletedModalShown} = useGame();
     const levelCompletedMessage = currentLevelData.successMessage;
     const [showModal, setShowModal] = useState('');
+
     const handleClick = () => setShowModal('');
 
     useEffect(() => {
-        const allSublevelsCompleted = sublevelState[currentLevel].every(sub => sub.completed === true);
-        allSublevelsCompleted ? setShowModal('show') : null;
-    }, [sublevelState, currentLevel])
+    const allSublevelsCompleted = sublevelState[currentLevel].every(sub => sub.completed);
+
+    if(allSublevelsCompleted && !levelCompletedModalShown[currentLevel]){
+            setShowModal('show');
+
+            setLevelCompletedModalShown(prev => ({
+                ...prev,
+                [currentLevel]: true
+            }));
+        }
+    }, [sublevelState, currentLevel, levelCompletedModalShown, setLevelCompletedModalShown]);
 
     return (
         <section className={`main__level-progress ${showModal}`}>
@@ -30,9 +39,9 @@ export default function LevelProgress(){
                         viewBox="0 0 24 24"
                         fill="none"
                         stroke="#000000"
-                        stroke-width="2.5"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
+                        strokeWidth="2.5"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
                         className='level-completed-modal__confetti'
                         >
                         <path d="M4 5h2" />
