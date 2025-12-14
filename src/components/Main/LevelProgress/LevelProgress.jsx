@@ -11,7 +11,7 @@ export default function LevelProgress(){
     const handleClick = () => setShowModal('');
 
     useEffect(() => {
-        const allSublevelsCompleted = sublevelState[currentLevel].every(sub => sub.completed === false);
+        const allSublevelsCompleted = sublevelState[currentLevel].every(sub => sub.completed === true);
         allSublevelsCompleted ? setShowModal('show') : null;
     }, [sublevelState, currentLevel])
 
