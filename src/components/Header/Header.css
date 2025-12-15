@@ -129,7 +129,13 @@
     display: none;
 }
 
-@media(max-width: 1200px){
+@media(max-width: 600px){
+    .header__color-mode-btn{
+        display: none;
+    }
+}
+
+@media (max-width: 1200px) {
     .header-container{
         position: sticky;
         top: 0;
@@ -143,18 +149,29 @@
     .header__title{
         font-size: var(--text-l);
     }
-}
 
-@media (max-width: 1550px) {
     .header__challenge-button--desktop{
         display: none;
+    }
+
+    .header{
+        gap: 15px;
     }
 
     .navigation-responsive{
         display: flex;
         justify-content: space-between;
         background-color: var(--gradient-darkest);
-        padding: 5px 0;
+        padding: 10px var(--padding-left-mobile);
+
+        button{
+            width: 170px;
+            padding: 2px 0;
+        }
+
+        button > span{
+            font-size: var(--text-xs);
+        }
     }
 
     .header__right{
@@ -163,5 +180,9 @@
 
     .header__logo{
         font-size: var(--text-s);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
     }
 }

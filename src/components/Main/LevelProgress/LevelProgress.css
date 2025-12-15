@@ -99,7 +99,7 @@
 @media(max-width: 930px){
   .main__level-progress{
     flex-direction: row;
-    width: 100%;
+    width: calc(100vw - 20px);
     height: fit-content;
   }
 
