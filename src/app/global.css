@@ -64,6 +64,9 @@
 
   /* height */
   --section-title-height: 52px;
+
+  /* max width */
+  --max-content-width: 1500px;
 }
 
 .light-mode{

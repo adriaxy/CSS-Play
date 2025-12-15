@@ -1,13 +1,32 @@
-.header{
+/* .header{
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 7px 30px ;
-    /* background-color: var(--bg-darkest); */
+    background-color: var(--bg-darkest);
     background: linear-gradient(to right, var(--gradient-darkest), var(--bg-darkest), var(--gradient-darkest));
     border-radius: var(--border-radius-xl) var(--border-radius-xl) 0 0;
     overflow: hidden;
     border-bottom: 1px solid var(--border-dark);
+    max-width: var(--max-content-width);
+    margin: 0 auto;
+} */
+ 
+.header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 7px 15px 7px ;
+    /* background-color: var(--bg-darkest); */
+    overflow: hidden;
+    max-width: var(--max-content-width);
+    margin: 0 auto;
+}
+
+.header_container{
+    background: linear-gradient(to right, var(--gradient-darkest), var(--bg-darkest), var(--gradient-darkest));
+    border-bottom: 1px solid var(--border-dark);
+    border-radius: var(--border-radius-xl) var(--border-radius-xl) 0 0;
 }
 
 .header__logo{
