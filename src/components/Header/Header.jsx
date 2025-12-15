@@ -32,6 +32,7 @@ export default function Header({ onPrev, onNext, isPrevDisabled, isNextDisabled}
             </div>
             <nav className='navigation-responsive'>
                 <PrevChallengeButton onClick={onPrev} isPrevDisabled={isPrevDisabled} className={'header__challenge-button--mobile'}/>
+                <div className='nav-sep'></div>
                 <NextChallengeButton onClick={onNext} isNextDisabled={isNextDisabled} className={'header__challenge-button--mobile'}/>
             </nav>
         </>
