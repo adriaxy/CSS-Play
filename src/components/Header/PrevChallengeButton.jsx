@@ -2,7 +2,7 @@
 
 import ChallengeButton from "./navButtons/ChallengeButton";
 
-export default function PrevChallengeButton({onClick, isPrevDisabled}) {
+export default function PrevChallengeButton({onClick, isPrevDisabled, className}) {
     return (
         <ChallengeButton 
             label={'Previous challenge'}
@@ -26,6 +26,7 @@ export default function PrevChallengeButton({onClick, isPrevDisabled}) {
             svgPosition="left"
             onClick={onClick}
             disabled={isPrevDisabled}
+            className={className}
         />
     )
 }

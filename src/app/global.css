@@ -8,6 +8,9 @@
   --bg-light-blue: #D4ECE9;
   --bg-html: #0a1422;
 
+  /* header responsive colors */
+  --bg-header-darkest: #0d1f33bc;
+
   /* gradient colors */
   --gradient-darkest: #0a1422;
   --gradient-dark: #0f1c25;
@@ -21,8 +24,8 @@
   --border-dark: #26485e;
 
   /* Highlight colors */
-  --highlight-yellow: #ffca29;  /* yellow highlight for emphasis */
-  --highlight-red: #D4523D;     /* red highlight for warnings or errors */
+  --highlight-yellow: #ffca29;  
+  --highlight-red: #D4523D;     
 
   /* Game stats colors */
   --completed-dark: #006127;
@@ -65,17 +68,20 @@
   /* height */
   --section-title-height: 52px;
 
-  /* max width */
+  /* max width content*/
   --max-content-width: 1500px;
+
+  /* padding responsive */
+  --padding-left-mobile: 15px;
 }
 
 .light-mode{
     /* Background colors (Light Mode) */
-  --bg-darkest: #F5F9FB;        /* tono más oscuro dentro del modo claro */
-  --bg-dark: #E8F0F4;           /* ligeramente más oscuro que el fondo base */
-  --bg-secondary: #C7E4E3;      /* secundario suave para secciones */
-  --bg-primary: #78AEAD;        /* primario más fuerte para tarjetas/títulos */
-  --bg-light: #ffffff;          /* fondo principal claro */
+  --bg-darkest: #F5F9FB;        
+  --bg-dark: #E8F0F4;         
+  --bg-secondary: #C7E4E3;     
+  --bg-primary: #78AEAD;     
+  --bg-light: #ffffff;       
   --bg-html: #0d1f33;
 
   /* gradient colors */
@@ -83,13 +89,13 @@
   --gradient-light: #78AEAD;
 
   /* Highlight colors (Light Mode) */
-  --highlight-yellow: #E6B800;  /* amarillo más suave pero visible */
-  --highlight-red: #C24432;     /* rojo para alertas, adaptado a modo claro */
+  --highlight-yellow: #E6B800; 
+  --highlight-red: #C24432;     
 
   /* Text colors (Light Mode) */
-  --text-on-dark: #ffffff;      /* texto sobre elementos más oscuros */
-  --text-on-light: #1b3241;     /* texto principal sobre fondos claros */
-  --text-muted: #6B8A92;        /* texto apagado o secundario */
+  --text-on-dark: #ffffff;     
+  --text-on-light: #1b3241;    
+  --text-muted: #6B8A92;        
   --btn-disabled: #aebec3;  
 
   /* Block colors */
@@ -149,6 +155,12 @@ body{
     border: 1px solid var(--border-dark);
     border-radius: var(--border-radius-xl);
     transition: background-color 0.5s ease;
+}
+
+@media(max-width: 1200px){
+    body{
+        border: none;
+    }
 }
 
 *{

@@ -2,7 +2,7 @@
 
 import ChallengeButton from "./navButtons/ChallengeButton";
 
-export default function NextChallengeButton({onClick, isNextDisabled}) {
+export default function NextChallengeButton({onClick, isNextDisabled, className}) {
     return ( 
         <ChallengeButton
             label={'Next challenge'}
@@ -27,6 +27,7 @@ export default function NextChallengeButton({onClick, isNextDisabled}) {
             svgPosition="right"
             onClick={onClick}
             disabled={isNextDisabled}
+            className={className}
         />
     )
 }

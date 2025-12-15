@@ -6,3 +6,11 @@
     justify-content: space-around;
     align-items: center;
 }
+
+@media(max-width: 930px){
+    .progress-dots{
+        width: 100%;
+        flex-direction: row;
+        gap: 10px;
+    }
+}
