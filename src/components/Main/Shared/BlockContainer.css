@@ -7,6 +7,12 @@
     overflow: hidden;
 }
 
+@media (max-width: 500px) {
+    .block-container{
+        width: 100vw;
+    }
+}
+
 .completed-sublevel-message{
     transform: translateX(100%);
     opacity: 0;

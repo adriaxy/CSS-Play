@@ -69,3 +69,8 @@
     font-weight: var(--text-bold);
 }
 
+@media (max-width: 500px) {
+    .theory__text{
+        padding: 10px 16px;
+    }
+}
