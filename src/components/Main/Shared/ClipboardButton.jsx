@@ -20,7 +20,7 @@ export default function ClipboardButton({copiedText}){
             height="18" 
             viewBox="0 0 24 24" 
             fill="none" 
-            stroke="white" 
+            stroke="var(--bg-light)" 
             strokeWidth="1" 
             strokeLinecap="round" 
             strokeLinejoin="round">
@@ -33,7 +33,7 @@ export default function ClipboardButton({copiedText}){
             height="18" 
             viewBox="0 0 24 24" 
             fill="none" 
-            stroke="white" 
+            stroke="var(--bg-light)" 
             strokeWidth="1" 
             strokeLinecap="round" 
             strokeLinejoin="round">

@@ -4,7 +4,7 @@
     gap: 45px;
     height: 33px;
     padding: 5px 10px;
-    background-color: var(--bg-secondary);
+    background-color: var(--header-arena);
     border-radius: var(--border-radius-l) var(--border-radius-l) 0 0;
 }
 

@@ -10,7 +10,7 @@ export default function CloseModalButton({onClick, className}) {
             height="25"
             viewBox="0 0 24 24"
             fill="none"
-            stroke="#fff"
+            stroke="var(--bg-light)"
             strokeWidth="1.75"
             strokeLinecap="round"
             strokeLinejoin="round"

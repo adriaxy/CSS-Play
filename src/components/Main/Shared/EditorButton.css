@@ -1,5 +1,5 @@
 .editor-button{
-    background-color: var(--b-light);
+    background-color: var(--bg-darkest);
     width: fit-content;
     border-radius: 9999;
     border: 3px solid var(--highlight-yellow);
@@ -15,5 +15,5 @@
 
 .editor-button > div > span{
     font-size: var(--text-xs);
-    color: var(--text-on-dark);
+    color: var(--bg-light);
 }

@@ -7,6 +7,8 @@
   --bg-light: #fff;
   --bg-light-blue: #D4ECE9;
   --bg-html: #0a1422;
+  --header-arena: #78AEAD;
+  --code-solution: #0f1e32;
 
   /* header responsive colors */
   --bg-header-darkest: #0d1f33bc;
@@ -79,29 +81,32 @@
     /* Background colors (Light Mode) */
   --bg-darkest: #F5F9FB;        
   --bg-dark: #E8F0F4;         
-  --bg-secondary: #C7E4E3;     
-  --bg-primary: #78AEAD;     
-  --bg-light: #ffffff;       
-  --bg-html: #0d1f33;
+  --bg-secondary: #78AEAD;     
+  --bg-primary: #78AEAD;    
+  --header-arena: #a5d5ce; 
+  --bg-light: #0d1f33;       
+  --bg-html: #ffffff;
+  --code-solution: #D4ECE9;
 
   /* gradient colors */
   --gradient-darkest: #fff;
   --gradient-light: #78AEAD;
 
   /* Highlight colors (Light Mode) */
-  --highlight-yellow: #E6B800; 
+  --highlight-yellow: #f6d037; 
   --highlight-red: #C24432;     
 
-  /* Text colors (Light Mode) */
-  --text-on-dark: #ffffff;     
+  /* Text colors (Light Mode) */ 
   --text-on-light: #1b3241;    
-  --text-muted: #6B8A92;        
+  --text-muted: #344d54;        
   --btn-disabled: #aebec3;  
 
   /* Block colors */
-  --b-light: #0d1f33;
+  --b-light: #2d485b;
 
   --shadow: 0.3;
+
+  --border-dark: #ffca29;
 }
 
 @font-face {

@@ -33,7 +33,7 @@
 .block-name-text{
     display: none;
     white-space: nowrap;
-    color: var(--highlight-yellow);
+    color: var(--highlight-red);
     font-size: var(--text-s);
     position: absolute;
     bottom: -25px;

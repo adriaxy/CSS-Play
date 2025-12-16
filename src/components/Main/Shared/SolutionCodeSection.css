@@ -15,7 +15,7 @@
 }
 
 .block__code-wrapper{
-    background-color: #0f1e32;
+    background-color: var(--code-solution);
     border-radius: var(--border-radius-l);
 }
 
