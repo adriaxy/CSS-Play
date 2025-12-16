@@ -87,6 +87,7 @@
   --bg-light: #0d1f33;       
   --bg-html: #ffffff;
   --code-solution: #D4ECE9;
+  --bg-header-darkest: #c9dbf0bc;
 
   /* gradient colors */
   --gradient-darkest: #fff;
@@ -172,11 +173,6 @@ body{
     font-family: Lexend, sans-serif;
     color: var(--text-on-light);
 }
-
-/* .light{
-    font-weight: 100;
-    background-color: red;
-} */
 
 button:active{
     transform: scale(0.9);

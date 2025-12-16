@@ -2,9 +2,9 @@
     background-color: var(--bg-darkest);
     width: fit-content;
     border-radius: 9999;
-    border: 3px solid var(--highlight-yellow);
+    border: 1px solid var(--highlight-yellow);
     height: 29px;
-    padding: 0 6px;
+    padding: 0 8px;
 }
 
 .editor-button div{
