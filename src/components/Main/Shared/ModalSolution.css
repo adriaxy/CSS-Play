@@ -1,14 +1,11 @@
 
 .modal-solution__background{
     display: none;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
+    position: fixed;
+    inset: 0; 
     backdrop-filter: blur(7px);
     background-color: #8190a04a;
-    z-index: 2;
+    z-index: 999;
 }
 
 .modal-solution__background.showModal{

@@ -5,6 +5,7 @@ import TargetLayout from './TargetLayout/TargetLayout';
 import Theory from './Theory/Theory';
 import LevelProgress from './LevelProgress/LevelProgress';
 import ModalSolution from './Shared/ModalSolution';
+import MobileAlert from './MobileAlert/MobileAlert';
 import { useGame } from '@/app/GameContext';
 
 export default function Main(){
@@ -32,6 +33,7 @@ export default function Main(){
             className='modal-solution' 
             onClick={() => setViewSolution(false)}
             />
+            <MobileAlert />
         </main>
     )
 }
