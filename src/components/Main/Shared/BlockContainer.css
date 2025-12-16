@@ -7,7 +7,7 @@
     overflow: hidden;
 }
 
-@media (max-width: 500px) {
+@media (max-width: 410px) {
     .block-container{
         width: 100vw;
     }

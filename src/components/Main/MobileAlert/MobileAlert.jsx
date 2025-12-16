@@ -1,11 +1,18 @@
 import './MobileAlert.css'
 import CloseModalButton from '../Shared/CloseModalButton'
 import { useState } from 'react'
+import { useGame } from '@/app/GameContext'
 
 export default function MobileAlert() {
+    const { mobileAlertShown, setMobileAlertShown } = useGame();
     const [isHidden, setIsHidden] = useState(false);
 
-    const handleClick = () => setIsHidden(true);
+    const handleClick = () => {
+        setIsHidden(true);
+        setMobileAlertShown(true);
+    };
+
+    if(mobileAlertShown || isHidden) return null; 
 
     return (
         <div className={`modal-alert-mobile ${isHidden ? 'hide' : ''}`}>

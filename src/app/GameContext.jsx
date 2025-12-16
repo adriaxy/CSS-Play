@@ -149,10 +149,12 @@ export function GameProvider({ initialLevel, initialSublevel, children}){
                 }
             }))
         }
-    }, [completedBlocks, currentLevel, currentSublevel])
+    }, [completedBlocks, currentLevel, currentSublevel]);
+
+    const [mobileAlertShown, setMobileAlertShown] = useState(false); 
 
     return (
-        <GameContext.Provider value={{code, setCode, hoveredBlock, setHoveredBlock, initialGameCode, viewSolution, setViewSolution, blockStyles, completedBlocks, setCompletedBlocks, evaluationResult, showGrid, setShowGrid, sublevelState, setSublevelState, setCurrentLevel, setCurrentSublevel, currentSublevel, currentLevel, currentLevelData, currentSublevelData, showCompletedLevelMessage, setShowCompletedLevelMessage, levelCompletedModalShown, setLevelCompletedModalShown}}>
+        <GameContext.Provider value={{code, setCode, hoveredBlock, setHoveredBlock, initialGameCode, viewSolution, setViewSolution, blockStyles, completedBlocks, setCompletedBlocks, evaluationResult, showGrid, setShowGrid, sublevelState, setSublevelState, setCurrentLevel, setCurrentSublevel, currentSublevel, currentLevel, currentLevelData, currentSublevelData, showCompletedLevelMessage, setShowCompletedLevelMessage, levelCompletedModalShown, setLevelCompletedModalShown, mobileAlertShown, setMobileAlertShown}}>
             {children}
         </GameContext.Provider>
     )
