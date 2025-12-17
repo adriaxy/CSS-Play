@@ -13,6 +13,9 @@
   /* header responsive colors */
   --bg-header-darkest: #0d1f33bc;
 
+  /* scroll bar color */
+  --scroll-color: #0d1f33;
+
   /* gradient colors */
   --gradient-darkest: #0a1422;
   --gradient-dark: #0f1c25;
@@ -75,6 +78,9 @@
 
   /* padding responsive */
   --padding-left-mobile: 15px;
+
+  /* border sections */
+  --border-width-section: 0px;
 }
 
 .light-mode{
@@ -88,6 +94,7 @@
   --bg-html: #ffffff;
   --code-solution: #D4ECE9;
   --bg-header-darkest: #c9dbf0bc;
+  --scroll-color: #78AEAD;
 
   /* gradient colors */
   --gradient-darkest: #fff;
@@ -107,7 +114,8 @@
 
   --shadow: 0.3;
 
-  --border-dark: #ffca29;
+  /* border sections */
+  --border-width-section: 1px;
 }
 
 @font-face {

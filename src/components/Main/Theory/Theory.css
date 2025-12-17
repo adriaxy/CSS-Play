@@ -7,7 +7,7 @@
     font-size: var(--text-s);
     font-weight: var(--text-regular);
     scrollbar-width: auto;  
-    scrollbar-color: #0d1f33 transparent;
+    scrollbar-color: var(--scroll-color) transparent;
 }
 
 .theory__text-limit{

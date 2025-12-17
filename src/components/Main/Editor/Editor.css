@@ -5,10 +5,11 @@
     flex-direction: column;
     overflow: hidden;
     background: linear-gradient(to bottom, var(--bg-darkest), var(--gradient-darkest));
-    /* background: transparent; */
     & > *{
         padding: 15px;
     }
+    border: var(--border-width-section) solid var(--highlight-yellow);
+    /* filter: drop-shadow(-5px 5px 3px var(--highlight-yellow)); */
 }
 
 .editor.completed{
