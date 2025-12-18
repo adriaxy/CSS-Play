@@ -10,7 +10,7 @@ export function GameProvider({ initialLevel, initialSublevel, children}){
     const [currentLevel, setCurrentLevel] = useState(initialLevel);
     const [currentSublevel, setCurrentSublevel] = useState(initialSublevel);
     
-
+    // Extraemos los datos de cada nivel y subnivel según la página en la que estemos
     const currentLevelData = levels[currentLevel];
     const currentSublevelData = currentLevelData.sublevels[currentSublevel];
 
@@ -35,10 +35,10 @@ export function GameProvider({ initialLevel, initialSublevel, children}){
     const [viewSolution, setViewSolution] = useState(false);
     const [showGrid, setShowGrid] = useState(true);
 
-    //Escondemos el mensaje "challenge completed" cuando se completa el nivel y se muestra la modal
+    // Estados para esconder el mensaje "challenge completed" del playground cuando 
+    // se completa el nivel y se muestra la modal de felicitación
     const [showCompletedLevelMessage, setShowCompletedLevelMessage] = useState(false);
     const [levelCompletedModalShown, setLevelCompletedModalShown] = useState({});
-
 
     //TFG
     const [sublevelProgress, setSublevelProgress] = useState({});
@@ -99,18 +99,19 @@ export function GameProvider({ initialLevel, initialSublevel, children}){
     }, [sublevelState, currentLevel, currentSublevel]);
 
     //Reset game
-    const resetGame = () => {
-        setSelectedBlock(null);
-        setHoveredBlock(null);
-        setCompletedBlocks({ block1: false, block2: false });
-        setCode(initialGameCode);
-        setEvaluationResult(null);
-        setShowGrid(true);
-        setViewSolution(false);
-    };
+    // const resetGame = () => {
+    //     setSelectedBlock(null);
+    //     setHoveredBlock(null);
+    //     setCompletedBlocks({ block1: false, block2: false });
+    //     setCode(initialGameCode);
+    //     setEvaluationResult(null);
+    //     setShowGrid(true);
+    //     setViewSolution(false);
+    // };
 
     const [blockStyles, setBlockStyles] = useState();
 
+    // Actualizamos los datos de progreso del jugador en sublevelState usando el parseador con css-tree
     useEffect(()=> {
         const index = sublevelState[currentLevel][currentSublevel]
         const code = index.firstTime === true ? index.defaultCode : index.playerCode;
@@ -125,6 +126,7 @@ export function GameProvider({ initialLevel, initialSublevel, children}){
         })
     }, [currentSublevel, currentLevel, sublevelState[currentLevel]?.[currentSublevel]?.playerCode, sublevelState[currentLevel]?.[currentSublevel]?.firstTime ])
 
+    // Guardamos el progreso de cada nivel
     useEffect(() => {
     const sublevelsCount = levels[currentLevel].sublevels.length;
         setLevelProgress(prev => ({
@@ -135,6 +137,7 @@ export function GameProvider({ initialLevel, initialSublevel, children}){
         }));
     }, [currentLevel]);
 
+    
     const allBlocksCompleted = Object.values(completedBlocks).every(v => v === true);
 
     useEffect(()=> {

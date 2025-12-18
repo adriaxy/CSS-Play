@@ -9,6 +9,7 @@ export default function SublevelGame() {
   const router = useRouter();
   const levelSublevels = currentLevelData.sublevels;
 
+  // Navegación entre subniveles
   const goToNext = () => {
       if (currentSublevel + 1 < levelSublevels.length) {
           const nextName = levelSublevels[currentSublevel + 1].name;
