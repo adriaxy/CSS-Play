@@ -63,7 +63,7 @@ export function GameProvider({ initialLevel, initialSublevel, children}){
                     block1: false,
                     block2: false
                 },        
-                completed: false,
+                completed: true,
                 blockStyles: {}
             }));
             return sublevelState;

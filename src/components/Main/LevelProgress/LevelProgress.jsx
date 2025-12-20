@@ -5,7 +5,7 @@ import { useEffect, useState } from 'react';
 import CloseModalButton from '../Shared/CloseModalButton';
 
 export default function LevelProgress(){
-    const { currentLevelData, sublevelState, currentLevel, setShowCompletedLevelMessage, levelCompletedModalShown, setLevelCompletedModalShown} = useGame();
+    const { currentLevelData, sublevelState, currentLevel, levelCompletedModalShown, setLevelCompletedModalShown} = useGame();
     const levelCompletedMessage = currentLevelData.successMessage;
     const [showModal, setShowModal] = useState('');
 
@@ -57,7 +57,7 @@ export default function LevelProgress(){
                         </svg>
                     </div>
                 </span>
-                <CloseModalButton onClick={() => (handleClick(), setShowCompletedLevelMessage(true))} className="level-completed-modal__close-button"/> 
+                <CloseModalButton onClick={handleClick} className="level-completed-modal__close-button"/> 
                 {levelCompletedMessage}
                 <div className='next-level-button'>
                     <button className='header__challenge-button next-level'>
