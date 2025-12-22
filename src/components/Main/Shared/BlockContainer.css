@@ -21,11 +21,14 @@
     right: 0;
     padding: 5px 15px;
     font-size: var(--text-xs);
-    color: #fff;
     background-color: var(--completed-dark);
     border-radius: 5px 0 0 12px;
     transition: all 0.5s ease;
     z-index: 1;
+
+    span{
+        color: #fff
+    }
 }
 
 .completed-sublevel-message.completed{
