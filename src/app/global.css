@@ -1,9 +1,9 @@
 :root {
   /* Background colors */
-  --bg-darkest: #0d1f33;        /* darkest background */
-  --bg-dark: #1b3241;           /* slightly lighter background */
-  --bg-secondary: #78AEAD;      /* secondary background for titles or sections */
-  --bg-primary: #D4ECE9;        /* primary background for titles or cards */
+  --bg-darkest: #0d1f33;        
+  --bg-dark: #1b3241;           
+  --bg-secondary: #78AEAD;      
+  --bg-primary: #D4ECE9;        
   --bg-light: #fff;
   --bg-light-blue: #D4ECE9;
   --bg-html: #0a1422;
@@ -108,7 +108,10 @@
   /* Text colors (Light Mode) */ 
   --text-on-light: #1b3241;    
   --text-muted: #344d54;        
-  --btn-disabled: #aebec3;  
+  --btn-disabled: #aebec3; 
+  
+  /* border color */
+  --border-dark: #c4d4d9;
 
   /* Block colors */
   --b-light: #2d485b;
