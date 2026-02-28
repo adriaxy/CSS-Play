@@ -127,7 +127,7 @@ const levels = [
         name: "width",
         evaluatedBlocks: ["block1", "block2"],
         totalBlocks: ["block1", "block2"],
-        challenge: "Apply the width property to both blocks so that each one matches the required width shown in the target layout, using pixel values.",
+        challenge: "Apply the width property to both blocks so that each one matches the required width shown in the target layout, using pixel values (px).",
         theory: {
         description: [
           "The width property defines the horizontal size of an element’s content area.",
@@ -157,7 +157,7 @@ const levels = [
             group: "group1",
             initialStyle: { width: "50px", height: "50px", background: 'var(--b-light)', borderRadius: '20px'},
             defaultCode: "",
-            solution: { width: "150px" },
+            solution: [{ width: "150px" }],
             viewSolution: 'width: 150px;'
           },
           {
@@ -165,7 +165,7 @@ const levels = [
             group: "group2",
             initialStyle: { width: "50px", height: "50px", background: 'var(--b-light)', borderRadius: '20px'},
             defaultCode: "",
-            solution: { width: "300px" },
+            solution:[{ width: "300px" }],
             viewSolution: 'width: 300px;'
           },
           {
@@ -190,7 +190,7 @@ const levels = [
         name: "height",
         evaluatedBlocks: ["block1", "block2"],
         totalBlocks: ["block1", "block2"],
-        challenge: "Apply the height property to both blocks so that each one matches the required height shown in the target layout, using pixel values.",
+        challenge: "Apply the height property to both blocks so that each one matches the required height shown in the target layout, using pixel values (px).",
         theory: {
         description: [
           "The height property defines the vertical size of an element’s content area.",
@@ -218,7 +218,7 @@ const levels = [
             group: "group1",
             initialStyle: { height: "50px", width: "100px", background: 'var(--b-light)', borderRadius: '20px'},
             defaultCode: "width: 100px;",
-            solution: { width: "100px", height: "120px" },
+            solution: [{ width: "100px", height: "120px" }],
             viewSolution: 'height: 120px;'
           },
           {
@@ -226,7 +226,7 @@ const levels = [
             group: "group2",
             initialStyle: { height: "50px", width: "100px", background: 'var(--b-light)', borderRadius: '20px'},
             defaultCode: "width: 100px;",
-            solution: { width: "100px", height: "200px" },
+            solution: [{ width: "100px", height: "200px" }],
             viewSolution: 'height: 200px;'
           },
           {
@@ -250,7 +250,7 @@ const levels = [
         name: "padding",
         evaluatedBlocks: ["block1", "block2"],
         totalBlocks: ["block1", "block2"],
-        challenge: "Apply the padding property to both blocks so that each one matches the required spacing shown in the target layout, using pixel values.",
+        challenge: "Apply the padding property to both blocks so that each one matches the required spacing shown in the target layout, using pixel values (px).",
         theory: {
         description: [
           "The padding property adds space inside an element, between its content and its border.",
@@ -278,7 +278,10 @@ const levels = [
             group: "group1",
             initialStyle: { width: "200px", height: "50px", background: 'var(--b-light)'},
             defaultCode: "width: 200px;\nheight: 50px;",
-            solution: { width: "200px", height: "50px", padding: "10px"},
+            solution: [
+              { width: "200px", height: "50px", padding: "10px" },                                     
+              { width: "200px", height: "50px", paddingTop: "10px", paddingRight: "10px", paddingBottom: "10px", paddingLeft: "10px" } 
+            ],
             viewSolution: 'padding: 10px;',
           },
           {
@@ -286,7 +289,12 @@ const levels = [
             group: "group2",
             initialStyle: { width: "200px", height: "50px", background: 'var(--b-light)'},
             defaultCode: "width: 200px;\nheight: 50px;",
-            solution: { width: "200px", height: "50px", padding: "25px 50px 0px 50px"},
+            solution: [
+              { width: "200px", height: "50px", padding: "25px 50px 0px 50px"},
+              { width: "200px", height: "50px", padding: "25px 50px 0px"},
+              { width: "200px", height: "50px", paddingTop: "25px", paddingRight: "50px", paddingLeft: "50px"},
+              { width: "200px", height: "50px", paddingTop: "25px", paddingRight: "50px", paddingLeft: "50px", paddingBottom: "0px"}
+            ],
             viewSolution: 'padding: 25px 50px 0px 50px;',
           },
           {
@@ -344,7 +352,11 @@ const levels = [
             group: "group1",
             initialStyle: { width: "150px", height: "100px", background: 'var(--b-light)', borderRadius: '20px' },
             defaultCode: "width: 150px;\nheight: 100px;\n",
-            solution: { width: "150px", height: "100px", marginRight: '100px' },
+            solution: [
+              { width: "150px", height: "100px", marginRight: "100px" },
+              { width: "150px", height: "100px", margin: "0px 100px 0px 0px" },
+              { width: "150px", height: "100px", marginTop: "0px", marginRight: "100px", marginBottom: "0px", marginLeft: "0px" }
+            ],
             viewSolution: 'margin-right: 100px;'
           },
           {
@@ -400,7 +412,7 @@ const levels = [
             group: "group1",
             initialStyle: { boxSizing: "content-box", width: "100px", height: "100px", background: 'var(--b-light)', borderRadius: '20px', border: '10px solid var(--highlight-yellow)' },
             defaultCode: "width: 100px;\nheight: 100px;\npadding: 20px;\nmargin: 10px;",
-            solution: { width: "100px", height: "100px", boxSizing: "border-box" },
+            solution: [{ width: "100px", height: "100px", boxSizing: "border-box" }],
             viewSolution: 'box-sizing: border-box;'
           },
           {

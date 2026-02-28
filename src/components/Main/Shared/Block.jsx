@@ -17,13 +17,19 @@ export default function Block({blockId, style, group, blockSolution, playground 
     // Compara el estilo actual del bloque con la solución
     const compareCodeWithSolution = () => {
         if (!blockIdPlayground) return;
-        const current = sublevelState?.[currentLevel]?.[currentSublevel]?.blockStyles?.[blockIdPlayground];
-        if(!current || !blockSolution) return false;
-        for(const key in blockSolution){
-            if(current[key] !== blockSolution[key]) return false;
-        }
-
-        return true;
+        const userInputSolution = sublevelState?.[currentLevel]?.[currentSublevel]?.blockStyles?.[blockIdPlayground];
+        if(!userInputSolution || !blockSolution) return false;
+        const finalValidation = blockSolution.some(solution => {
+            let flag = true;
+            for(const key in solution){
+                if(userInputSolution[key] !== solution[key]){
+                    flag = false;
+                    break; 
+                }
+            }
+            return flag;
+        })
+        return finalValidation;
     }
 
     // actualiza el estado de completado del bloque

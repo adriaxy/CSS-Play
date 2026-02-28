@@ -25,7 +25,7 @@ export default function ModalSolution({viewSolution, onClick}) {
             <div className="modal-solution__wrapper" onClick={(e) => e.stopPropagation()}>
                 <div className="solution-header">
                     <div>
-                        <span className="solution-header__title">Solution</span>
+                        <span className="solution-header__title">Suggested solutions</span>
                         <svg xmlns="http://www.w3.org/2000/svg"
                         width="24"
                         height="24"
