@@ -33,7 +33,7 @@ const levels = [
             group: "group1",
             initialStyle: { width: "50px", height: "50px", background: 'var(--b-light)', borderRadius: '20px'},
             defaultCode: "",
-            solution: { width: "150px" },
+            solution: [{ width: "150px" }],
             viewSolution: 'width: 150px;'
           },
           {
@@ -41,7 +41,7 @@ const levels = [
             group: "group2",
             initialStyle: { width: "50px", height: "50px", background: 'var(--b-light)', borderRadius: '20px'},
             defaultCode: "",
-            solution: { width: "300px" },
+            solution: [{ width: "300px" }],
             viewSolution: 'width: 300px;'
           },
           {
@@ -87,7 +87,7 @@ const levels = [
             group: "group1",
             initialStyle: { height: "50px", width: "100px", background: 'var(--b-light)', borderRadius: '20px'},
             defaultCode: "width: 100px;",
-            solution: { width: "100px", height: "120px" },
+            solution: [{ width: "100px", height: "120px" }],
             viewSolution: 'height: 120px;'
           },
           {
@@ -95,7 +95,7 @@ const levels = [
             group: "group2",
             initialStyle: { height: "50px", width: "100px", background: 'var(--b-light)', borderRadius: '20px'},
             defaultCode: "width: 100px;",
-            solution: { width: "100px", height: "200px" },
+            solution: [{ width: "100px", height: "200px" }],
             viewSolution: 'height: 200px;'
           },
           {
@@ -364,7 +364,7 @@ const levels = [
             group: "group2",
             initialStyle: { width: "50px", height: "50px", background: 'var(--bg-secondary)', borderRadius: '20px' },
             defaultCode: "width: 150px;\nheight: 100px;\n",
-            solution: { width: "50px", height: "50px", background: 'var(--bg-secondary)'},
+            solution: [{ width: "50px", height: "50px", background: 'var(--bg-secondary)'}],
             viewSolution: 'margin: 0px 0px 0px 250px;'
           },
           {
