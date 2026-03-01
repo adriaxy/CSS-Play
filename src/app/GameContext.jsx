@@ -156,8 +156,16 @@ export function GameProvider({ initialLevel, initialSublevel, children}){
 
     const [mobileAlertShown, setMobileAlertShown] = useState(false); 
 
+    //Niveles y subniveles que usaremos para mostrar en HOME
+    const homeLevelsData = Array.from({length: levels.length}, (_,i) => ({
+        id: levels[i].level,
+        completed: false,
+        levelName: levels[i].name,
+        sublevelNames: levels[i].sublevels.map(sublevel => sublevel.name)
+    }))
+
     return (
-        <GameContext.Provider value={{code, setCode, hoveredBlock, setHoveredBlock, initialGameCode, viewSolution, setViewSolution, blockStyles, completedBlocks, setCompletedBlocks, evaluationResult, showGrid, setShowGrid, sublevelState, setSublevelState, setCurrentLevel, setCurrentSublevel, currentSublevel, currentLevel, currentLevelData, currentSublevelData, showCompletedLevelMessage, setShowCompletedLevelMessage, levelCompletedModalShown, setLevelCompletedModalShown, mobileAlertShown, setMobileAlertShown}}>
+        <GameContext.Provider value={{ homeLevelsData, code, setCode, hoveredBlock, setHoveredBlock, initialGameCode, viewSolution, setViewSolution, blockStyles, completedBlocks, setCompletedBlocks, evaluationResult, showGrid, setShowGrid, sublevelState, setSublevelState, setCurrentLevel, setCurrentSublevel, currentSublevel, currentLevel, currentLevelData, currentSublevelData, showCompletedLevelMessage, setShowCompletedLevelMessage, levelCompletedModalShown, setLevelCompletedModalShown, mobileAlertShown, setMobileAlertShown}}>
             {children}
         </GameContext.Provider>
     )
