@@ -75,7 +75,7 @@ export default function Editor (){
             <ResetCodeButton onClick={resetCode}/>
             <ViewSolutionButton onClick={() => setViewSolution(true)}/>
           </div>
-          <textarea name="" id="" onChange={handleChange} value={currentCode}></textarea>
+          <textarea className='textarea' name="" id="" onChange={handleChange} value={currentCode}></textarea>
         </div>
     )
 }
