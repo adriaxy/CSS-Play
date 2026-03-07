@@ -1,6 +1,28 @@
 .subheader-section{
     height: var(--section-title-height);
-    background: linear-gradient(to right, var(--gradient-darkest), var(--bg-darkest), var(--gradient-darkest));
+    /* background: linear-gradient(to right, var(--yellow-bg-gradient), var(--bg-darkest), var(--bg-darkest), var(--green-bg-gradient)); */
+    /* background: linear-gradient(to right, var(--gradient-darkest), var(--bg-darkest), var(--gradient-darkest)); */
+    border-bottom: 1px solid var(--bg-dark);
+}
+
+.subheader-title{
+    max-width: 650px;
+    mask-image: linear-gradient(to right, transparent, black 30%, black 70%, transparent);
+    overflow: hidden;
+}
+
+.subheader-title-heading{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.subheader-title h2{
+    width: max-content;
+}
+
+.subheader-title--animated{
+    animation: scroll-left var(--scroll-left-duration, 80s) linear infinite;
 }
 
 .subheader-section span{

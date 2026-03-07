@@ -10,6 +10,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body>
+        <div className='stars'></div>
         <GameProvider initialLevel={0} initialSublevel={0}>
           <ThemeProvider>
             <BodyClassController>

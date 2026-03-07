@@ -398,8 +398,8 @@ const levels = [
         ],
         syntax: [
           "/* Default */\nbox-sizing: content-box;",
-          "/* Include padding and border in width/height */\nbox-sizing: border-box;",
-          "/* Apply to all elements (common practice) */\n* {\n  box-sizing: border-box;\n}"
+          "/* Include padding and border in \nwidth/height */\n\nbox-sizing: border-box;",
+          "/* Apply to all elements */\n* {\n  box-sizing: border-box;\n}"
         ]
       },
         blocks: [

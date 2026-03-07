@@ -8,13 +8,12 @@
     & > *{
         padding: 15px;
     }
-    border: var(--border-width-section) solid var(--highlight-yellow);
     /* filter: drop-shadow(-5px 5px 3px var(--highlight-yellow)); */
 }
 
 .editor.completed{
     outline: 1px solid var(--completed-light);
-    filter: drop-shadow(0 0 4px var(--completed-light));
+    filter: drop-shadow(0 0 10px var(--completed-light));
     animation: editorCompletedAnimation .2s ease-in-out 1;
 }
 
@@ -31,12 +30,22 @@
 }
 
 .editor__challenge{
-    background-color: var(--highlight-yellow);
     color: var(--text-on-dark);
     font-weight: var(--text-regular);
     text-align: center;
     font-size: var(--text-m);
+    /* background: linear-gradient(135deg, var(--yellow-bg) 0%, var(--green-bg) 100%); */
+    background-color: var(--yellow-bg);
 }
+
+/* .editor__challenge{
+    color: var(--text-on-dark);
+    font-weight: var(--text-regular);
+    text-align: center;
+    font-size: var(--text-m);
+    background: linear-gradient(135deg, var(--yellow-bg) 0%, var(--green-bg) 100%);
+    background-color: var(--yellow-bg);
+} */
 
 .editor__challenge--bold{
     color: var(--text-on-dark);

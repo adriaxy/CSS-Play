@@ -10,6 +10,7 @@
     height: 330px;
     display: flex;
     flex-direction: column;
+    outline: 1px solid var(--border-dark);
     /* border: 1px solid var(--border-dark); */
 }
 
@@ -30,6 +31,7 @@
     height: calc(100vh - 65px);
     gap: var(--gap-main);
     max-width: var(--max-content-width);
+    max-height: var(--max-content-height);
     margin: 0 auto;
 }
 
@@ -42,6 +44,8 @@
 
 .main__editor{
     grid-area: editor;
+    outline: 1px solid var(--border-dark);
+    border-radius: var(--border-radius-l);
 }
 
 .main__arena{
@@ -66,6 +70,7 @@
     overflow: hidden;
     display: flex;
     flex-direction: column;
+    outline: 1px solid var(--border-dark);
 }
 
 @media(max-width: 1200px){

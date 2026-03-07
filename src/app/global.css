@@ -1,6 +1,6 @@
 :root {
   /* Background colors */
-  --bg-darkest: #0d1f33;        
+  --bg-darkest: #03080d;        
   --bg-dark: #1b3241;           
   --bg-secondary: #78AEAD;      
   --bg-primary: #D4ECE9;        
@@ -10,7 +10,15 @@
   --header-arena: #78AEAD;
   --code-solution: #0f1e32;
   --dark-blue: #0d1f33;
+  --dark-blue: #253d8c;
+  --bg-transparent: rgba(10, 15, 26, .8);
+  --white-bg: #fff;
+  --yellow-bg: #ffbf00; 
+  --green-bg: #a5d5ce;
 
+  /* Background colors gradient */
+  --yellow-bg-gradient: #ffca2930; 
+  --green-bg-gradient: #a5d5ce30;  
   /* header responsive colors */
   --bg-header-darkest: #0d1f33bc;
 
@@ -27,11 +35,18 @@
   --b-light: #fff;
 
   /* border colors */
-  --border-dark: #26485e;
+  --border-dark: #26485e95;
 
   /* Highlight colors */
-  --highlight-yellow: #ffca29;  
+  --highlight-yellow: #ffbf00;  
   --highlight-red: #D4523D;     
+  --d: #ffbf00;
+
+  /* Title colors */
+  --white-title: #fff;
+  ---yellow-title: #ffbf00; 
+  --green-title: #a5d5ce;
+
 
   /* Game stats colors */
   --completed-dark: #006127;
@@ -44,7 +59,7 @@
   --btn-disabled: #2d485b;         /* less intense text for secondary info */
 
   /* Grid colors */
-  --border-grid-primary: #78aead2c;
+  --border-grid-primary: #78aead37;
 
   /* Font sizes */
   --text-xxs: 11px;
@@ -53,9 +68,10 @@
   --text-m: 16.2px;
   --text-l: 20px;
   --text-xl: 25px;
+  --text-xxl: 32px;
 
   /* Font weight */
-  --text-bolder: 700;
+  --text-bolder: 900;
   --text-bold: 500;
   --text-medium: 500;
   --text-regular: 300;
@@ -65,6 +81,9 @@
   --border-radius-xl: 30px;
   --border-radius-l: 15px;
 
+  /* border radius text blocks */
+  --border-txt-md: 5px;
+  --border-txt-xl: 15px;
   /* drop-shadow filter */
   --shadow: 5;
 
@@ -77,11 +96,17 @@
   /* max width content*/
   --max-content-width: 1500px;
 
+  /* max width content*/
+  --max-content-height: 900px;
+
   /* padding responsive */
   --padding-left-mobile: 15px;
 
   /* border sections */
   --border-width-section: 0px;
+
+  /* animation duration */
+  --scroll-left-duration: 350s;
 }
 
 .light-mode{
@@ -102,19 +127,24 @@
   --gradient-light: #78AEAD;
 
   /* Highlight colors (Light Mode) */
-  --highlight-yellow: #f6d037; 
+  --highlight-yellow: #ffbf00; 
   --highlight-red: #C24432;     
 
   /* Text colors (Light Mode) */ 
   --text-on-light: #1b3241;    
   --text-muted: #344d54;        
   --btn-disabled: #aebec3; 
+
+  /* Title colors */
+  --white-title: #03080d;
+  ---yellow-title: #03080d; 
+  --green-title: #03080d;
   
   /* border color */
-  --border-dark: #c4d4d9;
+  --border-dark: #d9c8c4;
 
   /* Block colors */
-  --b-light: #2d485b;
+  --b-light: #03080d;
 
   --shadow: 0.3;
 
@@ -167,7 +197,8 @@ body{
     font-family: Lexend;
     /* background-color: var(--bg-dark); */
     /* background: radial-gradient(circle at top center, var(--bg-dark), var(--gradient-darkest), var(--gradient-darkest)); */
-    background: linear-gradient(to bottom, var(--bg-dark), var(--bg-dark), var(--gradient-darkest));
+    /* background: linear-gradient(to bottom, var(--bg-dark), var(--bg-dark), var(--gradient-darkest)); */
+    background-color: var(--bg-darkest);
     width: 100vw;
     height: 100vh;
     border: 1px solid var(--border-dark);
@@ -181,7 +212,7 @@ body{
     }
 }
 
-*{
+*:not(.block-content, .textarea){
     font-family: Lexend, sans-serif;
     color: var(--text-on-light);
 }
@@ -195,17 +226,36 @@ button:active{
     place-items: center;
     gap: 15px;
     margin-top: 30vh;
-
-    div{
-        border: 0.5px solid var(--bg-light);
-        border-radius: var(--border-radius-l);
-        padding: 20px;
-        display: grid;
-        place-items: center;
-        gap: 10px;
-    }
 }
 
 .home-contruction-btn{
     background-color: var(--bg-html);
+}
+
+.stars{
+    position: fixed;
+    inset: 0;
+    background-image: radial-gradient(2px 2px at 40px 70px, rgba(255, 255, 255, .5), transparent), radial-gradient(1px 1px at 90px 40px, rgba(255, 255, 255, .6), transparent), radial-gradient(2px 2px at 130px 80px, rgba(255, 255, 255, .4), transparent), radial-gradient(1px 1px at 160px 120px, rgba(255, 255, 255, .7), transparent), radial-gradient(2px 2px at 200px 60px, rgba(0, 229, 204, .6), transparent), radial-gradient(1px 1px at 250px 150px, rgba(255, 255, 255, .5), transparent), radial-gradient(2px 2px at 300px 40px, rgba(255, 77, 77, .4), transparent);
+    background-size: 350px 200px;
+    animation: twinkle 2s ease-in-out infinite alternate;
+    pointer-events: none;
+    z-index: 0;
+}
+
+@keyframes twinkle {
+        0% {
+        opacity: .3;
+    }
+    100% {
+        opacity: .5;
+    }
+}
+
+@keyframes scroll-left {
+    0% {
+    transform: translate(0);
+    }
+    100% {
+        transform: translate(-50%);
+    }   
 }
