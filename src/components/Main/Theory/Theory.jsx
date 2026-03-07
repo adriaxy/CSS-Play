@@ -6,34 +6,26 @@ export default function Theory(){
     const { currentSublevelData } = useGame();
     const description = currentSublevelData.theory.description;
     const syntax = currentSublevelData.theory.syntax;
+    const title = Array.from({ length: 100 });
 
     return(
         <>
-            <SubHeaderSection sectionName={'theory__title'}>
-                <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="40"
-                height="40"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="var(--text-on-light)"
-                strokeWidth="1.75"
-                strokeLinejoin="round"
-                >
-                <path d="M3 19a9 9 0 0 1 9 0a9 9 0 0 1 9 0" />
-                <path d="M3 6a9 9 0 0 1 9 0a9 9 0 0 1 9 0" />
-                <path d="M3 6l0 13" />
-                <path d="M12 6l0 13" />
-                <path d="M21 6l0 13" />
-                </svg>
-            <span className='theory__title--light'>CSS property: <span className='theory__title--bold'>{currentSublevelData.name.toUpperCase()}</span></span>
+            <SubHeaderSection sectionName={'theory__title'} isTitleAnmiated={true}>
+            <span className='theory__title--light'>
+                {title.map((_,i) => (
+                    <span key={i} className='theory__title--bold'>{currentSublevelData.name}</span>
+                ))}
+            </span>
             </SubHeaderSection>
             <div className="theory__text">
                 <div className="theory__text-limit">
                     <div className='theory__text-description'>
-                        {description.map((p, i) => (
-                            <p key={i} className='description-property__paragraph'>{p}</p>
-                        ))}
+                        <h4 className='text-theory__title'>A bit of theory...</h4>
+                            <div className="text-theory__container">
+                                {description.map((p, i) => (
+                                    <p key={i} className='description-property__paragraph'>{p}</p>
+                                ))}
+                            </div>
                     </div>
                     <div className='theory__text-syntax'>
                     <h4 className='text-syntax__title'>Syntax</h4>

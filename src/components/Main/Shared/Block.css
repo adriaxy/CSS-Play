@@ -1,5 +1,7 @@
 .block{
     position: relative;
+    cursor: crosshair;
+    transition: all 0.2s ease;
 }
 
 .block.completed {

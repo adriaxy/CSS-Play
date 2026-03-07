@@ -12,7 +12,7 @@ export default function TargetLayout(){
     return(
         <div className='target-layout'>
             <SubHeaderArena 
-                SubHeaderTitle={'Target Layout'}
+                SubHeaderTitle={'Target Layout'} headerStyles={{background: "var(--green-bg)"}}
             />
             <BlockContainer blockId={'target'}>
                 <Grid />

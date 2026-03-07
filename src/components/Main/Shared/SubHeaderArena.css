@@ -5,7 +5,8 @@
     height: 33px;
     padding: 5px 10px;
     background-color: var(--header-arena);
-    border-radius: var(--border-radius-l) var(--border-radius-l) 0 0;
+    border-radius: var(--border-radius-l) var(--border-radius-l) 0px 0px;
+    background: linear-gradient(135deg, var(--yellow-bg) 0%, var(--green-bg) 100%);
 }
 
 .sub-header__title{

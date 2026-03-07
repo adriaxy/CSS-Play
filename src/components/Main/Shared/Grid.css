@@ -27,7 +27,6 @@
     text-align: center;
     padding: 2px;
     margin-top: 10px;
-    background-color: var(--gradient-darkest);
     color: var(--gradient-light);
 }
 
@@ -46,6 +45,5 @@
     margin-left: 8px;
     font-size: var(--text-xxs);
     text-align: center;
-    background-color: var(--gradient-darkest);
     color: var(--gradient-light);
 }

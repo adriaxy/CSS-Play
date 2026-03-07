@@ -16,7 +16,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 7px 15px 7px ;
+    padding: 15px ;
     /* background-color: var(--bg-darkest); */
     overflow: hidden;
     max-width: var(--max-content-width);
@@ -25,8 +25,8 @@
 
 .header-container{
     background: linear-gradient(to right, var(--gradient-darkest), var(--bg-darkest), var(--gradient-darkest));
-    border-bottom: 1px solid var(--border-dark);
     border-radius: var(--border-radius-xl) var(--border-radius-xl) 0 0;
+    /* box-shadow: rgba(255, 255, 255, 0.1) 0px 5px 50px -5px, rgba(255, 255, 255, 0.1) 0px 0px 0px 1px; */
 }
 
 .header__logo{
@@ -70,11 +70,26 @@
 }
 
 .header__title{
-    font-size: var(--text-xl);
+    font-size: var(--text-xxl);
     font-weight: 200;
     display: inline-block;
     margin-bottom: 5px;
-    font-weight: var(--text-bold);
+    font-weight: 900;
+    background: linear-gradient(135deg, var(---yellow-title) 0%, var(--green-title) 100%);
+    -webkit-text-fill-color: transparent;
+    background-size: 150% 150%;
+    background-clip: text;
+    animation: gradientTitle 6s ease infinite;
+}
+
+@keyframes gradientTitle {
+    0%, 100% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
 }
 
 .header__center{

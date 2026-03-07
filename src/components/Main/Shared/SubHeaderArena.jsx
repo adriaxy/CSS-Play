@@ -1,8 +1,8 @@
 import './SubHeaderArena.css'
 
-export default function SubHeader({SubHeaderTitle, buttons = []}){
+export default function SubHeader({SubHeaderTitle, buttons = [], headerStyles}){
     return(
-        <header className="sub-header">
+        <header className="sub-header" style={headerStyles}>
             <h3 className="sub-header__title">
                 {SubHeaderTitle === 'Playground'
                     ? <svg
