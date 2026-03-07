@@ -14,7 +14,7 @@
 .theory__text-limit{
     margin: 0 auto;
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
     padding: 20px 25px;
     gap: 20px;
 }
@@ -25,10 +25,22 @@
     line-height: 1.6;
     font-weight: var(--text-regular);
     padding: 10px;
-    
+    position: relative;
+    margin-bottom: 10px;
+    border-radius: var(--border-radius-l);
     transition: all 0.2s ease;
     &:hover{
         background-color: var(--bg-dark);
+    }
+
+    &::before{
+        content: '';
+        position: absolute;
+        top: 14px;
+        left: -8px;
+        height: 17px;
+        width: 6px;
+        background-color: #78aead6a;
     }
 }
 
@@ -47,17 +59,17 @@
 .syntax-property__code, .text-theory__container {
   background: var(--bg-darkest);           
   color: var(--text-on-dark); 
-  border-radius: 8px;               
+  border-radius: var(--border-radius-l);               
   font-size: var(--text-m);
   padding: 12px 30px;
   margin: 15px 0 10px 20px;
-  max-width: 400px;
   overflow-x: auto;
   box-shadow: inset 0 0 0 1px rgba(255,255,255,0.08);
 }
 
 .text-theory__container{
-  padding: 12px 20px;
+  padding: 12px 20px 12px 29px;
+  position: relative;
 }
 
 .syntax-property__code code {

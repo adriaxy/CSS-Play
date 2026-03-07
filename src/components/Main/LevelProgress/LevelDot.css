@@ -6,11 +6,25 @@
     border-radius: 50px;
     animation: zoom 2s linear infinite;
     pointer-events: none;
+    position: relative;
 }
 
 .level-dot.completed{
     background-color: green;
     filter: drop-shadow(0px 0px 7px rgb(21, 120, 57));
+}
+
+.level-dot__selected.current{
+   position: absolute;
+   width: 90%;
+   height: 90%;
+   opacity: 0.4;
+   transform: translateX(-50%) translatey(-50%) rotate(45deg);
+   outline: 4px dashed var(--highlight-red);
+}
+
+.level-dot__selected.current.completed{
+   outline: 4px dashed var(--completed-light);
 }
 
 .level-dot-wrapper{
