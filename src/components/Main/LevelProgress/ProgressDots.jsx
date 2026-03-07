@@ -3,7 +3,7 @@ import LevelDot from './LevelDot';
 import { useGame } from '@/app/GameContext';
 
 export default function ProgressDots() {
-    const { sublevelState, currentLevel, currentLevelData } = useGame();
+    const { sublevelState, currentLevel, currentLevelData, currentSublevel } = useGame();
 
     return (
         <div className='progress-dots'>
@@ -13,7 +13,8 @@ export default function ProgressDots() {
                     sublevel={i}
                     dotName={sublevel.name}
                     isCompleted={sublevelState[currentLevel][i]?.completed ? 'completed' : ''}
-                />
+                    currentLevel={i === currentSublevel ? 'current' : ''}
+                /> 
             ))}
         </div>
     );

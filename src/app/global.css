@@ -19,6 +19,7 @@
   /* Background colors gradient */
   --yellow-bg-gradient: #ffca2930; 
   --green-bg-gradient: #a5d5ce30;  
+
   /* header responsive colors */
   --bg-header-darkest: #0d1f33bc;
 
@@ -47,9 +48,8 @@
   ---yellow-title: #ffbf00; 
   --green-title: #a5d5ce;
 
-
   /* Game stats colors */
-  --completed-dark: #006127;
+  --completed-dark: #00943b;
   --completed-light: #00943b;
 
   /* Text colors */
@@ -60,6 +60,9 @@
 
   /* Grid colors */
   --border-grid-primary: #78aead37;
+
+  /* Current sublevel - dot outline color */
+  --outline-current-sublevel: #ffbf00;
 
   /* Font sizes */
   --text-xxs: 11px;
@@ -97,7 +100,7 @@
   --max-content-width: 1500px;
 
   /* max width content*/
-  --max-content-height: 900px;
+  --max-content-height: 850px;
 
   /* padding responsive */
   --padding-left-mobile: 15px;
@@ -139,6 +142,9 @@
   --white-title: #03080d;
   ---yellow-title: #03080d; 
   --green-title: #03080d;
+  
+  /* Current sublevel - dot outline color */
+  --outline-current-sublevel: #ffffff;
   
   /* border color */
   --border-dark: #d9c8c4;
