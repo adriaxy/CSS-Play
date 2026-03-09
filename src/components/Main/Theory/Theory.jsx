@@ -13,7 +13,7 @@ export default function Theory(){
             <SubHeaderSection sectionName={'theory__title'} isTitleAnmiated={true}>
             <span className='theory__title--light'>
                 {title.map((_,i) => (
-                    <span key={i} className='theory__title--bold'>{currentSublevelData.name}</span>
+                    <span key={i} className={`theory__title--font-${i % 5}`}>{currentSublevelData.name}</span>
                 ))}
             </span>
             </SubHeaderSection>

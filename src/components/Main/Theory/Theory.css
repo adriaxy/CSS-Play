@@ -1,5 +1,37 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@900&family=Inter:wght@200&family=Fira+Code:wght@700&family=Bebas+Neue&family=Dancing+Script:wght@600&display=swap');
+
+.theory__title--font-0 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 900;
+    margin-left: 30px;
+}
+
+.theory__title--font-1 {
+    font-family: 'Inter', sans-serif;
+    font-weight: 200;
+    margin-left: 30px;
+}
+
+.theory__title--font-2 {
+    font-family: 'Fira Code', monospace;
+    font-weight: 700;
+    margin-left: 30px;
+}
+
+.theory__title--font-3 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-weight: 400;
+    margin-left: 30px;
+}
+
+.theory__title--font-4 {
+    font-family: 'Dancing Script', cursive;
+    font-weight: 600;
+    margin-left: 30px;
+}
+
 .theory__text{
-    flex: 1;       
+    flex: 1;
     overflow-y: auto;    
     overflow-x: hidden;
     /* background-color: var(--bg-light-blue); */
