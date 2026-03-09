@@ -126,6 +126,13 @@ export function GameProvider({ initialLevel, initialSublevel, children}){
         })
     }, [currentSublevel, currentLevel, sublevelState[currentLevel]?.[currentSublevel]?.playerCode, sublevelState[currentLevel]?.[currentSublevel]?.firstTime ])
 
+    useEffect(() => {
+        const defaultGrid = levels[currentLevel].defaultShowGrid;
+        if (defaultGrid !== undefined) {
+            setShowGrid(defaultGrid);
+        }
+    }, [currentLevel]);
+
     // Guardamos el progreso de cada nivel
     useEffect(() => {
     const sublevelsCount = levels[currentLevel].sublevels.length;

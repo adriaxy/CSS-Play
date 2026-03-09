@@ -120,6 +120,7 @@ const levels = [
     level: 2,
     name: "Dimensions and Spacing",
     successMessage: "You’ve successfully completed the Dimensions & Spacing level! You mastered essential CSS properties like padding, margin, width, height, and box-sizing. Keep experimenting and applying what you’ve learned",
+    defaultShowGrid: true,
     sublevels: [
       // Sublevel 1: WIDTH
       {
