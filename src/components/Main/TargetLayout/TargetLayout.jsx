@@ -27,7 +27,9 @@ export default function TargetLayout(){
                                 style={{...block.initialStyle, ...block.solution[0]}} 
                                 group={block.group} 
                                 blockSolution={block.solution}
-                                playground={false}/>
+                                playground={false}
+                                blockText={block.text}
+                                />
                         )
                     })
                 }

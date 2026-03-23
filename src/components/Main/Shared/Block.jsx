@@ -2,7 +2,7 @@ import './Block.css'
 import { useGame } from '@/app/GameContext'
 import { useEffect } from 'react';
 
-export default function Block({blockId, style, group, blockSolution, playground = false}) {
+export default function Block({blockId, style, group, blockSolution, playground = false, blockText}) {
     // Obtenemos estado global del juego desde el context
     const {hoveredBlock, setHoveredBlock, sublevelState, currentSublevel, currentLevel, setSublevelState, currentSublevelData} = useGame();
     const hasBlockChildrenInside = currentSublevelData.blocks[0].blockChildrenInside;
@@ -77,6 +77,7 @@ export default function Block({blockId, style, group, blockSolution, playground 
             className={`block ${blockIdPlayground} ${isCompleted}`}>
                 {hasBlockChildrenInside && <div style={insideChildrenStyles}>{insideChildrenText !== '' && insideChildrenText}</div>}
                 <div className='block-name-text' style={finalStyleHoverText} aria-label={blockId}>{blockId}</div>
+                {blockText && <p className='block-content'>{blockText}</p>}
             </div>
             {}
         </>

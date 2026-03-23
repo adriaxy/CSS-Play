@@ -1,8 +1,11 @@
+'use client'
 import './LevelProgress.css';
 import ProgressDots from './ProgressDots';
 import { useGame } from '@/app/GameContext';
 import { useEffect, useState } from 'react';
 import CloseModalButton from '../Shared/CloseModalButton';
+import { useRouter } from 'next/navigation';
+import levels from '@/data/levels';
 
 export default function LevelProgress(){
     const { currentLevelData, sublevelState, currentLevel, levelCompletedModalShown, setLevelCompletedModalShown} = useGame();
@@ -10,6 +13,10 @@ export default function LevelProgress(){
     const [showModal, setShowModal] = useState('');
 
     const handleClick = () => setShowModal('');
+
+    const router = useRouter();
+    const nextLevelData = levels[currentLevel + 1];
+    const nextLevelFirstSublevel = nextLevelData?.sublevels[0]?.name;
 
     useEffect(() => {
     const allSublevelsCompleted = sublevelState[currentLevel].every(sub => sub.completed);
@@ -59,26 +66,31 @@ export default function LevelProgress(){
                 </span>
                 <CloseModalButton onClick={handleClick} className="level-completed-modal__close-button"/> 
                 {levelCompletedMessage}
-                <div className='next-level-button'>
-                    <button className='header__challenge-button next-level'>
-                        Go to level 3
-                        <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            width="30"
-                            height="30"
-                            viewBox="0 0 24 24"
-                            fill="none"
-                            stroke="var(--text-on-light)"
-                            strokeWidth="1.75"
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            >
-                            <path d="M5 12l14 0" />
-                            <path d="M15 16l4 -4" />
-                            <path d="M15 8l4 4" />
-                        </svg>
-                    </button>
-                </div>
+                {nextLevelData &&
+                    (<div className='next-level-button'>
+                        <button 
+                            className='header__challenge-button next-level'
+                            onClick={() => router.push(`/level/${currentLevelData.level + 1}/${nextLevelFirstSublevel}`)}
+                        >
+                            {`Go to level ${currentLevelData.level + 1}`}
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="30"
+                                height="30"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="var(--text-on-light)"
+                                strokeWidth="1.75"
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                                >
+                                <path d="M5 12l14 0" />
+                                <path d="M15 16l4 -4" />
+                                <path d="M15 8l4 4" />
+                            </svg>
+                        </button>
+                    </div>
+                )}
             </div>
         </section>
     )
