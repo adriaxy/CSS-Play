@@ -2,22 +2,38 @@ const levels = [
   {
       // PRUEBA NIVEL 1 (SOLO EL NIVEL 2 ESTA COMPLETO --- VER MÁS ABAJO)
     level: 1,
-    name: "Dimensions and Spacing",
+    name: "Styling Essentials",
+    // 
+    // 
+    // 
+    // TODO cambiar el mensaje de finalización y todos los mensajes teóricos y del reto
+    // 
+    // 
+    // 
+    successMessage:  `You’ve successfully completed the Styling Essentials level! You mastered essential CSS properties like color, font-family and text-align. Keep experimenting and applying what you’ve learned`,
+    defaultShowGrid: false,
     sublevels: [
       {
-        id: 1-1,
-        name: "1-1",
+        id: 1,
+        name: "color",
+        
         evaluatedBlocks: ["block1", "block2"],
         totalBlocks: ["block1", "block2"],
-        challenge: "Apply the width property to both blocks so that each one matches the required width shown in the target layout.",
+        challenge: "Apply the color property to both blocks so that each text matches the required color shown in the target layout.",
         theory: {
           description: [
-            "The width property defines the horizontal size of an element's content area.",
-            "It determines how wide the element appears on the page, without affecting the height.",
-            "You can set width using various units like pixels (px), percentages (%), or relative units (em, rem).",
-            "Using width properly helps control layout and alignment of elements."
+            "The color property defines the color of text inside an element.",
+            "It affects only the text content and does not change the background of the element.",
+            "Colors can be defined using keywords, hexadecimal values, RGB, or HSL formats.",
+            "Changing the text color helps improve readability and visual hierarchy in a design.",
+            "Using the color property effectively is essential for styling typography."
           ],
-          syntax: ["width: 200px;"]
+          syntax: [
+            "/* Named color */\ncolor: red;",
+            "/* Hexadecimal value */\ncolor: #ff0000;",
+            "/* RGB value */\ncolor: rgb(255, 0, 0);",
+            "/* HSL value */\ncolor: hsl(0, 100%, 50%);"
+          ]
         },
         blocks: [
           {
@@ -31,18 +47,20 @@ const levels = [
           {
             id: "block1",
             group: "group1",
-            initialStyle: { width: "50px", height: "50px", background: 'var(--b-light)', borderRadius: '20px'},
+            initialStyle: { borderRadius: "var(--border-txt-xl)", padding: "5px 15px", fontSize: "30px", fontWeight: "bold", outline: "1px solid red", filter: "drop-shadow(0 0 8px rgba(255, 0, 0, 0.5))", background: "var(--gradient-darkest)"},
             defaultCode: "",
-            solution: [{ width: "150px" }],
-            viewSolution: 'width: 150px;'
+            text: 'Roses are red 🌹',
+            solution: [{ color: "red" }],
+            viewSolution: 'color: red;'
           },
           {
             id: "block2",
             group: "group2",
-            initialStyle: { width: "50px", height: "50px", background: 'var(--b-light)', borderRadius: '20px'},
+            initialStyle: { borderRadius: "var(--border-txt-xl)", padding: "5px 12px", fontSize: "30px", fontWeight: "bold", outline: "1px solid green", filter: "drop-shadow(0 0 5px green)", background: "var(--gradient-darkest)"},
             defaultCode: "",
-            solution: [{ width: "300px" }],
-            viewSolution: 'width: 300px;'
+            text: 'Green like a frog 🐸',
+            solution: [{ color: "green" }],
+            viewSolution: 'color: green;'
           },
           {
             id: "blockParent",
@@ -57,61 +75,365 @@ const levels = [
             }
           }
         ],
-        successMessage: "Great! You've learned how width works."
+        successMessage: "Great! You've learned how color works."
       },
-
       {
-        id: 1-2,
-        name: "1.2",
+        id: 2,
+        name: "background-color",
         evaluatedBlocks: ["block1", "block2"],
         totalBlocks: ["block1", "block2"],
-        challenge: "Apply the height property to both blocks so that each one matches the required height shown in the target layout.",
+        challenge: "Apply the background-color property to both blocks so that each one matches the required background color shown in the target layout.",
         theory: {
           description: [
-            "The height property defines the vertical size of an element's content area.",
-            "It determines how tall the element appears on the page, without affecting the width.",
-            "You can assign height values in pixels, percentages, or relative units.",
-            "Height is essential to control layout and spacing vertically."
+            "The background-color property defines the background color of an element.",
+            "It fills the entire content and padding area behind the element's content.",
+            "Background colors help separate elements visually and create contrast in layouts.",
+            "You can define colors using keywords, hexadecimal, RGB, or HSL values.",
+            "Using background-color effectively helps structure and highlight parts of a UI."
           ],
-          syntax: ["height: 150px;"]
+          syntax: [
+            "/* Named color */\nbackground-color: blue;",
+            "/* Hexadecimal value */\nbackground-color: #0000ff;",
+            "/* RGB value */\nbackground-color: rgb(0, 0, 255);",
+            "/* Transparent background */\nbackground-color: transparent;"
+          ]
         },
         blocks: [
           {
             id: "initialStylePlayground",
-            defaultCode: '/* Block 1 */\n.block1 {\nwidth: 100px;\n\n}\n\n/* Block 2 */\n.block2 {\nwidth: 100px;\n\n}',
+            initialStyleBlock1: { width: "50px" },
+            initialStyleBlock2: { width: "50px" },
+            defaultCode: "/* Block 1 */\n.block1 {\n\n}\n\n/* Block 2 */\n.block2 {\n\n}",
             blockChildrenInside: false,
             blockChildrenOutside: false
           },
           {
             id: "block1",
             group: "group1",
-            initialStyle: { height: "50px", width: "100px", background: 'var(--b-light)', borderRadius: '20px'},
-            defaultCode: "width: 100px;",
-            solution: [{ width: "100px", height: "120px" }],
-            viewSolution: 'height: 120px;'
+            initialStyle: {position: "absolute", top:"25%", left: "20%", width: "100px", height: "100px", backgroundColor: 'white', borderRadius: "var(--border-txt-md)", boxShadow: '-20px 25px 50px -10px blue', outline: "2px solid blue", display: "grid", placeItems: "center", color: "#0000CC"},
+            defaultCode: "",
+            solution: [{ backgroundColor: 'blue' }],
+            viewSolution: 'background-color: blue;'
           },
           {
             id: "block2",
             group: "group2",
-            initialStyle: { height: "50px", width: "100px", background: 'var(--b-light)', borderRadius: '20px'},
-            defaultCode: "width: 100px;",
-            solution: [{ width: "100px", height: "200px" }],
-            viewSolution: 'height: 200px;'
+            initialStyle: { position: "absolute", bottom:"30%", right: "20%", width: "100px", height: "100px", backgroundColor: 'white', borderRadius: "var(--border-txt-md)", boxShadow: "20px 25px 50px -15px red", outline: "2px solid red", display: "grid", placeItems: "center", color: "#CC0000"},
+            defaultCode: "",
+            solution: [{ backgroundColor: 'red' }],
+            viewSolution: 'background-color: red;'
           },
           {
             id: "blockParent",
             style: {
-              paddingBottom: "50px",
+              position: "relative"
+            }
+          }
+        ],
+        successMessage: "Great! You've learned how background-color works."
+      },
+      {
+        id: 3,
+        name: "font-family",
+        evaluatedBlocks: ["block1", "block2"],
+        totalBlocks: ["block1", "block2"],
+        challenge: "Apply the font-family property to both blocks so that each text uses the required font shown in the target layout.",
+        theory: {
+          description: [
+            "The font-family property defines which typeface is used to display text.",
+            "You can specify multiple fonts as a fallback list in case the first one is not available.",
+            "Fonts strongly influence the tone and readability of a design.",
+            "Common generic families include serif, sans-serif, monospace, cursive, and fantasy.",
+            "Choosing the right font-family is essential for consistent typography."
+          ],
+          syntax: [
+            "/* Single font */\nfont-family: monospace;",
+            "/* Font with fallback */\nfont-family: 'Times New Roman', serif;",
+            "/* Multiple fallbacks */\nfont-family: Arial, Helvetica, sans-serif;",
+            "/* Generic family */\nfont-family: serif;"
+          ]
+          },
+        blocks: [
+          {
+            id: "initialStylePlayground",
+            initialStyleBlock1: { width: "50px" },
+            initialStyleBlock2: { width: "50px" },
+            defaultCode: "/* Block 1 */\n.block1 {\n\n}\n\n/* Block 2 */\n.block2 {\n\n}",
+            blockChildrenInside: false,
+            blockChildrenOutside: false
+          },
+          {
+            id: "block1",
+            group: "group1",
+            initialStyle: { borderRadius: "var(--border-txt-md)", padding: "5px 15px", fontSize: "20px", fontWeight: "bold", outline: "1px solid #ffca2961", filter: "drop-shadow(0 0 15px #ffca2961)", background: "var(--gradient-darkest)", fontFamily: "sans-serif"},
+            defaultCode: "",
+            text: 'I am rigid in Monospace.',
+            solution: [
+              { fontFamily: "monospace" },
+              { fontFamily: "Monospace" }
+            ],
+            viewSolution: 'font-family: Monospace;'
+          },
+          {
+            id: "block2",
+            group: "group2",
+            initialStyle: { borderRadius: "var(--border-txt-md)", padding: "5px 12px", fontSize: "20px", fontWeight: "bold", outline: "1px solid #ffca2961", filter: "drop-shadow(0 0 15px #ffca2961)", background: "var(--gradient-darkest)", fontFamily: "sans-serif"},
+            defaultCode: "",
+            text: 'I am fancy in Times New Roman',
+            solution: [
+              { fontFamily: "Times New Roman" },
+              { fontFamily: "times new roman" }
+            ],
+            viewSolution: 'font-family: Times New Roman;'
+          },
+          {
+            id: "blockParent",
+            style: {
+              padding: "20px",
               height: "100%",
               display: "flex",
-              flexDirection: "row",
-              alignItems: 'flex-end',
+              flexDirection: "column",
+              alignItems: 'center',
               justifyContent: 'center',
               gap: '50px'
             }
           }
         ],
-        successMessage: "Awesome! Now you know how to control height."
+        successMessage: "Great! You've learned how font-family works."
+      },
+      {
+        id: 4,
+        name: "font-size",
+        evaluatedBlocks: ["block1", "block2"],
+        totalBlocks: ["block1", "block2"],
+        challenge: "Apply the font-size property to both blocks so that each text matches the required size shown in the target layout.",
+        theory: {
+          description: [
+            "The font-size property defines the size of text inside an element.",
+            "It determines how large or small the characters appear on the screen.",
+            "Font sizes can be defined using pixels, relative units, or percentages.",
+            "Using appropriate font sizes improves readability and visual hierarchy.",
+            "Font-size is a fundamental property for controlling typography."
+          ],
+          syntax: [
+            "/* Fixed size */\nfont-size: 20px;",
+            "/* Relative to parent */\nfont-size: 120%;",
+            "/* Relative unit */\nfont-size: 1.5rem;",
+            "/* Small predefined value */\nfont-size: small;"
+          ]
+        },
+        blocks: [
+          {
+            id: "initialStylePlayground",
+            initialStyleBlock1: { width: "50px" },
+            initialStyleBlock2: { width: "50px" },
+            defaultCode: "/* Block 1 */\n.block1 {\nfont-family: lexend;\n\n}\n\n/* Block 2 */\n.block2 {\nfont-family: lexend;\n\n}",
+            blockChildrenInside: false,
+            blockChildrenOutside: false
+          },
+          {
+            id: "block1",
+            group: "group1",
+            initialStyle: { borderRadius: "var(--border-txt-md)", padding: "5px 15px", fontSize: "20px", fontWeight: "bold", outline: "1px solid #ffca2961", filter: "drop-shadow(0 0 15px #ffca2961)", background: "var(--gradient-darkest)"},
+            defaultCode: "",
+            text: '50px HUGE!',
+            solution: [{ fontSize: "50px" }],
+            viewSolution: 'font-size: 50px;'
+          },
+          {
+            id: "block2",
+            group: "group2",
+            initialStyle: { borderRadius: "var(--border-txt-md)", padding: "5px 12px", fontSize: "20px", fontWeight: "bold", outline: "1px solid #ffca2961", filter: "drop-shadow(0 0 15px #ffca2961)", background: "var(--gradient-darkest)"},
+            defaultCode: "",
+            text: 'minuscule 6px',
+            solution: [{ fontSize: "6px" }],
+            viewSolution: 'font-size: 6px;'
+          },
+          {
+            id: "blockParent",
+            style: {
+              padding: "20px",
+              height: "100%",
+              display: "flex",
+              flexDirection: "column",
+              alignItems: 'center',
+              justifyContent: 'center',
+              gap: '50px'
+            }
+          }
+        ],
+        successMessage: "Great! You've learned how font-size works."
+      },
+      {
+        id: 5,
+        name: "font-weight",
+        evaluatedBlocks: ["block1", "block2"],
+        totalBlocks: ["block1", "block2"],
+        challenge: "Apply the font-weight property to both blocks so that each text matches the required thickness shown in the target layout.",
+       theory: {
+          description: [
+            "The font-weight property controls how thick or bold text appears.",
+            "It can be defined using keywords like normal or bold, or numeric values.",
+            "Numeric weights usually range from 100 (thin) to 900 (extra bold).",
+            "Heavier weights help emphasize text and create visual hierarchy.",
+            "Using font-weight effectively improves clarity and emphasis in typography."
+          ],
+          syntax: [
+            "/* Keyword value */\nfont-weight: bold;",
+            "/* Normal text */\nfont-weight: normal;",
+            "/* Numeric weight */\nfont-weight: 700;",
+            "/* Very thin text */\nfont-weight: 100;"
+          ]
+        },
+        blocks: [
+          {
+            id: "initialStylePlayground",
+            initialStyleBlock1: { width: "50px" },
+            initialStyleBlock2: { width: "50px" },
+            defaultCode: "/* Block 1 */\n.block1 {\nfont-family: lexend;\nfont-size: 45px;\n\n}\n\n/* Block 2 */\n.block2 {\nfont-family: lexend;\nfont-size: 45px;\n\n}",
+            blockChildrenInside: false,
+            blockChildrenOutside: false
+          },
+          {
+            id: "block1",
+            group: "group1",
+            initialStyle: { borderRadius: "var(--border-txt-xl)", padding: "5px 15px", fontSize: "45px", fontWeight: "300", outline: "1px solid #ffca2961", filter: "drop-shadow(0 0 15px #ffca2961)", background: "var(--gradient-darkest)"},
+            defaultCode: "",
+            text: 'I am 900!',
+            solution: [{ fontWeight: "900" }],
+            viewSolution: 'font-weight: 900;'
+          },
+          {
+            id: "block2",
+            group: "group2",
+            initialStyle: { borderRadius: "var(--border-txt-xl)", padding: "5px 12px", fontSize: "45px", fontWeight: "300", outline: "1px solid #ffca2961", filter: "drop-shadow(0 0 15px #ffca2961)", background: "var(--gradient-darkest)"},
+            defaultCode: "",
+            text: 'Ultra thin 100',
+            solution: [{ fontWeight: "100" }],
+            viewSolution: 'font-weight: 100;'
+          },
+          {
+            id: "blockParent",
+            style: {
+              padding: "20px",
+              height: "100%",
+              display: "flex",
+              flexDirection: "column",
+              alignItems: 'center',
+              justifyContent: 'center',
+              gap: '50px'
+            }
+          }
+        ],
+        successMessage: "Great! You've learned how font-weight works."
+      },
+      {
+        id: 6,
+        name: "line-height",
+        evaluatedBlocks: ["block1"],
+        totalBlocks: ["block1", "block2"],
+        challenge: "Apply the line-height property to the block so that the spacing between lines of text matches the required layout.",
+        theory: {
+          description: [
+            "The line-height property defines the vertical spacing between lines of text.",
+            "It helps control readability by adjusting how tightly or loosely text lines are stacked.",
+            "Line height can be defined using unitless values, pixels, or percentages.",
+            "A larger line-height creates more breathing space between lines.",
+            "Using line-height properly greatly improves text readability in paragraphs."
+          ],
+          syntax: [
+            "/* Unitless value (recommended) */\nline-height: 1.5;",
+            "/* Fixed value */\nline-height: 24px;",
+            "/* Percentage */\nline-height: 150%;",
+            "/* Default */\nline-height: normal;"
+          ]
+        },
+        blocks: [
+          {
+            id: "initialStylePlayground",
+            initialStyleBlock1: { width: "50px" },
+            initialStyleBlock2: { width: "50px" },
+            defaultCode: "/* Block 1 */\n.block1 {\nfont-family: lexend;\nfont-size: 13px;\nfont-weight: 300;\n\n}",
+            blockChildrenInside: false,
+            blockChildrenOutside: false
+          },
+          {
+            id: "block1",
+            group: "group1",
+            initialStyle: { borderRadius: "var(--border-txt-md)", padding: "10px 10px", textAlign: "center", fontSize: "13px", fontWeight: "300", outline: "1px solid #ffca2961", filter: "drop-shadow(0 0 15px #ffca2961)", background: "var(--gradient-darkest)", width: "220px"},
+            defaultCode: "",
+            text: '"We are what we repeatedly do. Excellence, then, is not an act, but a habit. The habits we form shape our character, and our character shapes our destiny."',
+            solution: [{ lineHeight: "2" }],
+            viewSolution: 'line-height: 2;'
+          },
+          {
+            id: "blockParent",
+            style: {
+              padding: "20px",
+              height: "100%",
+              display: "flex",
+              flexDirection: "column",
+              alignItems: 'center',
+              justifyContent: 'center',
+              gap: '50px'
+            }
+          }
+        ],
+        successMessage: "Great! You've learned how line-height works."
+      },
+      {
+        id: 7,
+        name: "text-align",
+        evaluatedBlocks: ["block1"],
+        totalBlocks: ["block1", "block2"],
+        challenge: "Apply the text-align property to the block so that the text alignment matches the required layout.",
+        theory: {
+          description: [
+            "The text-align property controls the horizontal alignment of text inside an element.",
+            "It determines how inline content is positioned within its container.",
+            "Common alignment values include left, right, center, and justify.",
+            "Text alignment is often used to improve readability and layout structure.",
+            "Using text-align properly helps create balanced and organized text layouts."
+          ],
+          syntax: [
+            "/* Center alignment */\ntext-align: center;",
+            "/* Align text to the left */\ntext-align: left;",
+            "/* Align text to the right */\ntext-align: right;",
+            "/* Justified text */\ntext-align: justify;"
+          ]
+        },
+        blocks: [
+          {
+            id: "initialStylePlayground",
+            initialStyleBlock1: { width: "50px" },
+            initialStyleBlock2: { width: "50px" },
+            defaultCode: "/* Block 1 */\n.block1 {\nfont-family: lexend;\nfont-size: 13px;\nfont-weight: 300;\nline-height: 2;\n\n}",
+            blockChildrenInside: false,
+            blockChildrenOutside: false
+          },
+          {
+            id: "block1",
+            group: "group1",
+            initialStyle: { borderRadius: "var(--border-txt-md)", padding: "10px 20px", textAlign: "right", fontSize: "13px", fontWeight: "300", outline: "1px solid #ffca2961", filter: "drop-shadow(0 0 15px #ffca2961)", background: "var(--gradient-darkest)", lineHeight: "2", width: "220px"},
+            defaultCode: "",
+            text: '"We are what we repeatedly do. Excellence, then, is not an act, but a habit. The habits we form shape our character, and our character shapes our destiny."',
+            solution: [{ textAlign: "center" }],
+            viewSolution: 'text-align: center;'
+          },
+          {
+            id: "blockParent",
+            style: {
+              padding: "20px",
+              height: "100%",
+              display: "flex",
+              flexDirection: "column",
+              alignItems: 'center',
+              justifyContent: 'center',
+              gap: '50px'
+            }
+          }
+        ],
+        successMessage: "Great! You've learned how text-align works."
       }
     ]
   },

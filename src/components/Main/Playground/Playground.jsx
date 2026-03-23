@@ -35,7 +35,9 @@ export default function Playground(){
                                 style={block.initialStyle} 
                                 group={block.group} 
                                 blockSolution={block.solution}
-                                playground={true}/>
+                                playground={true}
+                                blockText={block.text}
+                                />
                         )
                     })
                 }
