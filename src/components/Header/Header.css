@@ -30,25 +30,103 @@
 }
 
 .header__logo{
-    font-size: 24px;
+    font-size: 28px;
     cursor: pointer;
     display: flex;
     flex-direction: row;
     align-items: center;
     gap: 8px;
+    min-width: 70px;
+}
+
+.header__logo-svg {
+    fill: var(--yellow-bg);
 }
 
 .header__logo-bold{
-    font-weight: 800;
-    border-bottom: 6px solid var(--highlight-yellow);
+    font-weight: 700;
 }
 
-.header__logo-light{
-    font-weight: 100;
+.header__logo{
+    &:hover .letter {
+        animation: letterJump 3s infinite;
+    }
+
+    &:hover .letter-0 {
+        animation-delay: 0s;
+    }
+
+    &:hover .letter-1 {
+        animation-delay: 0.05s;
+    }
+
+    &:hover .letter-2 {
+        animation-delay: 0.1s;
+    }
+
+    &:hover .header__logo-svg{
+        animation: playMove 3s ease-out 0.15s infinite;
+    }
 }
 
-.header__logo-svg{
-    width: 35px;
+.letter{
+    display: inline-block;
+}
+
+@keyframes letterJump {
+    0% {
+        transform: translateY(0);
+    }
+
+    10% {
+        transform: translateY(-8px);
+        color: var(--yellow-bg);
+    }
+
+    20% {
+        transform: translateY(0);
+        color: var(--green-bg);
+    }
+
+    60% {
+        color: var(--yellow-bg);
+    }
+
+    80% {
+        color: var(--green-bg);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+@keyframes playMove {
+    0% {
+        transform: translateX(0);
+    }
+
+    10% {
+        transform: translateX(4px);
+        fill: var(--yellow-bg);
+    }
+
+    20% {
+        transform: translateX(0);
+        fill: var(--green-bg);
+    }
+
+    60% {
+        fill: var(--yellow-bg);
+    }
+
+    80% {
+        fill: var(--green-bg);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
 }
 
 .header__challenge-button{
@@ -197,16 +275,7 @@
     }
 
     .header__logo{
-        font-size: var(--text-s);
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: center;
-        gap: 4px;
-    }
-
-    .header__logo-svg{
-        width: 20px;
+        font-size: var(--text-l);
     }
 }
 
@@ -229,13 +298,5 @@
             background: none;
             box-shadow: none;
         }
-    }
-
-    .header__logo-svg{
-        display: none;
-    }
-
-    .header__logo-bold{
-        border-bottom: none;
     }
 }
