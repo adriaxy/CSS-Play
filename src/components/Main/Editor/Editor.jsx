@@ -103,7 +103,7 @@ export default function Editor (){
               <path d="M15 11l0 .01" />
               <path d="M18 13l0 .01" />
             </svg>
-            <span>CHALLENGE <span>{sublevelNumber}</span><span className='editor__title--light-typo'> - {sublevelName.toUpperCase()}</span></span>
+            <span>CHALLENGE <span>{sublevelNumber}</span><span className='editor__title--light-typo'> - {sublevelName}</span></span>
           </SubHeaderSection>
           <p className='editor__challenge'>
             {parts[0]}
