@@ -7,8 +7,7 @@ import ThemeModeButton from './ThemeModeButton';
 import { useGame } from '@/app/GameContext';
 
 export default function Header({ onPrev, onNext, isPrevDisabled, isNextDisabled}) {
-    const { currentLevelData, currentSublevelData } = useGame();
-    const sublevelName = currentSublevelData.name.toUpperCase();
+    const { currentLevelData } = useGame();
 
     return (
         <>
