@@ -17,9 +17,20 @@
 .block__code-wrapper{
     background-color: var(--code-solution);
     border-radius: var(--border-radius-l);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 10px;
+    align-items: center;
+    padding: 10px;
+}
+
+.block_code-clipboard-wrapper{
+    min-width: 100px;
+    display: flex;
+    justify-content: end;
 }
 
 .block_code-text{
     font-weight: var(--text-bold);
-    padding: 15px;
 }

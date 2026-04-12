@@ -17,7 +17,7 @@
     left: 50%;
     transform: translate(-50%, 50%);
     border-radius: var(--border-radius-xl);
-    max-width: 500px;
+    max-width: fit-content;
     min-height: fit-content;
     z-index: 2;
     position: relative;

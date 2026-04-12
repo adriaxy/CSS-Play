@@ -47,8 +47,8 @@ export default function ClipboardButton({copiedText}){
 
     return(
         <button onClick={() => {handleClick(); resetClipboard(1000)}} className="copy-code-button">
-            {svg}
             <span className="copy-code-button__text">{copyButtonMessage}</span>
+            {svg}
         </button>
     )
 }
