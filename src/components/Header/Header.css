@@ -69,6 +69,11 @@
     }
 }
 
+.header__logo-svg{
+    animation: playMove 3s ease-out 0.15s infinite;
+}
+
+
 .letter{
     display: inline-block;
 }
