@@ -750,7 +750,7 @@ const levels = [
   {
     level: 3,
     name: "Borders & Decoration",
-    successMessage:  `You’ve successfully completed the Borders and Corners level! You mastered essential CSS properties like border, border-color and outline. Keep experimenting and applying what you’ve learned`,
+    successMessage:  `You’ve successfully completed the Borders & Decoration level! You mastered essential CSS properties like border, outline and box-shadow. Keep experimenting and applying what you’ve learned`,
     defaultShowGrid: false,
     sublevels: [
       {
@@ -763,7 +763,7 @@ const levels = [
           description: [
             "The border property adds a visible edge around an element, separating it from surrounding content.",
             "A border requires three components to be visible: a width, a style, and a color.",
-            "The shorthand border property lets you define all three in a single declaration, in the order: width, style, color.",
+            "The shorthand border property lets you define all three in  a single declaration, in the order: width, style, color.",
             "You can also write each component separately using border-width, border-style, and border-color — useful when you need more control.",
             "Border style is the most critical component: without it, the border will not render even if width and color are set."
           ],
@@ -789,7 +789,16 @@ const levels = [
             group: "group1",
             initialStyle: { position: "absolute", top:"25%", right: "20%", width: "300px", height: "50px", backgroundColor: "lime" },
             defaultCode: "",
-            solution: [{ border: "10px solid red" }],
+            solution: [
+              { border: "10px solid red" },
+              { border: "solid 10px red" },
+              { border: "red solid 10px" },
+              { border: "10px solid #ff0000" },
+              { border: "10px solid rgb(255, 0, 0)" },
+              { borderWidth: "10px", borderStyle: "solid", borderColor: "red" },
+              { borderWidth: "10px", borderStyle: "solid", borderColor: "#ff0000" },
+              { borderWidth: "10px", borderStyle: "solid", borderColor: "rgb(255, 0, 0)" }
+            ],
             viewSolution: 'border: 10px solid red;'
           },
           {
@@ -797,7 +806,16 @@ const levels = [
             group: "group2",
             initialStyle: { position: "absolute", bottom:"30%", left: "20%",width: "300px", height: "50px", backgroundColor: "hotpink", border: "5px" },
             defaultCode: "",
-            solution: [{ border: "3px dashed blue" }],
+            solution: [
+              { border: "3px dashed blue" },
+              { border: "dashed 3px blue" },
+              { border: "blue dashed 3px" },
+              { border: "3px dashed #0000ff" },
+              { border: "3px dashed rgb(0, 0, 255)" },
+              { borderWidth: "3px", borderStyle: "dashed", borderColor: "blue" },
+              { borderWidth: "3px", borderStyle: "dashed", borderColor: "#0000ff" },
+              { borderWidth: "3px", borderStyle: "dashed", borderColor: "rgb(0, 0, 255)" }
+            ],
             viewSolution: 'border: 3px dashed blue;'
           },
           {
@@ -845,15 +863,25 @@ const levels = [
             group: "group1",
             initialStyle: { position: "absolute", top:"25%", left: "20%", width: "100px", height: "100px", backgroundColor: "cyan", border: "3px solid red" },
             defaultCode: "",
-            solution: [{ borderRadius: "10px"}],
+            solution: [
+              { borderRadius: "10px" },
+              { borderRadius: "10.0px" },
+              { borderRadius: "10px 10px 10px 10px" },
+              { borderTopLeftRadius: "10px", borderTopRightRadius: "10px", borderBottomRightRadius: "10px", borderBottomLeftRadius: "10px" },
+              { borderRadius: "10.0px 10.0px 10.0px 10.0px" }
+            ],
             viewSolution: 'border-radius: 10px;'
           },
           {
             id: "block2",
             group: "group2",
-            initialStyle: {  position: "absolute", bottom:"30%", right: "20%", width: "100px", height: "100px", backgroundColor: "yellow", border: "3px dashed blue" },
+            initialStyle: {  position: "absolute", bottom:"30%", right: "20%", width: "100px", height: "100px", backgroundColor: "yellow", border: "3px dashed green" },
             defaultCode: "",
-            solution: [{ borderRadius: '50%' }],
+            solution: [
+              { borderRadius: "50%" },
+              { borderRadius: "50.0%" },
+              { borderTopLeftRadius: "50%", borderTopRightRadius: "50%", borderBottomRightRadius: "50%", borderBottomLeftRadius: "50%" }
+            ],
             viewSolution: 'border-radius: 50%;'
           },
           {
@@ -870,87 +898,96 @@ const levels = [
         name: "outline",
         evaluatedBlocks: ["block1", "block2"],
         totalBlocks: ["block1", "block2"],
-        challenge: "Apply the font-family property to both blocks so that each text uses the required font shown in the target layout.",
+        challenge: "Apply the outline property to each block to match the target layout. One block has a normal outline, while the other looks detached from the element due to an existing offset.",
         theory: {
           description: [
-            "The font-family property defines which typeface is used to display text.",
-            "You can specify multiple fonts as a fallback list in case the first one is not available.",
-            "Fonts strongly influence the tone and readability of a design.",
-            "Common generic families include serif, sans-serif, monospace, cursive, and fantasy.",
-            "Choosing the right font-family is essential for consistent typography."
+            "The outline property draws a line outside the element's border without affecting layout or size.",
+            "Unlike borders, outlines do not take up space and may overlap other elements.",
+            "You can control the outline's width, style, and color.",
+            "Outlines do not support individual side control (no top, right, bottom, left separation).",
+            "The outline-offset property lets you create space between the outline and the element."
           ],
           syntax: [
-            "/* Single font */\nfont-family: monospace;",
-            "/* Font with fallback */\nfont-family: 'Times New Roman', serif;",
-            "/* Multiple fallbacks */\nfont-family: Arial, Helvetica, sans-serif;",
-            "/* Generic family */\nfont-family: serif;"
+            "/* Basic outline */\noutline: 2px solid black;",
+            "/* Different styles */\noutline: 4px dashed red;",
+            "outline: 3px dotted blue;",
+            "/* Outline with offset */\noutline: 2px solid green;\noutline-offset: 6px;",
+            "/* Removing outline */\noutline: none;"
           ]
-          },
+        },
         blocks: [
           {
             id: "initialStylePlayground",
             initialStyleBlock1: { width: "50px" },
             initialStyleBlock2: { width: "50px" },
-            defaultCode: "/* Block 1 */\n.block1 {\n\n}\n\n/* Block 2 */\n.block2 {\n\n}",
+            defaultCode: "/* Block 1 */\n.block1 {\nwidth: 300px;\nheight: 50px;\nbackground-color: sienna;\nborder-radius: 100px 40px 10px 0px;\n\n}\n\n/* Block 2 */\n.block2 {\nwidth: 50px;\nheight: 50px;\nbackground-color: deepskyblue;\nborder-radius: 50%;\noutline-offset: 25px\n\n}",
             blockChildrenInside: false,
             blockChildrenOutside: false
           },
           {
             id: "block1",
             group: "group1",
-            initialStyle: { borderRadius: "var(--border-txt-md)", padding: "5px 15px", fontSize: "20px", fontWeight: "bold", outline: "1px solid #ffca2961", filter: "drop-shadow(0 0 15px #ffca2961)", background: "var(--gradient-darkest)", fontFamily: "sans-serif"},
+            initialStyle: {  position: "absolute", top:"15%", left: "13%", width: "300px", height: "50px", backgroundColor: "sienna", borderRadius: "100px 40px 10px 0px" },
             defaultCode: "",
             solution: [
-              { fontFamily: "monospace" },
-              { fontFamily: "Monospace" }
+              { outline: "10px solid red" },
+              { outline: "solid 10px red" },
+              { outline: "red solid 10px" },
+              { outline: "10px solid #ff0000" },
+              { outline: "10px solid rgb(255, 0, 0)" },
+              { outlineWidth: "10px", outlineStyle: "solid", outlineColor: "red" },
+              { outlineWidth: "10px", outlineStyle: "solid", outlineColor: "#ff0000" },
+              { outlineWidth: "10px", outlineStyle: "solid", outlineColor: "rgb(255, 0, 0)" }
             ],
-            viewSolution: 'font-family: Monospace;'
+            viewSolution: 'outline: 10px solid red;'
           },
           {
             id: "block2",
             group: "group2",
-            initialStyle: { borderRadius: "var(--border-txt-md)", padding: "5px 12px", fontSize: "20px", fontWeight: "bold", outline: "1px solid #ffca2961", filter: "drop-shadow(0 0 15px #ffca2961)", background: "var(--gradient-darkest)", fontFamily: "sans-serif"},
+            initialStyle: { position: "absolute", bottom:"30%", right: "20%", width: "50px", height: "50px", backgroundColor: "deepskyblue", borderRadius: "50%", outlineOffset: "25px" },
             defaultCode: "",
             solution: [
-              { fontFamily: "Times New Roman" },
-              { fontFamily: "times new roman" }
+              { outline: "5px dashed red" },
+              { outline: "dashed 5px red" },
+              { outline: "red dashed 5px" },
+              { outline: "5px dashed #ff0000" },
+              { outline: "5px dashed rgb(255, 0, 0)" },
+              { outlineWidth: "5px", outlineStyle: "dashed", outlineColor: "red" },
+              { outlineWidth: "5px", outlineStyle: "dashed", outlineColor: "#ff0000" },
+              { outlineWidth: "5px", outlineStyle: "dashed", outlineColor: "rgb(255, 0, 0)" }
             ],
-            viewSolution: 'font-family: Times New Roman;'
+            viewSolution: 'outline: 5px dashed red;'
           },
           {
             id: "blockParent",
             style: {
-              padding: "20px",
-              height: "100%",
-              display: "flex",
-              flexDirection: "column",
-              alignItems: 'center',
-              justifyContent: 'center',
-              gap: '50px'
+              position: "relative"
             }
           }
         ],
-        successMessage: "Great! You've learned how font-family works."
+        successMessage: "Great! You've learned how outline works."
       },
       {
         id: 4,
-        name: "font-size",
+        name: "box-shadow",
         evaluatedBlocks: ["block1", "block2"],
         totalBlocks: ["block1", "block2"],
-        challenge: "Apply the font-size property to both blocks so that each text matches the required size shown in the target layout.",
+        challenge: "Apply the box-shadow property to each block to match the target layout. Both blocks use a centered glow effect (no offset), but differ in spread and color intensity: the first block has a smaller green glow, while the second block has a larger red glow.",
         theory: {
           description: [
-            "The font-size property defines the size of text inside an element.",
-            "It determines how large or small the characters appear on the screen.",
-            "Font sizes can be defined using pixels, relative units, or percentages.",
-            "Using appropriate font sizes improves readability and visual hierarchy.",
-            "Font-size is a fundamental property for controlling typography."
+            "The box-shadow property adds shadow effects around an element's box.",
+            "It is defined using horizontal offset, vertical offset, blur radius, spread radius, and color.",
+            "When horizontal and vertical offsets are 0, the shadow is centered evenly around the element (glow effect).",
+            "The blur radius controls how soft and wide the shadow appears.",
+            "The spread radius increases or decreases the size of the shadow evenly in all directions.",
+            "Different colors can be used to create glow-like visual effects."
           ],
           syntax: [
-            "/* Fixed size */\nfont-size: 20px;",
-            "/* Relative to parent */\nfont-size: 120%;",
-            "/* Relative unit */\nfont-size: 1.5rem;",
-            "/* Small predefined value */\nfont-size: small;"
+            "/* Centered glow shadow */\nbox-shadow: 0px 0px 50px 20px green;",
+            "/* Stronger glow with larger spread */\nbox-shadow: 0px 0px 50px 40px red;",
+            "/* Basic shadow with offset */\nbox-shadow: 4px 4px 10px rgba(0,0,0,0.3);",
+            "/* Soft glow effect */\nbox-shadow: 0px 0px 30px 10px rgba(0, 255, 0, 0.5);",
+            "/* Multiple shadows */\nbox-shadow: 0 0 20px rgba(0,0,0,0.2), 0 0 40px rgba(0,0,0,0.1);"
           ]
         },
         blocks: [
@@ -958,159 +995,44 @@ const levels = [
             id: "initialStylePlayground",
             initialStyleBlock1: { width: "50px" },
             initialStyleBlock2: { width: "50px" },
-            defaultCode: "/* Block 1 */\n.block1 {\nfont-family: lexend;\n\n}\n\n/* Block 2 */\n.block2 {\nfont-family: lexend;\n\n}",
+            defaultCode: "/* Block 1 */\n.block1 {\nwidth: 50px;\nheight: 50px;\nbackground-color: orange;\nborder-radius: 50%;\nborder: 2px solid yellow;\noutline: 3px dotted green;\noutline-offset: 2px;\n\n}\n\n/* Block 2 */\n.block2 {\nwidth: 100px;\nheight: 100px;\nbackground-color: blue;\nborder-radius: 50%;\nborder: 1px solid white;\noutline: 3px dashed red;\noutline-offset: 15px\n\n}",
             blockChildrenInside: false,
             blockChildrenOutside: false
           },
           {
             id: "block1",
             group: "group1",
-            initialStyle: { borderRadius: "var(--border-txt-md)", padding: "5px 15px", fontSize: "20px", fontWeight: "bold", outline: "1px solid #ffca2961", filter: "drop-shadow(0 0 15px #ffca2961)", background: "var(--gradient-darkest)"},
+            initialStyle: {  position: "absolute", top:"20%", left: "15%", width: "50px", height: "50px", backgroundColor: "orange", borderRadius: "50%", outline: "3px dotted green", border: "2px solid yellow", outlineOffset: "2px" },
             defaultCode: "",
-            text: '50px HUGE!',
-            solution: [{ fontSize: "50px" }],
-            viewSolution: 'font-size: 50px;'
+            solution: [
+              { boxShadow: "0px 0px 50px 20px green" },
+              { boxShadow: "0 0 50px 20px green" },
+              { boxShadow: "0px 0px 50px 20px #008000" },
+              { boxShadow: "0 0 50px 20px #008000" }
+            ],
+            viewSolution: 'box-shadow: 0px 0px 50px 20px green;'
           },
           {
             id: "block2",
             group: "group2",
-            initialStyle: { borderRadius: "var(--border-txt-md)", padding: "5px 12px", fontSize: "20px", fontWeight: "bold", outline: "1px solid #ffca2961", filter: "drop-shadow(0 0 15px #ffca2961)", background: "var(--gradient-darkest)"},
+            initialStyle: { position: "absolute", bottom:"23%", left: "58%", width: "100px", height: "100px", backgroundColor: "blue", borderRadius: "50%", border: "1px solid white", outline: "3px dashed red", outlineOffset: "15px" },
             defaultCode: "",
-            text: 'minuscule 6px',
-            solution: [{ fontSize: "6px" }],
-            viewSolution: 'font-size: 6px;'
+            solution: [
+              { boxShadow: "0px 0px 50px 40px red" },
+              { boxShadow: "0 0 50px 40px red" },
+              { boxShadow: "0px 0px 50px 40px #ff0000" },
+              { boxShadow: "0 0 50px 40px #ff0000" }
+            ],
+            viewSolution: 'box-shadow: 0px 0px 50px 40px red;'
           },
           {
             id: "blockParent",
             style: {
-              padding: "20px",
-              height: "100%",
-              display: "flex",
-              flexDirection: "column",
-              alignItems: 'center',
-              justifyContent: 'center',
-              gap: '50px'
+              position: "relative"
             }
           }
         ],
-        successMessage: "Great! You've learned how font-size works."
-      },
-      {
-        id: 5,
-        name: "font-weight",
-        evaluatedBlocks: ["block1", "block2"],
-        totalBlocks: ["block1", "block2"],
-        challenge: "Apply the font-weight property to both blocks so that each text matches the required thickness shown in the target layout.",
-       theory: {
-          description: [
-            "The font-weight property controls how thick or bold text appears.",
-            "It can be defined using keywords like normal or bold, or numeric values.",
-            "Numeric weights usually range from 100 (thin) to 900 (extra bold).",
-            "Heavier weights help emphasize text and create visual hierarchy.",
-            "Using font-weight effectively improves clarity and emphasis in typography."
-          ],
-          syntax: [
-            "/* Keyword value */\nfont-weight: bold;",
-            "/* Normal text */\nfont-weight: normal;",
-            "/* Numeric weight */\nfont-weight: 700;",
-            "/* Very thin text */\nfont-weight: 100;"
-          ]
-        },
-        blocks: [
-          {
-            id: "initialStylePlayground",
-            initialStyleBlock1: { width: "50px" },
-            initialStyleBlock2: { width: "50px" },
-            defaultCode: "/* Block 1 */\n.block1 {\nfont-family: lexend;\nfont-size: 45px;\n\n}\n\n/* Block 2 */\n.block2 {\nfont-family: lexend;\nfont-size: 45px;\n\n}",
-            blockChildrenInside: false,
-            blockChildrenOutside: false
-          },
-          {
-            id: "block1",
-            group: "group1",
-            initialStyle: { borderRadius: "var(--border-txt-xl)", padding: "5px 15px", fontSize: "45px", fontWeight: "300", outline: "1px solid #ffca2961", filter: "drop-shadow(0 0 15px #ffca2961)", background: "var(--gradient-darkest)"},
-            defaultCode: "",
-            text: 'I am 900!',
-            solution: [{ fontWeight: "900" }],
-            viewSolution: 'font-weight: 900;'
-          },
-          {
-            id: "block2",
-            group: "group2",
-            initialStyle: { borderRadius: "var(--border-txt-xl)", padding: "5px 12px", fontSize: "45px", fontWeight: "300", outline: "1px solid #ffca2961", filter: "drop-shadow(0 0 15px #ffca2961)", background: "var(--gradient-darkest)"},
-            defaultCode: "",
-            text: 'Ultra thin 100',
-            solution: [{ fontWeight: "100" }],
-            viewSolution: 'font-weight: 100;'
-          },
-          {
-            id: "blockParent",
-            style: {
-              padding: "20px",
-              height: "100%",
-              display: "flex",
-              flexDirection: "column",
-              alignItems: 'center',
-              justifyContent: 'center',
-              gap: '50px'
-            }
-          }
-        ],
-        successMessage: "Great! You've learned how font-weight works."
-      },
-      {
-        id: 6,
-        name: "line-height",
-        evaluatedBlocks: ["block1"],
-        totalBlocks: ["block1", "block2"],
-        challenge: "Apply the line-height property to the block so that the spacing between lines of text matches the required layout.",
-        theory: {
-          description: [
-            "The line-height property defines the vertical spacing between lines of text.",
-            "It helps control readability by adjusting how tightly or loosely text lines are stacked.",
-            "Line height can be defined using unitless values, pixels, or percentages.",
-            "A larger line-height creates more breathing space between lines.",
-            "Using line-height properly greatly improves text readability in paragraphs."
-          ],
-          syntax: [
-            "/* Unitless value (recommended) */\nline-height: 1.5;",
-            "/* Fixed value */\nline-height: 24px;",
-            "/* Percentage */\nline-height: 150%;",
-            "/* Default */\nline-height: normal;"
-          ]
-        },
-        blocks: [
-          {
-            id: "initialStylePlayground",
-            initialStyleBlock1: { width: "50px" },
-            initialStyleBlock2: { width: "50px" },
-            defaultCode: "/* Block 1 */\n.block1 {\nfont-family: lexend;\nfont-size: 13px;\nfont-weight: 300;\n\n}",
-            blockChildrenInside: false,
-            blockChildrenOutside: false
-          },
-          {
-            id: "block1",
-            group: "group1",
-            initialStyle: { borderRadius: "var(--border-txt-md)", padding: "10px 10px", textAlign: "center", fontSize: "13px", fontWeight: "300", outline: "1px solid #ffca2961", filter: "drop-shadow(0 0 15px #ffca2961)", background: "var(--gradient-darkest)", width: "220px"},
-            defaultCode: "",
-            text: '"We are what we repeatedly do. Excellence, then, is not an act, but a habit. The habits we form shape our character, and our character shapes our destiny."',
-            solution: [{ lineHeight: "2" }],
-            viewSolution: 'line-height: 2;'
-          },
-          {
-            id: "blockParent",
-            style: {
-              padding: "20px",
-              height: "100%",
-              display: "flex",
-              flexDirection: "column",
-              alignItems: 'center',
-              justifyContent: 'center',
-              gap: '50px'
-            }
-          }
-        ],
-        successMessage: "Great! You've learned how line-height works."
+        successMessage: "Great! You've learned how box-shadow works."
       }
     ]
   }
