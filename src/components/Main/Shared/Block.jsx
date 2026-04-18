@@ -60,7 +60,7 @@ export default function Block({blockId, style, group, blockSolution, playground 
     // Estilos finales combinando props, hover y estilos de playground
     const finalStyle = {
         ...style,
-        ...(isHovered ? {outline: "2px solid var(--highlight-red)", transition: "box-shadow 0.1s ease"} : {}),
+        ...(isHovered ? {outline: "2px solid var(--highlight-red)", zIndex: "2"} : {}),
         ...(playground === true ? (sublevelState[currentLevel][currentSublevel].blockStyles[blockIdPlayground] || {}) : {})
     }
 

@@ -1035,6 +1035,410 @@ const levels = [
         successMessage: "Great! You've learned how box-shadow works."
       }
     ]
+  },
+  {
+    level: 6,
+    name: "Positioning & Display",
+    successMessage: `You’ve successfully completed the Positioning & Display level! You mastered essential CSS properties like display, position, z-index and more. Keep experimenting and applying what you’ve learned`,
+    defaultShowGrid: true,
+    sublevels: [
+      // Sublevel 1: DISPLAY
+      {
+        id: 1,
+        name: "display",
+        evaluatedBlocks: ["block1", "block2"],
+        totalBlocks: ["block1", "block2"],
+        challenge: "Both blocks are stacking as full-width block elements. Apply the display property: inline-block to both so they appear side by side on the same line.",
+        theory: {
+          description: [
+            "The display property defines how an element is rendered in the document flow.",
+            "block elements take up the full width of their container and always start on a new line.",
+            "inline-block elements flow inline like text but can still have width and height.",
+            "inline elements flow with text and ignore width or height settings.",
+            "Setting display: none hides an element completely, removing it from the layout."
+          ],
+          syntax: [
+            "/* Takes full width, stacks vertically */\ndisplay: block;",
+            "/* Flows inline, keeps dimensions */\ndisplay: inline-block;",
+            "/* Flows with text, ignores dimensions */\ndisplay: inline;",
+            "/* Hides element completely */\ndisplay: none;",
+            "/* Enables flexbox layout */\ndisplay: flex;"
+          ]
+        },
+        blocks: [
+          {
+            id: "initialStylePlayground",
+            defaultCode: "/* Block 1 */\n.block1 {\nwidth: 100px;\nheight: 100px;\nborder-radius: 12px;\n\n}\n\n/* Block 2 */\n.block2 {\nwidth: 100px;\nheight: 100px;\nborder-radius: 12px;\n\n}",
+            blockChildrenInside: false,
+            blockChildrenOutside: false
+          },
+          {
+            id: "block1",
+            group: "group1",
+            initialStyle: { display: "block", width: "100px", height: "100px", background: "var(--b-light)", borderRadius: "12px", marginBottom: "10px", marginRight: "10px" },
+            defaultCode: "",
+            solution: [{ display: "inline-block" }],
+            viewSolution: "display: inline-block;"
+          },
+          {
+            id: "block2",
+            group: "group2",
+            initialStyle: { display: "block", width: "100px", height: "100px", background: "var(--b-light)", borderRadius: "12px", marginBottom: "10px", marginRight: "10px" },
+            defaultCode: "",
+            solution: [{ display: "inline-block" }],
+            viewSolution: "display: inline-block;"
+          },
+          {
+            id: "blockParent",
+            style: {
+              padding: "50px",
+              height: "100%"
+            }
+          }
+        ],
+        successMessage: "Great! You’ve learned how display works."
+      },
+
+      // Sublevel 2: POSITION
+      {
+        id: 2,
+        name: "position",
+        evaluatedBlocks: ["block1"],
+        totalBlocks: ["block1"],
+        challenge: "The block sits in its natural flow position. Apply position property in absolute and use bottom: 20px and right: 20px to pin it to the bottom-right corner of the container.",
+        theory: {
+          description: [
+            "The position property controls how an element is placed in the document.",
+            "static is the default: elements follow the normal document flow and ignore offset properties.",
+            "relative keeps the element in the flow but allows offset from its natural position using top, right, bottom, and left.",
+            "absolute removes the element from the flow and positions it relative to its nearest positioned ancestor.",
+            "fixed positions relative to the viewport, and sticky switches between relative and fixed based on scroll."
+          ],
+          syntax: [
+            "/* Default: normal flow, offsets ignored */\nposition: static;",
+            "/* Offset from natural position */\nposition: relative;",
+            "/* Removed from flow, positioned within ancestor */\nposition: absolute;",
+            "/* Fixed to the viewport */\nposition: fixed;",
+            "/* Sticks at a scroll threshold */\nposition: sticky;\ntop: 0;"
+          ]
+        },
+        blocks: [
+          {
+            id: "initialStylePlayground",
+            defaultCode: "/* Block 1 */\n.block1 {\nwidth: 80px;\nheight: 80px;\nborder-radius: 12px;\n\n}",
+            blockChildrenInside: false,
+            blockChildrenOutside: false
+          },
+          {
+            id: "block1",
+            group: "group1",
+            initialStyle: { width: "80px", height: "80px", borderRadius: "12px", background: "var(--b-light)", margin: "6px 0 0  6px" },
+            defaultCode: "width: 80px;\nheight: 80px;\nborder-radius: 12px;",
+            solution: [
+              { width: "80px", height: "80px", borderRadius: "12px", bottom: "20px", right: "20px", position: "absolute" }
+            ],
+            viewSolution: "position: absolute;\nbottom: 20px;\nright: 20px;"
+          },
+          {
+            id: "blockParent",
+            style: {
+              position: "relative",
+              height: "100%",
+              outline: "2px dashed var(--highlight-red)",
+              outlineOffset: "-6px"
+            }
+          }
+        ],
+        successMessage: "Great! You’ve learned how position works."
+      },
+
+      // Sublevel 3: TOP / LEFT / BOTTOM / RIGHT
+      {
+        id: 3,
+        name: "offset",
+        evaluatedBlocks: ["block1"],
+        totalBlocks: ["block1"],
+        challenge: "The block is set to position: relative. Apply the offset property — top and left — to shift it so it matches the target position.",
+        theory: {
+          description: [
+            "The offset properties top, right, bottom, and left control the displacement of a positioned element.",
+            "They only work when position is set to relative, absolute, fixed, or sticky.",
+            "With position: relative, offsets shift the element from its natural flow position without affecting surrounding elements.",
+            "With position: absolute, offsets position the element inside its nearest positioned ancestor.",
+            "Positive values push inward (top pushes down, left pushes right), negative values push outward."
+          ],
+          syntax: [
+            "/* Push down from natural position */\nposition: relative;\ntop: 30px;",
+            "/* Move right */\nposition: relative;\nleft: 50px;",
+            "/* Pin to top-left corner */\nposition: absolute;\ntop: 0;\nleft: 0;",
+            "/* Pin to bottom-right corner */\nposition: absolute;\nbottom: 0;\nright: 0;",
+            "/* Negative offset (push up) */\nposition: relative;\ntop: -20px;"
+          ]
+        },
+        blocks: [
+          {
+            id: "initialStylePlayground",
+            defaultCode: "/* Block 1 */\n.block1 {\nposition: relative;\n\n}",
+            blockChildrenInside: false,
+            blockChildrenOutside: false
+          },
+          {
+            id: "block1",
+            group: "group1",
+            initialStyle: { position: "relative", width: "100px", height: "100px", background: "var(--b-light)", borderRadius: "12px" },
+            defaultCode: "position: relative;",
+            solution: [
+              { position: "relative", top: "100px", left: "150px" }
+            ],
+            viewSolution: "top: 100px;\nleft: 150px;"
+          },
+          {
+            id: "blockParent",
+            style: {
+              padding: "0px",
+              height: "100%"
+            }
+          }
+        ],
+        successMessage: "Great! You’ve learned how top, left, bottom, and right work."
+      },
+
+      // Sublevel 4: Z-INDEX
+      {
+        id: 4,
+        name: "z-index",
+        evaluatedBlocks: ["block1", "block2"],
+        totalBlocks: ["block1", "block2"],
+        challenge: "Both blocks overlap. Currently the blue block is on top of the pink one. Apply the z-index property so that the pink block appears in front and the blue block goes behind.",
+        theory: {
+          description: [
+            "The z-index property controls the stacking order of positioned elements along the Z axis.",
+            "It only works on elements with a position value other than static.",
+            "Elements with a higher z-index appear in front of elements with a lower value.",
+            "By default, elements later in the DOM stack on top of earlier elements at the same level.",
+            "Negative z-index values push elements behind the normal document flow."
+          ],
+          syntax: [
+            "/* Element on top */\nposition: absolute;\nz-index: 2;",
+            "/* Element behind */\nposition: absolute;\nz-index: 1;",
+            "/* Force element to back */\nposition: absolute;\nz-index: -1;",
+            "/* Highest stacking order */\nposition: absolute;\nz-index: 999;"
+          ]
+        },
+        blocks: [
+          {
+            id: "initialStylePlayground",
+            defaultCode: "/* Block 1 - blue */\n.block1 {\nposition: absolute;\ntop: 25%;\nleft: 30%;\nwidth: 150px;\nheight: 150px;\nbackground: #4a90e2;\nborder-radius: 12px;\n\n}\n\n/* Block 2 - pink */\n.block2 {\nposition: absolute;\ntop: 33%;\nleft: 40%;\nwidth: 150px;\nheight: 150px;\nbackground: #d67ad0;\nborder-radius: 12px;\n\n}",
+            blockChildrenInside: false,
+            blockChildrenOutside: false
+          },
+          {
+            id: "block1",
+            group: "group1",
+            initialStyle: { position: "absolute", top: "25%", left: "30%", width: "150px", height: "150px", background: "#4a90e2", borderRadius: "12px", zIndex: "2" },
+            defaultCode: "position: absolute;\ntop: 25%;\nleft: 30%;\nwidth: 150px;\nheight: 150px;\nbackground: #4a90e2;\nborder-radius: 12px;",
+            solution: [{ position: "absolute", top: "25%", left: "30%", width: "150px", height: "150px", background: "#4a90e2", borderRadius: "12px", zIndex: "1" }],
+            viewSolution: "z-index: 1;"
+          },
+          {
+            id: "block2",
+            group: "group2",
+            initialStyle: { position: "absolute", top: "33%", left: "40%", width: "150px", height: "150px", background: "#d67ad0", borderRadius: "12px", zIndex: "1" },
+            defaultCode: "position: absolute;\ntop: 33%;\nleft: 40%;\nwidth: 150px;\nheight: 150px;\nbackground: #d67ad0;\nborder-radius: 12px;",
+            solution: [{ position: "absolute", top: "33%", left: "40%", width: "150px", height: "150px", background: "#d67ad0", borderRadius: "12px", zIndex: "2" }],
+            viewSolution: "z-index: 2;"
+          },
+          {
+            id: "blockParent",
+            style: {
+              position: "relative",
+              height: "100%"
+            }
+          }
+        ],
+        successMessage: "Great! You’ve learned how z-index works."
+      },
+
+      // Sublevel 5: FLOAT
+      {
+        id: 5,
+        name: "float",
+        evaluatedBlocks: ["block1", "block2"],
+        totalBlocks: ["block1", "block2"],
+        challenge: "Apply float: left to block1 and float: right to block2 so they appear anchored to opposite sides of the container.",
+        theory: {
+          description: [
+            "The float property removes an element from the normal document flow and pushes it to the left or right of its container.",
+            "Floated elements allow surrounding content and inline elements to wrap around them.",
+            "Common values are left, right, and none (the default).",
+            "Floats were widely used for layouts before flexbox and grid, and are still useful for text wrapping.",
+            "Adjacent block content collapses around floated elements unless cleared."
+          ],
+          syntax: [
+            "/* Float to the left */\nfloat: left;",
+            "/* Float to the right */\nfloat: right;",
+            "/* Remove float */\nfloat: none;",
+            "/* Image with text wrapping */\nimg {\n  float: left;\n  margin-right: 10px;\n}"
+          ]
+        },
+        blocks: [
+          {
+            id: "initialStylePlayground",
+            defaultCode: "/* Block 1 */\n.block1 {\nwidth: 100px;\nheight: 100px;\nbackground: #55e06f;\nborder-radius: 12px;\n\n}\n\n/* Block 2 */\n.block2 {\nwidth: 100px;\nheight: 100px;\nbackground: #e94560;\nborder-radius: 12px;\n\n}",
+            blockChildrenInside: false,
+            blockChildrenOutside: false
+          },
+          {
+            id: "block1",
+            group: "group1",
+            initialStyle: { width: "100px", height: "100px", background: "#55e06f", borderRadius: "12px" },
+            defaultCode: "width: 100px;\nheight: 100px;\nbackground: #55e06f;\nborder-radius: 12px;",
+            solution: [{ width: "100px", height: "100px", background: "#55e06f", borderRadius: "12px", float: "left" }],
+            viewSolution: "float: left;"
+          },
+          {
+            id: "block2",
+            group: "group2",
+            initialStyle: { width: "100px", height: "100px", background: "#e94560", borderRadius: "12px", overflow: "hidden" },
+            defaultCode: "width: 100px;\nheight: 100px;\nbackground: #e94560;\nborder-radius: 12px;",
+            solution: [{ width: "100px", height: "100px", background: "#e94560", borderRadius: "12px", float: "right" }],
+            viewSolution: "float: right;"
+          },
+          {
+            id: "blockParent",
+            style: {
+              padding: "50px",
+              height: "100%",
+              overflow: "hidden"
+            }
+          }
+        ],
+        successMessage: "Great! You’ve learned how float works."
+      },
+
+      // Sublevel 6: CLEAR
+      {
+        id: 6,
+        name: "clear",
+        evaluatedBlocks: ["block2"],
+        totalBlocks: ["block1", "block2"],
+        challenge: "Block1 is floating left. Block2 is wrapping alongside it. Apply clear: both to block2 so it moves below the float and starts on a new line.",
+        theory: {
+          description: [
+            "The clear property prevents an element from sitting next to floated elements.",
+            "It forces the element to move below any floats on the specified side.",
+            "clear: left clears left floats, clear: right clears right floats, and clear: both clears all floats.",
+            "Without clear, block elements wrap alongside floated content.",
+            "clear is commonly used after float-based layouts to restore normal document flow."
+          ],
+          syntax: [
+            "/* Move below left floats */\nclear: left;",
+            "/* Move below right floats */\nclear: right;",
+            "/* Move below all floats */\nclear: both;",
+            "/* Default: no clearing */\nclear: none;"
+          ]
+        },
+        blocks: [
+          {
+            id: "initialStylePlayground",
+            defaultCode: "/* Block 1 - floated */\n.block1 {\nfloat: left;\nwidth: 80px;\nheight: 80px;\nbackground: #4a90e2;\nborder-radius: 12px;\n}\n\n/* Block 2 */\n.block2 {\nwidth: 200px;\nheight: 50px;\nbackground: #e94560;\nborder-radius: 12px;\n\n}",
+            blockChildrenInside: false,
+            blockChildrenOutside: false
+          },
+          {
+            id: "block1",
+            group: "group1",
+            initialStyle: { float: "left", width: "80px", height: "80px", background: "#4a90e2", borderRadius: "12px", margin: "0px 10px 20px 0px" }
+          },
+          {
+            id: "block2",
+            group: "group2",
+            initialStyle: { width: "200px", height: "50px", background: "#e94560", borderRadius: "12px" },
+            defaultCode: "width: 200px;\nheight: 50px;\nbackground: #e94560;\nborder-radius: 12px;",
+            solution: [
+              { width: "200px", height: "50px", background: "#e94560", borderRadius: "12px", clear: "both" },
+              { width: "200px", height: "50px", background: "#e94560", borderRadius: "12px", clear: "left" }
+            ],
+            viewSolution: "clear: both;"
+          },
+          {
+            id: "blockParent",
+            style: {
+              padding: "50px",
+              height: "100%"
+            }
+          }
+        ],
+        successMessage: "Great! You’ve learned how clear works."
+      },
+
+      // Sublevel 7: OVERFLOW
+      {
+        id: 7,
+        name: "overflow",
+        evaluatedBlocks: ["block1", "block2"],
+        totalBlocks: ["block1", "block2"],
+        challenge: "Both blocks have more content than fits inside. Apply overflow: hidden to block1 to clip the excess, and overflow: auto to block2 to make it scrollable.",
+        theory: {
+          description: [
+            "The overflow property controls what happens when content is larger than its container.",
+            "visible is the default: content spills outside the element’s boundary.",
+            "hidden clips the overflowing content, making it invisible beyond the element’s edges.",
+            "scroll always shows scrollbars, even when the content fits inside.",
+            "auto adds scrollbars only when needed, hiding them when content fits."
+          ],
+          syntax: [
+            "/* Default: content overflows */\noverflow: visible;",
+            "/* Clip overflowing content */\noverflow: hidden;",
+            "/* Always show scrollbars */\noverflow: scroll;",
+            "/* Scrollbars only when needed */\noverflow: auto;",
+            "/* Control axes separately */\noverflow-x: hidden;\noverflow-y: scroll;"
+          ]
+        },
+        blocks: [
+          {
+            id: "initialStylePlayground",
+            defaultCode: "/* Block 1 */\n.block1 {\nwidth: 130px;\nheight: 80px;\n\n}\n\n/* Block 2 */\n.block2 {\nwidth: 130px;\nheight: 80px;\n\n}",
+            blockChildrenInside: false,
+            blockChildrenOutside: false
+          },
+          {
+            id: "block1",
+            group: "group1",
+            initialStyle: { width: "130px", height: "80px", borderRadius: "var(--border-txt-md)", padding: "10px 10px", textAlign: "center", fontSize: "13px", fontWeight: "300", outline: "1px solid #ffca2961", filter: "drop-shadow(0 0 15px #ffca2961)", background: "var(--gradient-darkest)" },
+            defaultCode: "width: 130px;\nheight: 80px;",
+            text: "This text is much longer than the box and will overflow beyond its boundaries if not clipped.",
+            solution: [
+              { width: "130px", height: "80px", overflow: "hidden" }
+            ],
+            viewSolution: "overflow: hidden;"
+          },
+          {
+            id: "block2",
+            group: "group2",
+            initialStyle: { width: "130px", height: "80px", borderRadius: "var(--border-txt-md)", padding: "10px 10px", textAlign: "center", fontSize: "13px", fontWeight: "300", outline: "1px solid #ffca2961", filter: "drop-shadow(0 0 15px #ffca2961)", background: "var(--gradient-darkest)" },
+            defaultCode: "width: 130px;\nheight: 80px;",
+            text: "This text is also too long to fit. Apply overflow: auto so the user can scroll through all of it.",
+            solution: [
+              { width: "130px", height: "80px", overflow: "auto" }
+            ],
+            viewSolution: "overflow: auto;"
+          },
+          {
+            id: "blockParent",
+            style: {
+              padding: "20px",
+              height: "100%",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              gap: "25px"
+            }
+          }
+        ],
+        successMessage: "Great! You’ve learned how overflow works."
+      }
+    ]
   }
 ];
 

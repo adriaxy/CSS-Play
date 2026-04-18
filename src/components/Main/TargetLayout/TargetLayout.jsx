@@ -24,7 +24,7 @@ export default function TargetLayout(){
                             <Block 
                                 key={blockId} 
                                 blockId={blockId} 
-                                style={{...block.initialStyle, ...block.solution[0]}} 
+                                style={{...block.initialStyle, ...(block.solution?.[0] ?? {})}}
                                 group={block.group} 
                                 blockSolution={block.solution}
                                 playground={false}
