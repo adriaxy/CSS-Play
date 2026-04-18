@@ -34,7 +34,7 @@ export async function generateMetadata({params}){
   return {
     title: `CSS Play - ${sublevel.name}`,
     icons: {
-      icon: `/assets/play_favicon.svg`
+      icon: `/assets/play_favicon.png`
     },
     description: 'An interactive platform to learn CSS through visual challenges and real-time feedback.'
   }
