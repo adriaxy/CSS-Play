@@ -29,14 +29,15 @@ export default function Playground(){
                         const block = currentSublevelData.blocks.find(b => b.id === blockId);
                         if (!block) return null;
                         return (
-                            <Block 
-                                key={blockId} 
-                                blockId={blockId} 
-                                style={block.initialStyle} 
-                                group={block.group} 
+                            <Block
+                                key={blockId}
+                                blockId={blockId}
+                                style={block.initialStyle}
+                                group={block.group}
                                 blockSolution={block.solution}
                                 playground={true}
                                 blockText={block.text}
+                                labelConfig={block.label?.playground}
                                 />
                         )
                     })

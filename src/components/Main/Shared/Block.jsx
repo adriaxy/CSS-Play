@@ -2,7 +2,22 @@ import './Block.css'
 import { useGame } from '@/app/GameContext'
 import { useEffect } from 'react';
 
-export default function Block({blockId, style, group, blockSolution, playground = false, blockText}) {
+function getLabelStyle({ position = 'bottom', offset = 25, color } = {}) {
+    const colorStyle = color ? { color } : {};
+    switch (position) {
+        case 'top':
+            return { ...colorStyle, bottom: 'auto', top: `-${offset}px`, left: '50%', transform: 'translateX(-50%)' };
+        case 'left':
+            return { ...colorStyle, bottom: 'auto', right: `calc(100% + ${offset}px)`, top: '50%', left: 'auto', transform: 'translateY(-50%)' };
+        case 'right':
+            return { ...colorStyle, bottom: 'auto', left: `calc(100% + ${offset}px)`, top: '50%', transform: 'translateY(-50%)' };
+        default:
+            return { ...colorStyle, bottom: `-${offset}px`, left: '50%', transform: 'translateX(-50%)' };
+    }
+}
+
+
+export default function Block({blockId, style, group, blockSolution, playground = false, blockText, labelConfig}) {
     // Obtenemos estado global del juego desde el context
     const {hoveredBlock, setHoveredBlock, sublevelState, currentSublevel, currentLevel, setSublevelState, currentSublevelData} = useGame();
     const hasBlockChildrenInside = currentSublevelData.blocks[0].blockChildrenInside;
@@ -65,7 +80,8 @@ export default function Block({blockId, style, group, blockSolution, playground 
     }
 
     const finalStyleHoverText = {
-        ...(isHovered ? {display: "block"} : {display: "none"})
+        ...(isHovered ? {display: "block"} : {display: "none"}),
+        ...getLabelStyle(labelConfig)
     }
 
     return (

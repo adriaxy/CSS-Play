@@ -21,14 +21,15 @@ export default function TargetLayout(){
                         const block = currentSublevelData.blocks.find(b => b.id === blockId);
                         if (!block) return null;
                         return (
-                            <Block 
-                                key={blockId} 
-                                blockId={blockId} 
+                            <Block
+                                key={blockId}
+                                blockId={blockId}
                                 style={{...block.initialStyle, ...(block.solution?.[0] ?? {})}}
-                                group={block.group} 
+                                group={block.group}
                                 blockSolution={block.solution}
                                 playground={false}
                                 blockText={block.text}
+                                labelConfig={block.label?.target}
                                 />
                         )
                     })

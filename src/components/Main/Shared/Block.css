@@ -38,7 +38,4 @@
     color: var(--highlight-red);
     font-size: var(--text-s);
     position: absolute;
-    bottom: -25px;
-    left: 50%;
-    transform: translateX(-50%);
 }

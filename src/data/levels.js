@@ -353,6 +353,10 @@ const levels = [
             id: "block1",
             group: "group1",
             initialStyle: { borderRadius: "var(--border-txt-md)", padding: "10px 10px", textAlign: "center", fontSize: "13px", fontWeight: "300", outline: "1px solid #66bb6a61", filter: "drop-shadow(0 0 15px #66bb6a61)", background: "var(--gradient-darkest)", width: "220px"},
+            label: {
+              playground: { position: 'bottom', offset: 25},
+              target: { position: 'bottom', offset: 35}
+            },
             defaultCode: "",
             text: '"We are what we repeatedly do. Excellence, then, is not an act, but a habit. The habits we form shape our character, and our character shapes our destiny."',
             solution: [{ lineHeight: "2" }],
@@ -407,6 +411,10 @@ const levels = [
             id: "block1",
             group: "group1",
             initialStyle: { borderRadius: "var(--border-txt-md)", padding: "10px 20px", textAlign: "right", fontSize: "13px", fontWeight: "300", outline: "1px solid #ba68c861", filter: "drop-shadow(0 0 15px #ba68c861)", background: "var(--gradient-darkest)", lineHeight: "2", width: "220px"},
+            label: {
+              playground: { position: 'bottom', offset: 35},
+              target: { position: 'bottom', offset: 35}
+            },
             defaultCode: "",
             text: '"We are what we repeatedly do. Excellence, then, is not an act, but a habit. The habits we form shape our character, and our character shapes our destiny."',
             solution: [{ textAlign: "center" }],
@@ -726,6 +734,10 @@ const levels = [
             id: "block1",
             group: "group1",
             initialStyle: { boxSizing: "content-box", width: "100px", height: "100px", background: 'var(--b-light)', borderRadius: '20px', border: '10px solid var(--highlight-yellow)' },
+            label: {
+              playground: { position: 'bottom', offset: 35},
+              target: { position: 'bottom', offset: 35}
+            },
             defaultCode: "width: 100px;\nheight: 100px;\npadding: 20px;\nmargin: 10px;",
             solution: [{ width: "100px", height: "100px", boxSizing: "border-box" }],
             viewSolution: 'box-sizing: border-box;'
@@ -945,6 +957,10 @@ const levels = [
             id: "block2",
             group: "group2",
             initialStyle: { position: "absolute", bottom:"30%", right: "20%", width: "50px", height: "50px", backgroundColor: "deepskyblue", borderRadius: "50%", outlineOffset: "25px" },
+            label: {
+              playground: { position: 'bottom', offset: 55},
+              target: { position: 'bottom', offset: 55}
+            },
             defaultCode: "",
             solution: [
               { outline: "5px dashed red" },
@@ -1016,6 +1032,10 @@ const levels = [
             id: "block2",
             group: "group2",
             initialStyle: { position: "absolute", bottom:"23%", left: "58%", width: "100px", height: "100px", backgroundColor: "blue", borderRadius: "50%", border: "1px solid white", outline: "3px dashed red", outlineOffset: "15px" },
+            label: {
+              playground: { position: 'bottom', offset: 45, color: "var(--text-on-light)"},
+              target: { position: 'bottom', offset: 45, color: "var(--text-on-light)"}
+            },
             defaultCode: "",
             solution: [
               { boxShadow: "0px 0px 50px 40px red" },
@@ -1076,6 +1096,10 @@ const levels = [
             id: "block1",
             group: "group1",
             initialStyle: { display: "block", width: "100px", height: "100px", background: "#ec4899", borderRadius: "12px", marginBottom: "10px", marginRight: "10px" },
+            label: {
+              playground: { position: 'right', offset: 15},
+              target: { position: 'bottom', offset: 25}
+            },
             defaultCode: "",
             solution: [{ display: "inline-block" }],
             viewSolution: "display: inline-block;"
@@ -1134,6 +1158,10 @@ const levels = [
             group: "group1",
             initialStyle: { width: "80px", height: "80px", borderRadius: "12px", background: "#6366f1", margin: "6px 0 0  6px" },
             defaultCode: "width: 80px;\nheight: 80px;\nborder-radius: 12px;",
+            label: {
+              playground: { position: 'right', offset: 15},
+              target: { position: 'top', offset: 25}
+            },
             solution: [
               { width: "80px", height: "80px", borderRadius: "12px", bottom: "20px", right: "20px", position: "absolute" }
             ],
@@ -1236,6 +1264,10 @@ const levels = [
             id: "block1",
             group: "group1",
             initialStyle: { position: "absolute", top: "25%", left: "30%", width: "150px", height: "150px", background: "#4a90e2", borderRadius: "12px", zIndex: "2" },
+            label: {
+              playground: { position: 'top', offset: 25},
+              target: { position: 'top', offset: 25}
+            },
             defaultCode: "position: absolute;\ntop: 25%;\nleft: 30%;\nwidth: 150px;\nheight: 150px;\nbackground: #4a90e2;\nborder-radius: 12px;",
             solution: [{ position: "absolute", top: "25%", left: "30%", width: "150px", height: "150px", background: "#4a90e2", borderRadius: "12px", zIndex: "1" }],
             viewSolution: "z-index: 1;"
