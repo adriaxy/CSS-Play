@@ -106,9 +106,15 @@ export default function Editor (){
             <span>CHALLENGE <span>{sublevelNumber}</span><span className='editor__title--light-typo'> - {sublevelName}</span></span>
           </SubHeaderSection>
           <p className='editor__challenge'>
-            {parts[0]}
-            <span className='editor__challenge--bold'>{boldTarget}</span>
-            {parts[1]}
+            {parts.length === 2 ? (
+              <>
+                {parts[0]}
+                <span className='editor__challenge--bold'>{boldTarget}</span>
+                {parts[1]}
+              </>
+            ) : (
+              parts[0]
+            )}
           </p>
           <div className="editor-buttons__wrapper">
             {showSemicolonHint && (
