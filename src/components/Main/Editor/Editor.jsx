@@ -7,6 +7,33 @@ import { useGame } from '@/app/GameContext';
 import { useState, useEffect, useRef } from 'react';
 import { parseCssToRules } from '../../../../lib/parseCss';
 
+// Colors used to highlight /* Block 1 */ and /* Block 2 */ comments per sublevel.
+// Each pair reflects the actual CSS color values involved in that sublevel's challenge.
+const BLOCK_COLORS = {
+  'color':            ['#ff0000', '#008000'],
+  'background-color': ['#0000ff', '#ff0000'],
+  'border':           ['#00ff00', '#ff69b4'],
+  'border-radius':    ['#00ffff', '#ffff00'],
+  'outline':          ['#a0522d', '#00bfff'],
+  'box-shadow':       ['#008000', '#ff0000'],
+  'z-index':          ['#4a90e2', '#d67ad0'],
+  'float':            ['#55e06f', '#e94560'],
+  'clear':            ['#4a90e2', '#e94560'],
+};
+const DEFAULT_BLOCK_COLORS = ['var(--text-on-light)', 'var(--text-on-light)'];
+
+// Overlays styled spans on top of the textarea (which has transparent text) so
+// block comments appear bold and color-coded without replacing the native input.
+function buildHighlightHtml(code, block1Color, block2Color) {
+  const escaped = code
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;');
+  return escaped
+    .replace(/\/\* Block 1 \*\//g, `<strong class="block-comment block1" style="color:${block1Color}">/* Block 1 */</strong>`)
+    .replace(/\/\* Block 2 \*\//g, `<strong class="block-comment block2" style="color:${block2Color}">/* Block 2 */</strong>`);
+}
+
 export default function Editor (){
   const {viewSolution, setViewSolution, sublevelState, setSublevelState, currentLevel, currentSublevel, currentSublevelData} = useGame();
   const isCompleted = sublevelState[currentLevel][currentSublevel].completed ? 'completed' : '';
@@ -24,6 +51,16 @@ export default function Editor (){
 
   const [showSemicolonHint, setShowSemicolonHint] = useState(false);
   const hintTimerRef = useRef(null);
+  const textareaRef = useRef(null);
+  const highlightRef = useRef(null);
+
+  const [block1Color, block2Color] = BLOCK_COLORS[sublevelName] ?? DEFAULT_BLOCK_COLORS;
+
+  const syncScroll = () => {
+    if (highlightRef.current && textareaRef.current) {
+      highlightRef.current.scrollTop = textareaRef.current.scrollTop;
+    }
+  };
 
   useEffect(() => {
     if (!playerCode) {
@@ -125,7 +162,23 @@ export default function Editor (){
               <ViewSolutionButton onClick={() => setViewSolution(true)}/>
             </div>
           </div>
-          <textarea className='textarea' name="" id="" onChange={handleChange} value={currentCode}></textarea>
+          <div className="editor-code-wrapper">
+            <div
+              ref={highlightRef}
+              className="editor-highlight"
+              aria-hidden="true"
+              dangerouslySetInnerHTML={{ __html: buildHighlightHtml(currentCode, block1Color, block2Color) }}
+            />
+            <textarea
+              ref={textareaRef}
+              className='textarea'
+              name=""
+              id=""
+              onChange={handleChange}
+              onScroll={syncScroll}
+              value={currentCode}
+            />
+          </div>
         </div>
     )
 }

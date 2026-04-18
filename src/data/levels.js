@@ -1228,7 +1228,7 @@ const levels = [
         blocks: [
           {
             id: "initialStylePlayground",
-            defaultCode: "/* Block 1 - blue */\n.block1 {\nposition: absolute;\ntop: 25%;\nleft: 30%;\nwidth: 150px;\nheight: 150px;\nbackground: #4a90e2;\nborder-radius: 12px;\n\n}\n\n/* Block 2 - pink */\n.block2 {\nposition: absolute;\ntop: 33%;\nleft: 40%;\nwidth: 150px;\nheight: 150px;\nbackground: #d67ad0;\nborder-radius: 12px;\n\n}",
+            defaultCode: "/* Block 1 */\n.block1 {\nposition: absolute;\ntop: 25%;\nleft: 30%;\nwidth: 150px;\nheight: 150px;\nbackground: #4a90e2;\nborder-radius: 12px;\n\n}\n\n/* Block 2 */\n.block2 {\nposition: absolute;\ntop: 33%;\nleft: 40%;\nwidth: 150px;\nheight: 150px;\nbackground: #d67ad0;\nborder-radius: 12px;\n\n}",
             blockChildrenInside: false,
             blockChildrenOutside: false
           },
@@ -1341,7 +1341,7 @@ const levels = [
         blocks: [
           {
             id: "initialStylePlayground",
-            defaultCode: "/* Block 1 - floated */\n.block1 {\nfloat: left;\nwidth: 80px;\nheight: 80px;\nbackground: #4a90e2;\nborder-radius: 12px;\n}\n\n/* Block 2 */\n.block2 {\nwidth: 200px;\nheight: 50px;\nbackground: #e94560;\nborder-radius: 12px;\n\n}",
+            defaultCode: "/* Block 1 */\n.block1 {\nfloat: left;\nwidth: 80px;\nheight: 80px;\nbackground: #4a90e2;\nborder-radius: 12px;\n}\n\n/* Block 2 */\n.block2 {\nwidth: 200px;\nheight: 50px;\nbackground: #e94560;\nborder-radius: 12px;\n\n}",
             blockChildrenInside: false,
             blockChildrenOutside: false
           },
