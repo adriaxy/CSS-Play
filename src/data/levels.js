@@ -157,7 +157,7 @@ const levels = [
           {
             id: "block1",
             group: "group1",
-            initialStyle: { borderRadius: "var(--border-txt-md)", padding: "5px 15px", fontSize: "20px", fontWeight: "bold", outline: "1px solid #ffca2961", filter: "drop-shadow(0 0 15px #ffca2961)", background: "var(--gradient-darkest)", fontFamily: "sans-serif"},
+            initialStyle: { borderRadius: "var(--border-txt-md)", padding: "5px 15px", fontSize: "20px", fontWeight: "bold", outline: "1px solid #00bcd461", filter: "drop-shadow(0 0 15px #00bcd461)", background: "var(--gradient-darkest)", fontFamily: "sans-serif"},
             defaultCode: "",
             text: 'I am rigid in Monospace.',
             solution: [
@@ -169,7 +169,7 @@ const levels = [
           {
             id: "block2",
             group: "group2",
-            initialStyle: { borderRadius: "var(--border-txt-md)", padding: "5px 12px", fontSize: "20px", fontWeight: "bold", outline: "1px solid #ffca2961", filter: "drop-shadow(0 0 15px #ffca2961)", background: "var(--gradient-darkest)", fontFamily: "sans-serif"},
+            initialStyle: { borderRadius: "var(--border-txt-md)", padding: "5px 12px", fontSize: "20px", fontWeight: "bold", outline: "1px solid #e91e8c61", filter: "drop-shadow(0 0 15px #e91e8c61)", background: "var(--gradient-darkest)", fontFamily: "sans-serif"},
             defaultCode: "",
             text: 'I am fancy in Times New Roman',
             solution: [
@@ -226,7 +226,7 @@ const levels = [
           {
             id: "block1",
             group: "group1",
-            initialStyle: { borderRadius: "var(--border-txt-md)", padding: "5px 15px", fontSize: "20px", fontWeight: "bold", outline: "1px solid #ffca2961", filter: "drop-shadow(0 0 15px #ffca2961)", background: "var(--gradient-darkest)"},
+            initialStyle: { borderRadius: "var(--border-txt-md)", padding: "5px 15px", fontSize: "20px", fontWeight: "bold", outline: "1px solid #ff704361", filter: "drop-shadow(0 0 15px #ff704361)", background: "var(--gradient-darkest)"},
             defaultCode: "",
             text: '50px HUGE!',
             solution: [{ fontSize: "50px" }],
@@ -235,7 +235,7 @@ const levels = [
           {
             id: "block2",
             group: "group2",
-            initialStyle: { borderRadius: "var(--border-txt-md)", padding: "5px 12px", fontSize: "20px", fontWeight: "bold", outline: "1px solid #ffca2961", filter: "drop-shadow(0 0 15px #ffca2961)", background: "var(--gradient-darkest)"},
+            initialStyle: { borderRadius: "var(--border-txt-md)", padding: "5px 12px", fontSize: "20px", fontWeight: "bold", outline: "1px solid #7c4dff61", filter: "drop-shadow(0 0 15px #7c4dff61)", background: "var(--gradient-darkest)"},
             defaultCode: "",
             text: 'minuscule 6px',
             solution: [{ fontSize: "6px" }],
@@ -289,7 +289,7 @@ const levels = [
           {
             id: "block1",
             group: "group1",
-            initialStyle: { borderRadius: "var(--border-txt-xl)", padding: "5px 15px", fontSize: "45px", fontWeight: "300", outline: "1px solid #ffca2961", filter: "drop-shadow(0 0 15px #ffca2961)", background: "var(--gradient-darkest)"},
+            initialStyle: { borderRadius: "var(--border-txt-xl)", padding: "5px 15px", fontSize: "45px", fontWeight: "300", outline: "1px solid #f4433661", filter: "drop-shadow(0 0 15px #f4433661)", background: "var(--gradient-darkest)"},
             defaultCode: "",
             text: 'I am 900!',
             solution: [{ fontWeight: "900" }],
@@ -298,7 +298,7 @@ const levels = [
           {
             id: "block2",
             group: "group2",
-            initialStyle: { borderRadius: "var(--border-txt-xl)", padding: "5px 12px", fontSize: "45px", fontWeight: "300", outline: "1px solid #ffca2961", filter: "drop-shadow(0 0 15px #ffca2961)", background: "var(--gradient-darkest)"},
+            initialStyle: { borderRadius: "var(--border-txt-xl)", padding: "5px 12px", fontSize: "45px", fontWeight: "300", outline: "1px solid #546e7a61", filter: "drop-shadow(0 0 15px #546e7a61)", background: "var(--gradient-darkest)"},
             defaultCode: "",
             text: 'Ultra thin 100',
             solution: [{ fontWeight: "100" }],
@@ -352,7 +352,7 @@ const levels = [
           {
             id: "block1",
             group: "group1",
-            initialStyle: { borderRadius: "var(--border-txt-md)", padding: "10px 10px", textAlign: "center", fontSize: "13px", fontWeight: "300", outline: "1px solid #ffca2961", filter: "drop-shadow(0 0 15px #ffca2961)", background: "var(--gradient-darkest)", width: "220px"},
+            initialStyle: { borderRadius: "var(--border-txt-md)", padding: "10px 10px", textAlign: "center", fontSize: "13px", fontWeight: "300", outline: "1px solid #66bb6a61", filter: "drop-shadow(0 0 15px #66bb6a61)", background: "var(--gradient-darkest)", width: "220px"},
             defaultCode: "",
             text: '"We are what we repeatedly do. Excellence, then, is not an act, but a habit. The habits we form shape our character, and our character shapes our destiny."',
             solution: [{ lineHeight: "2" }],
@@ -406,7 +406,7 @@ const levels = [
           {
             id: "block1",
             group: "group1",
-            initialStyle: { borderRadius: "var(--border-txt-md)", padding: "10px 20px", textAlign: "right", fontSize: "13px", fontWeight: "300", outline: "1px solid #ffca2961", filter: "drop-shadow(0 0 15px #ffca2961)", background: "var(--gradient-darkest)", lineHeight: "2", width: "220px"},
+            initialStyle: { borderRadius: "var(--border-txt-md)", padding: "10px 20px", textAlign: "right", fontSize: "13px", fontWeight: "300", outline: "1px solid #ba68c861", filter: "drop-shadow(0 0 15px #ba68c861)", background: "var(--gradient-darkest)", lineHeight: "2", width: "220px"},
             defaultCode: "",
             text: '"We are what we repeatedly do. Excellence, then, is not an act, but a habit. The habits we form shape our character, and our character shapes our destiny."',
             solution: [{ textAlign: "center" }],
@@ -463,14 +463,14 @@ const levels = [
             id: "initialStylePlayground",
             initialStyleBlock1: { width: "50px" },
             initialStyleBlock2: { width: "50px" },
-            defaultCode: "/* Block 1 */\n.block1 {\n\n}\n\n/* Block 2 */\n.block2 {\n\n}",
+            defaultCode: "/* Block 1 */\n.block1 {\nbackground-color: #4f9de8;\n\n}\n\n/* Block 2 */\n.block2 {\nbackground-color: #e8734f;\n\n}",
             blockChildrenInside: false,
             blockChildrenOutside: false
           },
           {
             id: "block1",
             group: "group1",
-            initialStyle: { width: "50px", height: "50px", background: 'var(--b-light)', borderRadius: '20px'},
+            initialStyle: { width: "50px", height: "50px", background: '#4f9de8', borderRadius: '20px'},
             defaultCode: "",
             solution: [{ width: "150px" }],
             viewSolution: 'width: 150px;'
@@ -478,7 +478,7 @@ const levels = [
           {
             id: "block2",
             group: "group2",
-            initialStyle: { width: "50px", height: "50px", background: 'var(--b-light)', borderRadius: '20px'},
+            initialStyle: { width: "50px", height: "50px", background: '#e8734f', borderRadius: '20px'},
             defaultCode: "",
             solution:[{ width: "300px" }],
             viewSolution: 'width: 300px;'
@@ -524,14 +524,14 @@ const levels = [
         blocks: [
           {
             id: "initialStylePlayground",
-            defaultCode: '/* Block 1 */\n.block1 {\nwidth: 100px;\n\n}\n\n/* Block 2 */\n.block2 {\nwidth: 100px;\n\n}',
+            defaultCode: '/* Block 1 */\n.block1 {\nwidth: 100px;\nbackground-color: #8b5cf6;\n\n}\n\n/* Block 2 */\n.block2 {\nwidth: 100px;\nbackground-color: #10b981;\n\n}',
             blockChildrenInside: false,
             blockChildrenOutside: false
           },
           {
             id: "block1",
             group: "group1",
-            initialStyle: { height: "50px", width: "100px", background: 'var(--b-light)', borderRadius: '20px'},
+            initialStyle: { height: "50px", width: "100px", background: '#8b5cf6', borderRadius: '20px'},
             defaultCode: "width: 100px;",
             solution: [{ width: "100px", height: "120px" }],
             viewSolution: 'height: 120px;'
@@ -539,7 +539,7 @@ const levels = [
           {
             id: "block2",
             group: "group2",
-            initialStyle: { height: "50px", width: "100px", background: 'var(--b-light)', borderRadius: '20px'},
+            initialStyle: { height: "50px", width: "100px", background: '#10b981', borderRadius: '20px'},
             defaultCode: "width: 100px;",
             solution: [{ width: "100px", height: "200px" }],
             viewSolution: 'height: 200px;'
@@ -591,7 +591,7 @@ const levels = [
           {
             id: "block1",
             group: "group1",
-            initialStyle: { width: "200px", height: "50px", background: 'var(--b-light)'},
+            initialStyle: { width: "200px", height: "50px", background: 'var(--b-light)', outline: "1px solid red", filter: "drop-shadow(0 0 20px rgba(255, 0, 0, 0.7))"},
             defaultCode: "width: 200px;\nheight: 50px;",
             solution: [
               { width: "200px", height: "50px", padding: "10px" },                                     
@@ -602,7 +602,7 @@ const levels = [
           {
             id: "block2",
             group: "group2",
-            initialStyle: { width: "200px", height: "50px", background: 'var(--b-light)'},
+            initialStyle: { width: "200px", height: "50px", background: 'var(--b-light)', outline: "1px solid green", filter: "drop-shadow(0 0 20px rgba(0, 128, 0, 0.7))"},
             defaultCode: "width: 200px;\nheight: 50px;",
             solution: [
               { width: "200px", height: "50px", padding: "25px 50px 0px 50px"},
@@ -658,14 +658,14 @@ const levels = [
         blocks: [
           {
             id: "initialStylePlayground",
-            defaultCode: "/* Block 1 */\n.block1 {\nwidth: 150px;\nheight: 100px;\n\n}",
+            defaultCode: "/* Block 1 */\n.block1 {\nwidth: 150px;\nheight: 100px;\nbackground-color: #ab47bc;\n\n}",
             blockChildrenInside: false,
             blockChildrenOutside: false
           },
           {
             id: "block1",
             group: "group1",
-            initialStyle: { width: "150px", height: "100px", background: 'var(--b-light)', borderRadius: '20px' },
+            initialStyle: { width: "150px", height: "100px", background: '#ab47bc', borderRadius: '20px' },
             defaultCode: "width: 150px;\nheight: 100px;\n",
             solution: [
               { width: "150px", height: "100px", marginRight: "100px" },
@@ -1068,14 +1068,14 @@ const levels = [
         blocks: [
           {
             id: "initialStylePlayground",
-            defaultCode: "/* Block 1 */\n.block1 {\nwidth: 100px;\nheight: 100px;\nborder-radius: 12px;\n\n}\n\n/* Block 2 */\n.block2 {\nwidth: 100px;\nheight: 100px;\nborder-radius: 12px;\n\n}",
+            defaultCode: "/* Block 1 */\n.block1 {\nwidth: 100px;\nheight: 100px;\nborder-radius: 12px;\nbackground-color: #ec4899;\n\n}\n\n/* Block 2 */\n.block2 {\nwidth: 100px;\nheight: 100px;\nborder-radius: 12px;\nbackground-color: #3b82f6;\n\n}",
             blockChildrenInside: false,
             blockChildrenOutside: false
           },
           {
             id: "block1",
             group: "group1",
-            initialStyle: { display: "block", width: "100px", height: "100px", background: "var(--b-light)", borderRadius: "12px", marginBottom: "10px", marginRight: "10px" },
+            initialStyle: { display: "block", width: "100px", height: "100px", background: "#ec4899", borderRadius: "12px", marginBottom: "10px", marginRight: "10px" },
             defaultCode: "",
             solution: [{ display: "inline-block" }],
             viewSolution: "display: inline-block;"
@@ -1083,7 +1083,7 @@ const levels = [
           {
             id: "block2",
             group: "group2",
-            initialStyle: { display: "block", width: "100px", height: "100px", background: "var(--b-light)", borderRadius: "12px", marginBottom: "10px", marginRight: "10px" },
+            initialStyle: { display: "block", width: "100px", height: "100px", background: "#3b82f6", borderRadius: "12px", marginBottom: "10px", marginRight: "10px" },
             defaultCode: "",
             solution: [{ display: "inline-block" }],
             viewSolution: "display: inline-block;"
@@ -1125,14 +1125,14 @@ const levels = [
         blocks: [
           {
             id: "initialStylePlayground",
-            defaultCode: "/* Block 1 */\n.block1 {\nwidth: 80px;\nheight: 80px;\nborder-radius: 12px;\n\n}",
+            defaultCode: "/* Block 1 */\n.block1 {\nwidth: 80px;\nheight: 80px;\nborder-radius: 12px;\nbackground-color: #6366f1;\n\n}",
             blockChildrenInside: false,
             blockChildrenOutside: false
           },
           {
             id: "block1",
             group: "group1",
-            initialStyle: { width: "80px", height: "80px", borderRadius: "12px", background: "var(--b-light)", margin: "6px 0 0  6px" },
+            initialStyle: { width: "80px", height: "80px", borderRadius: "12px", background: "#6366f1", margin: "6px 0 0  6px" },
             defaultCode: "width: 80px;\nheight: 80px;\nborder-radius: 12px;",
             solution: [
               { width: "80px", height: "80px", borderRadius: "12px", bottom: "20px", right: "20px", position: "absolute" }
@@ -1405,7 +1405,7 @@ const levels = [
           {
             id: "block1",
             group: "group1",
-            initialStyle: { width: "130px", height: "80px", borderRadius: "var(--border-txt-md)", padding: "10px 10px", textAlign: "center", fontSize: "13px", fontWeight: "300", outline: "1px solid #ffca2961", filter: "drop-shadow(0 0 15px #ffca2961)", background: "var(--gradient-darkest)" },
+            initialStyle: { width: "130px", height: "80px", borderRadius: "var(--border-txt-md)", padding: "10px 10px", textAlign: "center", fontSize: "13px", fontWeight: "300", outline: "1px solid #ef535061", filter: "drop-shadow(0 0 15px #ef535061)", background: "var(--gradient-darkest)" },
             defaultCode: "width: 130px;\nheight: 80px;",
             text: "This text is much longer than the box and will overflow beyond its boundaries if not clipped.",
             solution: [
@@ -1416,7 +1416,7 @@ const levels = [
           {
             id: "block2",
             group: "group2",
-            initialStyle: { width: "130px", height: "80px", borderRadius: "var(--border-txt-md)", padding: "10px 10px", textAlign: "center", fontSize: "13px", fontWeight: "300", outline: "1px solid #ffca2961", filter: "drop-shadow(0 0 15px #ffca2961)", background: "var(--gradient-darkest)" },
+            initialStyle: { width: "130px", height: "80px", borderRadius: "var(--border-txt-md)", padding: "10px 10px", textAlign: "center", fontSize: "13px", fontWeight: "300", outline: "1px solid #26a69a61", filter: "drop-shadow(0 0 15px #26a69a61)", background: "var(--gradient-darkest)" },
             defaultCode: "width: 130px;\nheight: 80px;",
             text: "This text is also too long to fit. Apply overflow: auto so the user can scroll through all of it.",
             solution: [
