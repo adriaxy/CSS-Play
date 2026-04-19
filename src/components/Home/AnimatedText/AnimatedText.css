@@ -1,0 +1,33 @@
+.animated-text {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    margin-right: 20px;
+}
+
+.animated-text--visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.animated-text--exit {
+    opacity: 0;
+    transform: translateY(14px);
+}
+
+.animated-text--enter {
+    opacity: 0;
+    transform: translateY(-14px);
+}
+
+.animated-text__svg {
+    display: flex;
+    align-items: center;
+}
+
+.animated-text__label {
+    color: var(--highlight-yellow);
+    font-size: var(--text-s);
+    white-space: nowrap;
+}
