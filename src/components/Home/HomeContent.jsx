@@ -15,6 +15,7 @@ export default function HomeContent(){
     const { homeLevelsData, sublevelState, resetProgress } = useGame();
     const [search, setSearch] = useState('');
     const [showInfo, setShowInfo] = useState(true);
+    const [toggleHovered, setToggleHovered] = useState(false);
 
     const totalSublevels = sublevelState.reduce((sum, level) => sum + level.length, 0);
     const totalCompleted = sublevelState.reduce((sum, level) => sum + level.filter(s => s.completed).length, 0);
@@ -90,10 +91,23 @@ export default function HomeContent(){
                         </div>
                     </div>
                 </div>
-                <div className="informative-section__right"></div>
+                <div className="informative-section__right">
+                    <video
+                        src="/assets/CSSPLAY_trailer.mp4"
+                        autoPlay
+                        loop
+                        muted
+                        playsInline
+                    />
+                </div>
             </section>
             </div>
-            <button className="section-toggle" onClick={() => setShowInfo(prev => !prev)}>
+            <button
+                className="section-toggle"
+                onClick={() => { setShowInfo(prev => !prev); setToggleHovered(false); }}
+                onMouseEnter={() => setToggleHovered(true)}
+                onMouseLeave={() => setToggleHovered(false)}
+            >
                 <div className="section-toggle__line" />
                 <div className={`section-toggle__chevron${showInfo ? '' : ' section-toggle__chevron--flipped'}`}>
                     <svg
@@ -103,6 +117,10 @@ export default function HomeContent(){
                         <path d="M6 15l6 -6l6 6" />
                     </svg>
                 </div>
+                <span className={`section-toggle__tooltip${toggleHovered ? ' show' : ''}`}>
+                    {showInfo ? 'Hide intro' : 'Show intro'}
+                    <span className="section-toggle__tooltip__edge" />
+                </span>
                 <div className="section-toggle__line" />
             </button>
             <section className="home-levels">

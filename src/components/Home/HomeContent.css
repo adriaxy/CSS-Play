@@ -54,6 +54,7 @@
     color: var(--text-muted);
     transition: opacity 0.2s ease;
     cursor: pointer;
+    position: relative;
 }
 
 .section-toggle:hover {
@@ -75,6 +76,36 @@
     border: 0.5px solid var(--show-info-button);
     border-radius: 50px;
     transition: transform 0.4s ease;
+}
+
+.section-toggle__tooltip {
+    display: none;
+    background-color: var(--highlight-yellow);
+    color: #0a1422;
+    padding: 5px 10px;
+    border-radius: 5px;
+    position: absolute;
+    bottom: calc(100% + 8px);
+    left: 50%;
+    transform: translateX(-50%);
+    white-space: nowrap;
+    font-size: var(--text-s);
+    pointer-events: none;
+}
+
+.section-toggle__tooltip.show {
+    display: block;
+}
+
+.section-toggle__tooltip__edge {
+    background-color: var(--highlight-yellow);
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, 50%) rotate(45deg);
+    width: 7px;
+    height: 7px;
 }
 
 .section-toggle__chevron--flipped {
@@ -115,8 +146,18 @@
     gap: 50px;
 }
 
-.informative-section__right{
-    background-color: gray;
+.informative-section__right {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.informative-section__right video{
+    width: 90%;
+    height: 90%;
+    border-radius: 15px;
+    object-fit: cover;
+    display: block;
+    box-shadow: 8px 8px 6px -2px var(--shadow-color-dark);
 }
 
 .left__subtitle{
@@ -185,6 +226,13 @@
     border-radius: 50px;
     cursor: pointer;
     font-size: var(--text-s);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+@media (hover: hover) {
+    .call-action__button:hover {
+        transform: scale(1.05);
+    }
 }
 
 a{

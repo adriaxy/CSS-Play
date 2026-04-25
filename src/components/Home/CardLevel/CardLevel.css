@@ -11,6 +11,7 @@
     min-width: 278px;
     min-height: 223px;
     position: relative;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
 
@@ -77,11 +78,23 @@
     margin: 20px;
 }
 
-.card-level__play:hover .play__svg{
-    transform: scale(1.2);
-}
-
 .play__svg{
     transition: transform 0.3s ease;
     fill: #03080d;
+}
+
+@media (hover: hover) {
+    .card-level:nth-child(odd):hover {
+        transform: translateY(-5px);
+        box-shadow: 0px 5px 10px 0px #ffbf00bf;
+    }
+
+    .card-level:nth-child(even):hover {
+        transform: translateY(-5px);
+        box-shadow: 0px 5px 10px 0px #a5d5cebf;
+    }
+
+    .card-level__play:hover .play__svg {
+        transform: scale(1.1);
+    }
 }
