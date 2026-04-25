@@ -98,16 +98,30 @@ export function GameProvider({ initialLevel, initialSublevel, children}){
     }
     }, [sublevelState, currentLevel, currentSublevel]);
 
-    //Reset game
-    // const resetGame = () => {
-    //     setSelectedBlock(null);
-    //     setHoveredBlock(null);
-    //     setCompletedBlocks({ block1: false, block2: false });
-    //     setCode(initialGameCode);
-    //     setEvaluationResult(null);
-    //     setShowGrid(true);
-    //     setViewSolution(false);
-    // };
+    const resetProgress = () => {
+        setSublevelState(levels.map((level) =>
+            Array.from({ length: level.sublevels.length }, (_, i) => ({
+                firstTime: true,
+                defaultCode: level.sublevels[i].blocks[0].defaultCode,
+                playerCode: null,
+                completedBlocks: { block1: false, block2: false },
+                completed: false,
+                blockStyles: {}
+            }))
+        ));
+        setLevelProgress(() => {
+            const progress = {};
+            levels.forEach((level, lvlIdx) => {
+                progress[lvlIdx] = Object.fromEntries(
+                    level.sublevels.map((_, subIdx) => [subIdx, false])
+                );
+            });
+            return progress;
+        });
+        setCompletedBlocks({ block1: false, block2: false });
+        setCode(initialGameCode);
+        setEvaluationResult(null);
+    };
 
     const [blockStyles, setBlockStyles] = useState();
 
@@ -172,7 +186,7 @@ export function GameProvider({ initialLevel, initialSublevel, children}){
     }))
 
     return (
-        <GameContext.Provider value={{ homeLevelsData, code, setCode, hoveredBlock, setHoveredBlock, initialGameCode, viewSolution, setViewSolution, blockStyles, completedBlocks, setCompletedBlocks, evaluationResult, showGrid, setShowGrid, sublevelState, setSublevelState, setCurrentLevel, setCurrentSublevel, currentSublevel, currentLevel, currentLevelData, currentSublevelData, showCompletedLevelMessage, setShowCompletedLevelMessage, levelCompletedModalShown, setLevelCompletedModalShown, mobileAlertShown, setMobileAlertShown}}>
+        <GameContext.Provider value={{ homeLevelsData, code, setCode, hoveredBlock, setHoveredBlock, initialGameCode, viewSolution, setViewSolution, blockStyles, completedBlocks, setCompletedBlocks, evaluationResult, showGrid, setShowGrid, sublevelState, setSublevelState, setCurrentLevel, setCurrentSublevel, currentSublevel, currentLevel, currentLevelData, currentSublevelData, showCompletedLevelMessage, setShowCompletedLevelMessage, levelCompletedModalShown, setLevelCompletedModalShown, mobileAlertShown, setMobileAlertShown, resetProgress}}>
             {children}
         </GameContext.Provider>
     )

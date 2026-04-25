@@ -1,0 +1,54 @@
+.card-sublevels__ul{
+    list-style: none;
+
+    li{
+        padding-left: 15px;
+        position: relative;
+        margin-bottom: 3px;
+    }
+}
+
+.card-sublevel__li:hover button{
+    text-decoration: underline;
+}
+
+.card-sublevel__li button{
+    font-size: 13px;
+    font-weight: var(--text-regular);
+}
+
+.li__dot-decoration{
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    top: 50%;
+    left: 0px;
+    background-color: var(--highlight-red);
+    border-radius: 50px;
+    animation: zoom 2s linear infinite;
+    filter: drop-shadow(0px 0px 10px rgba(219, 0, 0, 1));
+}
+
+.card-sublevel__btn--completed {
+    color: var(--completed-dark);
+    font-weight: var(--text-bold) !important;
+}
+
+.card-sublevel__btn--pending {
+    color: var(--highlight-red);
+}
+
+.li__dot-decoration--completed {
+    background-color: var(--completed-dark);
+    filter: drop-shadow(0px 0px 10px var(--completed-dark));
+}
+
+@keyframes zoom {
+    0%{
+        transform: scale(0.8)
+    } 50% {
+        transform: scale(1.4) 
+    } 100%{
+        transform: scale(0.8);
+    }
+}

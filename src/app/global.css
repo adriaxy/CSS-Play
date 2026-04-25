@@ -37,6 +37,7 @@
 
   /* border colors */
   --border-dark: #26485e95;
+  --show-info-button: #ffbf0062;
 
   /* Highlight colors */
   --highlight-yellow: #ffbf00;  
@@ -61,6 +62,9 @@
 
   /* Grid colors */
   --border-grid-primary: #78aead37;
+
+  /* Shadow colors */
+  --shadow-color-dark: #5454545b;
 
   /* Current sublevel - dot outline color */
   --outline-current-sublevel: #ffbf00;
@@ -111,6 +115,9 @@
 
   /* animation duration */
   --scroll-left-duration: 350s;
+
+  /* Card level border-width */
+  --card-border-width: 0.5px;
 }
 
 .light-mode{
@@ -144,12 +151,16 @@
   --white-title: #03080d;
   ---yellow-title: #03080d; 
   --green-title: #03080d;
+
+  /* Shadow colors */
+  --shadow-color-dark: #7e7e7e40;
   
   /* Current sublevel - dot outline color */
   --outline-current-sublevel: #ffffff;
   
   /* border color */
-  --border-dark: #d9c8c4;
+  --border-dark: #9cb1be95;
+  --show-info-button: #344d54;
 
   /* Block colors */
   --b-light: #03080d;
@@ -158,6 +169,9 @@
 
   /* border sections */
   --border-width-section: 1px;
+
+  /* Card level border-width */
+  --card-border-width: 1px;
 }
 
 @font-face {
@@ -227,13 +241,6 @@ body{
 
 button:active{
     transform: scale(0.9);
-}
-
-.home-section{
-    display: grid;
-    place-items: center;
-    gap: 15px;
-    margin-top: 30vh;
 }
 
 .home-contruction-btn{
