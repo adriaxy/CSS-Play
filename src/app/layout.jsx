@@ -5,6 +5,7 @@ import { ThemeProvider, useTheme } from './ThemeContext';
 import { useEffect } from 'react';
 import { GameProvider } from './GameContext';
 import Header from '@/components/Header/Header';
+import { Analytics } from '@vercel/analytics/react';
 
 export default function RootLayout({ children }) {
   return (
@@ -20,6 +21,7 @@ export default function RootLayout({ children }) {
             </BodyClassController>
           </ThemeProvider>
         </GameProvider>
+        <Analytics />
       </body>
     </html>
   );
