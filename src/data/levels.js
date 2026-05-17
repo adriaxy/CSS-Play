@@ -2,13 +2,13 @@ const levels = [
   {
     level: 1,
     name: "Styling Essentials",
-    successMessage:  `You’ve successfully completed the Styling Essentials level! You mastered essential CSS properties like color, font-family and text-align. Keep experimenting and applying what you’ve learned`,
+    successMessage:  `You've successfully completed the Styling Essentials level! You mastered essential CSS properties like color, font-family and text-align. Keep experimenting and applying what you've learned`,
     defaultShowGrid: false,
     sublevels: [
       {
         id: 1,
         name: "color",
-        
+
         evaluatedBlocks: ["block1", "block2"],
         totalBlocks: ["block1", "block2"],
         challenge: "Apply the color property to both blocks so that each text matches the required color shown in the target layout.",
@@ -21,10 +21,10 @@ const levels = [
             "Using the color property effectively is essential for styling typography."
           ],
           syntax: [
-            "/* Named color */\ncolor: red;",
-            "/* Hexadecimal value */\ncolor: #ff0000;",
-            "/* RGB value */\ncolor: rgb(255, 0, 0);",
-            "/* HSL value */\ncolor: hsl(0, 100%, 50%);"
+            { comment: "Named color", code: [{ property: "color", value: "red" }] },
+            { comment: "Hexadecimal value", code: [{ property: "color", value: "#ff0000" }] },
+            { comment: "RGB value", code: [{ property: "color", value: "rgb(255, 0, 0)" }] },
+            { comment: "HSL value", code: [{ property: "color", value: "hsl(0, 100%, 50%)" }] },
           ]
         },
         blocks: [
@@ -84,10 +84,10 @@ const levels = [
             "Using background-color effectively helps structure and highlight parts of a UI."
           ],
           syntax: [
-            "/* Named color */\nbackground-color: blue;",
-            "/* Hexadecimal value */\nbackground-color: #0000ff;",
-            "/* RGB value */\nbackground-color: rgb(0, 0, 255);",
-            "/* Transparent background */\nbackground-color: transparent;"
+            { comment: "Named color", code: [{ property: "background-color", value: "blue" }] },
+            { comment: "Hexadecimal value", code: [{ property: "background-color", value: "#0000ff" }] },
+            { comment: "RGB value", code: [{ property: "background-color", value: "rgb(0, 0, 255)" }] },
+            { comment: "Transparent background", code: [{ property: "background-color", value: "transparent" }] },
           ]
         },
         blocks: [
@@ -139,10 +139,10 @@ const levels = [
             "Choosing the right font-family is essential for consistent typography."
           ],
           syntax: [
-            "/* Single font */\nfont-family: monospace;",
-            "/* Font with fallback */\nfont-family: 'Times New Roman', serif;",
-            "/* Multiple fallbacks */\nfont-family: Arial, Helvetica, sans-serif;",
-            "/* Generic family */\nfont-family: serif;"
+            { comment: "Single font", code: [{ property: "font-family", value: "monospace" }] },
+            { comment: "Font with fallback", code: [{ property: "font-family", value: "'Times New Roman', serif" }] },
+            { comment: "Multiple fallbacks", code: [{ property: "font-family", value: "Arial, Helvetica, sans-serif" }] },
+            { comment: "Generic family", code: [{ property: "font-family", value: "serif" }] },
           ]
           },
         blocks: [
@@ -208,10 +208,10 @@ const levels = [
             "Font-size is a fundamental property for controlling typography."
           ],
           syntax: [
-            "/* Fixed size */\nfont-size: 20px;",
-            "/* Relative to parent */\nfont-size: 120%;",
-            "/* Relative unit */\nfont-size: 1.5rem;",
-            "/* Small predefined value */\nfont-size: small;"
+            { comment: "Fixed size", code: [{ property: "font-size", value: "20px" }] },
+            { comment: "Relative to parent", code: [{ property: "font-size", value: "120%" }] },
+            { comment: "Relative unit", code: [{ property: "font-size", value: "1.5rem" }] },
+            { comment: "Small predefined value", code: [{ property: "font-size", value: "small" }] },
           ]
         },
         blocks: [
@@ -271,10 +271,10 @@ const levels = [
             "Using font-weight effectively improves clarity and emphasis in typography."
           ],
           syntax: [
-            "/* Keyword value */\nfont-weight: bold;",
-            "/* Normal text */\nfont-weight: normal;",
-            "/* Numeric weight */\nfont-weight: 700;",
-            "/* Very thin text */\nfont-weight: 100;"
+            { comment: "Keyword value", code: [{ property: "font-weight", value: "bold" }] },
+            { comment: "Normal text", code: [{ property: "font-weight", value: "normal" }] },
+            { comment: "Numeric weight", code: [{ property: "font-weight", value: "700" }] },
+            { comment: "Very thin text", code: [{ property: "font-weight", value: "100" }] },
           ]
         },
         blocks: [
@@ -334,10 +334,10 @@ const levels = [
             "Using line-height properly greatly improves text readability in paragraphs."
           ],
           syntax: [
-            "/* Unitless value (recommended) */\nline-height: 1.5;",
-            "/* Fixed value */\nline-height: 24px;",
-            "/* Percentage */\nline-height: 150%;",
-            "/* Default */\nline-height: normal;"
+            { comment: "Unitless value (recommended)", code: [{ property: "line-height", value: "1.5" }] },
+            { comment: "Fixed value", code: [{ property: "line-height", value: "24px" }] },
+            { comment: "Percentage", code: [{ property: "line-height", value: "150%" }] },
+            { comment: "Default", code: [{ property: "line-height", value: "normal" }] },
           ]
         },
         blocks: [
@@ -392,10 +392,10 @@ const levels = [
             "Using text-align properly helps create balanced and organized text layouts."
           ],
           syntax: [
-            "/* Center alignment */\ntext-align: center;",
-            "/* Align text to the left */\ntext-align: left;",
-            "/* Align text to the right */\ntext-align: right;",
-            "/* Justified text */\ntext-align: justify;"
+            { comment: "Center alignment", code: [{ property: "text-align", value: "center" }] },
+            { comment: "Align text to the left", code: [{ property: "text-align", value: "left" }] },
+            { comment: "Align text to the right", code: [{ property: "text-align", value: "right" }] },
+            { comment: "Justified text", code: [{ property: "text-align", value: "justify" }] },
           ]
         },
         blocks: [
@@ -441,7 +441,7 @@ const levels = [
     // NIVEL 2 COMPLETO ==>
     level: 2,
     name: "Dimensions and Spacing",
-    successMessage: "You’ve successfully completed the Dimensions & Spacing level! You mastered essential CSS properties like padding, margin, width, height, and box-sizing. Keep experimenting and applying what you’ve learned",
+    successMessage: "You've successfully completed the Dimensions & Spacing level! You mastered essential CSS properties like padding, margin, width, height, and box-sizing. Keep experimenting and applying what you've learned",
     defaultShowGrid: true,
     sublevels: [
       // Sublevel 1: WIDTH
@@ -453,17 +453,17 @@ const levels = [
         challenge: "Apply the width property to both blocks so that each one matches the required width shown in the target layout, using pixel values (px).",
         theory: {
         description: [
-          "The width property defines the horizontal size of an element’s content area.",
+          "The width property defines the horizontal size of an element's content area.",
           "By default, it only affects the content box and does not include padding, border, or margin.",
           "Setting a width allows you to control how elements occupy space within a layout.",
           "The final visible size of an element can change depending on other properties such as `padding`, `border`, and `box-sizing`.",
           "Using `width` effectively is essential for building consistent and predictable layouts."
         ],
         syntax: [
-          "/* Fixed width */\nwidth: 200px;",
-          "/* Relative to parent */\nwidth: 50%;",
-          "/* Responsive units */\nwidth: 10rem;",
-          "/* Automatic width (default) */\nwidth: auto;"
+          { comment: "Fixed width", code: [{ property: "width", value: "200px" }] },
+          { comment: "Relative to parent", code: [{ property: "width", value: "50%" }] },
+          { comment: "Responsive units", code: [{ property: "width", value: "10rem" }] },
+          { comment: "Automatic width (default)", code: [{ property: "width", value: "auto" }] },
         ]
       },
         blocks: [
@@ -516,17 +516,17 @@ const levels = [
         challenge: "Apply the height property to both blocks so that each one matches the required height shown in the target layout, using pixel values (px).",
         theory: {
         description: [
-          "The height property defines the vertical size of an element’s content area.",
+          "The height property defines the vertical size of an element's content area.",
           "By default, it only affects the content box and does not include padding, border, or margin.",
           "Setting a height allows you to control how tall elements appear on the page.",
           "The final visible height can change depending on other properties such as `padding`, `border`, and `box-sizing`.",
           "Using height effectively helps maintain layout consistency and alignment."
         ],
         syntax: [
-          "/* Fixed height */\nheight: 100px;",
-          "/* Relative to parent */\nheight: 50%;",
-          "/* Responsive units */\nheight: 10rem;",
-          "/* Automatic height (default) */\nheight: auto;"
+          { comment: "Fixed height", code: [{ property: "height", value: "100px" }] },
+          { comment: "Relative to parent", code: [{ property: "height", value: "50%" }] },
+          { comment: "Responsive units", code: [{ property: "height", value: "10rem" }] },
+          { comment: "Automatic height (default)", code: [{ property: "height", value: "auto" }] },
         ]
       },
         blocks: [
@@ -580,13 +580,18 @@ const levels = [
           "It helps create breathing room for content and improves readability.",
           "You can set padding individually for top, right, bottom, and left, or all sides at once.",
           "Proper use of padding improves the visual structure and spacing within an element.",
-          "Padding affects the element’s total size unless `box-sizing` is adjusted."
+          "Padding affects the element's total size unless `box-sizing` is adjusted."
         ],
         syntax: [
-          "/* Same padding on all sides */\npadding: 20px;",
-          "/* Vertical | Horizontal */\npadding: 10px 20px;",
-          "/* Top | Right | Bottom | Left */\npadding: 5px 10px 15px 20px;",
-          "/* Individual sides */\npadding-top: 10px;\npadding-right: 15px;\npadding-bottom: 10px;\npadding-left: 15px;"
+          { comment: "Same padding on all sides", code: [{ property: "padding", value: "20px" }] },
+          { comment: "Vertical | Horizontal", code: [{ property: "padding", value: "10px 20px" }] },
+          { comment: "Top | Right | Bottom | Left", code: [{ property: "padding", value: "5px 10px 15px 20px" }] },
+          { comment: "Individual sides", code: [
+            { property: "padding-top", value: "10px" },
+            { property: "padding-right", value: "15px" },
+            { property: "padding-bottom", value: "10px" },
+            { property: "padding-left", value: "15px" },
+          ]},
         ]
       },
         blocks: [
@@ -602,8 +607,8 @@ const levels = [
             initialStyle: { width: "200px", height: "50px", background: 'var(--b-light)', outline: "1px solid red", filter: "drop-shadow(0 0 20px rgba(255, 0, 0, 0.7))"},
             defaultCode: "width: 200px;\nheight: 50px;",
             solution: [
-              { width: "200px", height: "50px", padding: "10px" },                                     
-              { width: "200px", height: "50px", paddingTop: "10px", paddingRight: "10px", paddingBottom: "10px", paddingLeft: "10px" } 
+              { width: "200px", height: "50px", padding: "10px" },
+              { width: "200px", height: "50px", paddingTop: "10px", paddingRight: "10px", paddingBottom: "10px", paddingLeft: "10px" }
             ],
             viewSolution: 'padding: 10px;',
           },
@@ -657,10 +662,15 @@ const levels = [
           "Proper use of margin helps align elements and prevent overlapping or overcrowding."
         ],
         syntax: [
-          "/* Same margin on all sides */\nmargin: 20px;",
-          "/* Vertical | Horizontal */\nmargin: 10px 20px;",
-          "/* Top | Right | Bottom | Left */\nmargin: 5px 10px 15px 20px;",
-          "/* Individual sides */\nmargin-top: 10px;\nmargin-right: 15px;\nmargin-bottom: 10px;\nmargin-left: 15px;"
+          { comment: "Same margin on all sides", code: [{ property: "margin", value: "20px" }] },
+          { comment: "Vertical | Horizontal", code: [{ property: "margin", value: "10px 20px" }] },
+          { comment: "Top | Right | Bottom | Left", code: [{ property: "margin", value: "5px 10px 15px 20px" }] },
+          { comment: "Individual sides", code: [
+            { property: "margin-top", value: "10px" },
+            { property: "margin-right", value: "15px" },
+            { property: "margin-bottom", value: "10px" },
+            { property: "margin-left", value: "15px" },
+          ]},
         ]
       },
         blocks: [
@@ -704,14 +714,14 @@ const levels = [
         ],
         successMessage: "Excellent! You've mastered margins."
       },
-      
+
       // Sublevel 5: BOX-SIZING
       {
         id: 5,
         name: "box-sizing",
         evaluatedBlocks: ["block1"],
         totalBlocks: ["block1", "block2"],
-        challenge: "Apply the box-sizing property to Block 1 so that the element’s total width and height exactly match the values defined in the code, including padding and border.",
+        challenge: "Apply the box-sizing property to Block 1 so that the element's total width and height exactly match the values defined in the code, including padding and border.",
         theory: {
         description: [
           "The box-sizing property controls how the total width and height of an element are calculated.",
@@ -720,9 +730,9 @@ const levels = [
           "It is essential for creating predictable, maintainable layouts, especially in complex designs."
         ],
         syntax: [
-          "/* Default */\nbox-sizing: content-box;",
-          "/* Include padding and border in \nwidth/height */\n\nbox-sizing: border-box;",
-          "/* Apply to all elements */\n* {\n  box-sizing: border-box;\n}"
+          { comment: "Default", code: [{ property: "box-sizing", value: "content-box" }] },
+          { comment: "Include padding and border in width/height", code: [{ property: "box-sizing", value: "border-box" }] },
+          { comment: "Apply to all elements", selector: "*", code: [{ property: "box-sizing", value: "border-box" }] },
         ]
       },
         blocks: [
@@ -762,7 +772,7 @@ const levels = [
   {
     level: 3,
     name: "Borders & Decoration",
-    successMessage:  `You’ve successfully completed the Borders & Decoration level! You mastered essential CSS properties like border, outline and box-shadow. Keep experimenting and applying what you’ve learned`,
+    successMessage:  `You've successfully completed the Borders & Decoration level! You mastered essential CSS properties like border, outline and box-shadow. Keep experimenting and applying what you've learned`,
     defaultShowGrid: false,
     sublevels: [
       {
@@ -780,11 +790,15 @@ const levels = [
             "Border style is the most critical component: without it, the border will not render even if width and color are set."
           ],
           syntax: [
-            "/* Shorthand: width style color */\nborder: 2px solid #e94560;",
-            "/* Shorthand with different style */\nborder: 4px dashed #ffffff;",
-            "/* Dotted border */\nborder: 3px dotted orange;",
-            "/* Using individual properties */\nborder-width: 2px;\nborder-style: solid;\nborder-color: #e94560;",
-            "/* No border */\nborder: none;"
+            { comment: "Shorthand: width style color", code: [{ property: "border", value: "2px solid #e94560" }] },
+            { comment: "Shorthand with different style", code: [{ property: "border", value: "4px dashed #ffffff" }] },
+            { comment: "Dotted border", code: [{ property: "border", value: "3px dotted orange" }] },
+            { comment: "Using individual properties", code: [
+              { property: "border-width", value: "2px" },
+              { property: "border-style", value: "solid" },
+              { property: "border-color", value: "#e94560" },
+            ]},
+            { comment: "No border", code: [{ property: "border", value: "none" }] },
           ]
         },
         blocks: [
@@ -854,11 +868,14 @@ const levels = [
             "A value of 50% on a square element produces a perfect circle."
           ],
           syntax: [
-            "/* Same radius on all corners */\nborder-radius: 8px;",
-            "/* Different radius per corner: top-left, top-right, bottom-right, bottom-left */\nborder-radius: 4px 12px 4px 12px;",
-            "/* Perfect circle (on a square element) */\nborder-radius: 50%;",
-            "/* Individual corners */\nborder-top-left-radius: 16px;\nborder-bottom-right-radius: 16px;",
-            "/* Pill shape (on a wide element) */\nborder-radius: 999px;"
+            { comment: "Same radius on all corners", code: [{ property: "border-radius", value: "8px" }] },
+            { comment: "Different radius per corner", code: [{ property: "border-radius", value: "4px 12px 4px 12px" }] },
+            { comment: "Perfect circle (on a square element)", code: [{ property: "border-radius", value: "50%" }] },
+            { comment: "Individual corners", code: [
+              { property: "border-top-left-radius", value: "16px" },
+              { property: "border-bottom-right-radius", value: "16px" },
+            ]},
+            { comment: "Pill shape (on a wide element)", code: [{ property: "border-radius", value: "999px" }] },
           ]
         },
         blocks: [
@@ -920,11 +937,14 @@ const levels = [
             "The outline-offset property lets you create space between the outline and the element."
           ],
           syntax: [
-            "/* Basic outline */\noutline: 2px solid black;",
-            "/* Different styles */\noutline: 4px dashed red;",
-            "outline: 3px dotted blue;",
-            "/* Outline with offset */\noutline: 2px solid green;\noutline-offset: 6px;",
-            "/* Removing outline */\noutline: none;"
+            { comment: "Basic outline", code: [{ property: "outline", value: "2px solid black" }] },
+            { comment: "Dashed style", code: [{ property: "outline", value: "4px dashed red" }] },
+            { comment: "Dotted style", code: [{ property: "outline", value: "3px dotted blue" }] },
+            { comment: "Outline with offset", code: [
+              { property: "outline", value: "2px solid green" },
+              { property: "outline-offset", value: "6px" },
+            ]},
+            { comment: "Removing outline", code: [{ property: "outline", value: "none" }] },
           ]
         },
         blocks: [
@@ -999,11 +1019,11 @@ const levels = [
             "Different colors can be used to create glow-like visual effects."
           ],
           syntax: [
-            "/* Centered glow shadow */\nbox-shadow: 0px 0px 50px 20px green;",
-            "/* Stronger glow with larger spread */\nbox-shadow: 0px 0px 50px 40px red;",
-            "/* Basic shadow with offset */\nbox-shadow: 4px 4px 10px rgba(0,0,0,0.3);",
-            "/* Soft glow effect */\nbox-shadow: 0px 0px 30px 10px rgba(0, 255, 0, 0.5);",
-            "/* Multiple shadows */\nbox-shadow: 0 0 20px rgba(0,0,0,0.2), 0 0 40px rgba(0,0,0,0.1);"
+            { comment: "Centered glow shadow", code: [{ property: "box-shadow", value: "0px 0px 50px 20px green" }] },
+            { comment: "Stronger glow with larger spread", code: [{ property: "box-shadow", value: "0px 0px 50px 40px red" }] },
+            { comment: "Basic shadow with offset", code: [{ property: "box-shadow", value: "4px 4px 10px rgba(0,0,0,0.3)" }] },
+            { comment: "Soft glow effect", code: [{ property: "box-shadow", value: "0px 0px 30px 10px rgba(0, 255, 0, 0.5)" }] },
+            { comment: "Multiple shadows", code: [{ property: "box-shadow", value: "0 0 20px rgba(0,0,0,0.2), 0 0 40px rgba(0,0,0,0.1)" }] },
           ]
         },
         blocks: [
@@ -1059,7 +1079,7 @@ const levels = [
   {
     level: 6,
     name: "Positioning & Display",
-    successMessage: `You’ve successfully completed the Positioning & Display level! You mastered essential CSS properties like display, position, z-index and more. Keep experimenting and applying what you’ve learned`,
+    successMessage: `You've successfully completed the Positioning & Display level! You mastered essential CSS properties like display, position, z-index and more. Keep experimenting and applying what you've learned`,
     defaultShowGrid: true,
     sublevels: [
       // Sublevel 1: DISPLAY
@@ -1078,11 +1098,11 @@ const levels = [
             "Setting display: none hides an element completely, removing it from the layout."
           ],
           syntax: [
-            "/* Takes full width, stacks vertically */\ndisplay: block;",
-            "/* Flows inline, keeps dimensions */\ndisplay: inline-block;",
-            "/* Flows with text, ignores dimensions */\ndisplay: inline;",
-            "/* Hides element completely */\ndisplay: none;",
-            "/* Enables flexbox layout */\ndisplay: flex;"
+            { comment: "Takes full width, stacks vertically", code: [{ property: "display", value: "block" }] },
+            { comment: "Flows inline, keeps dimensions", code: [{ property: "display", value: "inline-block" }] },
+            { comment: "Flows with text, ignores dimensions", code: [{ property: "display", value: "inline" }] },
+            { comment: "Hides element completely", code: [{ property: "display", value: "none" }] },
+            { comment: "Enables flexbox layout", code: [{ property: "display", value: "flex" }] },
           ]
         },
         blocks: [
@@ -1120,7 +1140,7 @@ const levels = [
             }
           }
         ],
-        successMessage: "Great! You’ve learned how display works."
+        successMessage: "Great! You've learned how display works."
       },
 
       // Sublevel 2: POSITION
@@ -1139,11 +1159,14 @@ const levels = [
             "fixed positions relative to the viewport, and sticky switches between relative and fixed based on scroll."
           ],
           syntax: [
-            "/* Default: normal flow, offsets ignored */\nposition: static;",
-            "/* Offset from natural position */\nposition: relative;",
-            "/* Removed from flow, positioned within ancestor */\nposition: absolute;",
-            "/* Fixed to the viewport */\nposition: fixed;",
-            "/* Sticks at a scroll threshold */\nposition: sticky;\ntop: 0;"
+            { comment: "Default: normal flow, offsets ignored", code: [{ property: "position", value: "static" }] },
+            { comment: "Offset from natural position", code: [{ property: "position", value: "relative" }] },
+            { comment: "Removed from flow, positioned within ancestor", code: [{ property: "position", value: "absolute" }] },
+            { comment: "Fixed to the viewport", code: [{ property: "position", value: "fixed" }] },
+            { comment: "Sticks at a scroll threshold", code: [
+              { property: "position", value: "sticky" },
+              { property: "top", value: "0" },
+            ]},
           ]
         },
         blocks: [
@@ -1177,7 +1200,7 @@ const levels = [
             }
           }
         ],
-        successMessage: "Great! You’ve learned how position works."
+        successMessage: "Great! You've learned how position works."
       },
 
       // Sublevel 3: TOP / LEFT / BOTTOM / RIGHT
@@ -1196,11 +1219,11 @@ const levels = [
             "Positive values push inward (top pushes down, left pushes right), negative values push outward."
           ],
           syntax: [
-            "/* Push down from natural position */\nposition: relative;\ntop: 30px;",
-            "/* Move right */\nposition: relative;\nleft: 50px;",
-            "/* Pin to top-left corner */\nposition: absolute;\ntop: 0;\nleft: 0;",
-            "/* Pin to bottom-right corner */\nposition: absolute;\nbottom: 0;\nright: 0;",
-            "/* Negative offset (push up) */\nposition: relative;\ntop: -20px;"
+            { comment: "Push down from natural position", code: [{ property: "position", value: "relative" }, { property: "top", value: "30px" }] },
+            { comment: "Move right", code: [{ property: "position", value: "relative" }, { property: "left", value: "50px" }] },
+            { comment: "Pin to top-left corner", code: [{ property: "position", value: "absolute" }, { property: "top", value: "0" }, { property: "left", value: "0" }] },
+            { comment: "Pin to bottom-right corner", code: [{ property: "position", value: "absolute" }, { property: "bottom", value: "0" }, { property: "right", value: "0" }] },
+            { comment: "Negative offset (push up)", code: [{ property: "position", value: "relative" }, { property: "top", value: "-20px" }] },
           ]
         },
         blocks: [
@@ -1228,7 +1251,7 @@ const levels = [
             }
           }
         ],
-        successMessage: "Great! You’ve learned how top, left, bottom, and right work."
+        successMessage: "Great! You've learned how top, left, bottom, and right work."
       },
 
       // Sublevel 4: Z-INDEX
@@ -1247,10 +1270,10 @@ const levels = [
             "Negative z-index values push elements behind the normal document flow."
           ],
           syntax: [
-            "/* Element on top */\nposition: absolute;\nz-index: 2;",
-            "/* Element behind */\nposition: absolute;\nz-index: 1;",
-            "/* Force element to back */\nposition: absolute;\nz-index: -1;",
-            "/* Highest stacking order */\nposition: absolute;\nz-index: 999;"
+            { comment: "Element on top", code: [{ property: "position", value: "absolute" }, { property: "z-index", value: "2" }] },
+            { comment: "Element behind", code: [{ property: "position", value: "absolute" }, { property: "z-index", value: "1" }] },
+            { comment: "Force element to back", code: [{ property: "position", value: "absolute" }, { property: "z-index", value: "-1" }] },
+            { comment: "Highest stacking order", code: [{ property: "position", value: "absolute" }, { property: "z-index", value: "999" }] },
           ]
         },
         blocks: [
@@ -1288,7 +1311,7 @@ const levels = [
             }
           }
         ],
-        successMessage: "Great! You’ve learned how z-index works."
+        successMessage: "Great! You've learned how z-index works."
       },
 
       // Sublevel 5: FLOAT
@@ -1307,10 +1330,13 @@ const levels = [
             "Adjacent block content collapses around floated elements unless cleared."
           ],
           syntax: [
-            "/* Float to the left */\nfloat: left;",
-            "/* Float to the right */\nfloat: right;",
-            "/* Remove float */\nfloat: none;",
-            "/* Image with text wrapping */\nimg {\n  float: left;\n  margin-right: 10px;\n}"
+            { comment: "Float to the left", code: [{ property: "float", value: "left" }] },
+            { comment: "Float to the right", code: [{ property: "float", value: "right" }] },
+            { comment: "Remove float", code: [{ property: "float", value: "none" }] },
+            { comment: "Image with text wrapping", selector: "img", code: [
+              { property: "float", value: "left" },
+              { property: "margin-right", value: "10px" },
+            ]},
           ]
         },
         blocks: [
@@ -1345,7 +1371,7 @@ const levels = [
             }
           }
         ],
-        successMessage: "Great! You’ve learned how float works."
+        successMessage: "Great! You've learned how float works."
       },
 
       // Sublevel 6: CLEAR
@@ -1364,10 +1390,10 @@ const levels = [
             "clear is commonly used after float-based layouts to restore normal document flow."
           ],
           syntax: [
-            "/* Move below left floats */\nclear: left;",
-            "/* Move below right floats */\nclear: right;",
-            "/* Move below all floats */\nclear: both;",
-            "/* Default: no clearing */\nclear: none;"
+            { comment: "Move below left floats", code: [{ property: "clear", value: "left" }] },
+            { comment: "Move below right floats", code: [{ property: "clear", value: "right" }] },
+            { comment: "Move below all floats", code: [{ property: "clear", value: "both" }] },
+            { comment: "Default: no clearing", code: [{ property: "clear", value: "none" }] },
           ]
         },
         blocks: [
@@ -1401,7 +1427,7 @@ const levels = [
             }
           }
         ],
-        successMessage: "Great! You’ve learned how clear works."
+        successMessage: "Great! You've learned how clear works."
       },
 
       // Sublevel 7: OVERFLOW
@@ -1414,17 +1440,20 @@ const levels = [
         theory: {
           description: [
             "The overflow property controls what happens when content is larger than its container.",
-            "visible is the default: content spills outside the element’s boundary.",
-            "hidden clips the overflowing content, making it invisible beyond the element’s edges.",
+            "visible is the default: content spills outside the element's boundary.",
+            "hidden clips the overflowing content, making it invisible beyond the element's edges.",
             "scroll always shows scrollbars, even when the content fits inside.",
             "auto adds scrollbars only when needed, hiding them when content fits."
           ],
           syntax: [
-            "/* Default: content overflows */\noverflow: visible;",
-            "/* Clip overflowing content */\noverflow: hidden;",
-            "/* Always show scrollbars */\noverflow: scroll;",
-            "/* Scrollbars only when needed */\noverflow: auto;",
-            "/* Control axes separately */\noverflow-x: hidden;\noverflow-y: scroll;"
+            { comment: "Default: content overflows", code: [{ property: "overflow", value: "visible" }] },
+            { comment: "Clip overflowing content", code: [{ property: "overflow", value: "hidden" }] },
+            { comment: "Always show scrollbars", code: [{ property: "overflow", value: "scroll" }] },
+            { comment: "Scrollbars only when needed", code: [{ property: "overflow", value: "auto" }] },
+            { comment: "Control axes separately", code: [
+              { property: "overflow-x", value: "hidden" },
+              { property: "overflow-y", value: "scroll" },
+            ]},
           ]
         },
         blocks: [
@@ -1476,7 +1505,7 @@ const levels = [
             }
           }
         ],
-        successMessage: "Great! You’ve learned how overflow works."
+        successMessage: "Great! You've learned how overflow works."
       }
     ]
   }

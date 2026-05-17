@@ -180,3 +180,9 @@ textarea{
     font-size: var(--text-xl);
 }
 
+@media (max-width: 1200px) {
+    .editor {
+        border-radius: 0;
+    }
+}
+

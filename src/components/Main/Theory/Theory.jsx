@@ -29,8 +29,30 @@ export default function Theory(){
                     </div>
                     <div className='theory__text-syntax'>
                     <h4 className='text-syntax__title'>Syntax</h4>
-                    {syntax.map((s, i) => (
-                        <pre key={i} className='syntax-property__code'><code>{s}</code></pre>
+                    {syntax.map(({ comment, selector, code }, i) => (
+                        <pre key={i} className='syntax-property__code'>
+                            <code>
+                                {comment && <><span className='syntax-comment'>{`/* ${comment} */`}</span>{'\n'}</>}
+                                {selector ? (
+                                    <>
+                                        {`${selector} {\n`}
+                                        {code.map(({ property, value }, j) => (
+                                            <span key={j}>
+                                                {'  '}<span className='syntax-prop'>{property}</span>{': '}<span className='syntax-val'>{value}</span>{';\n'}
+                                            </span>
+                                        ))}
+                                        {'}'}
+                                    </>
+                                ) : (
+                                    code.map(({ property, value }, j) => (
+                                        <span key={j}>
+                                            {j > 0 && '\n'}
+                                            <span className='syntax-prop'>{property}</span>{': '}<span className='syntax-val'>{value}</span>{';'}
+                                        </span>
+                                    ))
+                                )}
+                            </code>
+                        </pre>
                     ))}
                 </div>
                 </div>
