@@ -195,7 +195,9 @@ export default function HomeContent(){
                         })
                     )}
                 </div>
-                <OverallProgress className="home-levels__progress-bar-wrapper" />
+                <div className="home-levels__progress-bar-wrapper">
+                    <OverallProgress />
+                </div>
             </section>
             </>
 

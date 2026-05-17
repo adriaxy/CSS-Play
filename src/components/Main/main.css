@@ -45,48 +45,8 @@
 
 .main__overall-progress {
     grid-area: progress;
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    padding: 8px 15px;
-    border-radius: var(--border-radius-l);
-    outline: 1px solid var(--border-dark);
-    background: linear-gradient(to bottom, var(--bg-darkest), var(--gradient-darkest));
 }
 
-.overall-progress__label {
-    font-size: var(--text-xs);
-    color: var(--text-muted);
-    white-space: nowrap;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-}
-
-.overall-progress__bar {
-    flex: 1;
-    height: 6px;
-    background-color: var(--border-dark);
-    border-radius: 99px;
-    overflow: hidden;
-}
-
-.overall-progress__fill {
-    height: 100%;
-    background-color: var(--highlight-yellow);
-    border-radius: 99px;
-    transition: width 0.4s ease;
-}
-
-.overall-progress__stats {
-    font-size: var(--text-s);
-    font-family: monospace;
-    color: var(--text-on-light);
-    white-space: nowrap;
-}
-
-.overall-progress__total {
-    color: var(--text-muted);
-}
 
 .main__editor{
     grid-area: editor;

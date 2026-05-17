@@ -348,13 +348,6 @@ a{
     padding: 0 15px 20px;
 }
 
-.home-levels__progress-bar-wrapper .overall-progress__bar {
-    height: 10px;
-}
-
-.home-levels__progress-bar-wrapper .overall-progress__fill {
-    background: linear-gradient(135deg, #ffbf00 0%, #b5fef4 100%) 0 0 / 150% 150%;
-}
 
 @media (max-width: 1300px) {
     .informative-section {

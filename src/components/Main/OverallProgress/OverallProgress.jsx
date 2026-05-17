@@ -1,7 +1,8 @@
 'use client'
+import './OverallProgress.css';
 import { useGame } from '@/app/GameContext';
 
-export default function OverallProgress({ className = 'main__overall-progress' }) {
+export default function OverallProgress() {
   const { sublevelState } = useGame();
 
   const totalSublevels = sublevelState.reduce((sum, level) => sum + level.length, 0);
@@ -9,7 +10,7 @@ export default function OverallProgress({ className = 'main__overall-progress' }
   const progressPercent = totalSublevels > 0 ? Math.round((totalCompleted / totalSublevels) * 100) : 0;
 
   return (
-    <div className={className}>
+    <div className="main__overall-progress">
       <span className="overall-progress__label">Overall progress</span>
       <div className="overall-progress__bar">
         <div className="overall-progress__fill" style={{ width: `${progressPercent}%` }} />
