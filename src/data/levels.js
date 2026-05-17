@@ -1438,6 +1438,10 @@ const levels = [
             id: "block1",
             group: "group1",
             initialStyle: { width: "130px", height: "80px", borderRadius: "var(--border-txt-md)", padding: "10px 10px", textAlign: "center", fontSize: "13px", fontWeight: "300", outline: "1px solid #ef535061", filter: "drop-shadow(0 0 15px #ef535061)", background: "var(--gradient-darkest)" },
+            label: {
+              playground: { position: 'top'},
+              target: { position: 'top'}
+            },
             defaultCode: "width: 130px;\nheight: 80px;",
             text: "This text is much longer than the box and will overflow beyond its boundaries if not clipped.",
             solution: [
@@ -1450,6 +1454,10 @@ const levels = [
             group: "group2",
             initialStyle: { width: "130px", height: "80px", borderRadius: "var(--border-txt-md)", padding: "10px 10px", textAlign: "center", fontSize: "13px", fontWeight: "300", outline: "1px solid #26a69a61", filter: "drop-shadow(0 0 15px #26a69a61)", background: "var(--gradient-darkest)" },
             defaultCode: "width: 130px;\nheight: 80px;",
+            label: {
+              playground: { position: 'top'},
+              target: { position: 'top'}
+            },
             text: "This text is also too long to fit. Apply overflow: auto so the user can scroll through all of it.",
             solution: [
               { width: "130px", height: "80px", overflow: "auto" }
