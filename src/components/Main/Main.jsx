@@ -4,6 +4,7 @@ import Playground from './Playground/Playground';
 import TargetLayout from './TargetLayout/TargetLayout';
 import Theory from './Theory/Theory';
 import LevelProgress from './LevelProgress/LevelProgress';
+import OverallProgress from './OverallProgress/OverallProgress';
 import ModalSolution from './Shared/ModalSolution';
 import MobileAlert from './MobileAlert/MobileAlert';
 import { useGame } from '@/app/GameContext';
@@ -13,6 +14,7 @@ export default function Main(){
 
     return (
         <main className='main'>
+            <OverallProgress />
             <section className="main__editor">
                 <Editor/>
             </section>

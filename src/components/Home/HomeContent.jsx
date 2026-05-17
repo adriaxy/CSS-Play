@@ -7,6 +7,7 @@ import CardLevel from './CardLevel/CardLevel';
 import CardSublevels from './CardLevel/CardSublevels';
 import Header from '../Header/Header';
 import MobileAlert from '../Main/MobileAlert/MobileAlert';
+import OverallProgress from '../Main/OverallProgress/OverallProgress';
 import { useGame } from '@/app/GameContext';
 import levels from '@/data/levels';
 import Link from "next/link";
@@ -17,10 +18,6 @@ export default function HomeContent(){
     const [search, setSearch] = useState('');
     const [showInfo, setShowInfo] = useState(true);
     const [toggleHovered, setToggleHovered] = useState(false);
-
-    const totalSublevels = sublevelState.reduce((sum, level) => sum + level.length, 0);
-    const totalCompleted = sublevelState.reduce((sum, level) => sum + level.filter(s => s.completed).length, 0);
-    const progressPercent = totalSublevels > 0 ? Math.round((totalCompleted / totalSublevels) * 100) : 0;
 
     const filteredLevels = homeLevelsData.reduce((acc, level, i) => {
         const query = search.toLowerCase().trim();
@@ -198,12 +195,7 @@ export default function HomeContent(){
                         })
                     )}
                 </div>
-                <div className="home-levels__progress-bar-wrapper">
-                    <div className="progress-bar">
-                        <div className="progress-bar__fill" style={{ width: `${progressPercent}%` }} />
-                    </div>
-                    <span className="progress-bar__label">{progressPercent}%</span>
-                </div>
+                <OverallProgress className="home-levels__progress-bar-wrapper" />
             </section>
             </>
 
