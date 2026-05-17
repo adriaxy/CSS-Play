@@ -12,7 +12,7 @@ export default function Header({ onPrev, onNext, isPrevDisabled, isNextDisabled,
 
     return (
         <>
-            <div className='header-container'>
+            <div className={`header-container${isHome ? ' header-container--home' : ''}`}>
                 <header className="header">
                     <LogoButton />
                     {!isHome && <PrevChallengeButton onClick={onPrev} isPrevDisabled={isPrevDisabled} className={'header__challenge-button--desktop'}/>}

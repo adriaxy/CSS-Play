@@ -6,6 +6,7 @@ import ChallengeButton from '../Header/navButtons/ChallengeButton';
 import CardLevel from './CardLevel/CardLevel';
 import CardSublevels from './CardLevel/CardSublevels';
 import Header from '../Header/Header';
+import MobileAlert from '../Main/MobileAlert/MobileAlert';
 import { useGame } from '@/app/GameContext';
 import levels from '@/data/levels';
 import Link from "next/link";
@@ -43,7 +44,8 @@ export default function HomeContent(){
 
     return(
         <>
-            <Header 
+            <MobileAlert />
+            <Header
                 isHome={true}
             />
             <div className={`informative-wrapper${showInfo ? '' : ' informative-wrapper--hidden'}`}>

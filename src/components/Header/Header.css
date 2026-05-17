@@ -275,10 +275,6 @@
         }
     }
 
-    .header__right{
-        flex-direction: row-reverse;
-    }
-
     .header__logo{
         font-size: var(--text-l);
     }
@@ -288,6 +284,10 @@
 @media(max-width: 600px){
     .header__color-mode-btn{
         display: none;
+    }
+
+    .header-container--home .header__color-mode-btn{
+        display: grid;
     }
 
     .nav-sep{
