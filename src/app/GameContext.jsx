@@ -1,8 +1,34 @@
 "use client";
-import { createContext, useContext, useState, useEffect } from "react";
+import { createContext, useContext, useState, useEffect, useRef } from "react";
 import { parseCssToRules } from "../../lib/parseCss";
 import levels from "@/data/levels";
 import { parse } from "css-tree";
+
+const STORAGE_KEY = "cssPlayState";
+
+// Se serializan los campos que el jugador puede modificar
+// defaultCode viene de levels.js y blockStyles se recalcula con el parser, así que no hace falta guardarlos
+function serializeSublevelProgress(sublevelStateData) {
+    return sublevelStateData.map(levelArray =>
+        levelArray.map((sublevel) => ({
+            firstTime: sublevel.firstTime,
+            playerCode: sublevel.playerCode,
+            completedBlocks: sublevel.completedBlocks,
+            completed: sublevel.completed
+        }))
+    );
+}
+
+// Combina el progreso guardado con el estado inicial para que los niveles nuevos
+// que no existían en el guardado se inicialicen correctamente desde levels.js
+function mergeWithSavedProgress(savedProgress, initialState) {
+    return initialState.map((levelArray, levelIdx) =>
+        levelArray.map((sublevel, sublevelIdx) => ({
+            ...sublevel,
+            ...(savedProgress[levelIdx]?.[sublevelIdx] || {})
+        }))
+    );
+}
 
 const GameContext = createContext();
 
@@ -70,6 +96,47 @@ export function GameProvider({ initialLevel, initialSublevel, children}){
         })
     const [sublevelState, setSublevelState] = useState(initialProgress);
 
+    // ref para saber si ya se cargó el progreso de localStorage
+    // se evita que el efecto de guardado sobreescriba el localStorage con el estado
+    // vacío inicial antes de que se haya tenido la oportunidad de leer el guardado
+    const localProgressLoaded = useRef(false);
+
+    // Carga el progreso guardado al montar el componente
+    useEffect(() => {
+        try {
+            const savedData = localStorage.getItem(STORAGE_KEY);
+            if (savedData) {
+                const { sublevelProgress, completedLevelModals } = JSON.parse(savedData);
+                if (sublevelProgress) {
+                    setSublevelState(currentState =>
+                        mergeWithSavedProgress(sublevelProgress, currentState)
+                    );
+                }
+                if (completedLevelModals) {
+                    setLevelCompletedModalShown(completedLevelModals);
+                }
+            }
+        } catch (loadError) {
+            // Si localStorage no está disponible o el JSON está corrupto, se continúa con el estado inicial
+            console.warn("Could not load saved progress:", loadError);
+        }
+        localProgressLoaded.current = true;
+    }, []);
+
+    // Guarda el progreso automáticamente cada vez que cambia el estado
+    useEffect(() => {
+        if (!localProgressLoaded.current) return;
+        try {
+            localStorage.setItem(STORAGE_KEY, JSON.stringify({
+                sublevelProgress: serializeSublevelProgress(sublevelState),
+                completedLevelModals: levelCompletedModalShown
+            }));
+        } catch (saveError) {
+            // Puede ocurrir si el almacenamiento está lleno
+            console.warn("Could not save progress:", saveError);
+        }
+    }, [sublevelState, levelCompletedModalShown]);
+
     const evaluateBlocks = (completedBlocks, evaluatedBlocksArray) => {
         return evaluatedBlocksArray.every(
             blockId => completedBlocks[blockId] === true
@@ -121,6 +188,8 @@ export function GameProvider({ initialLevel, initialSublevel, children}){
         setCompletedBlocks({ block1: false, block2: false });
         setCode(initialGameCode);
         setEvaluationResult(null);
+        localStorage.removeItem(STORAGE_KEY);
+        localProgressLoaded.current = true;
     };
 
     const [blockStyles, setBlockStyles] = useState();
