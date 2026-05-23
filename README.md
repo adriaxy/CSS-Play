@@ -43,7 +43,9 @@ npm install
 npm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) in your browser.
+Open [http://localhost:3000](http://localhost:3000) in your browser — this loads the landing page.
+
+To go directly to the app, navigate to [http://localhost:3000/play](http://localhost:3000/play).
 
 ### Other scripts
 
@@ -52,6 +54,14 @@ npm run build   # Production build
 npm run start   # Start the production server
 npm run lint    # Run ESLint
 ```
+
+## Routes
+
+| Path | Description |
+|------|-------------|
+| `/` | Landing page — project presentation with an interactive CSS demo |
+| `/play` | App home — level selection and progress overview |
+| `/play/[level]/[sublevel]` | Individual sublevel with editor, theory, and playground |
 
 ## Project status — Early Development
 
