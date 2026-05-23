@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export default function LogoButton(){
     return (
-        <Link href={'/'}>
+        <Link href={'/play'}>
             <div className='header__left'>
                     <div className='header__logo'>
                         <div className="header__text">

@@ -24,7 +24,7 @@ export default function BackHomeButton({className, type}) {
     return (
         <Link
             className={className}
-            href='/'
+            href='/play'
         >
             {svg}
         </Link>
