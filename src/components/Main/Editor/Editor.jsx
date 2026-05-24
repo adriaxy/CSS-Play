@@ -184,8 +184,7 @@ export default function Editor (){
             <textarea
               ref={textareaRef}
               className='textarea'
-              name=""
-              id=""
+              aria-label="CSS editor"
               onChange={handleChange}
               onScroll={syncScroll}
               value={currentCode}
