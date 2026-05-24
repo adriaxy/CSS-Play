@@ -20,7 +20,7 @@ export default function Theory(){
             <div className="theory__text">
                 <div className="theory__text-limit">
                     <div className='theory__text-description'>
-                        <h4 className='text-theory__title'>A bit of theory...</h4>
+                        <h3 className='text-theory__title'>A bit of theory...</h3>
                             <div className="text-theory__container">
                                 {description.map((p, i) => (
                                     <p key={i} className='description-property__paragraph'>{p}</p>
@@ -28,7 +28,7 @@ export default function Theory(){
                             </div>
                     </div>
                     <div className='theory__text-syntax'>
-                    <h4 className='text-syntax__title'>Syntax</h4>
+                    <h3 className='text-syntax__title'>Syntax</h3>
                     {syntax.map(({ comment, selector, code }, i) => (
                         <pre key={i} className='syntax-property__code'>
                             <code>
