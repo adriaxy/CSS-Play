@@ -14,6 +14,7 @@ export default function BackHomeButton({className, type}) {
             strokeWidth="1.75"
             strokeLinecap="round"
             strokeLinejoin="round"
+            aria-hidden="true"
             >
             <path d="M5 12l-2 0l9 -9l9 9l-2 0" />
             <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
@@ -25,6 +26,7 @@ export default function BackHomeButton({className, type}) {
         <Link
             className={className}
             href='/play'
+            aria-label="Go to home"
         >
             {svg}
         </Link>

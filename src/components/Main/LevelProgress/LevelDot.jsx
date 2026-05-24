@@ -12,6 +12,7 @@ export default function LevelDot({ isCompleted, dotName, currentLevel }) {
         <Link
             href={`/level/${pageLevel}/${dotName}`}
             className="level-dot-wrapper"
+            aria-label={dotName}
             onMouseEnter={() => setIsHovered('show')}
             onMouseLeave={() => setIsHovered('')}
         >
