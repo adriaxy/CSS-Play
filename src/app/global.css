@@ -40,8 +40,9 @@
   --show-info-button: #ffbf0062;
 
   /* Highlight colors */
-  --highlight-yellow: #ffbf00;  
-  --highlight-red: #D4523D;     
+  --highlight-yellow: #ffbf00;
+  --highlight-red: #D4523D;
+  --badge-red: #b83525;
   --d: #ffbf00;
 
   /* Title colors */
@@ -138,8 +139,10 @@
   --gradient-light: #78AEAD;
 
   /* Highlight colors (Light Mode) */
-  --highlight-yellow: #ffbf00; 
-  --highlight-red: #C24432;     
+  --highlight-yellow: #ffbf00;
+  --highlight-red: #b83828;
+  --badge-red: #C24432;
+  --completed-dark: #007a2f;
 
   /* Text colors (Light Mode) */ 
   --text-on-light: #1b3241;    

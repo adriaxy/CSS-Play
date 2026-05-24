@@ -32,7 +32,7 @@
 }
 
 .title__badge-total{
-    background-color: var(--highlight-red);
+    background-color: var(--badge-red);
     border-radius: 5px;
     font-size: var(--text-xxs);
     color: white;
