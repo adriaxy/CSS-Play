@@ -43,6 +43,7 @@
   --highlight-yellow: #ffbf00;
   --highlight-red: #D4523D;
   --badge-red: #b83525;
+  --badge-green: #007a2f;
   --d: #ffbf00;
 
   /* Title colors */
@@ -142,6 +143,7 @@
   --highlight-yellow: #ffbf00;
   --highlight-red: #b83828;
   --badge-red: #C24432;
+  --badge-green: #007a2f;
   --completed-dark: #007a2f;
 
   /* Text colors (Light Mode) */ 
