@@ -16,8 +16,8 @@ export default function LevelDot({ isCompleted, dotName, currentLevel }) {
             onMouseEnter={() => setIsHovered('show')}
             onMouseLeave={() => setIsHovered('')}
         >
-        <button className={`level-dot ${isCompleted}`}>
-            <span className={`level-dot__selected ${currentLevel}  ${isCompleted}`}></span>
+        <button className={`level-dot ${isCompleted}`} aria-label={`${dotName}${isCompleted ? ' - completed' : ''}`}>
+            <span className={`level-dot__selected ${currentLevel}  ${isCompleted}`} aria-hidden="true"></span>
         </button>
         <span className={`level-dot__sublevel-name ${isHovered}`}>
             {dotName}

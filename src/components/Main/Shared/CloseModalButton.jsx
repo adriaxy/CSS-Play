@@ -3,7 +3,7 @@ import './CloseModalButton.css'
 export default function CloseModalButton({onClick, className}) {
     
     return(
-        <button onClick={onClick} className={`close-modal-button ${className}`}>
+        <button onClick={onClick} className={`close-modal-button ${className}`} aria-label="Close">
             <svg
             xmlns="http://www.w3.org/2000/svg"
             width="25"
@@ -14,6 +14,7 @@ export default function CloseModalButton({onClick, className}) {
             strokeWidth="1.75"
             strokeLinecap="round"
             strokeLinejoin="round"
+            aria-hidden="true"
             >
             <path d="M18 6l-12 12" />
             <path d="M6 6l12 12" />
