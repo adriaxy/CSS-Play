@@ -45,6 +45,7 @@ export default function HomeContent(){
             <Header
                 isHome={true}
             />
+            <main>
             <div className={`informative-wrapper${showInfo ? '' : ' informative-wrapper--hidden'}`}>
             <section className='informative-section'>
                 <div className="informative-section__left">
@@ -202,6 +203,7 @@ export default function HomeContent(){
                     <OverallProgress />
                 </div>
             </section>
+            </main>
             </>
 
     )
