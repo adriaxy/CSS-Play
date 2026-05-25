@@ -738,12 +738,12 @@ const levels = [
         blocks: [
           {
             id: "initialStylePlayground",
-            defaultCode: "/* Block 1 */\n.block1 {\nwidth: 100px;\nheight: 100px;\n\n}\n\n"
+            defaultCode: "/* Block 1 */\n.block1 {\nwidth: 100px;\nheight: 100px;\nborder: 10px solid gold;\n\n}\n\n"
           },
           {
             id: "block1",
             group: "group1",
-            initialStyle: { boxSizing: "content-box", width: "100px", height: "100px", background: 'var(--b-light)', borderRadius: '20px', border: '10px solid var(--highlight-yellow)' },
+            initialStyle: { boxSizing: "content-box", width: "100px", height: "100px", background: 'var(--b-light)', borderRadius: '20px', border: '10px solid gold' },
             label: {
               playground: { position: 'bottom', offset: 35},
               target: { position: 'bottom', offset: 35}
